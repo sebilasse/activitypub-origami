@@ -1,0 +1,21 @@
+@font-face {font-family: 'activitypub';src: url('./fonts/activitypub.eot?#iefix') format('embedded-opentype'), url('./fonts/activitypub.woff2?xxltkt') format('woff2'), url('./fonts/activitypub.woff?xxltkt') format('woff'), url('./fonts/activitypub.ttf?xxltkt') format('truetype'), url('./fonts/activitypub.svg?xxltkt#activitypub') format('svg');font-weight: normal;font-style: normal;}
+h1{font-size: 2.0em;line-height: 120%;}
+h2{font-size: 1.5em;line-height: 120%;}
+h3{font-size: 1.17em;line-height: 120%;}
+h4{line-height: 120%;}
+h5{font-size: 0.83em;line-height: 120%;}
+h6{font-size: 0.75em;line-height: 120%;}
+output{font-family: 'activitypub' !important;speak: none;font-size: 64px;font-style: normal;font-weight: normal;font-variant: normal;text-transform: none;line-height: 1;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+code{font-family: monospace;}
+
+[data-color="black"], .color_black  { color:black; }
+[data-color="multi"], .color_multi  { color:black; }
+[data-color="grey"], .color_grey  { color:#555555; }
+[data-color="pink"], .color_pink  { color:#f1007e; }
+[data-color="lightblue"], .color_lightblue  { color:#0AC1EB; }
+[data-color="blue"], .color_blue   { color:#04475f; }
+[data-color="lightgreen"], .color_lightgreen  { color:#67E63E; }
+[data-color="green"], .color_green  { color:#1A7D09; }
+[data-color="red"], .color_red    { color:#dc0005; }
+[data-color="orange"], .color_orange { color:#ff7a00; }
+[data-color="yellow"], .color_yellow { color:#ffaf00; }

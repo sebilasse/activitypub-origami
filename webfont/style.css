@@ -1,0 +1,372 @@
+@font-face {
+  font-family: 'activitypub';
+  src:
+    url('fonts/activitypub.ttf?tqnmyt') format('truetype'),
+    url('fonts/activitypub.woff?tqnmyt') format('woff'),
+    url('fonts/activitypub.svg?tqnmyt#activitypub') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'activitypub' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Hate:before {
+  content: "\30";
+  color: #555;
+}
+.icon-ArrowRGET:before {
+  content: "\31";
+  color: #555;
+}
+.icon-ArrowLGET:before {
+  content: "\32";
+  color: #555;
+}
+.icon-ArrowRPOST:before {
+  content: "\33";
+  color: #555;
+}
+.icon-ArrowLPOST:before {
+  content: "\34";
+  color: #555;
+}
+.icon-ArrowRHEAD:before {
+  content: "\35";
+  color: #555;
+}
+.icon-ArrowRPATCH:before {
+  content: "\36";
+  color: #555;
+}
+.icon-ArrowRPUT:before {
+  content: "\37";
+  color: #555;
+}
+.icon-ArrowRDELETE:before {
+  content: "\38";
+  color: #555;
+}
+.icon-Spam:before {
+  content: "\39";
+  color: #555;
+}
+.icon-a_Alyssa:before {
+  content: "\61";
+  color: #555;
+}
+.icon-a_m_Alyssa .path1:before {
+  content: "\41";
+  color: rgb(4, 71, 95);
+}
+.icon-a_m_Alyssa .path2:before {
+  content: "\44";
+  margin-left: -1em;
+  color: rgb(10, 193, 235);
+}
+.icon-b_Ben:before {
+  content: "\62";
+  color: #555;
+}
+.icon-b_m_Ben .path1:before {
+  content: "\42";
+  color: rgb(103, 230, 62);
+}
+.icon-b_m_Ben .path2:before {
+  content: "\43";
+  margin-left: -1em;
+  color: rgb(26, 125, 9);
+}
+.icon-c_AlyssaServer:before {
+  content: "\63";
+  color: #0ac1eb;
+}
+.icon-c_m_AlyssaServer .path1:before {
+  content: "\45";
+  color: rgb(4, 71, 95);
+}
+.icon-c_m_AlyssaServer .path2:before {
+  content: "\46";
+  margin-left: -1em;
+  color: rgb(10, 193, 235);
+}
+.icon-d_AlyssaDevice:before {
+  content: "\64";
+  color: #0ac1eb;
+}
+.icon-d_m_AlyssaDevice .path1:before {
+  content: "\47";
+  color: rgb(4, 71, 95);
+}
+.icon-d_m_AlyssaDevice .path2:before {
+  content: "\48";
+  margin-left: -1em;
+  color: rgb(10, 193, 235);
+}
+.icon-e_AlyssaInbox:before {
+  content: "\65";
+  color: #0ac1eb;
+}
+.icon-e_m_AlyssaInbox .path1:before {
+  content: "\49";
+  color: rgb(4, 71, 95);
+}
+.icon-e_m_AlyssaInbox .path2:before {
+  content: "\4a";
+  margin-left: -1.2880859375em;
+  color: rgb(10, 193, 235);
+}
+.icon-f_AlyssaOutbox:before {
+  content: "\66";
+  color: #0ac1eb;
+}
+.icon-f_m_AlyssaOutbox .path1:before {
+  content: "\4f";
+  color: rgb(4, 71, 95);
+}
+.icon-f_m_AlyssaOutbox .path2:before {
+  content: "\50";
+  margin-left: -1.2880859375em;
+  color: rgb(10, 193, 235);
+}
+.icon-g_git:before {
+  content: "\67";
+  color: #555;
+}
+.icon-h_SecHttp:before {
+  content: "\68";
+  color: #555;
+}
+.icon-i_Inbox:before {
+  content: "\69";
+  color: #f1007e;
+}
+.icon-j_SecJSON:before {
+  content: "\6a";
+  color: #555;
+}
+.icon-k_SecOCAP:before {
+  content: "\6b";
+  color: #555;
+}
+.icon-l_ArrowL:before {
+  content: "\6c";
+  color: #555;
+}
+.icon-n_ipfs:before {
+  content: "\6e";
+  color: #6acad1;
+}
+.icon-n_m_ipfs .path1:before {
+  content: "\26";
+  color: rgb(70, 158, 162);
+}
+.icon-n_m_ipfs .path2:before {
+  content: "\27";
+  margin-left: -1em;
+  color: rgb(106, 202, 209);
+}
+.icon-n_m_redaktor .path1:before {
+  content: "\4b";
+  color: rgb(62, 55, 60);
+}
+.icon-n_m_redaktor .path2:before {
+  content: "\4c";
+  margin-left: -1em;
+  color: rgb(255, 122, 0);
+}
+.icon-n_m_redaktor .path3:before {
+  content: "\4d";
+  margin-left: -1em;
+  color: rgb(62, 55, 60);
+}
+.icon-n_redaktor:before {
+  content: "\40";
+}
+.icon-o_Outbox:before {
+  content: "\6f";
+  color: #f1007e;
+}
+.icon-p_SecOAuth:before {
+  content: "\70";
+  color: #555;
+}
+.icon-PL_Like:before {
+  content: "\2b";
+  color: #555;
+}
+.icon-q_m_User .path1:before {
+  content: "\51";
+  color: rgb(92, 4, 50);
+}
+.icon-q_m_User .path2:before {
+  content: "\52";
+  margin-left: -1em;
+  color: rgb(241, 0, 126);
+}
+.icon-q_User:before {
+  content: "\71";
+  color: #555;
+}
+.icon-r_ArrowR:before {
+  content: "\72";
+  color: #555;
+}
+.icon-s_BenServer:before {
+  content: "\73";
+  color: #67e63e;
+}
+.icon-s_m_BenServer .path1:before {
+  content: "\53";
+  color: rgb(26, 125, 9);
+}
+.icon-s_m_BenServer .path2:before {
+  content: "\54";
+  margin-left: -1em;
+  color: rgb(103, 230, 62);
+}
+.icon-t_BenDevice:before {
+  content: "\74";
+  color: #67e63e;
+}
+.icon-t_m_BenDevice .path1:before {
+  content: "\55";
+  color: rgb(26, 125, 9);
+}
+.icon-t_m_BenDevice .path2:before {
+  content: "\56";
+  margin-left: -1em;
+  color: rgb(103, 230, 62);
+}
+.icon-u_BenInbox:before {
+  content: "\75";
+  color: #67e63e;
+}
+.icon-u_m_BenInbox .path1:before {
+  content: "\57";
+  color: rgb(26, 125, 9);
+}
+.icon-u_m_BenInbox .path2:before {
+  content: "\58";
+  margin-left: -1.2880859375em;
+  color: rgb(103, 230, 62);
+}
+.icon-v_BenOutbox:before {
+  content: "\76";
+  color: #67e63e;
+}
+.icon-v_m_BenOutbox .path1:before {
+  content: "\59";
+  color: rgb(26, 125, 9);
+}
+.icon-v_m_BenOutbox .path2:before {
+  content: "\5a";
+  margin-left: -1.2880859375em;
+  color: rgb(103, 230, 62);
+}
+.icon-v_m_BenOutbox .path3:before {
+  content: "\5b";
+  margin-left: -1.2880859375em;
+  color: rgb(103, 230, 62);
+}
+.icon-v_m_BenOutbox .path4:before {
+  content: "\5c";
+  margin-left: -1.2880859375em;
+  color: rgb(103, 230, 62);
+}
+.icon-v_m_BenOutbox .path5:before {
+  content: "\5d";
+  margin-left: -1.2880859375em;
+  color: rgb(103, 230, 62);
+}
+.icon-w_World:before {
+  content: "\77";
+  color: #f1007e;
+}
+.icon-x_Bot:before {
+  content: "\78";
+  color: #555;
+}
+.icon-x_m_Bot .path1:before {
+  content: "\a7";
+  color: rgb(85, 85, 85);
+}
+.icon-x_m_Bot .path2:before {
+  content: "\a8";
+  margin-left: -1em;
+  color: rgb(255, 157, 0);
+}
+.icon-y_logolong:before {
+  content: "\79";
+}
+.icon-y_m_logolong .path1:before {
+  content: "\25";
+  color: rgb(241, 0, 126);
+}
+.icon-y_m_logolong .path2:before {
+  content: "\28";
+  margin-left: -4.818359375em;
+  color: rgb(241, 0, 126);
+}
+.icon-y_m_logolong .path3:before {
+  content: "\29";
+  margin-left: -4.818359375em;
+  color: rgb(51, 51, 51);
+}
+.icon-y_m_logolong .path4:before {
+  content: "\2a";
+  margin-left: -4.818359375em;
+  color: rgb(85, 85, 85);
+}
+.icon-y_m_logolong .path5:before {
+  content: "\2d";
+  margin-left: -4.818359375em;
+  color: rgb(241, 0, 126);
+}
+.icon-z_logo:before {
+  content: "\7a";
+}
+.icon-z_m_logo .path1:before {
+  content: "\23";
+  color: rgb(241, 0, 126);
+}
+.icon-z_m_logo .path2:before {
+  content: "\2e";
+  margin-left: -1.2880859375em;
+  color: rgb(241, 0, 126);
+}
+.icon-z_m_logo .path3:before {
+  content: "\3b";
+  margin-left: -1.2880859375em;
+  color: rgb(51, 51, 51);
+}
+.icon-bubble:before {
+  content: "\6d";
+}
+.icon-bubbles2:before {
+  content: "\2c";
+}
+.icon-key:before {
+  content: "\24";
+}
+.icon-link:before {
+  content: "\2f";
+}
+.icon-filter:before {
+  content: "\21";
+}
+.icon-terminal:before {
+  content: "\3a";
+}

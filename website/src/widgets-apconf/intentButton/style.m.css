@@ -1,0 +1,77 @@
+/* montserrat-400 - latin ext. */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/montserrat-v14-latin_latin-ext-regular.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat Light'), local('Montserrat-Light'),
+       url('./fonts/montserrat-v14-latin_latin-ext-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/montserrat-v14-latin_latin-ext-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/montserrat-v14-latin_latin-ext-regular.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/montserrat-v14-latin_latin-ext-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/montserrat-v14-latin_latin-ext-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+/* montserrat-700 - latin ext. */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/montserrat-v14-latin_latin-ext-700.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
+       url('./fonts/montserrat-v14-latin_latin-ext-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/montserrat-v14-latin_latin-ext-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/montserrat-v14-latin_latin-ext-700.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/montserrat-v14-latin_latin-ext-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/montserrat-v14-latin_latin-ext-700.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+
+.root, .root *, .root input::placeholder, .root input:placeholder-shown {
+	--cap-h: 0.7 !important;
+	font-family: 'Montserrat', sans-serif !important;
+	margin-bottom: 0 !important;
+}
+.combo {
+	composes: root;
+	margin-top: calc(var(--line) * -1);
+}
+.container {
+	display: flex;
+	max-width: 320px;
+	position: relative;
+  margin-right: 4px;
+}
+.ok {
+	composes: root;
+	flex: 0;
+	position: absolute;
+	right: 0px;
+	margin-top: var(--padding-top) !important;
+	font-weight: 700;
+}
+.hidden {
+	display: none !important;
+}
+.root b {
+	flex: 1;
+}
+.btnInner {
+	display: flex;
+	align-items: center;
+}
+.label {
+	display: flex;
+	align-items: flex-start;
+	float: left;
+}
+.label span {
+	flex: 0;
+}
+.logo {
+	flex: 0;
+	height: 20px;
+	width: auto;
+	margin-right: 4px;
+}
+.logo.small {
+	height: 16px;
+}

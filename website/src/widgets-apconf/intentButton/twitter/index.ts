@@ -1,0 +1,40 @@
+import intentBundle from './nls/common';
+import IntentBase, { IntentButtonProperties } from '../index';
+export interface ShareTwitterProperties extends IntentButtonProperties {
+	related?: string;
+}
+
+export default class ShareTwitter extends IntentBase<ShareTwitterProperties> {
+	protected localize() { return this.localizeBundle(intentBundle) }
+	protected getLogoSrc() {
+		return `data:image/svg+xml;base64,
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9i
+ZSBJbGx1c3RyYXRvciAxNS4wLjIsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAw
+IEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9F
+TiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3Zn
+IHZlcnNpb249IjEuMSIgaWQ9IkViZW5lXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2
+ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4
+Ig0KCSB3aWR0aD0iMTczLjEzMXB4IiBoZWlnaHQ9IjE4NS42MDdweCIgdmlld0JveD0iMCAwIDE3My4x
+MzEgMTg1LjYwNyIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTczLjEzMSAxODUuNjA3Ig0KCSB4
+bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiMwMEFDRUQiIGQ9Ik01NC42MDcsMTYwLjYx
+NWM2Mi45NzMsMCw5Ny40MTYtNTIuMTcxLDk3LjQxNi05Ny40MTRjMC0xLjQ4MiwwLTIuOTU3LTAuMTAy
+LTQuNDI2DQoJYzYuNzAxLTQuODQ2LDEyLjQ4NC0xMC44NDksMTcuMDgyLTE3LjcyM2MtNi4yNDksMi43
+Ny0xMi44NzcsNC41ODUtMTkuNjY1LDUuMzg4YzcuMTQ3LTQuMjc5LDEyLjQ5Ni0xMS4wMDksMTUuMDU0
+LTE4LjkzOA0KCWMtNi43MjIsMy45ODgtMTQuMDc0LDYuNzk4LTIxLjc0Miw4LjMxMmMtMTIuOTY1LTEz
+Ljc4OC0zNC42NTItMTQuNDUzLTQ4LjQ0LTEuNDg3Yy04Ljg5Miw4LjM2Mi0xMi42NjQsMjAuODIyLTku
+OTA0LDMyLjcxMg0KCWMtMjcuNTI4LTEuMzgtNTMuMTc3LTE0LjM4Mi03MC41NjItMzUuNzcxYy05LjA4
+NywxNS42NDQtNC40NDUsMzUuNjU2LDEwLjYsNDUuNzA0Yy01LjQ0OC0wLjE2Mi0xMC43NzgtMS42MzIt
+MTUuNTQtNC4yODUNCgljMCwwLjE0LDAsMC4yODcsMCwwLjQzNGMwLjAwNCwxNi4yOTgsMTEuNDkzLDMw
+LjMzNSwyNy40NjgsMzMuNTYyYy01LjA0MSwxLjM3NS0xMC4zMjksMS41NzUtMTUuNDU5LDAuNTg4DQoJ
+YzQuNDg1LDEzLjk0NSwxNy4zMzgsMjMuNTAxLDMxLjk4NiwyMy43NzVjLTEyLjEyNCw5LjUyOC0yNy4x
+LDE0LjctNDIuNTIsMTQuNjg3Yy0yLjcyNC0wLjAwNi01LjQ0Ni0wLjE3MS04LjE1LTAuNDk0DQoJYzE1
+LjY1NywxMC4wNDcsMzMuODc1LDE1LjM3Nyw1Mi40NzksMTUuMzUzIi8+DQo8L3N2Zz4NCg==`
+	}
+	protected getUrl() {
+		const { text, related = '', target = document.location.href } = this.properties;
+		return `https://twitter.com/intent/tweet?` +
+			`text=${encodeURIComponent(text)}` +
+			`&url=${encodeURIComponent(target)}` +
+			`&related=${encodeURIComponent(related)}`
+	}
+}

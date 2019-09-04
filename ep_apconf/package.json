@@ -1,0 +1,30 @@
+{
+  "description": "Adds ActivityPub font, sharing, color, heading. Includes ep_headings2 and ep_font_color.",
+  "name": "ep_apconf",
+  "version": "0.0.9",
+  "author": {
+    "name": "Sebastian Lasse",
+    "email": "input@sebastianlasse.de",
+    "url": "https://github.com/redaktor"
+  },
+  "contributors": [
+    {
+      "name": "Matthias Bartelmeß",
+      "email": "mba@fourplusone.de"
+    },
+    {
+      "name": "John McLear",
+      "email": "john@mclear.co.uk"
+    },
+    {
+      "name": "Gedion Woldeselassie",
+      "email": "gwy321@gmail.com",
+      "url": "https://github.com/gedion"
+    }
+  ],
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
