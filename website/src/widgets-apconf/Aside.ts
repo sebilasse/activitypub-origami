@@ -65,7 +65,7 @@ export default class Aside extends WidgetBase<AsideProperties> {
 	}
 	private _boundIsLarger = this.isLarger.bind(this);
 	private _paneSize = 360;
-	
+
 	render() {
 		const { hash } = window.document.location;
 		const { paneSize = 360, activeIndex = 0, onClose } = this.properties;
@@ -112,7 +112,7 @@ export default class Aside extends WidgetBase<AsideProperties> {
 					`A conference about the present and future of ActivityPub,
 the world’s leading federated social web standard. `,
 					v('span', muted, [
-`This two day event will include presentations of prepared talks on Saturday
+`This two day event includes presentations of prepared talks on Saturday
 followed by a loosely structured unconference on Sunday.`
 					])
 				]),
@@ -207,9 +207,9 @@ followed by a loosely structured unconference on Sunday.`
 					v('iframe', {
 						src: this._iFrame,
 						classes: css.map,
-						style: this._mapfullscreen ? `height:100%;` : `height:${this._paneSize}px;`,
+						style: this._mapfullscreen ? `height:100%;` : `height:208px;`,
 						width: '100%',
-						height: this._mapfullscreen ? '100%' : this._paneSize,
+						height: this._mapfullscreen ? '100%' : '208px',
 						frameborder: '0',
 						scrolling: 'no',
 						scrollwheel: 'false',

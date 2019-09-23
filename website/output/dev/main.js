@@ -12665,7 +12665,7 @@ r.mount();
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {" _key":"redaktor/app","strong":"app-m__strong__3aXsU","imgLink":"app-m__imgLink__Lmd6e","icon":"app-m__icon__pCURb","pointerRow":"app-m__pointerRow__1BDY6","rightImage":"app-m__rightImage__3YgDb","alignedImage":"app-m__alignedImage__atGA4","buttonRow":"app-m__buttonRow__37OQg","flex":"app-m__flex__3mwRe","noflex":"app-m__noflex__kWnWj","mapContainer":"app-m__mapContainer__323FK","dialog":"app-m__dialog__2RvHE","max":"app-m__max__3n1lG","iconImg":"app-m__iconImg__13VHJ","iconLarge":"app-m__iconLarge__33COz","iconXLarge":"app-m__iconXLarge__3O4gX","donot":"app-m__donot__cCdjm","raised":"app-m__raised__1lbPE","iconImgAbs":"app-m__iconImgAbs__12Q7m","labelAbs":"app-m__labelAbs__3CJxa","iconSVG":"app-m__iconSVG__2f8LJ","iconDojo":"app-m__iconDojo__10LPR","inlineTypo":"app-m__inlineTypo__3TGHv","muted":"app-m__muted__40yep _ui-m__muted__1D8Ii","accent":"app-m__accent__1rupY","subtle":"app-m__subtle__2uR44","narrow":"app-m__narrow__3clQc","right":"app-m__right__ajD5H","typoAccent":"app-m__typoAccent__3LODU _typo__sans__1uzio undefined","serif":"app-m__serif__15yMB _typo__serif__1NL3x _typo__h5__2VhM4","sizeMenu":"app-m__sizeMenu__4kyZ1","materialLabel":"app-m__materialLabel__3XXMG","light":"app-m__light__1GEkv","dark":"app-m__dark__2r8vz","app":"app-m__app__1EaKP","toolbar":"app-m__toolbar__3PCAp","toolbarActions":"app-m__toolbarActions__3IwfA","tab":"app-m__tab__3x7kT","hasFlex":"app-m__hasFlex__1rcJA","flexReverse":"app-m__flexReverse__15gY8","baselined":"app-m__baselined__ec-dk","centerflex":"app-m__centerflex__1HEQO","logoHeader":"app-m__logoHeader__1V9LI _typo__header__CS3Yg","aside":"app-m__aside__wtfsg","asideImg":"app-m__asideImg__2poTn","fadeIn":"app-m__fadeIn__3UnYC","asideImgFixed":"app-m__asideImgFixed__2kR86 app-m__asideImg__2poTn","asideFooter":"app-m__asideFooter__1wXOX","asideFooterInner":"app-m__asideFooterInner__2Okde","expandedFooter":"app-m__expandedFooter__7DTxi","scheduleLinks":"app-m__scheduleLinks__2KbOt","mapContainerFull":"app-m__mapContainerFull__2g2EV","mapMagnifiy":"app-m__mapMagnifiy__2Bfk9","mapMouse":"app-m__mapMouse__3zKZu","noscroll":"app-m__noscroll__3RH3v","map":"app-m__map__1GgmW","year":"app-m__year__40rag","programHeader":"app-m__programHeader__2Zqeh","visible":"app-m__visible__17p9e","talkRow":"app-m__talkRow__3NbGw","talkBreak":"app-m__talkBreak__3hk2Y _color-m__purple__27d4H","keynoteRow":"app-m__keynoteRow__2x8Ko","tabHeader":"app-m__tabHeader__2YRiC","time":"app-m__time__2_MzD","talkTime":"app-m__talkTime__3j0JU","keynoteSingle":"app-m__keynoteSingle__zqHeL","keynoteMedia":"app-m__keynoteMedia__33xPF","event":"app-m__event__2Lb9U","session":"app-m__session__2-8WQ","sessionsTalkRow":"app-m__sessionsTalkRow__2XQok","keynote":"app-m__keynote__NZbRa","talk":"app-m__talk__2Rdx1","h5":"app-m__h5__RPV0k","compact":"app-m__compact__1Esnq","keynoteHeader":"app-m__keynoteHeader__1-BB_","talkHeader":"app-m__talkHeader__1RSzL","floorRow":"app-m__floorRow__1lTBH","floorPlan":"app-m__floorPlan__wnz1_","floorHint":"app-m__floorHint__1Rux3","am":"app-m__am__M1SAo","pm":"app-m__pm__14EmT","splitPaneHolder":"app-m__splitPaneHolder__3AJwa"};
+module.exports = {" _key":"redaktor/app","strong":"app-m__strong__3aXsU","imgLink":"app-m__imgLink__Lmd6e","icon":"app-m__icon__pCURb","actionLinks":"app-m__actionLinks__1HHlf","pointerRow":"app-m__pointerRow__1BDY6","rightImage":"app-m__rightImage__3YgDb","alignedImage":"app-m__alignedImage__atGA4","buttonRow":"app-m__buttonRow__37OQg","flex":"app-m__flex__3mwRe","noflex":"app-m__noflex__kWnWj","mapContainer":"app-m__mapContainer__323FK","dialog":"app-m__dialog__2RvHE","max":"app-m__max__3n1lG","iconImg":"app-m__iconImg__13VHJ","iconLarge":"app-m__iconLarge__33COz","iconXLarge":"app-m__iconXLarge__3O4gX","donot":"app-m__donot__cCdjm","raised":"app-m__raised__1lbPE","iconImgAbs":"app-m__iconImgAbs__12Q7m","labelAbs":"app-m__labelAbs__3CJxa","iconSVG":"app-m__iconSVG__2f8LJ","iconDojo":"app-m__iconDojo__10LPR","inlineTypo":"app-m__inlineTypo__3TGHv","muted":"app-m__muted__40yep _ui-m__muted__1D8Ii","accent":"app-m__accent__1rupY","subtle":"app-m__subtle__2uR44","narrow":"app-m__narrow__3clQc","right":"app-m__right__ajD5H","typoAccent":"app-m__typoAccent__3LODU _typo__sans__1uzio undefined","serif":"app-m__serif__15yMB _typo__serif__1NL3x _typo__h5__2VhM4","sizeMenu":"app-m__sizeMenu__4kyZ1","materialLabel":"app-m__materialLabel__3XXMG","light":"app-m__light__1GEkv","dark":"app-m__dark__2r8vz","app":"app-m__app__1EaKP","toolbar":"app-m__toolbar__3PCAp","toolbarActions":"app-m__toolbarActions__3IwfA","tab":"app-m__tab__3x7kT","hasFlex":"app-m__hasFlex__1rcJA","flexReverse":"app-m__flexReverse__15gY8","baselined":"app-m__baselined__ec-dk","centerflex":"app-m__centerflex__1HEQO","logoHeader":"app-m__logoHeader__1V9LI _typo__header__CS3Yg","aside":"app-m__aside__wtfsg","asideImg":"app-m__asideImg__2poTn","fadeIn":"app-m__fadeIn__3UnYC","asideImgFixed":"app-m__asideImgFixed__2kR86 app-m__asideImg__2poTn","asideFooter":"app-m__asideFooter__1wXOX","asideFooterInner":"app-m__asideFooterInner__2Okde","expandedFooter":"app-m__expandedFooter__7DTxi","scheduleLinks":"app-m__scheduleLinks__2KbOt","mapContainerFull":"app-m__mapContainerFull__2g2EV","mapMagnifiy":"app-m__mapMagnifiy__2Bfk9","mapMouse":"app-m__mapMouse__3zKZu","noscroll":"app-m__noscroll__3RH3v","map":"app-m__map__1GgmW","year":"app-m__year__40rag","programHeader":"app-m__programHeader__2Zqeh","imageContainer":"app-m__imageContainer__KOA-q","videoContainer":"app-m__videoContainer__3PyD5","talkVideoContainer":"app-m__talkVideoContainer__29scD","imageIframe":"app-m__imageIframe__3wTP0","videoIframe":"app-m__videoIframe__2z_mo","visible":"app-m__visible__17p9e","cc0":"app-m__cc0__AP-8s","ccBy":"app-m__ccBy__WqYP3","ccBySA":"app-m__ccBySA__2_deD","talkRow":"app-m__talkRow__3NbGw","talkBreak":"app-m__talkBreak__3hk2Y _color-m__purple__27d4H","keynoteRow":"app-m__keynoteRow__2x8Ko","keynoteActions":"app-m__keynoteActions__kUG4H","tabHeader":"app-m__tabHeader__2YRiC","time":"app-m__time__2_MzD","talkTime":"app-m__talkTime__3j0JU","keynoteSingle":"app-m__keynoteSingle__zqHeL","keynoteMedia":"app-m__keynoteMedia__33xPF","event":"app-m__event__2Lb9U","session":"app-m__session__2-8WQ","sessionsTalkRow":"app-m__sessionsTalkRow__2XQok","keynote":"app-m__keynote__NZbRa","talk":"app-m__talk__2Rdx1","h5":"app-m__h5__RPV0k","compact":"app-m__compact__1Esnq","keynoteHeader":"app-m__keynoteHeader__1-BB_","talkHeader":"app-m__talkHeader__1RSzL","floorRow":"app-m__floorRow__1lTBH","floorPlan":"app-m__floorPlan__wnz1_","floorHint":"app-m__floorHint__1Rux3","am":"app-m__am__M1SAo","pm":"app-m__pm__14EmT","splitPaneHolder":"app-m__splitPaneHolder__3AJwa"};
 
 /***/ }),
 
@@ -12797,7 +12797,7 @@ class Aside extends _dojo_framework_widget_core_WidgetBase__WEBPACK_IMPORTED_MOD
                     `A conference about the present and future of ActivityPub,
 the world’s leading federated social web standard. `,
                     Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('span', muted, [
-                        `This two day event will include presentations of prepared talks on Saturday
+                        `This two day event includes presentations of prepared talks on Saturday
 followed by a loosely structured unconference on Sunday.`
                     ])
                 ]),
@@ -12889,9 +12889,9 @@ followed by a loosely structured unconference on Sunday.`
                     Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('iframe', {
                         src: this._iFrame,
                         classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_9__["map"],
-                        style: this._mapfullscreen ? `height:100%;` : `height:${this._paneSize}px;`,
+                        style: this._mapfullscreen ? `height:100%;` : `height:208px;`,
                         width: '100%',
-                        height: this._mapfullscreen ? '100%' : this._paneSize,
+                        height: this._mapfullscreen ? '100%' : '208px',
                         frameborder: '0',
                         scrolling: 'no',
                         scrollwheel: 'false',
@@ -13260,13 +13260,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThemedBase", function() { return ThemedBase; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Tabs; });
 /* harmony import */ var _widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../widgets/common/Widget */ "./src/widgets/common/Widget.ts");
-/* harmony import */ var _widgets_icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../widgets/icon */ "./src/widgets/icon/index.ts");
-/* harmony import */ var _widgets_tab__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../widgets/tab */ "./src/widgets/tab/index.ts");
-/* harmony import */ var _widgets_tab_controller__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../widgets/tab-controller */ "./src/widgets/tab-controller/index.ts");
-/* harmony import */ var _tabs_CFPTab__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tabs/CFPTab */ "./src/widgets-apconf/tabs/CFPTab.ts");
-/* harmony import */ var _tabs_ScheduleTab__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tabs/ScheduleTab */ "./src/widgets-apconf/tabs/ScheduleTab.ts");
-/* harmony import */ var _tabs_InfoTab__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tabs/InfoTab */ "./src/widgets-apconf/tabs/InfoTab.ts");
-
+/* harmony import */ var _widgets_tab__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../widgets/tab */ "./src/widgets/tab/index.ts");
+/* harmony import */ var _widgets_tab_controller__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../widgets/tab-controller */ "./src/widgets/tab-controller/index.ts");
+/* harmony import */ var _tabs_CFPTab__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tabs/CFPTab */ "./src/widgets-apconf/tabs/CFPTab.ts");
+/* harmony import */ var _tabs_ScheduleTab__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tabs/ScheduleTab */ "./src/widgets-apconf/tabs/ScheduleTab.ts");
+/* harmony import */ var _tabs_InfoTab__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tabs/InfoTab */ "./src/widgets-apconf/tabs/InfoTab.ts");
 
 
 
@@ -13277,21 +13275,21 @@ const ThemedBase = Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["T
 class Tabs extends ThemedBase {
     render() {
         const { material, size, data = {}, onRequestTabChange, activeIndex = 0 } = this.properties;
-        return Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_tab_controller__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        return Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_tab_controller__WEBPACK_IMPORTED_MODULE_2__["default"], {
             material, activeIndex, onRequestTabChange
         }, [
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_tab__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_tab__WEBPACK_IMPORTED_MODULE_1__["default"], {
                 key: 'cfp-tab',
-                label: Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('span', [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_1__["default"], { type: 'downIcon' }), 'Program'])
-            }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_tabs_CFPTab__WEBPACK_IMPORTED_MODULE_4__["default"], { data, size })]),
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_tab__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                label: Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('span', ['program'])
+            }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_tabs_CFPTab__WEBPACK_IMPORTED_MODULE_3__["default"], { data, size })]),
+            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_tab__WEBPACK_IMPORTED_MODULE_1__["default"], {
                 key: 'schedule-tab',
-                label: 'Schedule'
-            }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_tabs_ScheduleTab__WEBPACK_IMPORTED_MODULE_5__["default"], { data, size })]),
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_tab__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                label: 'schedule'
+            }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_tabs_ScheduleTab__WEBPACK_IMPORTED_MODULE_4__["default"], { data, size })]),
+            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_tab__WEBPACK_IMPORTED_MODULE_1__["default"], {
                 key: 'info-tab',
-                label: 'Info'
-            }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_tabs_InfoTab__WEBPACK_IMPORTED_MODULE_6__["default"], { data, size })])
+                label: 'pictures & info'
+            }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_tabs_InfoTab__WEBPACK_IMPORTED_MODULE_5__["default"], { data, size })])
         ]);
     }
 }
@@ -14017,7 +14015,7 @@ class CFPTab extends _dojo_framework_widget_core_WidgetBase__WEBPACK_IMPORTED_MO
         const base = `https://redaktor.me/_deliver/apconf/`;
         const { size = 'default' } = this.properties;
         return Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_4__["tab"]] }, [
-            Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('h2', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_4__["tabHeader"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_4__["accent"]] }, ['Upcoming Program']),
+            Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('h2', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_4__["tabHeader"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_4__["accent"]] }, ['Program 2019']),
             Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_4__["hasFlex"] }, [
                 Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_4__["flex"] }, [
                     Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_4__["programHeader"] }, [
@@ -14100,7 +14098,11 @@ class CFPTab extends _dojo_framework_widget_core_WidgetBase__WEBPACK_IMPORTED_MO
                 Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('h5', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_4__["muted"] }, [
                     Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('a', {
                         href: 'https://librelounge.org/episodes/episode-10-fosdem-copyleftconf-and-spritely.html'
-                    }, ['listen on librelounge.org …']), Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br')
+                    }, ['listen on librelounge.org …']), Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
+                    Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('a', {
+                        href: 'https://conf.tube/videos/watch/0b487f1f-158c-475c-a9e5-4272128be139'
+                    }, ['watch video …']),
+                    Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br')
                 ])
             ])
         ]);
@@ -14175,7 +14177,7 @@ class InfoTab extends _dojo_framework_widget_core_WidgetBase__WEBPACK_IMPORTED_M
         return {
             text: `A conference about the present and future of #ActivityPub – ` +
                 `the world’s leading federated social web standard.
-${!isShort ? 'This two day event will include presentations of p' : 'P'}` +
+${!isShort ? 'This two day event includes presentations of p' : 'P'}` +
                 `repared talks on Saturday followed by a loosely structured unconference on Sunday.
 
 #apconf #Fediverse #Conference`,
@@ -14195,7 +14197,7 @@ ${!isShort ? 'This two day event will include presentations of p' : 'P'}` +
         const base = 'https://redaktor.me/_deliver/';
         return Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["tab"] }, [
             Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('span', [
-                'The conference follows ',
+                'The conference followed ',
                 Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('a', {
                     href: 'https://www.weboftrust.info/next-event-page.html',
                     target: '_blank', rel: 'external noopener noreferrer'
@@ -14203,37 +14205,53 @@ ${!isShort ? 'This two day event will include presentations of p' : 'P'}` +
                     '#RebootingWebOfTrust'
                 ])
             ]),
-            Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('h3', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["right"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["tabHeader"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["accent"]] }, ['... just around the corner']),
-            Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('span', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["centerflex"] }, [Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('span', [
-                    CodeOfConductLink(),
-                    Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('h5', [
-                        Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
-                        `ActivityPub Conf 2019 registration is `, Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('span', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["accent"] }, ['closed'])
-                    ]),
-                    Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["serif"] }, [
-                        'We are looking forward to meet 40 attendees.', Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
-                        Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('b', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["muted"] }, ['If you have specific accessibility requirements:']), Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
-                        'Contact us in advance and we make sure that we are able to accommodate you.',
-                        Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
-                        Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('b', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["muted"] }, ['If you look for a lift, can offer one or want to meet in advance:']),
-                        Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), 'Check this event on ',
-                        Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('a', {
-                            href: 'https://forum.conferencebuddy.io/t/activitypub-conf/587',
-                            target: '_blank', rel: 'external noopener noreferrer'
-                        }, [
-                            'Conference Buddy'
-                        ]), ' or ',
-                        Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('a', {
-                            href: 'https://socialhub.network/t/activitypubconf-2019-prague/654',
-                            target: '_blank', rel: 'external noopener noreferrer'
-                        }, [
-                            'Social Hub'
-                        ]), ' …'
-                    ]),
+            Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('h3', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["right"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["tabHeader"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["accent"]] }, ['tl;dr – It was awesome']),
+            Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('span', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["centerflex"] }, [
+                Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('span', [
+                    /*
+                                    CodeOfConductLink(),
+                    
+                                    v('h5', [
+                                        v('br'),
+                                        `ActivityPub Conf 2019 registration is `, v('span', {classes: css.accent},['closed'])
+                                    ]),
+                                    v('p', {classes: css.serif}, [
+                                        'We are looking forward to meet 40 attendees.', v('br'), v('br'),
+                                        v('b', {classes: css.muted}, ['If you have specific accessibility requirements:']), v('br'),
+                                        'Contact us in advance and we make sure that we are able to accommodate you.',
+                                        v('br'), v('br'),
+                                        v('b', {classes: css.muted},['If you look for a lift, can offer one or want to meet in advance:']),
+                                        v('br'), 'Check this event on ',
+                                        v('a', {
+                                            href: 'https://forum.conferencebuddy.io/t/activitypub-conf/587',
+                                            target: '_blank', rel: 'external noopener noreferrer'
+                                        }, [
+                                            'Conference Buddy'
+                                        ]), ' or ',
+                                        v('a', {
+                                            href: 'https://socialhub.network/t/activitypubconf-2019-prague/654',
+                                            target: '_blank', rel: 'external noopener noreferrer'
+                                        }, [
+                                            'Social Hub'
+                                        ]), ' …'
+                                    ]),
+                    */
                     Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('h5', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["accent"] }, ['Spread the word:']),
                     Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["hasFlex"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["baselined"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["serif"]] }, [
                         Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["w"])(_shareToMastodon_index__WEBPACK_IMPORTED_MODULE_4__["default"], this.getShareProps()),
                         Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["w"])(_intentButton_twitter__WEBPACK_IMPORTED_MODULE_3__["default"], Object.assign({}, this.getShareProps(true), { related: '@dustyweb,@mlemweb,@sl007' }))
+                    ]),
+                    Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('div', {
+                        classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["imageContainer"]
+                    }, [
+                        Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('iframe', {
+                            classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["imageIframe"],
+                            sandbox: 'allow-same-origin allow-scripts',
+                            src: 'https://archive.org/details/apconf-pictures',
+                            frameborder: '0',
+                            allowfullscreen: 'allowfullscreen',
+                            scrolling: 'no'
+                        })
                     ]),
                     Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('h5', [
                         Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('img', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["iconImg"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["iconSVG"]], src: _assets__WEBPACK_IMPORTED_MODULE_6__["ben"], alt: 'Ben Icon' }),
@@ -14241,8 +14259,7 @@ ${!isShort ? 'This two day event will include presentations of p' : 'P'}` +
                         Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('span', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["accent"] }, ['Friday in the evening']),
                     ]),
                     Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["serif"] }, [
-                        `Let's do an ActivityPub Picnic in Letná Park.`, Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
-                        'We need numbers for food – ping Sebastian …',
+                        `We did an ActivityPub Picnic in Letná Park.`,
                         Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br')
                     ]),
                     Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('h5', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["muted"] }, [
@@ -14265,7 +14282,7 @@ ${!isShort ? 'This two day event will include presentations of p' : 'P'}` +
                     ]), Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
                     Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('hr'),
                     Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_5__["serif"] }, [
-                        'We will provide videos for the talks and remote participation via Etherpad (sunday).', Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
+                        //'We will provide videos for the talks and remote participation via Etherpad (sunday).', v('br'),
                         'ActivityPub Conf is surrounded by ',
                         Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('a', {
                             href: 'https://www.dox.cz/en/exhibitions/datamaze',
@@ -14422,7 +14439,8 @@ for people to work individually.`, Object(_dojo_framework_widget_core_d__WEBPACK
                         ]),
                         Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_dojo_framework_widget_core_d__WEBPACK_IMPORTED_MODULE_0__["v"])('br')
                     ])
-                ])])
+                ])
+            ])
         ]);
     }
 }
@@ -14454,10 +14472,12 @@ const talks = {
         title: '“ActivityPub: past, present, future”',
         byline: 'Christopher Lemmer Webber',
         details: [
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: [_widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_1__["max"]] }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', [`This talk gives an overview of ActivityPub: `]), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
+            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: [_widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_1__["max"]] }, [
+                `This talk gives an overview of ActivityPub: `, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
                 `How did we get to this point? Where are we now? Where do we need to go?`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
                 `We'll paint a chart from past to a hopeful future with better privacy,
-richer interactions, and more security and control for our users.`])
+richer interactions, and more security and control for our users.`
+            ])
         ],
         isKeynote: true,
         img: '_02_Chris',
@@ -14467,21 +14487,22 @@ richer interactions, and more security and control for our users.`])
         title: '“Advice to new fediverse administrators and developers”',
         byline: 'Luc Didry',
         details: [
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', [`Hosting an ActivityPub service is not like hosting another service `]),
-                `and it's the same for developing ActivityPub software.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
+            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [
+                `Hosting an ActivityPub service is not like hosting another service
+and it's the same for developing ActivityPub software.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
                 `Here is some advice based on Framasoft's experience`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), `[we host a Mastodon instance and develop two
 ActivityPub software:`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), `PeerTube and Mobilizon – the last one is not yet out]`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
-                `Errors and observations.`])
+                `Errors and observations.`
+            ])
         ],
         isFlex: false,
         img: '05_Luc'
     },
     Maloki: {
         title: '“Is ActivityPub paving the way to web 3.0?”',
-        byline: 'Maloki',
+        byline: 'Marie Axelsson (Maloki)',
         details: [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', [`A talk about how we're walking away from Web 2.0,
-and paving the way to Web 3.0 with ActivityPub development. `]), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
+                `A talk about how we're walking away from Web 2.0 and paving the way to Web 3.0 with ActivityPub development. `, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
                 `We'll discuss what this could mean for the future of the web`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
                 `We'll look at some of the history of the web, and also consider the social implications moving forward.`
             ])
@@ -14491,31 +14512,34 @@ and paving the way to Web 3.0 with ActivityPub development. `]), Object(_widgets
     Pukkamustard: {
         title: '“The Semantic Social Network”',
         byline: 'Pukkamustard',
-        details: [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', [`ActivityPub uses JSON-LD as serialization. `]),
-                `This means @context field all over the place. But really there is more behind this:
+        details: [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [
+                `ActivityPub uses JSON-LD as serialization. This means @context field all over the place.
+But really there is more behind this:
 ActivityPub speaks Linked Data.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), `In this talk we would like to show what this means and how this
 can be used to do cool things.
 We might even convince you that the Fediverse is a huge distributed graph that could be queried in very interesting ways -
- that the Fediverse is a Semantic Social Network.`])
+ that the Fediverse is a Semantic Social Network.`
+            ])
         ],
         img: '07_Pukkamustard'
     },
     Serge: {
         title: '“Keeping Unwanted Messages off the Fediverse”',
         byline: 'Serge Wroclawski',
-        details: [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', [`Spam, scams and harassment `]),
-                `pose a threat to all social networks, including the Fediverse.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
+        details: [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [
+                `Spam, scams and harassment pose a threat to all social networks, including the Fediverse.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
                 `In this talk, we discuss a multilayered approach to mitigating these threats.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
-                `We explore spam mitigation techniques of the past as well as new techniques such as OcapPub and Postage.`])
+                `We explore spam mitigation techniques of the past as well as new techniques such as OcapPub and Postage.`
+            ])
         ],
         img: '09_Serge'
     },
     Schmittlauch: {
         title: '“Decentralised Hashtag Search and Subscription in Federated Social Networks”',
         byline: 'Schmittlauch',
-        details: [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', [`Hashtags have become an important tool for organising topic-related
-	posts in all major social networks, `]),
-                `even having managed to spark social movements like #MeToo. In federated social networks,
+        details: [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [
+                `Hashtags have become an important tool for organising topic-related posts in all major social networks,
+even having managed to spark social movements like #MeToo. In federated social networks,
 unfortunately so far the view on all posts of a hashtag is fragmented between instances.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
                 `For a student research paper I came up with an architecture for search and subscription of hashtag-posts
 in federated social networks.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
@@ -14523,7 +14547,8 @@ in federated social networks.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_
                 `As this architecture is still at a conceptual stage, after presenting my work I'd like to gather ideas and feedback
 from various Fediverse stakeholders: What do global hashtags mean for marginalised people and moderation, are they more
 a tool of empowerment or of harassment? How can this concept be represented in the ActivityPub protocol?
-And what stories do server devs have to tell about common attack scenarios?`])
+And what stories do server devs have to tell about common attack scenarios?`
+            ])
         ],
         img: '08_Schmittlauch'
     },
@@ -14531,8 +14556,8 @@ And what stories do server devs have to tell about common attack scenarios?`])
         title: '“OSS compliance with privacy by default and design”',
         byline: 'Cristina DeLisle',
         details: [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', [`Privacy is becoming more and more central in shaping the future of tech `]),
-                `and the data protection legislation has contributed significantly to making
+                `Privacy is becoming more and more central in shaping the future of tech and the data protection legislation has
+contributed significantly to making
 this happen. Privacy by default and design are core principles that are fundamental to how software should be envisioned.
 The GDPR that came into the spotlight has a strong case to become a standard even outside European borders, influencing
 the way we protect personal data. However its impact might be, its implementation is still in its infancy.
@@ -14549,40 +14574,45 @@ interesting to learn from, regardless if we are looking at them as mistakes, bes
         title: '“The case for the unattributed message”',
         byline: 'Caleb James DeLisle',
         details: [
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', [`Despite it's significant contribution to internet culture, `]),
-                `the archetype of the anonymous image board has been largely ignored by protocol designers. Perhaps the reason
-for this is because it's all too easy to conflate unattributed speech with unmoderated speech, which has shown
-itself to be a dead end.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
+            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [
+                `Despite it's significant contribution to internet culture, the archetype of the anonymous image board has been largely
+ignored by protocol designers. Perhaps the reason for this is because it's all too easy to conflate unattributed speech with
+unmoderated speech, which has shown itself to be a dead end.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
                 `But as we've seen from Twitter and Facebook, putting a name on everything hasn't actually worked that well at improving
 the quality of discourse, but what it does do is put already marginalized people at greater risk.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
                 `What I credit as one of the biggest breakthroughs of the fediverse has been the loose federation which allows a person
 to choose their moderator, completely side stepping the question of undemocratic censorship vs. toxic free speech.`,
                 Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
                 `Now I want to start a conversation about how we might marry this powerful moderation system to a forum which divorces the
-expression of thought from all forms of identity.`])
+expression of thought from all forms of identity.`
+            ])
         ],
         img: '02_Caleb'
     },
     Matt: {
         title: '“Federated Blogging with WriteFreely”',
         byline: 'Matt Baer',
-        details: [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', [`We're building out one idea of what federated blogging could look like `]),
-                `with separate ActivityPub-powered platforms, WriteFreely and Read.as
-– one for writing and and one for reading.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), `Beyond the software, we're also offering hosting services and
-helping new instances spring up to make community-building more accessible, and get ActivityPub-powered software into more
-hands.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), `In this talk I'll go over our approach so far and where we're headed next.`])
+        details: [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [
+                `We're building out one idea of what federated blogging could look like with separate ActivityPub-powered platforms,
+WriteFreely and Read.as – one for writing and and one for reading.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
+                `Beyond the software, we're also offering hosting services and helping new instances spring up to make community-building
+more accessible, and get ActivityPub-powered software into more hands.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
+                `In this talk I'll go over our approach so far and where we're headed next.`
+            ])
         ],
         img: '01_Matt'
     },
     Michael: {
         title: `“I don't know what I'm talking about”`,
         byline: 'Michael Demetriou [qwazix]',
-        details: [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', [`A newbie's introduction to ActivityPub: `]), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
+        details: [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [
+                `A newbie's introduction to ActivityPub: `, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
                 `I have just started my development journey in ActivityPubLand
 and I hope to have a first small application ready before ActivityPubConf.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
                 `I was thinking that since I have close to zero experience with ActivityPub development,
 I could document my first month of experience, describe the onboarding process and point out useful
-resources and common pitfalls. `, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), `In the end I can showcase what I've done during this period.`])
+resources and common pitfalls. `, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), `In the end I can showcase what I've done during this period.`
+            ])
         ],
         img: '04_Michael'
     },
@@ -14590,9 +14620,9 @@ resources and common pitfalls. `, Object(_widgets_common_Widget__WEBPACK_IMPORTE
         title: '“Architectures of Robust Openness”',
         byline: 'Mark S. Miller',
         details: [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"] }, [
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: [_widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_1__["max"]] }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', [
-                        `As social systems grow, we need patterns to allow us to grow social connections while maintaining safety and trust.`
-                    ]), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
+                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: [_widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_2__["largeP"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_1__["max"]] }, [
+                    `As social systems grow, we need patterns to allow us to grow social connections while maintaining safety
+and trust.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
                     `Ocaps (object capabilities) fill this void by allowing consensual connections between parties,
 and even allows participants to intentionally share those connections with others.`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
                     `But how can we allow for the establishing of new connections without opening us up to runaway abuse?`, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
@@ -14626,32 +14656,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ScheduleTab; });
 /* harmony import */ var _widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../widgets/common/Widget */ "./src/widgets/common/Widget.ts");
 /* harmony import */ var _dojo_framework_widget_core_WidgetBase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dojo/framework/widget-core/WidgetBase */ "./node_modules/@dojo/framework/widget-core/WidgetBase.mjs");
-/* harmony import */ var _dojo_framework_widget_core_meta_Intersection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @dojo/framework/widget-core/meta/Intersection */ "./node_modules/@dojo/framework/widget-core/meta/Intersection.mjs");
-/* harmony import */ var _widgets_checkbox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../widgets/checkbox */ "./src/widgets/checkbox/index.ts");
-/* harmony import */ var _widgets_icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../widgets/icon */ "./src/widgets/icon/index.ts");
-/* harmony import */ var _widgets_label__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../widgets/label */ "./src/widgets/label/index.ts");
-/* harmony import */ var _widgets_image__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../widgets/image */ "./src/widgets/image/index.ts");
-/* harmony import */ var _widgets_image_imageContent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../widgets/image/imageContent */ "./src/widgets/image/imageContent.ts");
-/* harmony import */ var _widgets_card__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../widgets/card */ "./src/widgets/card/index.ts");
-/* harmony import */ var _widgets_button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../widgets/button */ "./src/widgets/button/index.ts");
-/* harmony import */ var _widgets_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../widgets/container */ "./src/widgets/container/index.ts");
-/* harmony import */ var _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../styles/app.m.css */ "./src/styles/app.m.css");
-/* harmony import */ var _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../widgets/themes/redaktor-default/card.m.css */ "./src/widgets/themes/redaktor-default/card.m.css");
-/* harmony import */ var _widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../widgets/themes/redaktor-default/_ui.m.css */ "./src/widgets/themes/redaktor-default/_ui.m.css");
-/* harmony import */ var _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _widgets_themes_redaktor_default_color_m_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../widgets/themes/redaktor-default/_color.m.css */ "./src/widgets/themes/redaktor-default/_color.m.css");
-/* harmony import */ var _widgets_themes_redaktor_default_color_m_css__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_widgets_themes_redaktor_default_color_m_css__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _ScheduleData__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./ScheduleData */ "./src/widgets-apconf/tabs/ScheduleData.ts");
+/* harmony import */ var _widgets_checkbox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../widgets/checkbox */ "./src/widgets/checkbox/index.ts");
+/* harmony import */ var _widgets_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../widgets/icon */ "./src/widgets/icon/index.ts");
+/* harmony import */ var _widgets_label__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../widgets/label */ "./src/widgets/label/index.ts");
+/* harmony import */ var _widgets_card__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../widgets/card */ "./src/widgets/card/index.ts");
+/* harmony import */ var _widgets_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../widgets/button */ "./src/widgets/button/index.ts");
+/* harmony import */ var _widgets_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../widgets/container */ "./src/widgets/container/index.ts");
+/* harmony import */ var _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../styles/app.m.css */ "./src/styles/app.m.css");
+/* harmony import */ var _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../widgets/themes/redaktor-default/card.m.css */ "./src/widgets/themes/redaktor-default/card.m.css");
+/* harmony import */ var _widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../widgets/themes/redaktor-default/_ui.m.css */ "./src/widgets/themes/redaktor-default/_ui.m.css");
+/* harmony import */ var _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _widgets_themes_redaktor_default_color_m_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../widgets/themes/redaktor-default/_color.m.css */ "./src/widgets/themes/redaktor-default/_color.m.css");
+/* harmony import */ var _widgets_themes_redaktor_default_color_m_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_widgets_themes_redaktor_default_color_m_css__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _ScheduleData__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ScheduleData */ "./src/widgets-apconf/tabs/ScheduleData.ts");
+
+
+//import { Intersection } from '@dojo/framework/widget-core/meta/Intersection';
 
 
 
-
-
-
-
-
+//import Image from '../../widgets/image';
+//import ImageContent from '../../widgets/image/imageContent';
 
 
 
@@ -14661,11 +14688,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const eventType = {
-    orga: ['orange', _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["event"]],
-    food: ['lime', _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["event"]],
-    unconf: ['amber', _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["event"]],
-    keynote: ['pink', _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["keynote"]],
-    talk: ['deep-purple', _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["talk"]]
+    orga: ['orange', _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["event"]],
+    food: ['lime', _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["event"]],
+    unconf: ['amber', _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["event"]],
+    keynote: ['pink', _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["keynote"]],
+    talk: ['deep-purple', _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["talk"]]
 };
 class ScheduleTab extends _dojo_framework_widget_core_WidgetBase__WEBPACK_IMPORTED_MODULE_1__["WidgetBase"] {
     constructor() {
@@ -14674,23 +14701,23 @@ class ScheduleTab extends _dojo_framework_widget_core_WidgetBase__WEBPACK_IMPORT
     }
     render() {
         const { size = 'default' } = this.properties;
-        const { isIntersecting } = this.meta(_dojo_framework_widget_core_meta_Intersection__WEBPACK_IMPORTED_MODULE_2__["Intersection"]).get('saturday');
-        return Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["tab"] }, [
+        //const { isIntersecting } = this.meta(Intersection).get('saturday');
+        return Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["tab"] }, [
             /* SATURDAY */
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["hasFlex"] }, [
+            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["hasFlex"] }, [
                 Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('h2', {
                     key: 'saturday',
-                    classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["flex"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["tabHeader"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["accent"]]
+                    classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["flex"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["tabHeader"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["accent"]]
                 }, ['SAT, September 7']),
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["sizeMenu"] }, [
-                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_checkbox__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["sizeMenu"] }, [
+                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_checkbox__WEBPACK_IMPORTED_MODULE_2__["default"], {
                         // size,
                         outlined: true,
                         checked: false,
                         schema: 'secondary',
-                        offLabel: Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_4__["default"], { type: 'extendIcon', extraClasses: { root: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["strong"] } }),
-                        label: Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_4__["default"], { type: 'compactIcon', extraClasses: { root: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["strong"] } }),
-                        mode: _widgets_checkbox__WEBPACK_IMPORTED_MODULE_3__["Mode"].toggle,
+                        offLabel: Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_3__["default"], { type: 'extendIcon', extraClasses: { root: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["strong"] } }),
+                        label: Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_3__["default"], { type: 'compactIcon', extraClasses: { root: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["strong"] } }),
+                        mode: _widgets_checkbox__WEBPACK_IMPORTED_MODULE_2__["Mode"].toggle,
                         onChange: () => {
                             this._isCompact = !this._isCompact;
                             this.invalidate();
@@ -14698,62 +14725,62 @@ class ScheduleTab extends _dojo_framework_widget_core_WidgetBase__WEBPACK_IMPORT
                     })
                 ])
             ]),
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["right"] }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', ['Conference – ']), '10 a.m. - 6 p. m.']),
+            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["right"] }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', ['Conference – ']), '10 a.m. - 6 p. m.']),
             this.eventRow('10', true, 'Badges & Come Together', 'orga'),
             this.eventRow('10.30', true, 'Introductions', 'orga'),
             this.eventRow('10.45', true, 'Opening', 'keynote', true),
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["hasFlex"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["keynoteRow"]] }, [
-                this.talkCard('Chris', '10:45'),
-                this.talkCard('Luc', '11:40 – 12:10'),
+            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["hasFlex"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["keynoteRow"]] }, [
+                this.talkCard('Chris'),
+                this.talkCard('Luc'),
             ]),
             this.eventRow('12.10', false, 'Lunch', 'food'),
             this.eventRow('1.10', false, 'Talks', 'talk', true),
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["hasFlex"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["talkRow"]] }, [
-                this.talkCard('Maloki', '1:10 – 1:40'),
-                this.talkCard('Pukkamustard', '1:45 – 2:15'),
+            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["hasFlex"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["talkRow"]] }, [
+                this.talkCard('Maloki'),
+                this.talkCard('Pukkamustard'),
                 this.talkBreak(),
-                this.talkCard('Serge', '2:25 – 2:55'),
-                this.talkCard('Schmittlauch', '3:00 – 3:30'),
-                this.talkCard('Cristina', '3:35 – 4:05'),
+                this.talkCard('Serge'),
+                this.talkCard('Schmittlauch'),
+                this.talkCard('Cristina'),
                 this.talkBreak(),
-                this.talkCard('Caleb', '4:15 – 4:45'),
-                this.talkCard('Matt', '4:50 – 5:20'),
-                this.talkCard('Michael', '5:25 – 5:55'),
+                this.talkCard('Caleb'),
+                this.talkCard('Matt'),
+                this.talkCard('Michael'),
                 Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div')
             ]),
             Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
             /* SUNDAY */
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('h2', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["tabHeader"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["accent"]] }, ['SUN, September 8']),
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["right"] }, [
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', ['Un']), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_13__["muted"] }, ['conference – ']), '10 a.m. - 6 p. m.'
+            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('h2', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["tabHeader"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["accent"]] }, ['SUN, September 8']),
+            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["right"] }, [
+                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', ['Un']), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_10__["muted"] }, ['conference – ']), '10 a.m. - 6 p. m.'
             ]),
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_13__["largeP"] }, [
+            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_10__["largeP"] }, [
                 this.eventRow('10', true, 'Opening', 'keynote', true),
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["hasFlex"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["keynoteRow"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["keynoteSingle"]] }, [
-                    this.talkCard('Mark', '10:00')
+                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["hasFlex"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["keynoteRow"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["keynoteSingle"]] }, [
+                    this.talkCard('Mark')
                 ]),
                 Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', [' ']),
                 this.eventRow('11', true, 'Unconf Planning Session', 'orga'),
                 this.eventRow('12', true, 'Lunch', 'food'),
                 Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', {
-                    classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["hasFlex"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["keynoteRow"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["pointerRow"]],
+                    classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["hasFlex"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["keynoteRow"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["pointerRow"]],
                     onclick: () => { window.document.location.hash = '#floors'; }
                 }, [
-                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["flex"] }, [
-                        Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["strong"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["accent"]] }, [
-                            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_4__["default"], { type: 'locationIcon' }),
+                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["flex"] }, [
+                        Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["strong"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["accent"]] }, [
+                            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_3__["default"], { type: 'locationIcon' }),
                             '#Workshop, Gallery E, 1st floor'
                         ])
                     ]),
-                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["flex"] }, [
-                        Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["strong"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["accent"]] }, [
-                            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_4__["default"], { type: 'locationIcon' }),
+                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["flex"] }, [
+                        Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["strong"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["accent"]] }, [
+                            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_3__["default"], { type: 'locationIcon' }),
                             '#Studio, Aside, 1st floor'
                         ])
                     ]),
                     Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', [
-                        Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["strong"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["accent"]] }, [
-                            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_4__["default"], { type: 'locationIcon' }),
+                        Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["strong"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["accent"]] }, [
+                            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_3__["default"], { type: 'locationIcon' }),
                             '#Lab, ground floor'
                         ])
                     ])
@@ -14770,35 +14797,24 @@ class ScheduleTab extends _dojo_framework_widget_core_WidgetBase__WEBPACK_IMPORT
                 this.sessionRow(5),
                 this.eventRow('6', false, 'Closing', 'keynote', true),
                 Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'),
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["hasFlex"] }, [
-                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('span', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["flex"] }, [
-                        Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_label__WEBPACK_IMPORTED_MODULE_5__["default"], { size }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('a', {
+                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["hasFlex"] }, [
+                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('span', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["flex"] }, [
+                        Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_label__WEBPACK_IMPORTED_MODULE_4__["default"], { size }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('a', {
                                 href: 'https://dustycloud.org/blog/activitypub-conf-2019-speakers/'
                             }, ['list of speakers'])])
                     ]),
                     Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('span', [
-                        Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_4__["default"], { type: 'downIcon' }),
-                        Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_label__WEBPACK_IMPORTED_MODULE_5__["default"], { size }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('a', {
+                        Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_3__["default"], { type: 'downIcon' }),
+                        Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_label__WEBPACK_IMPORTED_MODULE_4__["default"], { size }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('a', {
                                 href: 'https://dustycloud.org/misc/APConfSpeakers.pdf'
                             }, ['PDF'])]),
                         Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', [' | ']),
-                        Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_label__WEBPACK_IMPORTED_MODULE_5__["default"], { size }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('a', {
+                        Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_label__WEBPACK_IMPORTED_MODULE_4__["default"], { size }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('a', {
                                 href: 'https://dustycloud.org/misc/APConfSpeakers.odt'
                             }, ['ODT'])])
                     ])
                 ])
             ]),
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', {
-                classes: [
-                    _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["scheduleLinks"],
-                    document.documentElement.clientWidth < 880 || isIntersecting ? null : _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["visible"]
-                ]
-            }, [
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('a', { href: '#saturday' }, ['saturday']), ' • ',
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('a', { href: '#sunday' }, ['sunday']), ' • ',
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('a', { href: '#sessions' }, ['sessions']), ' • ',
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('a', { href: '#floors' }, ['floors'])
-            ])
         ]);
     }
     getSessions(i) {
@@ -14808,123 +14824,120 @@ class ScheduleTab extends _dojo_framework_widget_core_WidgetBase__WEBPACK_IMPORT
         }
         else {
             return data.sessions.filter((s) => s.block === i)
-                .map((s) => this.talkCard(s, '', true));
+                .map((s) => this.talkCard(s, true));
         }
     }
     talkBreak() {
-        return Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_card__WEBPACK_IMPORTED_MODULE_8__["default"], { extraClasses: { root: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["talkBreak"] } }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', ['<br>'])]);
+        return Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_card__WEBPACK_IMPORTED_MODULE_5__["default"], { extraClasses: { root: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["talkBreak"] } }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', ['<br>'])]);
     }
     sessionRow(i) {
         return Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', {
-            classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["hasFlex"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["talkRow"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["sessionsTalkRow"]]
+            classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["hasFlex"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["talkRow"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["sessionsTalkRow"]]
         }, this.getSessions(i));
     }
     eventRow(time, isAM, details, type = 'talk', short = false) {
         const a = eventType[type];
-        return Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_container__WEBPACK_IMPORTED_MODULE_10__["default"], {
-            material: a[0], extraClasses: { root: short ? _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["event"] : a[1] }
+        return Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_container__WEBPACK_IMPORTED_MODULE_7__["default"], {
+            material: a[0], extraClasses: { root: short ? _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["event"] : a[1] }
         }, [
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('h5', { classes: [_widgets_themes_redaktor_default_color_m_css__WEBPACK_IMPORTED_MODULE_14__["light_text"]] }, [
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('span', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["time"], isAM ? _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["am"] : _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["pm"]] }, [
-                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_4__["default"], { type: 'dateIcon' }), ' ', time
+            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('h5', { classes: [_widgets_themes_redaktor_default_color_m_css__WEBPACK_IMPORTED_MODULE_11__["light_text"]] }, [
+                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('span', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["time"], isAM ? _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["am"] : _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["pm"]] }, [
+                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_3__["default"], { type: 'dateIcon' }), ' ', time
                 ]), ' – ', details
             ])
         ]);
     }
-    // target: '_blank', rel: 'noopener noreferrer'
     // TODO links or button onClick
-    talkCard(nameOrSession, time = '', isSession = false) {
+    talkCard(nameOrSession, isSession = false) {
         const { data = {} } = this.properties;
-        const cardProperties = isSession ? nameOrSession : Object.assign({}, (_ScheduleData__WEBPACK_IMPORTED_MODULE_15__["talks"][nameOrSession] || {}), (data.links ? data.links[nameOrSession] :  false || {}));
+        //console.log(nameOrSession);
+        const cardProperties = isSession ? nameOrSession : Object.assign({}, (_ScheduleData__WEBPACK_IMPORTED_MODULE_12__["talks"][nameOrSession] || {}), (data.links ? data.links[nameOrSession] :  false || {}));
         if (!cardProperties) {
             return null;
         }
         const actProps = { size: 'small', depth: 'flat' };
-        const { title, byline = '', details = [], img = '', location = '', isKeynote = false, hasButtons = true, isFlex = true, video = '', read = '', etherpad = '' } = cardProperties;
+        const { title, byline = '', details = [], img = '', isKeynote = false, hasButtons = true, isFlex = true, video = '', download = '', etherpad = '', time = '', license = 'cc0' } = cardProperties;
         let buttons;
-        if (!!isKeynote || !!img) {
-            buttons = Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_12__["actionButtons"] }, [
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_12__["actionButton"] }, [
-                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_button__WEBPACK_IMPORTED_MODULE_9__["default"], Object.assign({ disabled: !video, schema: 'secondary' }, actProps), ['Video'])
+        if (!isSession) {
+            buttons = Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_9__["actionButtons"] }, [
+                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('a', {
+                    classes: [_widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_9__["actionButton"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["imgLink"]],
+                    href: video.replace('/embed', '/watch') || '#',
+                    target: '_blank',
+                    rel: 'noopener noreferrer'
+                }, [
+                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_button__WEBPACK_IMPORTED_MODULE_6__["default"], Object.assign({ disabled: !video, schema: 'secondary' }, actProps), [
+                        '@apconf@conf.tube'
+                    ])
                 ]),
-                !video && read ? Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["hasFlex"] }, [
-                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('small', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["flex"] }, ['coming soon'])
+                !video ? Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["hasFlex"] }, [
+                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('small', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["flex"] }, ['coming soon'])
                 ]) : null,
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_12__["actionButton"] }, [
-                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_button__WEBPACK_IMPORTED_MODULE_9__["default"], Object.assign({ disabled: !read, schema: 'primary' }, actProps), ['Read']),
+                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('a', {
+                    classes: [_widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_9__["actionButton"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["imgLink"]],
+                    href: download || '#',
+                    target: '_blank',
+                    rel: 'noopener noreferrer'
+                }, [
+                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_button__WEBPACK_IMPORTED_MODULE_6__["default"], Object.assign({ disabled: !download, schema: 'primary' }, actProps), [
+                        'archive.org'
+                    ]),
                 ]),
-                !video ? Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('span', { classes: [_widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_13__["muted"], _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_13__["largeP"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["right"]] }, [])]) : null
+                !video ? Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('span', { classes: [_widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_10__["muted"], _widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_10__["largeP"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["right"]] }, [])]) : null
             ]);
         }
         else {
-            buttons = Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_12__["actionButtons"] }, [
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_12__["actionButton"] }, [
-                    !etherpad ? null : Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_4__["default"], { type: 'editIcon' }),
+            const s = nameOrSession;
+            buttons = Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_9__["actionButtons"] }, [
+                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_9__["actionButton"] }, [
+                    !!etherpad ? Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_3__["default"], { type: 'editIcon' }) :
+                        Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('a', {
+                            classes: [_widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_9__["actionButton"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["imgLink"]],
+                            href: 'https://pixelfed.social/apconf',
+                            target: '_blank',
+                            rel: 'noopener noreferrer'
+                        }, [
+                            'watch some photos'
+                        ]),
                     //v('p', {classes: css.accent}, ['Etherpad: ']),
-                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_button__WEBPACK_IMPORTED_MODULE_9__["default"], Object.assign({ disabled: !etherpad, schema: 'secondary' }, actProps), ['Participate']),
-                    !etherpad ? Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('span', { classes: [_widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_13__["muted"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["right"]] }, [
-                            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('small', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["flex"] }, ['Etherpad t.b.a.'])
-                        ])]) : null
+                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_button__WEBPACK_IMPORTED_MODULE_6__["default"], Object.assign({ disabled: !etherpad, schema: 'secondary' }, actProps, { onClick: () => {
+                            !!etherpad && typeof s === 'object' ?
+                                window.location.href = 'https://redaktor.me/pad/p/' + s.etherpad : '';
+                        } }), ['Etherpad'])
                 ])
             ]);
         }
-        return Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_card__WEBPACK_IMPORTED_MODULE_8__["default"], { extraClasses: { root: isKeynote || isFlex ? _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["flex"] : _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["noflex"] } }, [
-            !!img ? this.eventImg(title, byline, isKeynote, img) : null,
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('i', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["accent"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["talkTime"]] }, [time]),
+        const base = 'https://redaktor.me/_deliver/apconf/';
+        return Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_card__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            extraClasses: { root: isKeynote || isFlex ? _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["flex"] : _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["noflex"] }
+        }, [
+            !!video ? Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', {
+                classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["videoContainer"],
+                style: !!img ? `background: url('${base}${img}.svg')` : ''
+            }, [
+                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('iframe', {
+                    classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["videoIframe"],
+                    sandbox: 'allow-same-origin allow-scripts',
+                    src: video,
+                    frameborder: '0',
+                    allowfullscreen: 'allowfullscreen'
+                })
+            ]) : null,
             Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', {
                 classes: [
-                    isKeynote ? _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["keynote"] : (isSession ? _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["session"] : _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["talk"]),
-                    this._isCompact ? _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["compact"] : null, _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["flex"]
+                    isKeynote ? _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["keynote"] : (isSession ? _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["session"] : _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["talk"]),
+                    this._isCompact ? _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["compact"] : null, _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["flex"]
                 ]
-            }, !img ? [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), title, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: [_widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_13__["largeP"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["accent"]] }, [byline])] : details),
+            }, [
+                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('i', { classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["accent"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["talkTime"]] }, [time]),
+                isSession ? '' : Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('h5', [title]),
+                ...(!img ? [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), title, Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('br'), Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: [_widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_10__["largeP"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["accent"]] }, [byline])] : details)
+            ]),
+            isSession ? null : Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', { classes: [_widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_10__["largeP"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["accent"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__[license]] }, [byline]),
             !hasButtons ? null : Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', {
-                classes: _widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_12__["actions"]
+                classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["actionLinks"], _widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_9__["actions"], isSession || isKeynote ? _styles_app_m_css__WEBPACK_IMPORTED_MODULE_8__["keynoteActions"] : null]
             }, [
                 buttons,
-                !isKeynote ? null : Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', { classes: _widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_12__["actionIcons"] }, [
-                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('div', {
-                        classes: [_widgets_themes_redaktor_default_card_m_css__WEBPACK_IMPORTED_MODULE_12__["actionIcon"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["pointerRow"]],
-                        onclick: () => { window.document.location.hash = '#floors'; }
-                    }, [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_icon__WEBPACK_IMPORTED_MODULE_4__["default"], { type: 'locationIcon' })]),
-                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('p', {
-                        classes: [_styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["strong"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["accent"]],
-                        onclick: () => { window.document.location.hash = '#floors'; }
-                    }, [location])
-                ])
-            ])
-        ]);
-    }
-    eventImg(title = '', byline = '', isKeynote = false, img = '') {
-        const base = 'https://redaktor.me/_deliver/apconf/';
-        const mediaClass = isKeynote ? _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["keynoteMedia"] : void 0;
-        return Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_image__WEBPACK_IMPORTED_MODULE_6__["default"], {
-            extraClasses: { root: mediaClass },
-            src: !img ? `${base}APConfLogo.png` : `${base}${img}.svg`,
-            background: '#F1007E',
-            alt: `${isKeynote ? 'Keynote:' : 'Talk:'} ${title}`,
-            aspectRatio: {
-                width: 3,
-                height: 2,
-                cover: true,
-                position: 50
-            },
-            baselined: true,
-            compact: this._isCompact
-            //size: 'small'
-        }, [
-            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["w"])(_widgets_image_imageContent__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                horizontal: isKeynote ? 'left' : 'center',
-                vertical: img === '_01_Mark' ? 'top' : 'bottom',
-                schema: 'dark',
-                background: true
-            }, [
-                Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('hgroup', { classes: isKeynote ? _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["keynoteHeader"] : _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["talkHeader"] }, [
-                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])(isKeynote ? 'h3' : 'h5', [title]),
-                    Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('h5', { classes: [_widgets_themes_redaktor_default_ui_m_css__WEBPACK_IMPORTED_MODULE_13__["subtitle"], _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["subtle"]] }, [
-                        !isKeynote ? byline :
-                            Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('span', [Object(_widgets_common_Widget__WEBPACK_IMPORTED_MODULE_0__["v"])('b', { classes: _styles_app_m_css__WEBPACK_IMPORTED_MODULE_11__["accent"] }, ['Keynote']), ' by ', byline])
-                    ])
-                ])
             ])
         ]);
     }
@@ -17641,355 +17654,6 @@ class Icon extends IconBase {
 
 /***/ }),
 
-/***/ "./src/widgets/image/imageContent.ts":
-/*!*******************************************!*\
-  !*** ./src/widgets/image/imageContent.ts ***!
-  \*******************************************/
-/*! exports provided: HPos, VPos, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HPos", function() { return HPos; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VPos", function() { return VPos; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _common_Widget__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common/Widget */ "./src/widgets/common/Widget.ts");
-/* harmony import */ var _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../themes/redaktor-default/image.m.css */ "./src/widgets/themes/redaktor-default/image.m.css");
-/* harmony import */ var _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-var HPos;
-(function (HPos) {
-    HPos["left"] = "left";
-    HPos["center"] = "center";
-    HPos["right"] = "right";
-})(HPos || (HPos = {}));
-var VPos;
-(function (VPos) {
-    VPos["top"] = "top";
-    VPos["center"] = "center";
-    VPos["bottom"] = "bottom";
-})(VPos || (VPos = {}));
-let ImageContent = class ImageContent extends _common_Widget__WEBPACK_IMPORTED_MODULE_1__["RedaktorWidgetBase"] {
-    constructor() {
-        super(...arguments);
-        this._element = 'div';
-    }
-    getRootClasses() {
-        return [];
-    }
-    getPositionClasses(ui = _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_2__) {
-        const { horizontal, vertical } = this.properties;
-        return [
-            horizontal || vertical ? _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_2__["flex"] : null,
-            (horizontal && horizontal in HPos) ? this.theme(ui[horizontal]) : null,
-            (vertical && vertical in VPos) ?
-                (vertical === VPos.center ? _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_2__["middle"] : this.theme(ui[vertical])) : null
-        ];
-    }
-    getGradient() {
-        // TODO :  gradient = false
-        const { background = false, horizontal: h, vertical: v } = this.properties;
-        if (!background) {
-            return { style: null, gradientClass: null };
-        }
-        else if ((v === VPos.center && h === HPos.center)) {
-            return { style: null, gradientClass: 'toCenter' };
-        }
-        const { offset } = this.meta(_common_Widget__WEBPACK_IMPORTED_MODULE_1__["Dimensions"]).get('root');
-        const { offset: wrapperOffset } = this.meta(_common_Widget__WEBPACK_IMPORTED_MODULE_1__["Dimensions"]).get('wrapper');
-        const a = offset.height >= offset.width ? [h, v] : [v, h];
-        const pos = (a[0] === HPos.center || a[0] === VPos.center) ? a[1] : a[0];
-        let bg = [];
-        if (typeof background === 'number') {
-            bg = [0, 0, background, background];
-        }
-        else if (Array.isArray(background)) {
-            if (background.length === 4) {
-                bg = background;
-            }
-            else if (background.length === 3) {
-                bg = [0].concat(background);
-            }
-        }
-        return {
-            style: `--content-pos: to ${pos};
---content-h: ${Math.min((100 * wrapperOffset.height) / offset.height, 64)}%;
---content-w: ${Math.min((100 * wrapperOffset.width) / offset.width, 80)}%;
-${bg.reduce((s, v, i) => `${s} --img-a${i}: ${v};`, '')}`,
-            gradientClass: `to${pos}`
-        };
-    }
-    render() {
-        const { style, gradientClass } = this.getGradient();
-        return Object(_common_Widget__WEBPACK_IMPORTED_MODULE_1__["v"])(this._element, {
-            key: 'root',
-            style,
-            classes: [
-                this.theme(_themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_2__["mediaContent"]),
-                gradientClass ? this.theme(_themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_2__["gradient"]) : null,
-                gradientClass ? this.theme(_themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_2__[gradientClass]) : null,
-                ...this.getSchemaClasses(_themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_2__),
-                ...this.getPositionClasses(),
-                ...this.getRootClasses()
-            ]
-        }, [Object(_common_Widget__WEBPACK_IMPORTED_MODULE_1__["v"])('div', { key: 'wrapper' }, this.children)]); //this.children)
-    }
-};
-ImageContent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_common_Widget__WEBPACK_IMPORTED_MODULE_1__["customElement"])({
-        tag: 'redaktor-image',
-        properties: []
-    }),
-    Object(_common_Widget__WEBPACK_IMPORTED_MODULE_1__["theme"])(_themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_2__)
-], ImageContent);
-/* harmony default export */ __webpack_exports__["default"] = (ImageContent);
-
-
-/***/ }),
-
-/***/ "./src/widgets/image/index.ts":
-/*!************************************!*\
-  !*** ./src/widgets/image/index.ts ***!
-  \************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _common_Widget__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common/Widget */ "./src/widgets/common/Widget.ts");
-/* harmony import */ var _common_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/util */ "./src/widgets/common/util.ts");
-/* harmony import */ var _dojo_framework_widget_core_meta_Base__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @dojo/framework/widget-core/meta/Base */ "./node_modules/@dojo/framework/widget-core/meta/Base.mjs");
-/* harmony import */ var _dojo_framework_widget_core_meta_Intersection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @dojo/framework/widget-core/meta/Intersection */ "./node_modules/@dojo/framework/widget-core/meta/Intersection.mjs");
-/* harmony import */ var _dojo_framework_widget_core_meta_Resize__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @dojo/framework/widget-core/meta/Resize */ "./node_modules/@dojo/framework/widget-core/meta/Resize.mjs");
-/* harmony import */ var _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../themes/redaktor-default/image.m.css */ "./src/widgets/themes/redaktor-default/image.m.css");
-/* harmony import */ var _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__);
-
-var Image_1;
-
-
-
-
-
-
-
-class CurrentSrc extends _dojo_framework_widget_core_meta_Base__WEBPACK_IMPORTED_MODULE_3__["default"] {
-    get(key) {
-        const node = this.getNode(key);
-        return node && node.currentSrc ? node.currentSrc :
-            (node && node.src ? node.src : '');
-    }
-}
-// TODO maxSize (fixed size)
-// loading indicator
-// objectFit, objectPosition ?
-/* NOSCRIPT STATIC, e.g. gatsby
-// Show the original image during server-side rendering if JavaScript is disabled
-{this.addNoScript && (
-  <noscript
-    dangerouslySetInnerHTML={{
-      __html: noscriptImg({
-        alt,
-        title,
-        loading,
-        ...image,
-        imageVariants,
-      }),
-    }}
-  />
-)}
-*/
-let Image = Image_1 = class Image extends _common_Widget__WEBPACK_IMPORTED_MODULE_1__["RedaktorWidgetBase"] {
-    // TODO maxSize (fixed size)
-    // loading indicator
-    // objectFit, objectPosition ?
-    /* NOSCRIPT STATIC, e.g. gatsby
-    // Show the original image during server-side rendering if JavaScript is disabled
-    {this.addNoScript && (
-      <noscript
-        dangerouslySetInnerHTML={{
-          __html: noscriptImg({
-            alt,
-            title,
-            loading,
-            ...image,
-            imageVariants,
-          }),
-        }}
-      />
-    )}
-    */
-    constructor() {
-        super(...arguments);
-        this._boundIsLarger = this.isLarger.bind(this);
-        this._faded = false;
-        this._error = false;
-        this._loaded = false;
-        this._loading = false;
-        this.__w = 0.1;
-        this._mb = 0;
-    }
-    _onHover(event) {
-        this.properties.onHover && this.properties.onHover(event);
-    }
-    _onClick(event) {
-        event.stopPropagation();
-        this.properties.onClick && this.properties.onClick(event);
-    }
-    _onLoad(event) {
-        this._loaded = true;
-        this.properties.onLoad && this.properties.onLoad(event);
-        this.invalidate();
-    }
-    _onError(event) {
-        this._error = true;
-        this.properties.onError && this.properties.onError(event);
-        this.invalidate();
-    }
-    _onFadeEnd(event) {
-        this.properties.onFadeEnd && this.properties.onFadeEnd(event);
-        if (event.animationName.indexOf('_fadein_') > 0) {
-            this._faded = true;
-            setTimeout(() => { this.invalidate(); });
-        }
-    }
-    isLarger(contentRect) {
-        const { baselined = true } = this.properties;
-        const { marginBottom = 0 } = this.meta(_common_Widget__WEBPACK_IMPORTED_MODULE_1__["RedaktorDimensions"]).getOffset('root');
-        this.__w = Math.ceil((100 * contentRect.width) / window.innerWidth);
-        const grew = typeof this._w === 'undefined' || this.__w > this._w;
-        if (grew) {
-            this._w = this.__w;
-        }
-        if (baselined && this._mb !== marginBottom) {
-            this._mb = marginBottom;
-            setTimeout(() => { this.invalidate(); });
-        }
-        return grew;
-    }
-    getConstraints() {
-        const { placeholder, background, fade = false, fadeDuration = 320, compact = false, load = 'progressive', aspectRatio: _r = { width: 0, height: 0 } } = this.properties;
-        const { width = 0, height = 0, position: _p = 50, cover: isCover = true } = _r;
-        const isPositive = (n) => (typeof n === 'number' && n > 0);
-        const ratio = (!isPositive(width) || !isPositive(height)) ? 0 :
-            (Math.min(width, height) / Math.max(width, height) * 100);
-        const { offset } = this.meta(_common_Widget__WEBPACK_IMPORTED_MODULE_1__["Dimensions"]).get('media');
-        const { offset: rootOffset } = this.meta(_common_Widget__WEBPACK_IMPORTED_MODULE_1__["Dimensions"]).get('root');
-        const { isIntersecting } = this.meta(_dojo_framework_widget_core_meta_Intersection__WEBPACK_IMPORTED_MODULE_4__["Intersection"]).get('media');
-        const isMax = offset.width >= rootOffset.width;
-        const isPortrait = !!ratio && width < height;
-        const isToFade = this._loaded && !this._faded && fade;
-        const isFade = load === 'start' ? true :
-            (isToFade && load === 'progressive' && isIntersecting);
-        const willFade = !this._loaded && !this._faded && placeholder && fade;
-        let style = `--img-mb: ${this._mb}px;${compact ? `--ratio: 0;` :
-            (ratio > 0 ? `--ratio: ${ratio}%;` : '')}`;
-        if (ratio > 0) {
-            let a = [['width', 'x'], ['height', 'y']];
-            const [key, coord] = (!!isCover ? a : a.reverse())[isMax ? 0 : 1];
-            //console.log(key, offset[key], rootOffset[key])
-            const maxPos = (offset[key] - rootOffset[key]) / rootOffset[key] * 100;
-            const pos = Math.max(((_p / 100) * maxPos * -1), 0);
-            style += `--img-${coord}: ${pos}%;`;
-            if (!isCover) {
-                const hPerc = (rootOffset[key] - offset[key]) / rootOffset[key] * 100;
-                const remaining = 100 - hPerc;
-                style += `--img-${key.charAt(0)}: ${remaining}%;`;
-            }
-        }
-        if (placeholder && !this._faded) {
-            style += `--img-ph: ${offset.height}px;`;
-        }
-        if (typeof background === 'string' && (!this._loaded || ratio > 0)) {
-            style += `--img-bg: ${background};`;
-        }
-        if (isFade && typeof fadeDuration === 'number' && fadeDuration > 0) {
-            style += `--img-fd: ${fadeDuration}ms;`;
-        }
-        return { ratio, style, isIntersecting, isMax, isCover, isPortrait, isFade, willFade };
-    }
-    renderPlaceholder(isIntersecting = true) {
-        const { placeholder, placeholderStyles = {}, /*placeholderClasses,*/ size, fade = false, load = 'progressive' } = this.properties;
-        const hasPlaceholder = !!placeholder && typeof placeholder === 'string';
-        const loadPlaceholder = load !== 'intersect' || (load === 'intersect' && isIntersecting);
-        return (fade && loadPlaceholder && hasPlaceholder) ? Object(_common_Widget__WEBPACK_IMPORTED_MODULE_1__["v"])('img', {
-            key: 'placeholder',
-            src: placeholder,
-            styles: placeholderStyles,
-            classes: this.theme([
-                _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["media"], _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["placeholder"],
-                size in _common_util__WEBPACK_IMPORTED_MODULE_2__["Size"] ? _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__[size] : _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["noSize"]
-            ]),
-        }) : null;
-    }
-    renderImage(isIntersecting = true, isLarger = false) {
-        let imgProperties = this.properties;
-        const { src: _src, srcset: _set, alt, longdesc, crossorigin, usemap, size, placeholder, aria = {}, styles = {}, sizes = `${this._w}vw`, load = 'progressive', onLoadStart, onError } = this.properties;
-        const hasSrcset = Image_1.prototype.hasOwnProperty('srcset');
-        this._loading = load === 'start' || isIntersecting || this._loaded;
-        // TODO load 'progressive' or load 'intersect' + fade placeholder bg
-        if (this._loading && onLoadStart) {
-            const currentSrc = this.meta(CurrentSrc).get('media');
-            onLoadStart(currentSrc, isLarger);
-        }
-        if (this._error && placeholder && !onError) {
-            return null;
-        }
-        const src = this._loading ? _src :
-            (!hasSrcset && typeof placeholder === 'string') ? placeholder : '';
-        const srcset = this._loading ? _set :
-            (hasSrcset && typeof placeholder === 'string') ? placeholder : void 0;
-        return Object(_common_Widget__WEBPACK_IMPORTED_MODULE_1__["v"])('img', Object.assign({ key: 'media' }, imgProperties, { alt, longdesc, crossorigin, usemap, styles, src, srcset, sizes }, Object(_common_util__WEBPACK_IMPORTED_MODULE_2__["formatAriaProperties"])(aria), { classes: this.theme([
-                _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["media"],
-                _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["img"],
-                size in _common_util__WEBPACK_IMPORTED_MODULE_2__["Size"] ? _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__[size] : _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["noSize"]
-            ]), placeholder: void 0, onhover: this._onHover, onclick: this._onClick, onload: this._loading ? this._onLoad : void 0, onerror: this._loading ? this._onError : void 0, onanimationend: this._onFadeEnd }));
-    }
-    renderChildren() {
-        return !this.children ? null : Object(_common_Widget__WEBPACK_IMPORTED_MODULE_1__["v"])('figurecaption', { key: 'wrapper' }, this.children);
-    }
-    render() {
-        const { ratio, style, isMax, isPortrait, isCover, isIntersecting, isFade, willFade } = this.getConstraints();
-        const isRatio = ratio > 0;
-        const { baselined = true, compact = false } = this.properties;
-        const { isLarger = false } = this.meta(_dojo_framework_widget_core_meta_Resize__WEBPACK_IMPORTED_MODULE_5__["Resize"]).get('root', {
-            isLarger: this._boundIsLarger
-        });
-        return Object(_common_Widget__WEBPACK_IMPORTED_MODULE_1__["v"])(!this.children ? 'span' : 'figure', {
-            key: 'root',
-            classes: this.theme([
-                _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["root"],
-                isRatio ? _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["ratio"] : null,
-                isRatio ? (isCover === false ? _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["contain"] : _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["cover"]) : null,
-                isPortrait ? _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["portrait"] : _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["landscape"],
-                isLarger ? _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["grew"] : null,
-                isMax ? _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["max"] : null,
-                isFade ? _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["fade"] : (willFade ? _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["toFade"] : null),
-                compact ? _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["compact"] : null,
-                baselined === true ? _themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__["baselined"] : null
-            ]),
-            style
-        }, [
-            this.renderImage(isIntersecting, isLarger),
-            this.renderPlaceholder(isIntersecting),
-            this.renderChildren()
-        ]);
-    }
-};
-Image = Image_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_common_Widget__WEBPACK_IMPORTED_MODULE_1__["customElement"])({
-        tag: 'redaktor-image',
-        properties: []
-    }),
-    Object(_common_Widget__WEBPACK_IMPORTED_MODULE_1__["theme"])(_themes_redaktor_default_image_m_css__WEBPACK_IMPORTED_MODULE_6__)
-], Image);
-/* harmony default export */ __webpack_exports__["default"] = (Image);
-
-
-/***/ }),
-
 /***/ "./src/widgets/label/index.ts":
 /*!************************************!*\
   !*** ./src/widgets/label/index.ts ***!
@@ -19591,18 +19255,6 @@ module.exports = {" _key":"redaktor/dialog","root":"dialog-m__root__37h95","main
 
 // extracted by mini-css-extract-plugin
 module.exports = {" _key":"redaktor/icon","root":"icon-m__root__1g8dF","icon":"icon-m__icon__2C-GF","compactIcon":"icon-m__compactIcon__2Gy5q","extendIcon":"icon-m__extendIcon__3GPC1","plusIcon":"icon-m__plusIcon__mc91i","minusIcon":"icon-m__minusIcon__1AnN1","checkIcon":"icon-m__checkIcon__1925n","closeIcon":"icon-m__closeIcon__2cCxl","leftIcon":"icon-m__leftIcon__2pIlL","rightIcon":"icon-m__rightIcon__2SA8F","upIcon":"icon-m__upIcon__2LhNP","downIcon":"icon-m__downIcon__39Rt-","upAltIcon":"icon-m__upAltIcon__3U-br","downAltIcon":"icon-m__downAltIcon__1ZBiE","searchIcon":"icon-m__searchIcon__I89m3","barsIcon":"icon-m__barsIcon__KdP8S","settingsIcon":"icon-m__settingsIcon__1WP6k","alertIcon":"icon-m__alertIcon__2Jvjn","helpIcon":"icon-m__helpIcon__1uddl","infoIcon":"icon-m__infoIcon__eP9Qv","phoneIcon":"icon-m__phoneIcon__1gAwo","editIcon":"icon-m__editIcon__1aVQ3","dateIcon":"icon-m__dateIcon__3N2xM","linkIcon":"icon-m__linkIcon__2Rwia","locationIcon":"icon-m__locationIcon__21n0V","secureIcon":"icon-m__secureIcon__CllXq","mailIcon":"icon-m__mailIcon__1Fb7U"};
-
-/***/ }),
-
-/***/ "./src/widgets/themes/redaktor-default/image.m.css":
-/*!*********************************************************!*\
-  !*** ./src/widgets/themes/redaktor-default/image.m.css ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-module.exports = {" _key":"redaktor/image","parentSchema":"image-m__parentSchema__2f45b","hasSchema":"image-m__hasSchema__3FZMw","root":"image-m__root__2FFAq","media":"image-m__media__2Ga0t","noSize":"image-m__noSize__1O5Yr","mediaContent":"image-m__mediaContent__2D8ed","responsive":"image-m__responsive__1EW6L _ui-m__responsive__1IPWY","grew":"image-m__grew__3HSfq","toFade":"image-m__toFade__1_L4p","compact":"image-m__compact__3A3gC","placeholder":"image-m__placeholder__183DL","img":"image-m__img__3Beo9","fade":"image-m__fade__3YGRe","fadein":"image-m__fadein__1ejxk","ratio":"image-m__ratio__A_N4M","portrait":"image-m__portrait__1N6BH","landscape":"image-m__landscape__1xAsD","baselined":"image-m__baselined__3WHrP","contain":"image-m__contain__3Lp47","max":"image-m__max__3-3sp","cover":"image-m__cover__27zdN","raised":"image-m__raised__3iJ9j","enabled":"image-m__enabled__3zUdA","disabled":"image-m__disabled__1bXQf","flat":"image-m__flat__2YMjx","filled":"image-m__filled__3vg1h","outlined":"image-m__outlined__1zzfX","smallUI":"image-m__smallUI__24Kmp","defaultUI":"image-m__defaultUI__224S-","mediumUI":"image-m__mediumUI__3OQHC","largeUI":"image-m__largeUI__2NO0H","smallTypo":"image-m__smallTypo__3eI0C","defaultTypo":"image-m__defaultTypo__3Djuo","mediumTypo":"image-m__mediumTypo__1_uUx","largeTypo":"image-m__largeTypo__1vWgw","flex":"image-m__flex__2v-p8","top":"image-m__top__3X-09","totop":"image-m__totop__3pAeM","tobottom":"image-m__tobottom__3eQ06","toleft":"image-m__toleft__3WE44","toright":"image-m__toright__3dxUa","gradient":"image-m__gradient__1Juua","center":"image-m__center__1--5i","middle":"image-m__middle__2fwK3","toCenter":"image-m__toCenter__A0QSJ","left":"image-m__left__1NnCR","right":"image-m__right__4ncnM","bottom":"image-m__bottom__fEnri","baseline":"image-m__baseline__I79Wd"};
 
 /***/ }),
 

@@ -25,7 +25,7 @@ export default class CFPTab<P extends TabProperties = TabProperties> extends Wid
     const { size = 'default' } = this.properties;
 
 		return v('div', { classes: [css.tab] }, [
-      v('h2', {classes: [css.tabHeader, css.accent]}, ['Upcoming Program']),
+      v('h2', {classes: [css.tabHeader, css.accent]}, ['Program 2019']),
       v('div', {classes: css.hasFlex}, [
         v('div', {classes: css.flex}, [
           v('div', {classes: css.programHeader}, [
@@ -110,7 +110,11 @@ export default class CFPTab<P extends TabProperties = TabProperties> extends Wid
         v('h5', {classes: css.muted}, [
           v('a', {
             href: 'https://librelounge.org/episodes/episode-10-fosdem-copyleftconf-and-spritely.html'
-          }, ['listen on librelounge.org …']), v('br'), v('br')
+          }, ['listen on librelounge.org …']), v('br'),
+          v('a', {
+            href: 'https://conf.tube/videos/watch/0b487f1f-158c-475c-a9e5-4272128be139'
+          }, ['watch video …']),
+          v('br'), v('br')
         ])
       ])
 		]);

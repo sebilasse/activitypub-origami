@@ -18,11 +18,12 @@ a:hover {
 .imgLink:hover {
 	filter: grayscale(0%);
 }
-a[target="_blank"] {
+
+a[target="_blank"]:not(.actionLinks a) {
 	padding-left: 8px;
 	position: relative;
 }
-a[target="_blank"]::before {
+a[target="_blank"]:not(.actionLinks a)::before {
 	content: url(`data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
 0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNS4wLjIsIFNWRyBFeH
 BvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdm
@@ -39,6 +40,7 @@ RzPSIyLjA4MiwxNS41IDMuMjQyLDE1LjUgNC4zOTYsMTMuNSAzLjM2MSwxMy41ICIvPg0KPC9zdmc+DQ
 	left: -1px;
 	top: -2px;
 }
+
 .pointerRow {
 	cursor: pointer;
 }
@@ -355,7 +357,7 @@ span:hover > .iconImgAbs {
 }
 .map {
 	width: 100%;
-	height: 350px;
+	height: 208px;
 	border: 1px solid black;
 }
 
@@ -375,6 +377,32 @@ span:hover > .iconImgAbs {
 
 /* -------------------------------------------------------------------------- */
 /* SCHEDULE */
+.imageContainer,
+.videoContainer,
+.talkVideoContainer {
+	position: relative;
+	padding-top: 56.25%;
+	margin-bottom: var(--line, 16px);
+}
+.imageContainer {
+	overflow: hidden;
+	padding-top: 336%;
+}
+.imageIframe,
+.videoIframe {
+	background: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+.imageIframe {
+	top: -32px;
+	overflow: hidden !important;
+}
 .scheduleLinks {
 	display: none;
 	position: fixed;
@@ -391,6 +419,23 @@ span:hover > .iconImgAbs {
 .scheduleLinks.visible {
 	display: block;
 }
+
+.cc0, .ccBy, .ccBySA {
+	background-image: url('https://redaktor.me/_deliver/CC-0.svg');
+	background-repeat: no-repeat;
+	background-position: 16px 0;
+	background-size: 72px;
+	padding-left: 96px !important;
+	min-height: 24px;
+	display: inline-block;
+}
+.ccBy {
+	background-image: url('https://redaktor.me/_deliver/CC-BY.svg');
+}
+.ccBySA {
+	background-image: url('https://redaktor.me/_deliver/CC-BY-SA.svg');
+}
+
 .talkRow .flex:not(.talkBreak + .flex) {
 	min-width: 224px;
 }
@@ -400,6 +445,10 @@ span:hover > .iconImgAbs {
 .keynoteRow .flex {
 	min-width: 312px;
 }
+.keynoteActions {
+	justify-content: space-between !important;
+}
+.talkRow .flex,
 .keynoteRow .noflex {
 	width: 25%;
 	min-width: 306px;

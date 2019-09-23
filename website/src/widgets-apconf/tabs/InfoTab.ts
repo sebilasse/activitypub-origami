@@ -45,7 +45,7 @@ export default class InfoTab<P extends TabProperties = TabProperties> extends Wi
 		return {
 			text: `A conference about the present and future of #ActivityPub – ` +
 `the world’s leading federated social web standard.
-${!isShort ? 'This two day event will include presentations of p' : 'P'}` +
+${!isShort ? 'This two day event includes presentations of p' : 'P'}` +
 `repared talks on Saturday followed by a loosely structured unconference on Sunday.
 
 #apconf #Fediverse #Conference`,
@@ -67,7 +67,7 @@ ${!isShort ? 'This two day event will include presentations of p' : 'P'}` +
 		const base = 'https://redaktor.me/_deliver/';
 		return v('div', { classes: css.tab }, [
 			v('span', [
-				'The conference follows ',
+				'The conference followed ',
 				v('a', {
 					href: 'https://www.weboftrust.info/next-event-page.html',
 					target: '_blank', rel: 'external noopener noreferrer'
@@ -75,8 +75,12 @@ ${!isShort ? 'This two day event will include presentations of p' : 'P'}` +
 					'#RebootingWebOfTrust'
 				])
 			]),
-			v('h3', {classes: [css.right, css.tabHeader, css.accent]}, [ '... just around the corner' ]),
-			v('span', {classes: css.centerflex}, [ v('span', [
+			v('h3', {classes: [css.right, css.tabHeader, css.accent]}, [ 'tl;dr – It was awesome' ]),
+
+			v('span', {classes: css.centerflex}, [
+
+				v('span', [
+/*
 				CodeOfConductLink(),
 
 				v('h5', [
@@ -103,11 +107,24 @@ ${!isShort ? 'This two day event will include presentations of p' : 'P'}` +
 						'Social Hub'
 					]), ' …'
 				]),
-
+*/
 				v('h5', {classes: css.accent}, ['Spread the word:']),
 				v('p', {classes: [css.hasFlex, css.baselined, css.serif]}, [
 					w(ShareMastodon, this.getShareProps()),
 					w(ShareTwitter, {...this.getShareProps(true), related: '@dustyweb,@mlemweb,@sl007'})
+				]),
+
+				v('div', {
+					classes: css.imageContainer
+				}, [
+					v('iframe', {
+						classes: css.imageIframe,
+						sandbox: 'allow-same-origin allow-scripts',
+						src: 'https://archive.org/details/apconf-pictures',
+						frameborder: '0',
+						allowfullscreen: 'allowfullscreen',
+						scrolling: 'no'
+					})
 				]),
 
 				v('h5', [
@@ -116,8 +133,7 @@ ${!isShort ? 'This two day event will include presentations of p' : 'P'}` +
 					v('span', {classes: css.accent}, ['Friday in the evening']),
 				]),
 				v('p', {classes: css.serif}, [
-					`Let's do an ActivityPub Picnic in Letná Park.`, v('br'),
-					'We need numbers for food – ping Sebastian …',
+					`We did an ActivityPub Picnic in Letná Park.`,
 					v('br')
 				]),
 				v('h5', {classes: css.muted}, [
@@ -142,7 +158,7 @@ ${!isShort ? 'This two day event will include presentations of p' : 'P'}` +
 				]), v('br'),
 				v('hr'),
 				v('p', {classes: css.serif}, [
-					'We will provide videos for the talks and remote participation via Etherpad (sunday).', v('br'),
+					//'We will provide videos for the talks and remote participation via Etherpad (sunday).', v('br'),
 					'ActivityPub Conf is surrounded by ',
 					v('a', {
 						href: 'https://www.dox.cz/en/exhibitions/datamaze',

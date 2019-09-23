@@ -1,11 +1,11 @@
 import { DNode, v, w } from '../../widgets/common/Widget';
 import { WidgetBase } from '@dojo/framework/widget-core/WidgetBase';
-import { Intersection } from '@dojo/framework/widget-core/meta/Intersection';
+//import { Intersection } from '@dojo/framework/widget-core/meta/Intersection';
 import Checkbox, { Mode } from '../../widgets/checkbox';
 import Icon from '../../widgets/icon';
 import Label from '../../widgets/label';
-import Image from '../../widgets/image';
-import ImageContent from '../../widgets/image/imageContent';
+//import Image from '../../widgets/image';
+//import ImageContent from '../../widgets/image/imageContent';
 import Card from '../../widgets/card';
 import Button, { ButtonProperties } from '../../widgets/button';
 import Container from '../../widgets/container';
@@ -30,7 +30,7 @@ export default class ScheduleTab<P extends TabProperties = TabProperties> extend
 
 	render() {
     const { size = 'default' } = this.properties;
-		const { isIntersecting } = this.meta(Intersection).get('saturday');
+		//const { isIntersecting } = this.meta(Intersection).get('saturday');
 
 		return v('div', { classes: css.tab }, [
 			/* SATURDAY */
@@ -60,22 +60,22 @@ export default class ScheduleTab<P extends TabProperties = TabProperties> extend
 			this.eventRow('10.30', 	true, 'Introductions', 'orga'),
 			this.eventRow('10.45', 	true, 'Opening', 'keynote', true),
 			v('div', {classes: [css.hasFlex, css.keynoteRow]}, [
-				this.talkCard('Chris', '10:45'),
-				this.talkCard('Luc', '11:40 – 12:10'),
+				this.talkCard('Chris'),
+				this.talkCard('Luc'),
 			]),
 			this.eventRow('12.10', 	false, 'Lunch', 'food'),
 			this.eventRow('1.10', 	false, 'Talks', 'talk', true),
 			v('div', {classes: [css.hasFlex, css.talkRow]}, [
-				this.talkCard('Maloki', '1:10 – 1:40'),
-				this.talkCard('Pukkamustard', '1:45 – 2:15'),
+				this.talkCard('Maloki'),
+				this.talkCard('Pukkamustard'),
 				this.talkBreak(),
-				this.talkCard('Serge', '2:25 – 2:55'),
-				this.talkCard('Schmittlauch', '3:00 – 3:30'),
-				this.talkCard('Cristina', '3:35 – 4:05'),
+				this.talkCard('Serge'),
+				this.talkCard('Schmittlauch'),
+				this.talkCard('Cristina'),
 				this.talkBreak(),
-				this.talkCard('Caleb', '4:15 – 4:45'),
-				this.talkCard('Matt', '4:50 – 5:20'),
-				this.talkCard('Michael', '5:25 – 5:55'),
+				this.talkCard('Caleb'),
+				this.talkCard('Matt'),
+				this.talkCard('Michael'),
 				v('div')
 			]),
 			v('br'),
@@ -88,7 +88,7 @@ export default class ScheduleTab<P extends TabProperties = TabProperties> extend
 			v('p', {classes: ui.largeP}, [
 				this.eventRow('10', 	true, 'Opening', 'keynote', true),
 				v('div', {classes: [css.hasFlex, css.keynoteRow, css.keynoteSingle]}, [
-					this.talkCard('Mark', '10:00')
+					this.talkCard('Mark')
 				]),
 				v('p', [' ']),
 				this.eventRow('11',true, 'Unconf Planning Session', 'orga'),
@@ -118,6 +118,7 @@ export default class ScheduleTab<P extends TabProperties = TabProperties> extend
 				]),
 
 				this.eventRow('1', false, 'Block 1', 'unconf', true),
+
 				this.sessionRow(1),
 				this.eventRow('2', false, 'Block 2', 'unconf', true),
 				this.sessionRow(2),
@@ -149,7 +150,7 @@ export default class ScheduleTab<P extends TabProperties = TabProperties> extend
 				])
       ]),
 
-			v('div', {
+			/*v('div', {
 				classes: [
 					css.scheduleLinks,
 					document.documentElement.clientWidth < 880 || isIntersecting ? null : css.visible
@@ -159,7 +160,7 @@ export default class ScheduleTab<P extends TabProperties = TabProperties> extend
 				v('a', {href: '#sunday'}, ['sunday']), ' • ',
 				v('a', {href: '#sessions'}, ['sessions']), ' • ',
 				v('a', {href: '#floors'}, ['floors'])
-			])
+			])*/
 		])
 	}
 
@@ -170,7 +171,7 @@ export default class ScheduleTab<P extends TabProperties = TabProperties> extend
 			return []
 		} else {
 			return data.sessions.filter((s: apconfTalk) => s.block === i)
-				.map((s: apconfTalk) => this.talkCard(s, '', true))
+				.map((s: apconfTalk) => this.talkCard(s, true))
 		}
 	}
 
@@ -194,10 +195,10 @@ export default class ScheduleTab<P extends TabProperties = TabProperties> extend
 			])
 	}
 
-	// target: '_blank', rel: 'noopener noreferrer'
 	// TODO links or button onClick
-	private talkCard(nameOrSession: string | apconfTalk, time: string = '', isSession = false) {
+	private talkCard(nameOrSession: string | apconfTalk, isSession = false) {
 		const { data = {} } = this.properties;
+		//console.log(nameOrSession);
 		const cardProperties: apconfTalk = isSession ? nameOrSession : {
 			...(talks[<string>nameOrSession] || {}),
 			...(data.links ? data.links[<string>nameOrSession] : '' || {})
@@ -206,94 +207,128 @@ export default class ScheduleTab<P extends TabProperties = TabProperties> extend
 		if (!cardProperties) { return null }
 		const actProps: Partial<ButtonProperties> = {size: 'small', depth: 'flat'};
 		const {
-			title, byline = '', details = [], img = '', location = '',
+			title, byline = '', details = [], img = '',
 			isKeynote = false, hasButtons = true, isFlex = true,
-			video = '', read = '', etherpad = ''
+			video = '', download = '', etherpad = '', time = '', license = 'cc0'
 		} = cardProperties;
 
 		let buttons;
-		if (!!isKeynote || !!img) {
+		if (!isSession) {
 			buttons = v('div', { classes: card.actionButtons }, [
-				v('div', { classes: card.actionButton }, [
-					w(Button, { disabled: !video, schema: 'secondary', ...actProps }, [ 'Video' ])
+
+				v('a', {
+					classes: [card.actionButton, css.imgLink],
+					href: video.replace('/embed', '/watch')||'#',
+					target: '_blank',
+					rel: 'noopener noreferrer'
+				}, [
+					w(Button, {
+						disabled: !video,
+						schema: 'secondary',
+						...actProps
+					}, [
+						'@apconf@conf.tube'
+					])
 				]),
-				!video && read ? v('div', {classes: css.hasFlex}, [
+
+				!video ? v('div', {classes: css.hasFlex}, [
 					v('small', {classes: css.flex}, ['coming soon'])
 				]) : null,
-				v('div', { classes: card.actionButton }, [
-					w(Button, { disabled: !read, schema: 'primary', ...actProps }, [ 'Read' ]),
+
+				v('a', {
+					classes: [card.actionButton, css.imgLink],
+					href: download||'#',
+					target: '_blank',
+					rel: 'noopener noreferrer'
+				}, [
+					w(Button, {
+						disabled: !download,
+						schema: 'primary',
+						...actProps
+					}, [
+						'archive.org'
+					]),
 				]),
 				!video ? v('div', [v('span', {classes: [ui.muted, ui.largeP, css.right]}, [])]) : null
 			])
 		} else {
+			const s = nameOrSession;
 			buttons = v('div', { classes: card.actionButtons }, [
 				v('div', { classes: card.actionButton }, [
-					!etherpad ? null : w(Icon, {type: 'editIcon'}),
+					!!etherpad ? w(Icon, {type: 'editIcon'}) :
+					v('a', {
+						classes: [card.actionButton, css.imgLink],
+						href: 'https://pixelfed.social/apconf',
+						target: '_blank',
+						rel: 'noopener noreferrer'
+					}, [
+						'watch some photos'
+					]),
 					//v('p', {classes: css.accent}, ['Etherpad: ']),
-					w(Button, { disabled: !etherpad, schema: 'secondary', ...actProps }, [ 'Participate' ]),
-					!etherpad ? v('div', [v('span', {classes: [ui.muted, css.right]}, [
-						v('small', {classes: css.flex}, ['Etherpad t.b.a.'])])]) : null
+					w(Button, {
+						disabled: !etherpad,
+						schema: 'secondary',
+						...actProps,
+						onClick: () => {
+							!!etherpad && typeof s === 'object' ?
+							window.location.href = 'https://redaktor.me/pad/p/' + s.etherpad : ''
+						}
+					}, [ 'Etherpad' ])
 				])
 			])
 		}
 
-		return w(Card, {extraClasses: {root: isKeynote || isFlex ? css.flex : css.noflex}}, [
-			!!img ? this.eventImg(title, byline, isKeynote, img) : null,
-			v('i', {classes: [css.accent, css.talkTime]}, [time]),
+		const base = 'https://redaktor.me/_deliver/apconf/';
+
+		return w(Card, {
+			extraClasses: {root: isKeynote || isFlex ? css.flex : css.noflex}
+		}, [
+			!!video ? v('div', {
+				classes: css.videoContainer,
+				style: !!img ? `background: url('${base}${img}.svg')` : ''
+			}, [
+				v('iframe', {
+					classes: css.videoIframe,
+					sandbox: 'allow-same-origin allow-scripts',
+					src: video,
+					frameborder: '0',
+					allowfullscreen: 'allowfullscreen'
+				})
+			]) : null,
 			v('div', {
 				classes: [
 					isKeynote ? css.keynote : (isSession ? css.session : css.talk),
-					this._isCompact ? css.compact : null, css.flex]
-			}, !img ? [v('br'), title, v('br'), v('p', {classes: [ui.largeP, css.accent]}, [byline])] : details),
+					this._isCompact ? css.compact : null, css.flex
+				]
+			},
+			[
+				v('i', {classes: [css.accent, css.talkTime]}, [time]),
+				isSession ? '' : v('h5', [ title ]),
+				...(!img ? [v('br'), title, v('br'), v('p', {classes: [ui.largeP, css.accent]}, [byline])] : details)
+			]),
+
+			isSession ? null : v('p', { classes: [ui.largeP, css.accent, (<any>css)[license]] }, [ byline ]),
+
 			!hasButtons ? null : v('div', {
-				classes: card.actions
+				classes: [css.actionLinks, card.actions, isSession || isKeynote ? css.keynoteActions : null]
 			}, [
 				buttons,
+				/*
 				!isKeynote ? null : v('div', { classes: card.actionIcons }, [
-					v('div', {
-						classes: [card.actionIcon, css.pointerRow],
-						onclick: () => { window.document.location.hash = '#floors' }
-					 }, [ w(Icon, { type: 'locationIcon' }) ]),
-					v('p', {
-						classes: [css.strong, css.accent],
-						onclick: () => { window.document.location.hash = '#floors' }
-					}, [location])
-				])
-			])
-		])
-	}
-	private eventImg(title: DNode = '', byline: DNode = '', isKeynote = false, img = '') {
-		const base = 'https://redaktor.me/_deliver/apconf/';
-		const mediaClass = isKeynote ? css.keynoteMedia : void 0;
 
-		return w(Image, {
-			extraClasses: {root: mediaClass},
-			src: !img ? `${base}APConfLogo.png` : `${base}${img}.svg`,
-			background: '#F1007E',
-			alt: `${isKeynote ? 'Keynote:' : 'Talk:'} ${title}`,
-			aspectRatio: {
-				width: 3,
-				height: 2,
-				cover: true,
-				position: 50
-			},
-			baselined: true,
-			compact: this._isCompact
-			//size: 'small'
-		}, [
-			w(ImageContent, {
-				horizontal: isKeynote ? 'left' : 'center',
-				vertical: img === '_01_Mark' ?  'top' : 'bottom',
-				schema: 'dark',
-				background: true
-			}, [
-				v('hgroup', {classes: isKeynote ? css.keynoteHeader : css.talkHeader}, [
-					v(isKeynote ? 'h3' : 'h5', [title]),
-					v('h5', {classes: [ui.subtitle, css.subtle]}, [
-						!isKeynote ? byline :
-						v('span', [v('b', {classes: css.accent}, ['Keynote']), ' by ', byline])
-					])
+						v('div', ['cc ']),
+						v('p', {
+							classes: [css.strong, css.accent],
+							onclick: () => { window.document.location.hash = '#floors' }
+						}, [
+							byline
+						])
+
+
 				])
+*/
+
+
 			])
 		])
 	}

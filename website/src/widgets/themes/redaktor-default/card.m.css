@@ -199,7 +199,7 @@
   align-items: center;
   box-sizing: border-box;
   padding: var(--line) var(--lineHalf) var(--line) var(--lineHalf);
-
+	justify-content: space-around;
 }
 
 .actionsFullBleed {

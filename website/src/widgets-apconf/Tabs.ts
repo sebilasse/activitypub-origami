@@ -1,6 +1,5 @@
 import { v, w, WidgetBase, ThemedMixin, ThemedProperties } from '../widgets/common/Widget';
 import { Size, Material } from '../widgets/common/util';
-import Icon from '../widgets/icon';
 import Tab from '../widgets/tab';
 import TabController from '../widgets/tab-controller';
 import CFPTab from './tabs/CFPTab';
@@ -26,15 +25,15 @@ export default class Tabs<P extends TabProperties = TabProperties> extends Theme
 		}, [
 			w(Tab, {
 				key: 'cfp-tab',
-				label: v('span', [w(Icon, {type: 'downIcon'}), 'Program'])
+				label: v('span', ['program'])
 			}, [ w(CFPTab, { data, size }) ]),
 			w(Tab, {
 				key: 'schedule-tab',
-				label: 'Schedule'
+				label: 'schedule'
 			}, [ w(ScheduleTab, { data, size }) ]),
 			w(Tab, {
 				key: 'info-tab',
-				label: 'Info'
+				label: 'pictures & info'
 			}, [ w(InfoTab, { data, size }) ])
 		])
 	}
