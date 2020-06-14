@@ -5,11 +5,14 @@
 stuff for #apconf<br>
 [![-](https://raw.githubusercontent.com/redaktor/style/master/assets/readme/lineBlue.png)](#)<br>
 
-Contains website https://redaktor.me/apconf/ and iconfont and Etherpad extension …
+Contains websites
+- https://redaktor.me/apconf/
+- https://apconf.uber.space [draft, final URL t.b.a]
+and iconfont and Etherpad extension …
 
 Is a Work in Progress
 
-Was made in concrete hurry
+Was made in concrete hurry, see READMEs in the folders
 
 ## Story
 
