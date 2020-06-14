@@ -43,7 +43,6 @@ export default factory(function CFP({ middleware: { theme, i18n/*,icache, resize
 			</div>
 			<div classes={[grid.asideColumn, grid.asideStart]}>
 				<p>
-					<em>contact: </em>
 					<span classes={themedCss.m8l}>
 						<span>activitypub </span>
 						<span>conf</span>

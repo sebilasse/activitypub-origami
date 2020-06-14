@@ -68,6 +68,18 @@ export default factory(function App({ middleware: { theme, i18n, icache } }) {
         classes={[css.lightbulbControl]}
       />
 			<Header classes={{ 'apconf2020/Header': { lightbulb: [css.lightbulb] } }} />
+      <footer classes={[css.footer]}>
+        <small classes={[css.menuItem]}>
+          <Link key='credits' matchParams={{}} params={{}} activeClasses={[]} to='credits'>
+            Credits & License
+          </Link>
+        </small>
+        <small classes={[css.menuItem]}>
+          <Link key='privacy' matchParams={{}} params={{}} activeClasses={[]} to='privacy'>
+            Privacy
+          </Link>
+        </small>
+      </footer>
 			<main classes={[css.main]}>
 				<Route id="home" renderer={home} />
 				<Route id="roadmap" renderer={roadmap} />
@@ -94,10 +106,6 @@ export default factory(function App({ middleware: { theme, i18n, icache } }) {
 					() => <virtual><Combs activeId="credits" /><Credits />{desc(true)}</virtual>}
 				/>
 			</main>
-      <footer classes={[css.footer]}>
-        <small classes={[css.menuItem]}><a classes={[css.menuLink]} href="credits">Credits & License</a></small>
-        <small classes={[css.menuItem]}><a classes={[css.menuLink]} href="privacy">Privacy</a></small>
-      </footer>
 		</div>
 	);
 });

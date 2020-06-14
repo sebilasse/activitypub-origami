@@ -12,7 +12,6 @@ export default [
 	{ path: 'live', outlet: 'live', id: 'live', title: 'ActivityPub Conf 2020 > Live' },
 	{ path: 'hackathon', outlet: 'hackathon', id: 'hackathon', title: 'ActivityPub Conf 2020 > Hackathon' },
 	{ path: 'talks', outlet: 'talks', id: 'talks', title: 'ActivityPub Conf 2020 > Talks' },
-
 	{ path: 'privacy', outlet: 'privacy', id: 'privacy', title: 'ActivityPub Conf 2020 > Privacy' },
 	{ path: 'credits', outlet: 'credits', id: 'credits', title: 'ActivityPub Conf 2020 > CC0' }
 ] as RouteConfig[];
