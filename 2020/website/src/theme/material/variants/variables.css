@@ -1,0 +1,95 @@
+:root {
+	/* Color Pallette */
+	--color-white: #ffffff;
+	--color-off-white: #aaa;
+	--color-black: #000000;
+	--color-light-blue: #009dff;
+	--color-blue: #0f6ecd;
+	--color-dark-blue: #0a4784;
+	--color-purple: #862790;
+	--color-red: #c42826;
+	--color-green: #2ab770;
+	--color-blue: #2db5f9;
+	--color-border: rgba(0, 0, 0, 0.1);
+	--color-light-gray: #999;
+	--color-gray: #555;
+	--color-dark-gray: #333;
+	--color-black: #000;
+
+	--font-color: var(--color-dark-gray);
+	--font-color-hover: var(--color-black);
+	--font-color-inverse: var(--color-off-white);
+	--font-color-inverse-hover: var(--color-white);
+	--link-color: var(--color-blue);
+	--link-color-hover: var(--color-dark-blue);
+
+	--dark-background-color: #212329;
+	--darker-background-color: #141414;
+
+	/* Typography */
+	--body-font-size: 15px;
+
+	--block-quote-font-size: 15px;
+	--block-quote-font-weight: 500;
+
+	--pre-font-size: 13px;
+
+	--header1-font-size: 25px;
+	--header1-line-height: 1.2;
+
+	--header2-font-size: 21px;
+	--header2-line-height: 1.3;
+
+	--header3-font-size: 19px;
+	--header3-line-height: 1.4;
+
+	--header4-font-size: 19px;
+	--header4-line-height: 1.4;
+
+	--header5-font-size: 17px;
+	--header5-line-height: 1.4;
+
+	--header6-font-size: 15px;
+	--header6-line-height: 1.4;
+
+	--table-first-column-font-size: 15px;
+
+	--feature-points-font-size: 15px;
+
+	/* App Variables */
+	--border-radius: 4px;
+	--grid-size: 10px;
+	--card-padding: calc(var(--grid-size) * 2);
+
+	--header-background-color: var(--dark-background-color);
+	--responsive-header-background-color: var(--darker-background-color);
+	--hero-background: #000000;
+	--menu-offset: calc(var(--grid-size) * 2);
+	--toggle-button-width: calc(var(--grid-size) * 2.6);
+	--header-size: calc(var(--grid-size) * 6);
+
+	--menu-height: calc(var(--grid-size) * 4.4);
+
+	--content-top-padding: calc(var(--grid-size) * 6);
+	--content-padding: calc(var(--grid-size) * 3);
+	--console-background-color: var(--darker-background-color);
+}
+
+@media (max-width: 768px) {
+	:root {
+		--header1-font-size: 24px;
+		--header2-font-size: 22px;
+		--header3-font-size: 20px;
+		--header4-font-size: 18px;
+		--header5-font-size: 16px;
+		--header6-font-size: 14px;
+	}
+}
+
+@media (max-width: 850px) {
+	:root {
+		--header-size: calc(var(--grid-size) * 5);
+		--content-top-padding: var(--grid-size);
+		--content-padding: var(--grid-size);
+	}
+}

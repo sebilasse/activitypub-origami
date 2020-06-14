@@ -1,0 +1,124 @@
+.root {
+	margin-bottom: var(--line2);
+}
+
+.pageContent {
+	max-width: 100vw;
+}
+
+.header {
+	grid-row-start: 2;
+	/* grid-column: content-start / span 4; */
+}
+
+.timeline {
+	grid-row-start: 3;
+	/* grid-column: 1 / span 2; */
+}
+
+.timelineEntry {
+	position: relative;
+	display: flex;
+}
+
+.timelineEntry .cardHeader {
+	width: 280px;
+	padding: var(--line) 0;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 0;
+}
+
+.timelineEntry .card {
+	border: 1px solid rgba(0, 0, 0, 0.075);
+	padding: 0;
+}
+
+
+.timelineDate {
+	composes: s from '../theme/material/_ui.m.css';
+	position: relative;
+	padding: var(--line) calc(var(--line) * 2);
+	padding-left: 0;
+	top: calc(var(--line) * 2.8);
+	color: var(--gray);
+	width: calc(var(--line) * 15);
+	text-align: right;
+	display: inline-block;
+}
+
+.timelineEntry:first-child .timelineDate {
+	top: calc(var(--line) * 1.3);
+}
+
+.timelineEntry:not(.released) .timelineDate {
+	color: var(--gray);
+	font-weight: 600;
+}
+
+.timelineDetails {
+	display: flex;
+	margin-left: var(--line);
+	position: relative;
+	padding: calc(var(--line) * 1.5) 0 calc(var(--line) * 1.5) calc(var(--line) * 3);
+	border-left: 1px solid #777;
+	flex-grow: 1;
+}
+
+.timelineEntry:first-child .timelineDetails {
+	padding-top: 0;
+}
+
+.timelineEntry:last-child .timelineDetails {
+	padding-bottom: 0;
+}
+
+.timelineMarker {
+	position: absolute;
+	left: calc(var(--line) * -2);
+	top: calc(var(--line) * 3);
+	border-radius: 50%;
+	width: calc(var(--line) * 3.9);
+	height: calc(var(--line) * 3.9);
+	background: var(--info);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+}
+
+.timelineEntry:first-child .timelineMarker {
+	top: calc(var(--line) * 1.5);
+}
+
+.released .timelineMarker {
+	background: var(--success);
+}
+
+@media (max-width: 400px) {
+	.header {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 910px) {
+	.timelineDetails {
+		border-left: none;
+		margin-left: 0;
+		padding-left: 0;
+	}
+
+	.timelineDate {
+		position: absolute;
+		right: 42px;
+		z-index: 6;
+	}
+
+	.timelineMarker {
+		right: 15px;
+		left: unset;
+	}
+
+	.timelineEntry .cardHeader {
+		font-size: 20px;
+	}
+}

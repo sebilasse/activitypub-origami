@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ical.marudot.com//iCal Event Maker
+X-WR-CALNAME:ActivityPub Conference
+NAME:ActivityPub Conference
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+TZURL:http://tzurl.org/zoneinfo-outlook/Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20200611T114445Z
+UID:20200611T114445Z-283821018@marudot.com
+DTSTART;TZID=Europe/Berlin:20201002T000000
+DTEND;TZID=Europe/Berlin:20201005T230000
+SUMMARY:ActivityPub Conf 2020
+URL:https%3A%2F%2Fredaktor.me%2Fapconf2020
+DESCRIPTION:A conference about the present and future of ActivityPub\, the world’s leading federated social web standard.\nThe 2020 virtual conference will include\npre-recorded talks with live question and answer sessions\,\nbirds of a feather sessions\,\nlightning round talks\,\na hackathon that follows the conference
+LOCATION:virtual
+END:VEVENT
+END:VCALENDAR

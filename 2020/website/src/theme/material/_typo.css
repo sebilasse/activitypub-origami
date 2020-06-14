@@ -1,0 +1,326 @@
+/*
+RESET THE BROWSER STYLES,
+only necessary here TODO FIXME
+*/
+html, body { height: 100%; }
+body, div, figure, figcaption, section, p, h6, h5, h4, h3, h2, h1,
+small, p, ul, ol, li, b, big, i, tt, abbr, acronym, blockquote, cite, code,
+dfn, em, kbd, strong, samp, var, a, bdo, br, img, map, object, q, script, span,
+pre, sub, sup, button, input, label, select, textarea {
+  margin: 0;
+  padding: 0;
+}
+/* pt-sans-regular - latin */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/pt-sans-v11-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('PT Sans'), local('PTSans-Regular'),
+       url('./fonts/pt-sans-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/pt-sans-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/pt-sans-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/pt-sans-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/pt-sans-v11-latin-regular.svg#PTSans') format('svg'); /* Legacy iOS */
+}
+/* pt-sans-700 - latin */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/pt-sans-v11-latin-700.eot'); /* IE9 Compat Modes */
+  src: local('PT Sans Bold'), local('PTSans-Bold'),
+       url('./fonts/pt-sans-v11-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/pt-sans-v11-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/pt-sans-v11-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/pt-sans-v11-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/pt-sans-v11-latin-700.svg#PTSans') format('svg'); /* Legacy iOS */
+}
+/* pt-sans-700italic - latin */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: url('./fonts/pt-sans-v11-latin-700italic.eot'); /* IE9 Compat Modes */
+  src: local('PT Sans Bold Italic'), local('PTSans-BoldItalic'),
+       url('./fonts/pt-sans-v11-latin-700italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/pt-sans-v11-latin-700italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/pt-sans-v11-latin-700italic.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/pt-sans-v11-latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/pt-sans-v11-latin-700italic.svg#PTSans') format('svg'); /* Legacy iOS */
+}
+/* pt-serif-regular - latin */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/pt-serif-v11-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('PT Serif'), local('PTSerif-Regular'),
+       url('./fonts/pt-serif-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/pt-serif-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/pt-serif-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/pt-serif-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/pt-serif-v11-latin-regular.svg#PTSerif') format('svg'); /* Legacy iOS */
+}
+/* pt-serif-italic - latin */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: italic;
+  font-weight: 400;
+  src: url('./fonts/pt-serif-v11-latin-italic.eot'); /* IE9 Compat Modes */
+  src: local('PT Serif Italic'), local('PTSerif-Italic'),
+       url('./fonts/pt-serif-v11-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/pt-serif-v11-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/pt-serif-v11-latin-italic.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/pt-serif-v11-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/pt-serif-v11-latin-italic.svg#PTSerif') format('svg'); /* Legacy iOS */
+}
+
+/*--------------------------------------------------------------
+  Typography
+--------------------------------------------------------------*/
+/* 1.067 rythm for "PT Sans" AND "PT Serif": 10px / 1.1 */
+
+/* TYPO examples
+// https://codepen.io/sebilasse/pen/BdaPzN?editors=1010
+Maven Pro / Georgia               https://codepen.io/sebilasse/full/oENGev
+Merriweather Sans / Merriweather  https://codepen.io/sebilasse/pen/ddopBj
+*/
+
+:root {
+  --lineHeight: 1.1;
+  --base-size: 10px;
+  --base-line-start: -1px;
+  /* derived, do not touch */
+  --lines-below: 1;
+  --small-size: 1.4444444444444444rem;
+  --small-running-size: 1;
+
+  /* P, UI-XL 17px */
+  --size: 1.8888888888888888rem;
+  --lh: 1.7647058823529413;
+  --pt: 0.5000000000000001em;
+  --mb: 1.2647058823529411em;
+  --caph: 0.7647058823529411;
+
+  font-family: "PT Sans", PT Sans, sans-serif;
+  font-size: var(--base-size);
+  line-height: var(--lineHeight);
+  color: var(--color);
+  box-sizing: border-box;
+
+  /* do not touch */
+  --line: calc(var(--base-size) * var(--base-line));
+  --line2: calc(var(--line) * 2);
+  --line3: calc(var(--line) * 3);
+  --line4: calc(var(--line) * 4);
+  --line5: calc(var(--line) * 5);
+  --lineHalf: calc(var(--line) / 2);
+}
+
+@media (max-width: 768px) {
+  :root { --base-size: 9px; }
+}
+@media (max-width: 480px) {
+  :root { --base-size: 8px; }
+}
+
+
+body {
+  font-size: 1em;
+  font-display: optional;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-feature-settings: 'kern' 1,'onum' 1,'liga' 1;
+  text-rendering: optimizeLegibility;
+  background-clip: content-box;
+  overflow-x: hidden;
+  /*border: rgb(248, 244, 243) solid var(--line);
+  border-image: none 1 stretch 100% 0;*/
+}
+@supports (font-variant-ligatures: common-ligatures) {
+  body {
+    font-feature-settings: normal;
+    font-variant-ligatures: common-ligatures;
+  }
+}
+
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+}
+/* RYTHM AND SIZE */
+html {
+  /*---   debug  ---*/
+  --color-baseline 	  : rgba(255, 0, 0, 0.1);
+  --color-baseline-xl : rgba(0, 255, 0, 1);
+
+  --color: rgba(0, 0, 0, 0.87);
+  --base-line: 1.6666666666666667;
+}
+/* CHROME Subpixel rendering
+https://johnresig.com/blog/sub-pixel-problems-in-css/
+http://cruft.io/posts/percentage-calculations-in-ie/
+*/
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+  html {
+    --base-line: 1.6667;
+  }
+}
+
+.sans {
+  --weight: 400;
+  --weight-bold: 700;
+}
+.serif, blockquote, .p, .p-small {
+  font-family: "PT Serif", PT Serif, serif;
+  --weight: 400;
+  --weight-bold: 700;
+}
+blockquote footer {
+  font-family: "PT Sans", PT Sans, sans-serif;
+}
+b, .bold, h5, .h5 {
+  font-weight: 700;
+}
+em {
+  font-style: italic;
+  font-weight: 700;
+}
+.serif i, .serif em, .serif .italic {
+  font-style: italic;
+  font-weight: 400;
+}
+h2, h3 {
+  font-weight: 400;
+}
+a:visited /*no CSS sniffing*/ { color:inherit; }
+
+/* 13px */
+.xs {
+  --size: 1.3rem;
+  --lh: 1.6923076923076923;
+  --pt: 0.4615384615384615em;
+  --mb: 1.2307692307692308em;
+  --caph: 0.7692307692307693;
+}
+/* 14px */
+.s, small {
+  --size: 1.4rem;
+  --lh: 1.5714285714285716;
+  --pt: 0.42857142857142866em;
+  --mb: 1.142857142857143em;
+  --caph: 0.7142857142857143;
+}
+/* 16px */
+.m, h5 {
+  --size: 1.6rem;
+  --lh: 1.375;
+  --pt: 0.3125em;
+  --mb: 1.0625em;
+  --caph: 0.75;
+}
+/* 20px */
+.l, h4 {
+  --size: 2rem;
+  --lh: 1.1;
+  --pt: 0.17500000000000004em;
+  --mb: 0.925em;
+  --caph: 0.75;
+}
+/* 23px */
+.xl, h3 {
+  --size: 2.3rem;
+  --lh: 1.4347826086956526;
+  --pt: 0.34782608695652195em;
+  --mb: 1.0869565217391306em;
+  --caph: 0.7391304347826086;
+}
+/* 25px */
+.xxl, h2 {
+  --size: 2.5rem;
+  --lh: 1.3200000000000003;
+  --pt: 0.30000000000000016em;
+  --mb: 1.02em;
+  --caph: 0.72;
+}
+/* 32px */
+.h1, h1 {
+  --size: 3.2rem;
+  --lh: 1.03125;
+  --pt: 0.15625em;
+  --mb: 0.875em;
+  --caph: 0.71875;
+}
+/* 39px */
+.hero {
+  --size: 3.9rem;
+  --lh: 1.1282051282051284;
+  --pt: 0.20512820512820523em;
+  --mb: 0.9230769230769231em;
+  --caph: 0.717948717948718;
+}
+
+small, p, ul, ol, h5, h4, h3, h2, h1, b, big, i, tt, abbr, acronym, blockquote, code,
+dfn, em, kbd, strong, samp, var, a, bdo, img, map, object, q, script, span, pre,
+sub, sup, button, input, label, select, textarea,
+.small, .p, .p-small, .h6, .h5, .h4, .h3, .h2, .h1, .hero, .xs, .s, .m, .l, .xl, .xxl {
+  font-size: var(--size, 16px);
+  line-height: var(--lh, 24px);
+  padding-top: var(--pt, 8px);
+  margin-bottom: var(--mb, 16px);
+}
+
+.input {
+  font-family: var(--font-sans);
+}
+.input::placeholder {
+  padding-top: 0;
+}
+p > i,
+p > em {
+  line-height: 0;
+}
+
+*:not(pre) > code { /* TODO inline code */
+  background: var(--ui-bg);
+  color: var(--text);
+  border-radius: var(--ui-border-radius-emphasized);
+  text-shadow: 0 1px var(--ui-status);
+  padding: calc(var(--pt, 8px) / 3) calc(var(--pt, 8px) / 1.618) !important;
+}
+
+em,
+[class*="text shadow"] {
+  text-shadow: 0px 1px 2px rgba(34, 36, 38, 0.15);
+}
+
+.shadow:not([class*="subtle shadow"]) {
+  box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12), 0px 2px 10px 0px rgba(34, 36, 38, 0.08);
+}
+
+[class*="subtle shadow"] {
+  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+}
+summary {
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.header {
+  font-variant-numeric: lining-nums;
+}
+.running {
+  font-variant-numeric: oldstyle-nums;
+}
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+/*--------------------------------------------------------------
+Typo <---
+--------------------------------------------------------------*/

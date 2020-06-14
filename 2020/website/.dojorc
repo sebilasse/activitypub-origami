@@ -1,0 +1,24 @@
+{
+	"build-app": {
+		"pwa": {
+			"manifest": {
+				"name": "apconf2020",
+					"short_name": "apconf2020",
+					"description": "apconf2020",
+					"background_color": "#ffffff",
+					"theme_color": "#f1007e",
+					"icons": [
+					{
+						"src": "src/logo.png",
+						"sizes": [
+							128,
+						256,
+						512
+						]
+					}
+					]
+			}
+		},
+			"legacy": false
+	}
+}

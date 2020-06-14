@@ -1,0 +1,198 @@
+.combs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr 2fr) 1fr;
+  grid-template-rows: repeat(5, 5.536em);
+  justify-items: auto;
+  align-items: auto;
+  height: 27.68em;
+  width: 32em;
+  border: 0;
+	z-index: 11;
+}
+.combs:not(.hasHomeLink) {
+	grid-column: col-start / span 3;
+	grid-row-start: 1;
+}
+.combs.hasHomeLink {
+	align-self: center;
+	grid-column: content-start/span 2;
+	position: sticky;
+	position: -webkit-sticky;
+	top: -26em;
+	margin-top: -22.3333em;
+}
+.hasHomeLink .offGrid.home {
+	position: absolute;
+  left: -50%;
+  width: 16em;
+  height: 14em;
+  z-index: 1;
+  cursor: w-resize;
+	margin: 0;
+	padding: 0;
+}
+.home::after {
+	content: "";
+}
+
+.scrollControl {
+	z-index: 12;
+	padding: 8px 4px 0 4px;
+	margin: 0;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	width: 34px;
+	height: 30px;
+	background: var(--bg-muted);
+	bottom: -43px;
+	left: calc(50% - 21.5px);
+	cursor: pointer;
+}
+.scrollControl::after {
+	position: absolute;
+	content: '';
+	border: solid #fff;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 5px;
+	margin-top: 6px;
+	transform: rotate(-135deg);
+}
+@media (max-width: 1024px) {
+  .scrollControl {
+    left: auto;
+    right: 0;
+  }
+}
+@media (max-width: 768px) {
+  .scrollControl {
+    bottom: -38px;
+  }
+  .combs.hasHomeLink {
+    margin-top: -16.6em;
+  }
+}
+@media (max-width: 490px) {
+  .scrollControl {
+    right: auto;
+  }
+}
+.comb {
+	--lh: 1;
+	composes: m from '../theme/material/_ui.m.css';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  margin: 0.4325em 0.5em;
+  padding: 0.4325em;
+  text-align: center;
+  will-change: margin, background-color, filter;
+  z-index: 2;
+}
+.comb, .comb:visited {
+	color: var(--text, #1c191b);
+}
+.active { }
+@keyframes open {
+  0% { margin: 0 0; filter: saturate(1) blur(0); }
+  40% { margin: -0.21625em -0.25em; filter: saturate(0) blur(3rem); }
+	72% { margin: -0.21625em -0.25em; filter: saturate(1) blur(5rem); }
+	100% { margin: -0.21625em -0.25em; filter: saturate(0.24) blur(3rem); }
+}
+.comb.active:not(.home):not(.disabled) {
+  z-index: 0;
+  animation: open 1.6s var(--ui-easing);
+  animation-fill-mode: both;
+  grid-column-start: 2;
+  grid-column-end: span 5;
+  grid-row-start: 1;
+  grid-row-end: span 4;
+}
+.comb.offGrid {
+	background-color: transparent;
+	opacity: 0;
+	margin: calc(var(--line) / 2);
+}
+.comb:not(.offGrid) {
+	line-height: 1;
+	margin: 0.4325em 0.5em;
+	text-decoration: none;
+}
+.hasIcons .offGrid {
+	opacity: 1;
+  filter: saturate(0);
+	will-change: filter;
+	transition: filter var(--ui-dpd-2) var(--ui-easing);
+}
+.hasIcons:hover .offGrid {
+	filter: saturate(1);
+}
+.comb.disabled:not(.offGrid) {
+	background-color: var(--ui-bg, #e7e6e2);
+}
+.comb:not(.disabled):not(.offGrid) {
+  background-color: var(--bg, #e7e6e2);
+}
+.scrollControl,
+.comb:not(.offGrid),
+.comb.home.offGrid {
+	--combShape: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+	clip-path: var(--combShape);
+}
+.comb.disabled {
+  pointer-events: none;
+}
+.comb:not(.home) {
+  transition: margin var(--ui-dpd-2) var(--ui-easing);
+}
+.comb:not(.offGrid):not(.disabled):hover {
+  cursor: pointer;
+  margin: -0.21625em -0.25em;
+	color: var(--text, #1c191b);
+}
+
+.comb:not(.offGrid) {
+  grid-column-end: span 3;
+  grid-row-end: span 2;
+}
+.comb:nth-of-type(6),
+.comb:nth-of-type(5) {
+  grid-column-start: 1;
+}
+.comb:nth-of-type(1),
+.comb:nth-of-type(4) {
+  grid-column-start: 3;
+}
+.comb:nth-of-type(2),
+.comb:nth-of-type(3) {
+  grid-column-start: 5;
+}
+.comb:nth-of-type(1) {
+  grid-row-start: 2;
+}
+.comb:nth-of-type(2),
+.comb:nth-of-type(6) {
+  grid-row-start: 1;
+}
+.comb:nth-of-type(3),
+.comb:nth-of-type(5) {
+  grid-row-start: 3;
+}
+.comb:nth-of-type(4) {
+  grid-row-start: 4;
+}
+.alyssa.offGrid {
+	grid-column-start: 4;
+	grid-row-start: 1;
+}
+.ben.offGrid {
+	grid-row-start: 5;
+	grid-column-start: 2;
+}
+.robin.offGrid {
+	grid-row-start: 5;
+	grid-column-start: 6;
+}

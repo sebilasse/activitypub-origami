@@ -1,0 +1,12 @@
+export declare type RGB = [number, number, number];
+export declare function specificLight(rgb: RGB): number;
+export declare function bestTextColor(rgb: RGB, lightText?: string, darkText?: string, average?: number): string;
+export declare function rgb2hex(r: number, g: number, b: number): string;
+export declare function rgb2hsl(r: number, g: number, b: number): number[];
+export declare function hsl2rgb(h: number, s: number, l: number): RGB;
+export declare function hsl2hex(h: number, s: number, l: number): string;
+export declare function hex2rgb(hex: string): RGB;
+export declare function hex2hsl(hex: string): number[];
+export declare function minmax(v: number, maxi?: number, mini?: number): number;
+export declare function minmaxHue(h: number): number;
+export declare function hslCheck(h: number, s: number, l: number): void;

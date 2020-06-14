@@ -1,0 +1,18 @@
+.root {
+	composes: l from '../theme/material/_ui.m.css';
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+	box-sizing: border-box;
+	padding: var(--lineHalf);
+	padding-bottom: 0;
+	background-color: var(--ui-bg);
+	color: var(--text);
+}
+
+.image {
+	width: var(--line3);
+	height: var(--line3);
+	padding: var(--lineHalf);
+}

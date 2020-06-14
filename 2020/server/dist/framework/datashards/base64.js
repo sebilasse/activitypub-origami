@@ -1,0 +1,41 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.urlDecode = exports.urlEncode = exports.decode = exports.encode = exports.unescape = exports.escape = void 0;
+function _repeat(str, num) { return new Array(num + 1).join(str); }
+;
+function escape(str) {
+    return str.replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+}
+exports.escape = escape;
+function unescape(str) {
+    str = str.toString();
+    var mod = str.length % 4;
+    if (mod !== 0) {
+        str += _repeat('=', 4 - mod);
+    }
+    return str.replace(/\-/g, '+').replace(/_/g, '/');
+}
+exports.unescape = unescape;
+function encode(str) {
+    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (m, p1) {
+        return String.fromCharCode(parseInt(('0x' + p1), 16));
+    }));
+}
+exports.encode = encode;
+function decode(b64String) {
+    b64String = b64String.toString();
+    return decodeURIComponent(b64String.split('').map(function (c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+}
+exports.decode = decode;
+function urlEncode(str) {
+    return escape(encode(str));
+}
+exports.urlEncode = urlEncode;
+function urlDecode(b64String) {
+    b64String = b64String.toString();
+    return decode(unescape(b64String));
+}
+exports.urlDecode = urlDecode;
+//# sourceMappingURL=base64.js.map
