@@ -74,7 +74,7 @@ As permitted by law, you have the right to be provided at any time with informat
 that is stored as well as its origin, the recipient and the purpose for which it has been processed. You also have the right to have
 this data corrected, blocked or deleted. <br>
 You can contact us at any time using the address given in our legal notice if you have further questions on the topic of personal data.
-<br>
+<br><br>
 ## 4. Data collection on our website<br>
 *Server log files*<br>
 The website provider automatically collects and stores information that your browser automatically transmits to us in "server log files".<br>
@@ -102,7 +102,7 @@ Your data will not be transmitted for any other purpose unless you have given yo
 Your data will not be disclosed to third parties for advertising purposes without your express consent.
 <br><br>
 The basis for data processing is § 6 (1) (b) GDPR, which allows the processing of data to fulfill a contract or for measures preliminary to a contract.
-<br>
+<br><br>
 #5. eMail
 If you registered for the event, we require a valid email address as well as information that allows us to verify that you are the owner of the
 specified email address and that you agree to receive this newsletter.
