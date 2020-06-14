@@ -9,6 +9,9 @@ Firefox : list-style-image: url('./assets/AP_logo.svg'); BUG
 	background-color: var(--ap);
 	scroll-behavior: smooth;
 }
+header {
+	z-index: 12;
+}
 ::selection {
 	background: #aefb00;
 }
@@ -68,7 +71,7 @@ a:hover {
 }
 
 .main {
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -103,13 +106,14 @@ li, .description {
 	margin-top: -12.4em;
 	padding-bottom: var(--line);
 	background: linear-gradient(var(--surface),var(--surface) 18em,var(--ui-bg));
-	z-index: 11;
+	z-index: 9;
 }
 .description {
 	max-width: 492px;
-	grid-row-start: 4;
+	grid-row-start: 3;
 	grid-column: content-start / content-end;
 	padding-left: 8px;
+	padding-bottom: var(--line3);
 }
 
 .openRoadmap {

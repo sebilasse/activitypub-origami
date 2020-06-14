@@ -180,7 +180,7 @@ export default factory(function Register({ properties, middleware: { icache, the
 					>{messages.iTimezone}</TextInput>
 
 					<div classes={[themedCss.caption, themedCss.tzCaption]}>
-						<span class="serif">{messages.tzCaption}</span>
+						<span>{messages.tzCaption}</span>
 					</div>
 					<div style={timeStyle(-420, 360)}>
 						<Radio key='_5' name='availableFrom' value='5 a.m.'>5</Radio>

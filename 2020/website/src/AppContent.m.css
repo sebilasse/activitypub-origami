@@ -30,13 +30,21 @@
 	flex-direction: column;
 	justify-content: space-between;
 }
+.asideStart,
+.asideColumn.asideStart {
+	grid-row-start: 2;
+	justify-content: flex-start;
+}
 .asideColumn figcaption {
 	padding-right: var(--line);
 }
 .autoColumn { }
+.autoColumnWide {
+	grid-column: content-start / content-end;
+}
 @media (max-width: 1280px) {
 	.autoColumn {
-		grid-column: content-start / col-end;
+		grid-column: content-start / content-end;
 	}
 }
 @media (max-width: 620px) {

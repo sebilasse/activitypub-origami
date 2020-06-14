@@ -1,5 +1,6 @@
 import { tsx, create } from '@dojo/framework/core/vdom';
 import theme from '@dojo/framework/core/middleware/theme';
+import i18n from '@dojo/framework/core/middleware/i18n';
 import icache from '@dojo/framework/core/middleware/icache';
 import Route from '@dojo/framework/routing/Route';
 import Header from './header/Header';
@@ -9,47 +10,38 @@ import CFP from './cfp/CFP';
 import Link from './link/ActiveLink';
 import Register from './register/Register';
 import Roadmap from './roadmap/Roadmap';
+import Privacy from './privacy/Privacy';
+import Credits from './credits/Credits';
 
 import material from './theme/material';
 import * as css from './App.m.css';
+import bundle from './_nls/App.nls';
+const snarkdown = require('snarkdown').default;
 
-const factory = create({ theme, icache});
-const menuItems = ['Roadmap'];
+const factory = create({ theme, i18n, icache});
 
-export default factory(function App({ middleware: { theme, icache } }) {
+export default factory(function App({ middleware: { theme, i18n, icache } }) {
   if (!theme.get()) { theme.set(material, 'dark') }
+  const { messages } = i18n.localize(bundle);
 
 	const desc = (hidden = false) =>
 		<div classes={[css.description, hidden ? css.hidden : null]}>
 			<time classes={[css.small, css.descriptionMeta]}>
 				<span class="dt-start">October 2<sup>nd</sup></span> - <span class="dt-end">October 5<sup>th</sup> 2020</span>
 			</time>
-			<h4 class="p-summary">
-			A conference about the present and future of ActivityPub, the world’s leading federated social web standard.
-			</h4>
+			<h4 class="p-summary">{messages.description}</h4>
 			<br />
 			<h4 classes={css.descriptionMeta}>
-				The 2020 <em><address class="location">virtual</address></em> conference will include
+				{messages.tPrefix} <em><address class="location">{messages.tAddress}</address></em> {messages.tSuffix}
 			</h4>
-			<ul class="serif">
-				<li>pre-recorded talks with live question and answer sessions</li>
-				<li>birds of a feather sessions</li>
-				<li>lightning round talks</li>
-				<li>a hackathon that follows the conference.</li>
-				{menuItems.map((item) => {
-					return (
-						<li>
-							<Link key={item} matchParams={{}} params={{}} activeClasses={[]}
-								classes={[icache.get('openRoadmap') ? css.openRoadmap : null]}
-								onClick={() => { icache.set('openRoadmap', true) }}
-								to={item.toLowerCase()}
-							>
-								{item}
-							</Link>
-						</li>
-					);
-				})}
-			</ul>
+      <div class="serif" innerHTML={snarkdown(messages.list)} />
+      <Link key='roadmap' matchParams={{}} params={{}} activeClasses={[]}
+        classes={[icache.get('openRoadmap') ? css.openRoadmap : null]}
+        onClick={() => { icache.set('openRoadmap', true) }}
+        to='roadmap'
+      >
+        Roadmap
+      </Link>
 		</div>
 
 	const home = () =>
@@ -93,6 +85,13 @@ export default factory(function App({ middleware: { theme, icache } }) {
 				/>
 				<Route id="registerError" renderer={
 					() => <virtual><Combs activeId="register" /><Register state="error" /></virtual>}
+				/>
+
+				<Route id="privacy" renderer={
+					() => <virtual><Combs activeId="privacy" /><Privacy />{desc(true)}</virtual>}
+				/>
+				<Route id="credits" renderer={
+					() => <virtual><Combs activeId="credits" /><Credits />{desc(true)}</virtual>}
 				/>
 			</main>
       <footer classes={[css.footer]}>

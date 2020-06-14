@@ -73,6 +73,9 @@
   .combs.hasHomeLink {
     margin-top: -16.6em;
   }
+  .combs:not(.hasHomeLink) {
+  	grid-column: content-start / span 3;
+  }
 }
 @media (max-width: 490px) {
   .scrollControl {

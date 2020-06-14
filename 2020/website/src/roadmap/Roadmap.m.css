@@ -94,12 +94,9 @@
 	background: var(--success);
 }
 
-@media (max-width: 400px) {
-	.header {
-		font-size: 18px;
-	}
+.timelineEntry .cardHeader {
+	padding-left: var(--line);
 }
-
 @media (max-width: 910px) {
 	.timelineDetails {
 		border-left: none;
@@ -114,11 +111,7 @@
 	}
 
 	.timelineMarker {
-		right: 15px;
+		right: var(--line);
 		left: unset;
-	}
-
-	.timelineEntry .cardHeader {
-		font-size: 20px;
 	}
 }

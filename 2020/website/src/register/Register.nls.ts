@@ -24,7 +24,7 @@ Please read and *confirm* the mail we sent to complete your registration.`,
 	iTimezone: 'Timezone',
 	tzCaption: `Given the international audience of this conference,
 we'll try to schedule talks that can be attended by people around the world.
-Please help by setting your own time preferences`,
+Please help by setting your own time preferences:`,
 	iName: 'Real Name',
 	iOrg: 'Project, Org. or Company',
 	iAP: 'ActivityPub Address',
