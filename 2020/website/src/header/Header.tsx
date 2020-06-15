@@ -30,7 +30,7 @@ export default factory(function Header({ middleware: { theme, icache, i18n } }) 
 						<div classes={themedCss.toggleBar} />
 					</label>
 				</span>
-				<a href="home" classes={[themedCss.centerContainer]}>
+				<a href="/" classes={[themedCss.centerContainer]}>
 					<h2 classes={[themedCss.logo]} alt="ActivityPub main logo">
 						<b>Activity</b>Pub <br /><b><i>Conference</i> <time>2020</time></b>
 					</h2>
