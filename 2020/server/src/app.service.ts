@@ -115,7 +115,7 @@ Morgan Lemmer Webber and Sebastian Lasse\n
       await transporter.sendMail({
         from: `"ActivityPub Conference" <${packageJSON.redaktor.smtp.from}>`,
         to: `${registration.privateEmail}`,
-        /* bcc: packageJSON.redaktor.smtp.bcc
+        bcc: packageJSON.redaktor.smtp.bcc,
         // TODO BCC ! */
         subject: "⬡ Confirmed registration for ActivityPub Conference 2020",
         text,
