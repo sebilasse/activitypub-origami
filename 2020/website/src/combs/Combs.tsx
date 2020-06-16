@@ -25,7 +25,8 @@ const menuItems = [
 export default factory(function Combs({ properties, middleware: { theme } }) {
 	const themedCss = theme.classes(css);
 	const { hasIcons = false, hasHomeLink = true, activeId = '' } = properties();
-	const homeClasses = [themedCss.comb, themedCss.offGrid, themedCss.alyssa, appCss.alyssa, themedCss.home];
+	const CL = [themedCss.comb, themedCss.offGrid];
+	const homeClasses = [ themedCss.home, ...CL, themedCss.alyssa, !hasHomeLink ? appCss.alyssa : null ];
 	const activeColor = menuItems.reduce((p, item) => activeId === item.n ? item.color : p, 'gray');
 	return (
 		<nav
@@ -59,11 +60,11 @@ export default factory(function Combs({ properties, middleware: { theme } }) {
 						classes={homeClasses}
 						to='home'
 					>
-					</Link> : <div classes={homeClasses}></div>
+					</Link> : <div classes={homeClasses} />
 			)}
-			<div classes={[themedCss.comb, themedCss.offGrid]}></div>
-			<div classes={[themedCss.comb, themedCss.offGrid, themedCss.ben, appCss.ben]}></div>
-			<div classes={[themedCss.comb, themedCss.offGrid, themedCss.robin, appCss.robin]}></div>
+			<div classes={CL} />
+			<div classes={[...CL, themedCss.ben, !hasHomeLink ? appCss.ben : null]} />
+			<div classes={[...CL, themedCss.robin, !hasHomeLink ? appCss.robin : null]} />
 			{
 				!hasHomeLink ? null : <a
 					href={activeId ? `${activeId}#nav` : '#nav'}

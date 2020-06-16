@@ -17,20 +17,6 @@ const util = require("util");
 const writeFile = util.promisify(fs.writeFile);
 const packageJSON = require('../package.json');
 const snarkdown = require('snarkdown');
-const ap = {
-    '@context': 'https://www.w3.org/ns/activitystreams',
-    type: 'Create',
-    id: 'https://social.example/alyssa/posts/a29a6843-9feb-4c74-a7f7-081b9c9201d3',
-    to: ['https://chatty.example/ben/'],
-    actor: 'https://social.example/alyssa/',
-    object: {
-        type: 'Note',
-        id: 'https://social.example/alyssa/posts/49e2d03d-b53a-4c4c-a95c-94a6abf45a19',
-        attributedTo: 'https://social.example/alyssa/',
-        to: ['https://chatty.example/ben/'],
-        content: 'Say, did you finish reading that book I lent you?'
-    }
-};
 const v4r = new RegExp(/^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i);
 const { host = 'http://localhost', port: __p = 587 } = packageJSON.redaktor.smtp;
 const _p = typeof __p === 'number' ? __p :
@@ -62,8 +48,7 @@ let AppService = class AppService {
         const confirmLink = path.join(confirmBase, base64_1.encode(`apconf--${id}`));
         await writeFile(this._getFile(id), JSON.stringify(Object.assign(Object.assign({}, createUserDto), { status: 'pending' })));
         const text = `
-**Hello ${createUserDto.publicBadgeName},**\n
--> a nice text follows.
+**Hello ${createUserDto.publicBadgeName},**
 \n\n
 Please confirm your registration by visiting this link:\n
 [${confirmLink}](${confirmLink})
@@ -92,19 +77,40 @@ Morgan Lemmer Webber and Sebastian Lasse\n
                 throw new common_1.HttpException('Forbidden', common_1.HttpStatus.FORBIDDEN);
             }
             const registration = JSON.parse(fs.readFileSync(this._getFile(id), { encoding: 'utf8' }));
-            const lanyard = fs.readFileSync(`${path.join(__dirname, '..', 'lanyard.svg')}`, { encoding: 'utf8' })
-                .replace('{{name}}', registration.publicBadgeName)
-                .replace('{{url}}', registration.website)
-                .replace('{{byline}}', registration.publicBadgeByline)
-                .replace('{{timezone}}', registration.timezone)
-                .replace('{{id}}', `{{${id.substr(0, 8)}}}`);
+            const { publicBadgeName, website, ActivityPub, publicBadgeByline, timezone } = registration;
+            function shrink(s, maxChars = 30) {
+                const t = Math.ceil((s.length - maxChars) / 2);
+                const h = Math.floor(s.length / 2);
+                if (t > 0) {
+                    return [s.substr(0, h - t), s.substr(h + t, s.length)].join('…');
+                }
+                return s;
+            }
+            let lanyard = '';
+            let lanyardHtml = '';
+            try {
+                lanyard = fs.readFileSync(`${path.join(__dirname, '..', 'lanyard.svg')}`, { encoding: 'utf8' })
+                    .replace('{{name}}', shrink(publicBadgeName, 26))
+                    .replace('{{url}}', !!ActivityPub.length ? shrink(ActivityPub, 30) : shrink(website, 30))
+                    .replace('{{byline}}', shrink(publicBadgeByline, 26))
+                    .replace('{{timezone}}', timezone)
+                    .replace('{{id}}', `{ ${id.substr(0, 8)} }`);
+                lanyardHtml = fs.readFileSync(`${path.join(__dirname, '..', 'lanyard.html')}`, { encoding: 'utf8' })
+                    .replace('{{content}}', lanyard);
+            }
+            catch (e) {
+                console.log(e);
+            }
             registration.status = 'confirmed';
-            const data = Object.keys(registration).map((k) => `**${k}:**  \n${registration[k]}`).join('\n\n');
+            const caseR = /([A-Z])([A-Z])([a-z])|([a-z])([A-Z])/g;
+            const data = Object.keys(registration).map((k) => `**${k.replace(caseR, '$1$4 $2$3$5')}:**  \n${registration[k]}`).join('\n\n');
             const text = `
-**Hello ${registration.publicBadgeName},**\n
-you registered for the virtual ActivityPub Conference 2020,\n
--> nice text.\n
-We received this:\n\n
+**Hello ${registration.publicBadgeName},**\n\n
+Thank you for registering for the ActivityPub Conference 2020.\n
+You’re now on the registration list and we look forward to seeing you remotely in October!\n
+We will get in touch with further details.
+Please find your lanyard information below.
+\n\n
 ${data}
 \n\n
 Thank you,\n
@@ -114,6 +120,7 @@ Morgan Lemmer Webber and Sebastian Lasse\n
             await transporter.sendMail({
                 from: `"ActivityPub Conference" <${packageJSON.redaktor.smtp.from}>`,
                 to: `${registration.privateEmail}`,
+                bcc: packageJSON.redaktor.smtp.bcc,
                 subject: "⬡ Confirmed registration for ActivityPub Conference 2020",
                 text,
                 html,
@@ -123,12 +130,14 @@ Morgan Lemmer Webber and Sebastian Lasse\n
                     path: `${path.join(__dirname, '..')}/ActivityPub_Conference.ics`
                 },
                 attachments: [
-                    { filename: 'ActivityPubConf2020.svg', content: lanyard }
+                    { filename: 'ActivityPubConf2020.svg', content: lanyard },
+                    { filename: 'ActivityPubConf2020.html', content: lanyardHtml }
                 ]
             });
             const registrationJSON = JSON.stringify(registration);
             await writeFile(this._getFile(id, true), registrationJSON);
             await writeFile(this._getFile(id, true, 'svg'), lanyard);
+            await writeFile(this._getFile(id, true, 'html'), lanyardHtml);
             return true;
         }
         catch (e) {

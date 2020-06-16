@@ -34,10 +34,8 @@
 		"sinon": "^9.0.1",
 		"typescript": "~3.4.5"
 	},
-
 	"redaktor": {
-    "_serverHint":
-    "The full URL to the webserver. Can be a static directory, should have trailing slash:",
-    "server": "https://apconf.uber.space/server/"
-  }
+		"_serverHint": "The full URL to the webserver. Can be a static directory, should have trailing slash:",
+		"server": "https://apconf.uber.space/server/"
+	}
 }

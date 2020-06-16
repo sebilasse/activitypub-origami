@@ -27,6 +27,7 @@ export default factory(function Roadmap({ middleware: { theme } }) {
 		<div classes={[grid.root, themedCss.root]}>
 			<div></div>
 			<div classes={[grid.headline, themedCss.header]}><h1>What's coming up</h1></div>
+			<div></div>
 			<div key="timeline" classes={themedCss.timeline}>
 				{timelineEntries.map((entry:any) => (
 					<div classes={[themedCss.timelineEntry, entry.released ? themedCss.released : null]}>

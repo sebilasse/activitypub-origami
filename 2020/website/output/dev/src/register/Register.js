@@ -204,219 +204,6 @@ const validity = factory(function ({ middleware: { node, invalidator } }) {
 
 /***/ }),
 
-/***/ "./node_modules/@dojo/framework/core/util.mjs":
-/*!****************************************************!*\
-  !*** ./node_modules/@dojo/framework/core/util.mjs ***!
-  \****************************************************/
-/*! exports provided: deepAssign, deepMixin, mixin, partial, guaranteeMinimumTimeout, debounce, throttle, uuid, decorate */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deepAssign", function() { return deepAssign; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deepMixin", function() { return deepMixin; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mixin", function() { return mixin; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "partial", function() { return partial; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "guaranteeMinimumTimeout", function() { return guaranteeMinimumTimeout; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "debounce", function() { return debounce; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "throttle", function() { return throttle; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uuid", function() { return uuid; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "decorate", function() { return decorate; });
-/* harmony import */ var _vdom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
-
-const slice = Array.prototype.slice;
-const hasOwnProperty = Object.prototype.hasOwnProperty;
-/**
- * Type guard that ensures that the value can be coerced to Object
- * to weed out host objects that do not derive from Object.
- * This function is used to check if we want to deep copy an object or not.
- * Note: In ES6 it is possible to modify an object's Symbol.toStringTag property, which will
- * change the value returned by `toString`. This is a rare edge case that is difficult to handle,
- * so it is not handled here.
- * @param  value The value to check
- * @return       If the value is coercible into an Object
- */
-function shouldDeepCopyObject(value) {
-    return Object.prototype.toString.call(value) === '[object Object]';
-}
-function copyArray(array, inherited) {
-    return array.map(function (item) {
-        if (Array.isArray(item)) {
-            return copyArray(item, inherited);
-        }
-        return !shouldDeepCopyObject(item)
-            ? item
-            : _mixin({
-                deep: true,
-                inherited: inherited,
-                sources: [item],
-                target: {}
-            });
-    });
-}
-function _mixin(kwArgs) {
-    const deep = kwArgs.deep;
-    const inherited = kwArgs.inherited;
-    const target = kwArgs.target;
-    const copied = kwArgs.copied || [];
-    const copiedClone = [...copied];
-    for (let i = 0; i < kwArgs.sources.length; i++) {
-        const source = kwArgs.sources[i];
-        if (source === null || source === undefined) {
-            continue;
-        }
-        for (let key in source) {
-            if (inherited || hasOwnProperty.call(source, key)) {
-                let value = source[key];
-                if (copiedClone.indexOf(value) !== -1) {
-                    continue;
-                }
-                if (deep) {
-                    if (Array.isArray(value)) {
-                        value = copyArray(value, inherited);
-                    }
-                    else if (shouldDeepCopyObject(value)) {
-                        const targetValue = target[key] || {};
-                        copied.push(source);
-                        value = _mixin({
-                            deep: true,
-                            inherited: inherited,
-                            sources: [value],
-                            target: targetValue,
-                            copied
-                        });
-                    }
-                }
-                target[key] = value;
-            }
-        }
-    }
-    return target;
-}
-function deepAssign(target, ...sources) {
-    return _mixin({
-        deep: true,
-        inherited: false,
-        sources: sources,
-        target: target
-    });
-}
-function deepMixin(target, ...sources) {
-    return _mixin({
-        deep: true,
-        inherited: true,
-        sources: sources,
-        target: target
-    });
-}
-function mixin(target, ...sources) {
-    return _mixin({
-        deep: false,
-        inherited: true,
-        sources: sources,
-        target: target
-    });
-}
-/**
- * Returns a function which invokes the given function with the given arguments prepended to its argument list.
- * Like `Function.prototype.bind`, but does not alter execution context.
- *
- * @param targetFunction The function that needs to be bound
- * @param suppliedArgs An optional array of arguments to prepend to the `targetFunction` arguments list
- * @return The bound function
- */
-function partial(targetFunction, ...suppliedArgs) {
-    return function () {
-        const args = arguments.length ? suppliedArgs.concat(slice.call(arguments)) : suppliedArgs;
-        return targetFunction.apply(this, args);
-    };
-}
-function guaranteeMinimumTimeout(callback, delay) {
-    const startTime = Date.now();
-    let timerId;
-    function timeoutHandler() {
-        const delta = Date.now() - startTime;
-        if (delay == null || delta >= delay) {
-            callback();
-        }
-        else {
-            timerId = setTimeout(timeoutHandler, delay - delta);
-        }
-    }
-    timerId = setTimeout(timeoutHandler, delay);
-    return {
-        destroy: () => {
-            if (timerId != null) {
-                clearTimeout(timerId);
-                timerId = null;
-            }
-        }
-    };
-}
-function debounce(callback, delay) {
-    let timer;
-    return function () {
-        timer && timer.destroy();
-        let context = this;
-        let args = arguments;
-        timer = guaranteeMinimumTimeout(function () {
-            callback.apply(context, args);
-            args = context = timer = null;
-        }, delay);
-    };
-}
-function throttle(callback, delay) {
-    let ran;
-    return function () {
-        if (ran) {
-            return;
-        }
-        ran = true;
-        let args = arguments;
-        callback.apply(this, args);
-        guaranteeMinimumTimeout(function () {
-            ran = null;
-        }, delay);
-    };
-}
-function uuid() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-        const r = (Math.random() * 16) | 0, v = c === 'x' ? r : (r & 0x3) | 0x8;
-        return v.toString(16);
-    });
-}
-function decorate(dNodes, optionsOrModifier, predicate) {
-    let shallow = false;
-    let modifier;
-    if (typeof optionsOrModifier === 'function') {
-        modifier = optionsOrModifier;
-    }
-    else {
-        modifier = optionsOrModifier.modifier;
-        predicate = optionsOrModifier.predicate;
-        shallow = optionsOrModifier.shallow || false;
-    }
-    let nodes = Array.isArray(dNodes) ? [...dNodes] : [dNodes];
-    function breaker() {
-        nodes = [];
-    }
-    while (nodes.length) {
-        const node = nodes.shift();
-        if (node && node !== true) {
-            if (!shallow && (Object(_vdom__WEBPACK_IMPORTED_MODULE_0__["isWNode"])(node) || Object(_vdom__WEBPACK_IMPORTED_MODULE_0__["isVNode"])(node)) && node.children) {
-                nodes = [...nodes, ...node.children];
-            }
-            if (!predicate || predicate(node)) {
-                modifier(node, breaker);
-            }
-        }
-    }
-    return dNodes;
-}
-
-
-/***/ }),
-
 /***/ "./package.json":
 /*!**********************!*\
   !*** ./package.json ***!
@@ -869,10 +656,10 @@ module.exports = {" _key":"apconf2020/Register","root":"Register-m__root__ecb8b2
 
 /***/ }),
 
-/***/ "./src/register/Register.nls.ts":
-/*!**************************************!*\
-  !*** ./src/register/Register.nls.ts ***!
-  \**************************************/
+/***/ "./src/register/Register.nls.tsx":
+/*!***************************************!*\
+  !*** ./src/register/Register.nls.tsx ***!
+  \***************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -920,7 +707,14 @@ Please help by setting your own time preferences:`,
     talkCaption: 'Enter the title and a brief summary',
     bofCaption: 'Enter the title and a brief summary of the session',
 };
-/* harmony default export */ __webpack_exports__["default"] = ({ messages });
+/* harmony default export */ __webpack_exports__["default"] = ({
+    locales: {
+        en: messages,
+        de: () => __webpack_require__.e(/*! import() | src/register/de/Register.nls */ "src/register/de/Register.nls").then(__webpack_require__.bind(null, /*! ./de/Register.nls */ "./src/register/de/Register.nls.tsx")),
+        fr: () => __webpack_require__.e(/*! import() | src/register/fr/Register.nls */ "src/register/fr/Register.nls").then(__webpack_require__.bind(null, /*! ./fr/Register.nls */ "./src/register/fr/Register.nls.tsx"))
+    },
+    messages
+});
 
 
 /***/ }),
@@ -949,7 +743,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _Register_m_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Register.m.css */ "./src/register/Register.m.css");
 /* harmony import */ var _Register_m_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_Register_m_css__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _Register_nls__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Register.nls */ "./src/register/Register.nls.ts");
+/* harmony import */ var _Register_nls__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Register.nls */ "./src/register/Register.nls.tsx");
 
 
 

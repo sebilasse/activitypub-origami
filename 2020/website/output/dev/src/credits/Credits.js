@@ -38,10 +38,10 @@ module.exports = {" _key":"apconf2020/CFP","root":"CFP-m__root__ecb8b22t5LA","fi
 
 /***/ }),
 
-/***/ "./src/credits/Credits.nls.ts":
-/*!************************************!*\
-  !*** ./src/credits/Credits.nls.ts ***!
-  \************************************/
+/***/ "./src/credits/Credits.nls.tsx":
+/*!*************************************!*\
+  !*** ./src/credits/Credits.nls.tsx ***!
+  \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -63,7 +63,14 @@ or [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) per their wishes.
 The [sourcecode](http://github.com/sebilasse/activitypub-origami) of the page is released as `,
     imgCredit: `Sebastian`
 };
-/* harmony default export */ __webpack_exports__["default"] = ({ messages });
+/* harmony default export */ __webpack_exports__["default"] = ({
+    locales: {
+        en: messages,
+        de: () => __webpack_require__.e(/*! import() | src/credits/de/Credits.nls */ "src/credits/de/Credits.nls").then(__webpack_require__.bind(null, /*! ./de/Credits.nls */ "./src/credits/de/Credits.nls.tsx")),
+        fr: () => __webpack_require__.e(/*! import() | src/credits/fr/Credits.nls */ "src/credits/fr/Credits.nls").then(__webpack_require__.bind(null, /*! ./fr/Credits.nls */ "./src/credits/fr/Credits.nls.tsx"))
+    },
+    messages
+});
 
 
 /***/ }),
@@ -85,7 +92,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../cfp/CFP.m.css */ "./src/cfp/CFP.m.css");
 /* harmony import */ var _cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _Credits_nls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Credits.nls */ "./src/credits/Credits.nls.ts");
+/* harmony import */ var _Credits_nls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Credits.nls */ "./src/credits/Credits.nls.tsx");
 /* harmony import */ var _assets_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assets/icon */ "./src/assets/icon.ts");
 
 

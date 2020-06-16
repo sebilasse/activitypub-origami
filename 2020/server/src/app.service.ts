@@ -83,16 +83,34 @@ Morgan Lemmer Webber and Sebastian Lasse\n
         !fs.existsSync(this._getFile(id))) {
         throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
       }
-      // console.log('getConfirmation', id);
-      const registration = JSON.parse(fs.readFileSync(this._getFile(id), {encoding:'utf8'}));
-      const lanyard = fs.readFileSync(`${path.join(__dirname, '..', 'lanyard.svg')}`, {encoding:'utf8'})
-        .replace('{{name}}', registration.publicBadgeName)
-        .replace('{{url}}', registration.website)
-        .replace('{{byline}}', registration.publicBadgeByline)
-        .replace('{{timezone}}', registration.timezone)
-        .replace('{{id}}', `{{${id.substr(0,8)}}}`)
-        ;
 
+      const registration = JSON.parse(fs.readFileSync(this._getFile(id), {encoding:'utf8'}));
+      const { publicBadgeName, website, ActivityPub, publicBadgeByline, timezone } = registration;
+      function shrink(s: string, maxChars: number = 30) {
+        const t = Math.ceil((s.length - maxChars) / 2);
+        const h = Math.floor(s.length / 2);
+        if (t > 0) {
+          return [s.substr(0, h-t), s.substr(h+t, s.length)].join('…')
+        }
+        return s;
+      }
+      let lanyard = '';
+      let lanyardHtml = '';
+      try {
+        lanyard = fs.readFileSync(`${path.join(__dirname, '..', 'lanyard.svg')}`, {encoding:'utf8'})
+          .replace('{{name}}', shrink(publicBadgeName, 26))
+          .replace('{{url}}', !!ActivityPub.length ? shrink(ActivityPub, 30) : shrink(website, 30))
+          .replace('{{byline}}', shrink(publicBadgeByline, 26))
+          .replace('{{timezone}}', timezone)
+          .replace('{{id}}', `{ ${id.substr(0, 8)} }`);
+
+        lanyardHtml = fs.readFileSync(`${path.join(__dirname, '..', 'lanyard.html')}`, {encoding:'utf8'})
+          .replace('{{content}}', lanyard);
+      } catch (e) {
+        console.log(e)
+      }
+
+      // console.log('getConfirmation', id);
       registration.status = 'confirmed';
       const caseR = /([A-Z])([A-Z])([a-z])|([a-z])([A-Z])/g;
       const data = Object.keys(registration).map((k) =>
@@ -102,7 +120,7 @@ Morgan Lemmer Webber and Sebastian Lasse\n
 **Hello ${registration.publicBadgeName},**\n\n
 Thank you for registering for the ActivityPub Conference 2020.\n
 You’re now on the registration list and we look forward to seeing you remotely in October!\n
-We will get in touch with further details.\n
+We will get in touch with further details.
 Please find your lanyard information below.
 \n\n
 ${data}
@@ -126,12 +144,14 @@ Morgan Lemmer Webber and Sebastian Lasse\n
           path: `${path.join(__dirname, '..')}/ActivityPub_Conference.ics`
         },
         attachments: [
-          { filename: 'ActivityPubConf2020.svg', content: lanyard }
+          { filename: 'ActivityPubConf2020.svg', content: lanyard },
+          { filename: 'ActivityPubConf2020.html', content: lanyardHtml }
         ]
       });
       const registrationJSON = JSON.stringify(registration);
       await writeFile(this._getFile(id, true), registrationJSON);
       await writeFile(this._getFile(id, true, 'svg'), lanyard);
+      await writeFile(this._getFile(id, true, 'html'), lanyardHtml);
       return true
 
     } catch (e) {

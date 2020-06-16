@@ -34,10 +34,10 @@ module.exports = {" _key":"apconf2020/CFP","root":"CFP-m__root__ecb8b22t5LA","fi
 
 /***/ }),
 
-/***/ "./src/cfp/CFP.nls.ts":
-/*!****************************!*\
-  !*** ./src/cfp/CFP.nls.ts ***!
-  \****************************/
+/***/ "./src/cfp/CFP.nls.tsx":
+/*!*****************************!*\
+  !*** ./src/cfp/CFP.nls.tsx ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -94,7 +94,14 @@ Ada Lovelace aka Augusta Ada Byron
     byronCredit: `Daguerreotype by Antoine Claudet`,
     byronSpecialInstructions: `[CC0] wikimedia`
 };
-/* harmony default export */ __webpack_exports__["default"] = ({ messages });
+/* harmony default export */ __webpack_exports__["default"] = ({
+    locales: {
+        en: messages,
+        de: () => __webpack_require__.e(/*! import() | src/cfp/de/CFP.nls */ "src/cfp/de/CFP.nls").then(__webpack_require__.bind(null, /*! ./de/CFP.nls */ "./src/cfp/de/CFP.nls.tsx")),
+        fr: () => __webpack_require__.e(/*! import() | src/cfp/fr/CFP.nls */ "src/cfp/fr/CFP.nls").then(__webpack_require__.bind(null, /*! ./fr/CFP.nls */ "./src/cfp/fr/CFP.nls.tsx"))
+    },
+    messages
+});
 
 
 /***/ }),
@@ -116,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _CFP_m_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CFP.m.css */ "./src/cfp/CFP.m.css");
 /* harmony import */ var _CFP_m_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _CFP_nls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./CFP.nls */ "./src/cfp/CFP.nls.ts");
+/* harmony import */ var _CFP_nls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./CFP.nls */ "./src/cfp/CFP.nls.tsx");
 
 
 

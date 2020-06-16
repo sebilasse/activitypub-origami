@@ -34,10 +34,10 @@ module.exports = {" _key":"apconf2020/CFP","root":"CFP-m__root__ecb8b22t5LA","fi
 
 /***/ }),
 
-/***/ "./src/privacy/Privacy.nls.ts":
-/*!************************************!*\
-  !*** ./src/privacy/Privacy.nls.ts ***!
-  \************************************/
+/***/ "./src/privacy/Privacy.nls.tsx":
+/*!*************************************!*\
+  !*** ./src/privacy/Privacy.nls.tsx ***!
+  \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -164,7 +164,14 @@ Data we have stored for other purposes (e.g. email addresses for the members are
     imgCredit: `hellekin`,
     imgCredit2: `Sebastian`
 };
-/* harmony default export */ __webpack_exports__["default"] = ({ messages });
+/* harmony default export */ __webpack_exports__["default"] = ({
+    locales: {
+        en: messages,
+        de: () => __webpack_require__.e(/*! import() | src/privacy/de/Privacy.nls */ "src/privacy/de/Privacy.nls").then(__webpack_require__.bind(null, /*! ./de/Privacy.nls */ "./src/privacy/de/Privacy.nls.tsx")),
+        fr: () => __webpack_require__.e(/*! import() | src/privacy/fr/Privacy.nls */ "src/privacy/fr/Privacy.nls").then(__webpack_require__.bind(null, /*! ./fr/Privacy.nls */ "./src/privacy/fr/Privacy.nls.tsx"))
+    },
+    messages
+});
 
 
 /***/ }),
@@ -186,7 +193,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../cfp/CFP.m.css */ "./src/cfp/CFP.m.css");
 /* harmony import */ var _cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _Privacy_nls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Privacy.nls */ "./src/privacy/Privacy.nls.ts");
+/* harmony import */ var _Privacy_nls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Privacy.nls */ "./src/privacy/Privacy.nls.tsx");
 
 
 

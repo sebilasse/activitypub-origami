@@ -6,16 +6,19 @@
 	max-width: 100vw;
 }
 
-.header {
+.root .header {
 	grid-row-start: 2;
-	/* grid-column: content-start / span 4; */
+	position: sticky;
+	position: -webkit-sticky;
+	top: 80px;
+	z-index: -1;
 }
 
 .timeline {
-	grid-row-start: 3;
-	/* grid-column: 1 / span 2; */
+	grid-row-start: 2;
+	grid-column-start: 2;
+	z-index: 5;
 }
-
 .timelineEntry {
 	position: relative;
 	display: flex;
@@ -34,12 +37,23 @@
 }
 
 
+@media (max-width: 768px) {
+	.timeline {
+		grid-column-start: 1;
+	}
+}
+@media (max-width: 490px) {
+	.timelineEntry .cardHeader {
+		width: 184px;
+	}
+}
+
 .timelineDate {
 	composes: s from '../theme/material/_ui.m.css';
 	position: relative;
-	padding: var(--line) calc(var(--line) * 2);
+	padding: var(--line) var(--line2);
 	padding-left: 0;
-	top: calc(var(--line) * 2.8);
+	top: calc(var(--line2) - 1px);
 	color: var(--gray);
 	width: calc(var(--line) * 15);
 	text-align: right;
@@ -47,7 +61,7 @@
 }
 
 .timelineEntry:first-child .timelineDate {
-	top: calc(var(--line) * 1.3);
+	top: var(--pt);
 }
 
 .timelineEntry:not(.released) .timelineDate {
@@ -96,22 +110,4 @@
 
 .timelineEntry .cardHeader {
 	padding-left: var(--line);
-}
-@media (max-width: 910px) {
-	.timelineDetails {
-		border-left: none;
-		margin-left: 0;
-		padding-left: 0;
-	}
-
-	.timelineDate {
-		position: absolute;
-		right: 42px;
-		z-index: 6;
-	}
-
-	.timelineMarker {
-		right: var(--line);
-		left: unset;
-	}
 }

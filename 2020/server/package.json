@@ -82,9 +82,9 @@
 
     "_smtpHint": "The from address, bcc address for confirmed, host and port you want to send mails from:",
     "smtp": {
-      "from": "apconf@redaktor.me",
-      "bcc": "activitypubconf@riseup.net",
-      "host": "circinus.uberspace.de",
+      "from": "",
+      "bcc": "",
+      "host": "",
       "port": 587
     },
 

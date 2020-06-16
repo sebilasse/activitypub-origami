@@ -1,0 +1,30 @@
+For milestone 1 I would adjust OpenSearch to the AP protocol and work out the best way to search across instances (see "challenges")
+It will cost
+Hardware 
+Server for 2 ActivityPub Instances for stress testing
+2.000 EUR
+New primary laptop
+2.600 EUR
+This will optimize the stability of the whole project.
+
+Labour and Running costs
+5.200 EUR for 4 months "OpenSearch"
+3.100 EUR for contributions and documentation
+
+
+For milestone 2 I propose to implement the ability to subscribe to hashtags on all instances (see "challenges" and the mentioned paper)
+It will cost
+Labour and Running costs
+7.800 EUR for 6 months to beta for "Federated tag search and subscription"
+
+
+In milestone 3 I will finish the Discovery widgets and bring "search" to each relevant webcomponent in redaktor.
+It will cost
+2.500 EUR for 2 months "OpenSearch"
+1.200 EUR for contributions and documentation
+
+1.500 EUR for a scientific research and evaluation  "How do ActivityPub Users want to search ?"
+
+—-
+This is in total
+25.900 EUR

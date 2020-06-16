@@ -1,0 +1,9 @@
+The first full featured ActivityPub Server for nodeJS is 60% ready but for reliability, confidentiality, integrity and security we only use node policies and dependencies from people we have met in person and trust.
+
+In milestone 1 (6 months) we will implement datashards, a new storage primitive that provides a base for building highly secure applications and enhance the server with the extension (see "solving significant technical challenges").
+
+In milestone 2 (1 month) we need to optimize community management.
+
+In milestone 3 (2 months) we finish the widgets for webcomponents as a universal visual language for AP (themable, extendable).
+
+Milestone 4 allows us to finish the work on independent data storages and considering complementary protocols like the SOLID ecosystem.

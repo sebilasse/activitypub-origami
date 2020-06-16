@@ -1,7 +1,10 @@
 const messages = {
 	en: 'en',
+	enName: 'English',
 	de: 'de',
-	fr: 'fr'
+	deName: 'Deutsch',
+	fr: 'fr',
+	frName: 'Français'
 };
 
 export default { messages };

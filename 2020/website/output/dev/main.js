@@ -548,6 +548,141 @@ class ThemeInjector extends _Injector__WEBPACK_IMPORTED_MODULE_1__["default"] {
 
 /***/ }),
 
+/***/ "./node_modules/@dojo/framework/core/decorators/afterRender.mjs":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@dojo/framework/core/decorators/afterRender.mjs ***!
+  \**********************************************************************/
+/*! exports provided: afterRender, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "afterRender", function() { return afterRender; });
+/* harmony import */ var _handleDecorator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./handleDecorator */ "./node_modules/@dojo/framework/core/decorators/handleDecorator.mjs");
+
+function afterRender(method) {
+    return Object(_handleDecorator__WEBPACK_IMPORTED_MODULE_0__["handleDecorator"])((target, propertyKey) => {
+        target.addDecorator('afterRender', propertyKey ? target[propertyKey] : method);
+    });
+}
+/* harmony default export */ __webpack_exports__["default"] = (afterRender);
+
+
+/***/ }),
+
+/***/ "./node_modules/@dojo/framework/core/decorators/beforeProperties.mjs":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@dojo/framework/core/decorators/beforeProperties.mjs ***!
+  \***************************************************************************/
+/*! exports provided: beforeProperties, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "beforeProperties", function() { return beforeProperties; });
+/* harmony import */ var _handleDecorator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./handleDecorator */ "./node_modules/@dojo/framework/core/decorators/handleDecorator.mjs");
+
+function beforeProperties(method) {
+    return Object(_handleDecorator__WEBPACK_IMPORTED_MODULE_0__["handleDecorator"])((target, propertyKey) => {
+        target.addDecorator('beforeProperties', propertyKey ? target[propertyKey] : method);
+    });
+}
+/* harmony default export */ __webpack_exports__["default"] = (beforeProperties);
+
+
+/***/ }),
+
+/***/ "./node_modules/@dojo/framework/core/decorators/handleDecorator.mjs":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@dojo/framework/core/decorators/handleDecorator.mjs ***!
+  \**************************************************************************/
+/*! exports provided: handleDecorator, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleDecorator", function() { return handleDecorator; });
+/**
+ * Generic decorator handler to take care of whether or not the decorator was called at the class level
+ * or the method level.
+ *
+ * @param handler
+ */
+function handleDecorator(handler) {
+    return function (target, propertyKey, descriptor) {
+        if (typeof target === 'function') {
+            handler(target.prototype, undefined);
+        }
+        else {
+            handler(target, propertyKey);
+        }
+    };
+}
+/* harmony default export */ __webpack_exports__["default"] = (handleDecorator);
+
+
+/***/ }),
+
+/***/ "./node_modules/@dojo/framework/core/decorators/inject.mjs":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@dojo/framework/core/decorators/inject.mjs ***!
+  \*****************************************************************/
+/*! exports provided: getInjector, inject, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getInjector", function() { return getInjector; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "inject", function() { return inject; });
+/* harmony import */ var _shim_WeakMap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shim/WeakMap */ "./node_modules/@dojo/framework/shim/WeakMap.mjs");
+/* harmony import */ var _handleDecorator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./handleDecorator */ "./node_modules/@dojo/framework/core/decorators/handleDecorator.mjs");
+/* harmony import */ var _beforeProperties__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./beforeProperties */ "./node_modules/@dojo/framework/core/decorators/beforeProperties.mjs");
+
+
+
+/**
+ * Map of instances against registered injectors.
+ */
+const registeredInjectorsMap = new _shim_WeakMap__WEBPACK_IMPORTED_MODULE_0__["default"]();
+function getInjector(instance, name) {
+    const injectorItem = instance.registry.getInjector(name);
+    if (injectorItem) {
+        const { injector, invalidator } = injectorItem;
+        const registeredInjectors = registeredInjectorsMap.get(instance) || [];
+        if (registeredInjectors.length === 0) {
+            registeredInjectorsMap.set(instance, registeredInjectors);
+        }
+        if (registeredInjectors.indexOf(injectorItem) === -1) {
+            instance.own(invalidator.on('invalidate', () => {
+                instance.invalidate();
+            }));
+            registeredInjectors.push(injectorItem);
+        }
+        return injector;
+    }
+}
+/**
+ * Decorator retrieves an injector from an available registry using the name and
+ * calls the `getProperties` function with the payload from the injector
+ * and current properties with the the injected properties returned.
+ *
+ * @param InjectConfig the inject configuration
+ */
+function inject({ name, getProperties }) {
+    return Object(_handleDecorator__WEBPACK_IMPORTED_MODULE_1__["handleDecorator"])((target) => {
+        Object(_beforeProperties__WEBPACK_IMPORTED_MODULE_2__["beforeProperties"])(function (properties) {
+            const injector = getInjector(this, name);
+            if (injector) {
+                return getProperties(injector(), properties);
+            }
+        })(target);
+    });
+}
+/* harmony default export */ __webpack_exports__["default"] = (inject);
+
+
+/***/ }),
+
 /***/ "./node_modules/@dojo/framework/core/diff.mjs":
 /*!****************************************************!*\
   !*** ./node_modules/@dojo/framework/core/diff.mjs ***!
@@ -1033,6 +1168,341 @@ const theme = factory(({ middleware: { invalidator, icache, diffProperty, inject
     };
 });
 /* harmony default export */ __webpack_exports__["default"] = (theme);
+
+
+/***/ }),
+
+/***/ "./node_modules/@dojo/framework/core/mixins/I18n.mjs":
+/*!***********************************************************!*\
+  !*** ./node_modules/@dojo/framework/core/mixins/I18n.mjs ***!
+  \***********************************************************/
+/*! exports provided: INJECTOR_KEY, registerI18nInjector, I18nMixin, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "I18nMixin", function() { return I18nMixin; });
+/* harmony import */ var _i18n_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../i18n/i18n */ "./node_modules/@dojo/framework/i18n/i18n.mjs");
+/* harmony import */ var _vdom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
+/* harmony import */ var _decorators_afterRender__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../decorators/afterRender */ "./node_modules/@dojo/framework/core/decorators/afterRender.mjs");
+/* harmony import */ var _decorators_inject__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../decorators/inject */ "./node_modules/@dojo/framework/core/decorators/inject.mjs");
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util */ "./node_modules/@dojo/framework/core/util.mjs");
+/* harmony import */ var _shim_Promise__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shim/Promise */ "./node_modules/@dojo/framework/shim/Promise.mjs");
+/* harmony import */ var _decorators_beforeProperties__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../decorators/beforeProperties */ "./node_modules/@dojo/framework/core/decorators/beforeProperties.mjs");
+/* harmony import */ var _I18nInjector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../I18nInjector */ "./node_modules/@dojo/framework/core/I18nInjector.mjs");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "INJECTOR_KEY", function() { return _I18nInjector__WEBPACK_IMPORTED_MODULE_7__["INJECTOR_KEY"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "registerI18nInjector", function() { return _I18nInjector__WEBPACK_IMPORTED_MODULE_7__["registerI18nInjector"]; });
+
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+/* tslint:disable:interface-name */
+
+
+
+
+
+
+
+
+
+const previousLocaleMap = new WeakMap();
+function I18nMixin(Base) {
+    let I18n = class I18n extends Base {
+        localizeBundle(baseBundle) {
+            let { locale, i18nBundle } = this.properties;
+            if (i18nBundle) {
+                if (i18nBundle instanceof Map) {
+                    baseBundle = i18nBundle.get(baseBundle) || baseBundle;
+                }
+                else {
+                    baseBundle = i18nBundle;
+                }
+            }
+            return Object(_i18n_i18n__WEBPACK_IMPORTED_MODULE_0__["localizeBundle"])(baseBundle, {
+                locale,
+                invalidator: () => {
+                    this.invalidate();
+                }
+            });
+        }
+        renderDecorator(result) {
+            Object(_util__WEBPACK_IMPORTED_MODULE_4__["decorate"])(result, {
+                modifier: (node, breaker) => {
+                    const { locale, rtl } = this.properties;
+                    const properties = {};
+                    if (typeof rtl === 'boolean') {
+                        properties['dir'] = rtl ? 'rtl' : 'ltr';
+                    }
+                    if (locale) {
+                        properties['lang'] = locale;
+                    }
+                    node.properties = Object.assign({}, node.properties, properties);
+                    breaker();
+                },
+                predicate: _vdom__WEBPACK_IMPORTED_MODULE_1__["isVNode"]
+            });
+            return result;
+        }
+    };
+    __decorate([
+        Object(_decorators_afterRender__WEBPACK_IMPORTED_MODULE_2__["afterRender"])()
+    ], I18n.prototype, "renderDecorator", null);
+    I18n = __decorate([
+        Object(_decorators_beforeProperties__WEBPACK_IMPORTED_MODULE_6__["default"])(function (properties) {
+            const injector = Object(_decorators_inject__WEBPACK_IMPORTED_MODULE_3__["getInjector"])(this, _I18nInjector__WEBPACK_IMPORTED_MODULE_7__["INJECTOR_KEY"]);
+            let injectedLocale;
+            let injectedRtl;
+            if (injector) {
+                const injectLocaleData = injector();
+                if (injectLocaleData) {
+                    const injectedLocaleData = injectLocaleData.get();
+                    if (injectedLocaleData) {
+                        injectedLocale = injectedLocaleData.locale;
+                        injectedRtl = injectedLocaleData.rtl;
+                    }
+                }
+            }
+            const previousLocale = previousLocaleMap.get(this);
+            previousLocaleMap.set(this, properties.locale);
+            if (properties.locale && previousLocale !== properties.locale) {
+                const result = Object(_i18n_i18n__WEBPACK_IMPORTED_MODULE_0__["setLocale"])({ locale: properties.locale, local: true });
+                if (Object(_shim_Promise__WEBPACK_IMPORTED_MODULE_5__["isThenable"])(result)) {
+                    result.then(() => {
+                        this.invalidate();
+                    });
+                    return {
+                        locale: previousLocale || injectedLocale || Object(_i18n_i18n__WEBPACK_IMPORTED_MODULE_0__["getCurrentLocale"])(),
+                        rtl: properties.rtl !== undefined ? properties.rtl : injectedRtl
+                    };
+                }
+            }
+            return {
+                locale: properties.locale || injectedLocale || Object(_i18n_i18n__WEBPACK_IMPORTED_MODULE_0__["getCurrentLocale"])(),
+                rtl: properties.rtl !== undefined ? properties.rtl : injectedRtl
+            };
+        })
+    ], I18n);
+    return I18n;
+}
+/* harmony default export */ __webpack_exports__["default"] = (I18nMixin);
+
+
+/***/ }),
+
+/***/ "./node_modules/@dojo/framework/core/util.mjs":
+/*!****************************************************!*\
+  !*** ./node_modules/@dojo/framework/core/util.mjs ***!
+  \****************************************************/
+/*! exports provided: deepAssign, deepMixin, mixin, partial, guaranteeMinimumTimeout, debounce, throttle, uuid, decorate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deepAssign", function() { return deepAssign; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deepMixin", function() { return deepMixin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mixin", function() { return mixin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "partial", function() { return partial; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "guaranteeMinimumTimeout", function() { return guaranteeMinimumTimeout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "debounce", function() { return debounce; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "throttle", function() { return throttle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uuid", function() { return uuid; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "decorate", function() { return decorate; });
+/* harmony import */ var _vdom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
+
+const slice = Array.prototype.slice;
+const hasOwnProperty = Object.prototype.hasOwnProperty;
+/**
+ * Type guard that ensures that the value can be coerced to Object
+ * to weed out host objects that do not derive from Object.
+ * This function is used to check if we want to deep copy an object or not.
+ * Note: In ES6 it is possible to modify an object's Symbol.toStringTag property, which will
+ * change the value returned by `toString`. This is a rare edge case that is difficult to handle,
+ * so it is not handled here.
+ * @param  value The value to check
+ * @return       If the value is coercible into an Object
+ */
+function shouldDeepCopyObject(value) {
+    return Object.prototype.toString.call(value) === '[object Object]';
+}
+function copyArray(array, inherited) {
+    return array.map(function (item) {
+        if (Array.isArray(item)) {
+            return copyArray(item, inherited);
+        }
+        return !shouldDeepCopyObject(item)
+            ? item
+            : _mixin({
+                deep: true,
+                inherited: inherited,
+                sources: [item],
+                target: {}
+            });
+    });
+}
+function _mixin(kwArgs) {
+    const deep = kwArgs.deep;
+    const inherited = kwArgs.inherited;
+    const target = kwArgs.target;
+    const copied = kwArgs.copied || [];
+    const copiedClone = [...copied];
+    for (let i = 0; i < kwArgs.sources.length; i++) {
+        const source = kwArgs.sources[i];
+        if (source === null || source === undefined) {
+            continue;
+        }
+        for (let key in source) {
+            if (inherited || hasOwnProperty.call(source, key)) {
+                let value = source[key];
+                if (copiedClone.indexOf(value) !== -1) {
+                    continue;
+                }
+                if (deep) {
+                    if (Array.isArray(value)) {
+                        value = copyArray(value, inherited);
+                    }
+                    else if (shouldDeepCopyObject(value)) {
+                        const targetValue = target[key] || {};
+                        copied.push(source);
+                        value = _mixin({
+                            deep: true,
+                            inherited: inherited,
+                            sources: [value],
+                            target: targetValue,
+                            copied
+                        });
+                    }
+                }
+                target[key] = value;
+            }
+        }
+    }
+    return target;
+}
+function deepAssign(target, ...sources) {
+    return _mixin({
+        deep: true,
+        inherited: false,
+        sources: sources,
+        target: target
+    });
+}
+function deepMixin(target, ...sources) {
+    return _mixin({
+        deep: true,
+        inherited: true,
+        sources: sources,
+        target: target
+    });
+}
+function mixin(target, ...sources) {
+    return _mixin({
+        deep: false,
+        inherited: true,
+        sources: sources,
+        target: target
+    });
+}
+/**
+ * Returns a function which invokes the given function with the given arguments prepended to its argument list.
+ * Like `Function.prototype.bind`, but does not alter execution context.
+ *
+ * @param targetFunction The function that needs to be bound
+ * @param suppliedArgs An optional array of arguments to prepend to the `targetFunction` arguments list
+ * @return The bound function
+ */
+function partial(targetFunction, ...suppliedArgs) {
+    return function () {
+        const args = arguments.length ? suppliedArgs.concat(slice.call(arguments)) : suppliedArgs;
+        return targetFunction.apply(this, args);
+    };
+}
+function guaranteeMinimumTimeout(callback, delay) {
+    const startTime = Date.now();
+    let timerId;
+    function timeoutHandler() {
+        const delta = Date.now() - startTime;
+        if (delay == null || delta >= delay) {
+            callback();
+        }
+        else {
+            timerId = setTimeout(timeoutHandler, delay - delta);
+        }
+    }
+    timerId = setTimeout(timeoutHandler, delay);
+    return {
+        destroy: () => {
+            if (timerId != null) {
+                clearTimeout(timerId);
+                timerId = null;
+            }
+        }
+    };
+}
+function debounce(callback, delay) {
+    let timer;
+    return function () {
+        timer && timer.destroy();
+        let context = this;
+        let args = arguments;
+        timer = guaranteeMinimumTimeout(function () {
+            callback.apply(context, args);
+            args = context = timer = null;
+        }, delay);
+    };
+}
+function throttle(callback, delay) {
+    let ran;
+    return function () {
+        if (ran) {
+            return;
+        }
+        ran = true;
+        let args = arguments;
+        callback.apply(this, args);
+        guaranteeMinimumTimeout(function () {
+            ran = null;
+        }, delay);
+    };
+}
+function uuid() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        const r = (Math.random() * 16) | 0, v = c === 'x' ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
+    });
+}
+function decorate(dNodes, optionsOrModifier, predicate) {
+    let shallow = false;
+    let modifier;
+    if (typeof optionsOrModifier === 'function') {
+        modifier = optionsOrModifier;
+    }
+    else {
+        modifier = optionsOrModifier.modifier;
+        predicate = optionsOrModifier.predicate;
+        shallow = optionsOrModifier.shallow || false;
+    }
+    let nodes = Array.isArray(dNodes) ? [...dNodes] : [dNodes];
+    function breaker() {
+        nodes = [];
+    }
+    while (nodes.length) {
+        const node = nodes.shift();
+        if (node && node !== true) {
+            if (!shallow && (Object(_vdom__WEBPACK_IMPORTED_MODULE_0__["isWNode"])(node) || Object(_vdom__WEBPACK_IMPORTED_MODULE_0__["isVNode"])(node)) && node.children) {
+                nodes = [...nodes, ...node.children];
+            }
+            if (!predicate || predicate(node)) {
+                modifier(node, breaker);
+            }
+        }
+    }
+    return dNodes;
+}
 
 
 /***/ }),
@@ -8687,11 +9157,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header_Header__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./header/Header */ "./src/header/Header.tsx");
 /* harmony import */ var _combs_Combs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./combs/Combs */ "./src/combs/Combs.tsx");
 /* harmony import */ var _link_ActiveLink__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./link/ActiveLink */ "./src/link/ActiveLink.tsx");
-/* harmony import */ var _roadmap_Roadmap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./roadmap/Roadmap */ "./src/roadmap/Roadmap.tsx");
-/* harmony import */ var _theme_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./theme/material */ "./src/theme/material/index.ts");
-/* harmony import */ var _App_m_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./App.m.css */ "./src/App.m.css");
-/* harmony import */ var _App_m_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_App_m_css__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _nls_App_nls__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./_nls/App.nls */ "./src/_nls/App.nls.ts");
+/* harmony import */ var _theme_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./theme/material */ "./src/theme/material/index.ts");
+/* harmony import */ var _App_m_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./App.m.css */ "./src/App.m.css");
+/* harmony import */ var _App_m_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_App_m_css__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _nls_en_main__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./_nls/en/main */ "./src/_nls/en/main.tsx");
 
 
 
@@ -8704,18 +9173,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var Loadable__ = { type: "registry" };
-var __autoRegistryItems = { Combs: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./combs/Combs */ "./src/combs/Combs.tsx")), CFP: () => __webpack_require__.e(/*! import() | src/cfp/CFP */ "src/cfp/CFP").then(__webpack_require__.bind(null, /*! ./cfp/CFP */ "./src/cfp/CFP.tsx")), Register: () => __webpack_require__.e(/*! import() | src/register/Register */ "src/register/Register").then(__webpack_require__.bind(null, /*! ./register/Register */ "./src/register/Register.tsx")), Privacy: () => __webpack_require__.e(/*! import() | src/privacy/Privacy */ "src/privacy/Privacy").then(__webpack_require__.bind(null, /*! ./privacy/Privacy */ "./src/privacy/Privacy.tsx")), Credits: () => __webpack_require__.e(/*! import() | src/credits/Credits */ "src/credits/Credits").then(__webpack_require__.bind(null, /*! ./credits/Credits */ "./src/credits/Credits.tsx")) };
+var __autoRegistryItems = { Combs: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./combs/Combs */ "./src/combs/Combs.tsx")), Roadmap: () => __webpack_require__.e(/*! import() | src/roadmap/Roadmap */ "src/roadmap/Roadmap").then(__webpack_require__.bind(null, /*! ./roadmap/Roadmap */ "./src/roadmap/Roadmap.tsx")), CFP: () => __webpack_require__.e(/*! import() | src/cfp/CFP */ "src/cfp/CFP").then(__webpack_require__.bind(null, /*! ./cfp/CFP */ "./src/cfp/CFP.tsx")), Register: () => __webpack_require__.e(/*! import() | src/register/Register */ "src/register/Register").then(__webpack_require__.bind(null, /*! ./register/Register */ "./src/register/Register.tsx")), Privacy: () => __webpack_require__.e(/*! import() | src/privacy/Privacy */ "src/privacy/Privacy").then(__webpack_require__.bind(null, /*! ./privacy/Privacy */ "./src/privacy/Privacy.tsx")), Credits: () => __webpack_require__.e(/*! import() | src/credits/Credits */ "src/credits/Credits").then(__webpack_require__.bind(null, /*! ./credits/Credits */ "./src/credits/Credits.tsx")) };
 const snarkdown = __webpack_require__(/*! snarkdown */ "./node_modules/snarkdown/dist/snarkdown.es.js").default;
 const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["create"])({ theme: _dojo_framework_core_middleware_theme__WEBPACK_IMPORTED_MODULE_1__["default"], i18n: _dojo_framework_core_middleware_i18n__WEBPACK_IMPORTED_MODULE_2__["default"], icache: _dojo_framework_core_middleware_icache__WEBPACK_IMPORTED_MODULE_3__["default"] });
 /* harmony default export */ __webpack_exports__["default"] = (factory(function App({ middleware: { theme, i18n, icache } }) {
     if (!theme.get()) {
-        theme.set(_theme_material__WEBPACK_IMPORTED_MODULE_9__["default"], 'dark');
+        theme.set(_theme_material__WEBPACK_IMPORTED_MODULE_8__["default"], 'dark');
     }
-    const { messages } = i18n.localize(_nls_App_nls__WEBPACK_IMPORTED_MODULE_11__["default"]);
-    const desc = (hidden = false) => Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_10__["description"], hidden ? _App_m_css__WEBPACK_IMPORTED_MODULE_10__["hidden"] : null] },
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("time", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_10__["small"], _App_m_css__WEBPACK_IMPORTED_MODULE_10__["descriptionMeta"]] },
+    if (window.location.href.indexOf('#') > -1) {
+        window.location.href = window.location.href.replace('#', '');
+    }
+    /*
+    if (!i18n.get()) {
+      i18n.set({ locale: navigator.language || 'en-us', rtl: false });
+    }
+    console.log(bundle, i18n.get())
+    */
+    const { messages } = i18n.localize(_nls_en_main__WEBPACK_IMPORTED_MODULE_10__["default"]);
+    const desc = (hidden = false) => Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_9__["description"], hidden ? _App_m_css__WEBPACK_IMPORTED_MODULE_9__["hidden"] : null] },
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("time", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_9__["small"], _App_m_css__WEBPACK_IMPORTED_MODULE_9__["descriptionMeta"]] },
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", { class: "dt-start" },
                 "October 2",
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("sup", null, "nd")),
@@ -8726,34 +9203,32 @@ const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["c
                 " 2020")),
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h4", { class: "p-summary" }, messages.description),
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h4", { classes: _App_m_css__WEBPACK_IMPORTED_MODULE_10__["descriptionMeta"] },
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h4", { classes: _App_m_css__WEBPACK_IMPORTED_MODULE_9__["descriptionMeta"] },
             messages.tPrefix,
             " ",
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("em", null,
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("address", { class: "location" }, messages.tAddress)),
             " ",
             messages.tSuffix),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { class: "serif", innerHTML: snarkdown(messages.list) }),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_link_ActiveLink__WEBPACK_IMPORTED_MODULE_7__["default"], { key: 'roadmap', matchParams: {}, params: {}, activeClasses: [], classes: [icache.get('openRoadmap') ? _App_m_css__WEBPACK_IMPORTED_MODULE_10__["openRoadmap"] : null], onClick: () => { icache.set('openRoadmap', true); }, to: 'roadmap' }, "Roadmap"));
-    const home = () => Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_10__["hive"]] },
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { class: "serif", innerHTML: snarkdown(messages.list) }));
+    const home = () => Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_9__["hive"]] },
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_combs_Combs__WEBPACK_IMPORTED_MODULE_6__["default"], { hasIcons: true, hasHomeLink: false }),
         desc());
-    const roadmap = () => Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_10__["hive"]] },
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_combs_Combs__WEBPACK_IMPORTED_MODULE_6__["default"], { hasIcons: true, hasHomeLink: false }),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_roadmap_Roadmap__WEBPACK_IMPORTED_MODULE_8__["default"], null),
-        desc(true));
     const lS = localStorage.getItem('apconf') || '0';
-    return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_10__["root"]] },
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("input", { type: "checkbox", id: "lightbulb", checked: !!(lS === '1'), onchange: (e) => localStorage.setItem('apconf', e.target.checked ? '1' : '0'), classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_10__["lightbulbControl"]] }),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_header_Header__WEBPACK_IMPORTED_MODULE_5__["default"], { classes: { 'apconf2020/Header': { lightbulb: [_App_m_css__WEBPACK_IMPORTED_MODULE_10__["lightbulb"]] } } }),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("footer", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_10__["footer"]] },
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_10__["menuItem"]] },
+    return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_9__["root"]] },
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("input", { type: "checkbox", id: "lightbulb", checked: !!(lS === '1'), onchange: (e) => localStorage.setItem('apconf', e.target.checked ? '1' : '0'), classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_9__["lightbulbControl"]] }),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_header_Header__WEBPACK_IMPORTED_MODULE_5__["default"], { classes: { 'apconf2020/Header': { lightbulb: [_App_m_css__WEBPACK_IMPORTED_MODULE_9__["lightbulb"]] } } }),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("footer", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_9__["footer"]] },
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_9__["menuItem"]] },
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_link_ActiveLink__WEBPACK_IMPORTED_MODULE_7__["default"], { key: 'credits', matchParams: {}, params: {}, activeClasses: [], to: 'credits' }, "Credits & License")),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_10__["menuItem"]] },
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_9__["menuItem"]] },
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_link_ActiveLink__WEBPACK_IMPORTED_MODULE_7__["default"], { key: 'privacy', matchParams: {}, params: {}, activeClasses: [], to: 'privacy' }, "Privacy"))),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("main", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_10__["main"]] },
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("main", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_9__["main"]] },
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_dojo_framework_routing_Route__WEBPACK_IMPORTED_MODULE_4__["default"], { id: "home", renderer: home }),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_dojo_framework_routing_Route__WEBPACK_IMPORTED_MODULE_4__["default"], { id: "roadmap", renderer: roadmap }),
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_dojo_framework_routing_Route__WEBPACK_IMPORTED_MODULE_4__["default"], { id: "roadmap", renderer: () => Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("virtual", null,
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(Loadable__, { hasIcons: true, hasHomeLink: true, __autoRegistryItem: { label: "__autoRegistryItem_Combs", registryItem: __autoRegistryItems.Combs } }),
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(Loadable__, { __autoRegistryItem: { label: "__autoRegistryItem_Roadmap", registryItem: __autoRegistryItems.Roadmap } }),
+                    desc(true)) }),
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_dojo_framework_routing_Route__WEBPACK_IMPORTED_MODULE_4__["default"], { id: "cfp", renderer: () => Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("virtual", null,
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(Loadable__, { activeId: "cfp", __autoRegistryItem: { label: "__autoRegistryItem_Combs", registryItem: __autoRegistryItems.Combs } }),
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(Loadable__, { __autoRegistryItem: { label: "__autoRegistryItem_CFP", registryItem: __autoRegistryItems.CFP } }),
@@ -8796,10 +9271,10 @@ module.exports = {" _key":"apconf2020/AppContent","root":"AppContent-m__root__ec
 
 /***/ }),
 
-/***/ "./src/_nls/App.nls.ts":
-/*!*****************************!*\
-  !*** ./src/_nls/App.nls.ts ***!
-  \*****************************/
+/***/ "./src/_nls/en/main.tsx":
+/*!******************************!*\
+  !*** ./src/_nls/en/main.tsx ***!
+  \******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -8816,92 +9291,15 @@ A conference about the present and future of ActivityPub, the world’s leading 
 - a hackathon that follows the conference.`,
     tPrefix: 'The 2020',
     tAddress: 'virtual',
-    tSuffix: 'conference will include',
+    tSuffix: 'conference will include'
 };
-/* harmony default export */ __webpack_exports__["default"] = ({ messages });
-
-
-/***/ }),
-
-/***/ "./src/card/Card.m.css":
-/*!*****************************!*\
-  !*** ./src/card/Card.m.css ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-module.exports = {" _key":"apconf2020/Card","root":"Card-m__root__ecb8b23qYSn","depth4":"Card-m__depth4__ecb8b29lIOC","content":"Card-m__content__ecb8b2wAYWL","dark":"Card-m__dark__ecb8b21na8n"};
-
-/***/ }),
-
-/***/ "./src/card/Card.tsx":
-/*!***************************!*\
-  !*** ./src/card/Card.tsx ***!
-  \***************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dojo/framework/core/vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
-/* harmony import */ var _dojo_framework_core_middleware_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dojo/framework/core/middleware/theme */ "./node_modules/@dojo/framework/core/middleware/theme.mjs");
-/* harmony import */ var _Card_m_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Card.m.css */ "./src/card/Card.m.css");
-/* harmony import */ var _Card_m_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Card_m_css__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["create"])({ theme: _dojo_framework_core_middleware_theme__WEBPACK_IMPORTED_MODULE_1__["default"] }).properties();
-/* harmony default export */ __webpack_exports__["default"] = (factory(function Card({ middleware: { theme }, properties, children }) {
-    const { header, footer, depth = 1 } = properties();
-    const themedCss = theme.classes(_Card_m_css__WEBPACK_IMPORTED_MODULE_2__);
-    return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { key: "card", "data-test": "card", classes: [themedCss.root, depth === 4 ? themedCss.depth4 : null] },
-        header,
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { key: "content", "data-test": "content", classes: themedCss.content }, children()),
-        footer));
-}));
-
-
-/***/ }),
-
-/***/ "./src/card/CardHeader.m.css":
-/*!***********************************!*\
-  !*** ./src/card/CardHeader.m.css ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-module.exports = {" _key":"apconf2020/CardHeader","root":"CardHeader-m__root__ecb8b22odep _ui-m__l__ecb8b2MGqUU _typo__l__ecb8b23jYig","image":"CardHeader-m__image__ecb8b2fr0pX"};
-
-/***/ }),
-
-/***/ "./src/card/CardHeader.tsx":
-/*!*********************************!*\
-  !*** ./src/card/CardHeader.tsx ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dojo/framework/core/vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
-/* harmony import */ var _dojo_framework_core_middleware_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dojo/framework/core/middleware/theme */ "./node_modules/@dojo/framework/core/middleware/theme.mjs");
-/* harmony import */ var _CardHeader_m_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CardHeader.m.css */ "./src/card/CardHeader.m.css");
-/* harmony import */ var _CardHeader_m_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_CardHeader_m_css__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["create"])({ theme: _dojo_framework_core_middleware_theme__WEBPACK_IMPORTED_MODULE_1__["default"] }).properties();
-/* harmony default export */ __webpack_exports__["default"] = (factory(function CardHeader({ middleware: { theme }, properties, children }) {
-    const themedCss = theme.classes(_CardHeader_m_css__WEBPACK_IMPORTED_MODULE_2__);
-    const { title, image } = properties();
-    let content = children();
-    if (!content.length && title) {
-        content = [image && Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("img", { classes: themedCss.image, src: image.src, alt: image.alt || title }), title];
-    }
-    return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("header", { key: "card-header", "data-test": "card-header", classes: themedCss.root }, content));
-}));
+/* harmony default export */ __webpack_exports__["default"] = ({
+    locales: {
+        de: () => __webpack_require__.e(/*! import() | src/_nls/de/main */ "src/_nls/de/main").then(__webpack_require__.bind(null, /*! ../de/main */ "./src/_nls/de/main.tsx")),
+        fr: () => __webpack_require__.e(/*! import() | src/_nls/fr/main */ "src/_nls/fr/main").then(__webpack_require__.bind(null, /*! ../fr/main */ "./src/_nls/fr/main.tsx"))
+    },
+    messages
+});
 
 
 /***/ }),
@@ -8958,7 +9356,8 @@ const menuItems = [
 /* harmony default export */ __webpack_exports__["default"] = (factory(function Combs({ properties, middleware: { theme } }) {
     const themedCss = theme.classes(_Combs_m_css__WEBPACK_IMPORTED_MODULE_4__);
     const { hasIcons = false, hasHomeLink = true, activeId = '' } = properties();
-    const homeClasses = [themedCss.comb, themedCss.offGrid, themedCss.alyssa, _AppContent_m_css__WEBPACK_IMPORTED_MODULE_3__["alyssa"], themedCss.home];
+    const CL = [themedCss.comb, themedCss.offGrid];
+    const homeClasses = [themedCss.home, ...CL, themedCss.alyssa, !hasHomeLink ? _AppContent_m_css__WEBPACK_IMPORTED_MODULE_3__["alyssa"] : null];
     const activeColor = menuItems.reduce((p, item) => activeId === item.n ? item.color : p, 'gray');
     return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("nav", { id: "nav", role: "navigation", "aria-label": "Main Menu", classes: [
             themedCss.combs,
@@ -8976,9 +9375,9 @@ const menuItems = [
         }),
         (hasHomeLink ?
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_link_ActiveLink__WEBPACK_IMPORTED_MODULE_2__["default"], { key: 'home', matchParams: {}, params: {}, activeClasses: [], classes: homeClasses, to: 'home' }) : Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: homeClasses })),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [themedCss.comb, themedCss.offGrid] }),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [themedCss.comb, themedCss.offGrid, themedCss.ben, _AppContent_m_css__WEBPACK_IMPORTED_MODULE_3__["ben"]] }),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [themedCss.comb, themedCss.offGrid, themedCss.robin, _AppContent_m_css__WEBPACK_IMPORTED_MODULE_3__["robin"]] }),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: CL }),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [...CL, themedCss.ben, !hasHomeLink ? _AppContent_m_css__WEBPACK_IMPORTED_MODULE_3__["ben"] : null] }),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [...CL, themedCss.robin, !hasHomeLink ? _AppContent_m_css__WEBPACK_IMPORTED_MODULE_3__["robin"] : null] }),
         !hasHomeLink ? null : Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("a", { href: activeId ? `${activeId}#nav` : '#nav', classes: [themedCss.scrollControl], onclick: (evt) => { evt.preventDefault(); window.scrollTo(0, 0); } })));
 }));
 
@@ -9097,25 +9496,6 @@ module.exports = {" _key":"apconf2020/Header","root":"Header-m__root__ecb8b26_vz
 
 /***/ }),
 
-/***/ "./src/header/Header.nls.ts":
-/*!**********************************!*\
-  !*** ./src/header/Header.nls.ts ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-const messages = {
-    en: 'en',
-    de: 'de',
-    fr: 'fr'
-};
-/* harmony default export */ __webpack_exports__["default"] = ({ messages });
-
-
-/***/ }),
-
 /***/ "./src/header/Header.tsx":
 /*!*******************************!*\
   !*** ./src/header/Header.tsx ***!
@@ -9129,19 +9509,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dojo_framework_core_middleware_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dojo/framework/core/middleware/i18n */ "./node_modules/@dojo/framework/core/middleware/i18n.mjs");
 /* harmony import */ var _dojo_framework_core_middleware_theme__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @dojo/framework/core/middleware/theme */ "./node_modules/@dojo/framework/core/middleware/theme.mjs");
 /* harmony import */ var _dojo_framework_core_middleware_icache__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @dojo/framework/core/middleware/icache */ "./node_modules/@dojo/framework/core/middleware/icache.mjs");
-/* harmony import */ var _Header_m_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Header.m.css */ "./src/header/Header.m.css");
-/* harmony import */ var _Header_m_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_Header_m_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _Header_nls__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Header.nls */ "./src/header/Header.nls.ts");
+/* harmony import */ var _link_ActiveLink__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../link/ActiveLink */ "./src/link/ActiveLink.tsx");
+/* harmony import */ var _Header_m_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Header.m.css */ "./src/header/Header.m.css");
+/* harmony import */ var _Header_m_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Header_m_css__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
 
 
 
+// import bundle from './Header.nls';
 const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["create"])({ theme: _dojo_framework_core_middleware_theme__WEBPACK_IMPORTED_MODULE_2__["default"], icache: _dojo_framework_core_middleware_icache__WEBPACK_IMPORTED_MODULE_3__["default"], i18n: _dojo_framework_core_middleware_i18n__WEBPACK_IMPORTED_MODULE_1__["default"] });
 /* harmony default export */ __webpack_exports__["default"] = (factory(function Header({ middleware: { theme, icache, i18n } }) {
-    const { messages } = i18n.localize(_Header_nls__WEBPACK_IMPORTED_MODULE_5__["default"]);
-    const themedCss = theme.classes(_Header_m_css__WEBPACK_IMPORTED_MODULE_4__);
+    // const { messages } = i18n.localize(bundle);
+    const themedCss = theme.classes(_Header_m_css__WEBPACK_IMPORTED_MODULE_5__);
     const open = icache.get('open') || false;
     return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("header", { key: "root", classes: themedCss.root },
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("input", { id: "mainMenuToggle", onclick: () => {
@@ -9165,11 +9546,9 @@ const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["c
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("nav", { role: "navigation", classes: [themedCss.menu], "aria-label": "Meta Menu" },
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("ul", { classes: themedCss.menuList },
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("li", { classes: [themedCss.menuItem] },
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("a", { classes: themedCss.menuLink, target: "_blank", href: "#" }, messages.de)),
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("label", { classes: themedCss.lightbulb, for: "lightbulb" })),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("li", { classes: [themedCss.menuItem] },
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("a", { classes: themedCss.menuLink, target: "_blank", href: "#" }, messages.en)),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("li", { classes: [themedCss.menuItem] },
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("label", { classes: themedCss.lightbulb, for: "lightbulb" }))))));
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_link_ActiveLink__WEBPACK_IMPORTED_MODULE_4__["default"], { key: 'roadmap', matchParams: {}, params: {}, activeClasses: [], onClick: () => { icache.set('openRoadmap', true); }, to: 'roadmap' }, "Roadmap"))))));
 }));
 
 
@@ -9257,9 +9636,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dojo/framework/core/vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
 /* harmony import */ var _dojo_framework_core_Registry__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dojo/framework/core/Registry */ "./node_modules/@dojo/framework/core/Registry.mjs");
 /* harmony import */ var _dojo_framework_routing_RouterInjector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @dojo/framework/routing/RouterInjector */ "./node_modules/@dojo/framework/routing/RouterInjector.mjs");
-/* harmony import */ var _dojo_framework_routing_history_StateHistory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @dojo/framework/routing/history/StateHistory */ "./node_modules/@dojo/framework/routing/history/StateHistory.mjs");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./routes */ "./src/routes.ts");
-/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./App */ "./src/App.tsx");
+/* harmony import */ var _dojo_framework_core_mixins_I18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @dojo/framework/core/mixins/I18n */ "./node_modules/@dojo/framework/core/mixins/I18n.mjs");
+/* harmony import */ var _dojo_framework_routing_history_StateHistory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @dojo/framework/routing/history/StateHistory */ "./node_modules/@dojo/framework/routing/history/StateHistory.mjs");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./routes */ "./src/routes.ts");
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./App */ "./src/App.tsx");
+
 
 
 
@@ -9268,11 +9649,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const registry = new _dojo_framework_core_Registry__WEBPACK_IMPORTED_MODULE_1__["default"]();
-Object(_dojo_framework_routing_RouterInjector__WEBPACK_IMPORTED_MODULE_2__["registerRouterInjector"])(_routes__WEBPACK_IMPORTED_MODULE_4__["default"], registry, {
-    HistoryManager: _dojo_framework_routing_history_StateHistory__WEBPACK_IMPORTED_MODULE_3__["StateHistory"],
+Object(_dojo_framework_core_mixins_I18n__WEBPACK_IMPORTED_MODULE_3__["registerI18nInjector"])({ locale: 'de', rtl: false }, registry);
+Object(_dojo_framework_routing_RouterInjector__WEBPACK_IMPORTED_MODULE_2__["registerRouterInjector"])(_routes__WEBPACK_IMPORTED_MODULE_5__["default"], registry, {
+    HistoryManager: _dojo_framework_routing_history_StateHistory__WEBPACK_IMPORTED_MODULE_4__["StateHistory"],
     setDocumentTitle: ({ title, params: {} }) => (title ? title : 'ActivityPub Conference 2020')
 });
-const r = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["default"])(() => Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_App__WEBPACK_IMPORTED_MODULE_5__["default"], null));
+const r = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["default"])(() => Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_App__WEBPACK_IMPORTED_MODULE_6__["default"], null));
 const domNode = document.getElementById('app');
 r.mount({ registry, domNode });
 
@@ -9396,68 +9778,6 @@ const theme = factory(function ({ middleware: { coreTheme }, properties }) {
         } }, coreTheme);
 });
 /* harmony default export */ __webpack_exports__["default"] = (theme);
-
-
-/***/ }),
-
-/***/ "./src/roadmap/Roadmap.m.css":
-/*!***********************************!*\
-  !*** ./src/roadmap/Roadmap.m.css ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-module.exports = {" _key":"apconf2020/Roadmap","root":"Roadmap-m__root__ecb8b21womz","pageContent":"Roadmap-m__pageContent__ecb8b233a3K","header":"Roadmap-m__header__ecb8b21AXjK","timeline":"Roadmap-m__timeline__ecb8b226sjT","timelineEntry":"Roadmap-m__timelineEntry__ecb8b21me2O","cardHeader":"Roadmap-m__cardHeader__ecb8b21OuKE","card":"Roadmap-m__card__ecb8b23u4a5","timelineDate":"Roadmap-m__timelineDate__ecb8b2DHOQ3 _ui-m__s__ecb8b21rol0 _typo__s__ecb8b22332p","released":"Roadmap-m__released__ecb8b21Npuo","timelineDetails":"Roadmap-m__timelineDetails__ecb8b22_tq8","timelineMarker":"Roadmap-m__timelineMarker__ecb8b2gOHlr"};
-
-/***/ }),
-
-/***/ "./src/roadmap/Roadmap.tsx":
-/*!*********************************!*\
-  !*** ./src/roadmap/Roadmap.tsx ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dojo/framework/core/vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
-/* harmony import */ var _dojo_framework_core_middleware_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dojo/framework/core/middleware/theme */ "./node_modules/@dojo/framework/core/middleware/theme.mjs");
-/* harmony import */ var _card_Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../card/Card */ "./src/card/Card.tsx");
-/* harmony import */ var _card_CardHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../card/CardHeader */ "./src/card/CardHeader.tsx");
-/* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../AppContent.m.css */ "./src/AppContent.m.css");
-/* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _Roadmap_m_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Roadmap.m.css */ "./src/roadmap/Roadmap.m.css");
-/* harmony import */ var _Roadmap_m_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Roadmap_m_css__WEBPACK_IMPORTED_MODULE_5__);
-
-
-
-
-
-
-const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["create"])({ theme: _dojo_framework_core_middleware_theme__WEBPACK_IMPORTED_MODULE_1__["default"] });
-/* harmony default export */ __webpack_exports__["default"] = (factory(function Roadmap({ middleware: { theme } }) {
-    const themedCss = theme.classes(_Roadmap_m_css__WEBPACK_IMPORTED_MODULE_5__);
-    const timelineEntries = [
-        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Website"), released: true, date: 'June 10' },
-        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Deadline for CFP Submissions"), released: false, date: 'July 6' },
-        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Approval of Submissions"), released: false, date: 'July 15' },
-        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Detailed Planning"), released: false, date: 'August' },
-        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Planning Meeting"), released: false, date: 'September 5' },
-        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "End of pre-recorded talk submission"), released: false, date: 'September 11' },
-        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Deadline for uploads"), released: false, date: 'September 25' },
-        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Conference Meet and Greet"), released: false, date: 'October 2' }
-    ];
-    return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["root"], themedCss.root] },
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", null),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["headline"], themedCss.header] },
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h1", null, "What's coming up")),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { key: "timeline", classes: themedCss.timeline }, timelineEntries.map((entry) => (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [themedCss.timelineEntry, entry.released ? themedCss.released : null] },
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.timelineDate }, entry.date),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.timelineDetails },
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.timelineMarker }),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_card_Card__WEBPACK_IMPORTED_MODULE_2__["default"], { header: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_card_CardHeader__WEBPACK_IMPORTED_MODULE_3__["default"], { title: entry.title, classes: { 'apconf2020/CardHeader': { root: [themedCss.cardHeader] } } }), classes: { 'apconf2020/Card': { root: [themedCss.card] } } }))))))));
-}));
 
 
 /***/ }),
