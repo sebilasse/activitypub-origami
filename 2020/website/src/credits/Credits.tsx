@@ -6,7 +6,7 @@ import theme from '../middleware/theme';
 
 import * as grid from '../AppContent.m.css';
 import * as css from '../cfp/CFP.m.css';
-import bundle from './Credits.nls';
+import bundle from './nls/main';
 const snarkdown = require('snarkdown').default;
 import { pd } from '../assets/icon';
 const privImg = require('../assets/photos/low50_apconf_sl044_hd.jpg');
@@ -43,6 +43,7 @@ export default factory(function CFP({ middleware: { theme, i18n/*,icache, resize
 			</div>
 			<div classes={[grid.asideColumn, grid.asideStart]}>
 				<p>
+					<em>contact: </em>
 					<span classes={themedCss.m8l}>
 						<span>activitypub </span>
 						<span>conf</span>

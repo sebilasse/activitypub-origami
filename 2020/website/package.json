@@ -15,7 +15,7 @@
 	},
 	"dependencies": {
 		"@dojo/framework": "next",
-		"snarkdown": "^1.2.2",
+		"snarkdown": "1.2.2",
 		"tslib": "^1.10.0"
 	},
 	"devDependencies": {

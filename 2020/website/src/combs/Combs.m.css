@@ -71,7 +71,7 @@
     bottom: -38px;
   }
   .combs.hasHomeLink {
-    margin-top: -16.6em;
+    margin-top: -11em;
   }
   .combs:not(.hasHomeLink) {
   	grid-column: content-start / span 3;

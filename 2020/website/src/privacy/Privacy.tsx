@@ -2,15 +2,14 @@ import { tsx, create } from '@dojo/framework/core/vdom';
 import icache from '@dojo/framework/core/middleware/icache';
 import i18n from '@dojo/framework/core/middleware/i18n';
 import theme from '../middleware/theme';
-// import resize from '@dojo/framework/core/middleware/resize';
 
 import * as grid from '../AppContent.m.css';
 import * as css from '../cfp/CFP.m.css';
-import bundle from './Privacy.nls';
+import bundle from './nls/main';
 const snarkdown = require('snarkdown').default;
 const privImg = require('../assets/photos/low02_apconf_hellekin_002_hd.jpg');
 const privImg2 = require('../assets/photos/low57_apconf_sl051_hd.jpg');
-const factory = create({ icache, theme, i18n/*, resize*/ });
+const factory = create({ icache, theme, i18n });
 
 export default factory(function CFP({ middleware: { theme, i18n/*,icache, resize*/ } }) {
 	const { messages } = i18n.localize(bundle);

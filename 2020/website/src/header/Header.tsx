@@ -1,15 +1,13 @@
 import { tsx, create } from '@dojo/framework/core/vdom';
-import i18n from '@dojo/framework/core/middleware/i18n';
+//import i18n from '@dojo/framework/core/middleware/i18n';
 import theme from '@dojo/framework/core/middleware/theme';
 import icache from '@dojo/framework/core/middleware/icache';
 import Link from '../link/ActiveLink';
 import * as css from './Header.m.css';
-// import bundle from './Header.nls';
 
-const factory = create({ theme, icache, i18n });
+const factory = create({ theme, icache });
 
-export default factory(function Header({ middleware: { theme, icache, i18n } }) {
-	// const { messages } = i18n.localize(bundle);
+export default factory(function Header({ middleware: { theme, icache } }) {
 	const themedCss = theme.classes(css);
 	const open = icache.get<boolean>('open') || false;
 
@@ -42,15 +40,15 @@ export default factory(function Header({ middleware: { theme, icache, i18n } }) 
 			<nav role="navigation" classes={[themedCss.menu]} aria-label="Meta Menu">
 				<ul classes={themedCss.menuList}>
 					<li classes={[themedCss.menuItem]}>
-						<label classes={themedCss.lightbulb} for="lightbulb"></label>
+						<Link key='roadmap' matchParams={{}} params={{}} activeClasses={[]}
+							onClick={() => { icache.set('openRoadmap', true) }}
+							to='roadmap'
+						>
+							Roadmap
+						</Link>
 					</li>
 					<li classes={[themedCss.menuItem]}>
-			      <Link key='roadmap' matchParams={{}} params={{}} activeClasses={[]}
-			        onClick={() => { icache.set('openRoadmap', true) }}
-			        to='roadmap'
-			      >
-			        Roadmap
-			      </Link>
+						<label classes={themedCss.lightbulb} for="lightbulb"></label>
 					</li>
 				</ul>
 			</nav>

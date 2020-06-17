@@ -38,43 +38,6 @@ module.exports = {" _key":"apconf2020/CFP","root":"CFP-m__root__ecb8b22t5LA","fi
 
 /***/ }),
 
-/***/ "./src/credits/Credits.nls.tsx":
-/*!*************************************!*\
-  !*** ./src/credits/Credits.nls.tsx ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-const messages = {
-    headline: 'Licensing',
-    deadline: `CC`,
-    textHead: `Creative Commons`,
-    description: `
-By default APConf media will be released under a CC BY license.
-<br><br>
-*Keynotes, talks and presentations*<br>
-The content of the presentations belongs to the presenters and therefore each talk will be released as either
-[CC0](https://creativecommons.org/publicdomain/zero/1.0/deed), [CC BY](https://creativecommons.org/licenses/by/4.0/)
-or [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) per their wishes.<br>
-`,
-    overview: `[Creative Commons Attribution 4.0 International Public License](https://github.com/ContributorCovenant/contributor_covenant/blob/release/LICENSE.md)<br>
-The [sourcecode](http://github.com/sebilasse/activitypub-origami) of the page is released as `,
-    imgCredit: `Sebastian`
-};
-/* harmony default export */ __webpack_exports__["default"] = ({
-    locales: {
-        en: messages,
-        de: () => __webpack_require__.e(/*! import() | src/credits/de/Credits.nls */ "src/credits/de/Credits.nls").then(__webpack_require__.bind(null, /*! ./de/Credits.nls */ "./src/credits/de/Credits.nls.tsx")),
-        fr: () => __webpack_require__.e(/*! import() | src/credits/fr/Credits.nls */ "src/credits/fr/Credits.nls").then(__webpack_require__.bind(null, /*! ./fr/Credits.nls */ "./src/credits/fr/Credits.nls.tsx"))
-    },
-    messages
-});
-
-
-/***/ }),
-
 /***/ "./src/credits/Credits.tsx":
 /*!*********************************!*\
   !*** ./src/credits/Credits.tsx ***!
@@ -92,7 +55,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../cfp/CFP.m.css */ "./src/cfp/CFP.m.css");
 /* harmony import */ var _cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _Credits_nls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Credits.nls */ "./src/credits/Credits.nls.tsx");
+/* harmony import */ var _nls_main__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./nls/main */ "./src/credits/nls/main.ts");
 /* harmony import */ var _assets_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assets/icon */ "./src/assets/icon.ts");
 
 
@@ -107,7 +70,7 @@ const snarkdown = __webpack_require__(/*! snarkdown */ "./node_modules/snarkdown
 const privImg = __webpack_require__(/*! ../assets/photos/low50_apconf_sl044_hd.jpg */ "./src/assets/photos/low50_apconf_sl044_hd.jpg");
 const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["create"])({ icache: _dojo_framework_core_middleware_icache__WEBPACK_IMPORTED_MODULE_1__["default"], theme: _middleware_theme__WEBPACK_IMPORTED_MODULE_3__["default"], i18n: _dojo_framework_core_middleware_i18n__WEBPACK_IMPORTED_MODULE_2__["default"] /*, resize*/ });
 /* harmony default export */ __webpack_exports__["default"] = (factory(function CFP({ middleware: { theme, i18n /*,icache, resize*/ } }) {
-    const { messages } = i18n.localize(_Credits_nls__WEBPACK_IMPORTED_MODULE_6__["default"]);
+    const { messages } = i18n.localize(_nls_main__WEBPACK_IMPORTED_MODULE_6__["default"]);
     const themedCss = theme.classes(_cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__);
     return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["orange"], _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["root"], themedCss.root, theme.isJS() ? themedCss.js : null] },
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["headline"] },
@@ -138,6 +101,7 @@ const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["c
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("img", { src: _assets_icon__WEBPACK_IMPORTED_MODULE_7__["pd"], alt: "Public Domain" })),
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["asideColumn"], _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["asideStart"]] },
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null,
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("em", null, "contact: "),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", { classes: themedCss.m8l },
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, "activitypub "),
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, "conf"),
@@ -145,6 +109,41 @@ const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["c
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, "up.net"),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null)))));
 }));
+
+
+/***/ }),
+
+/***/ "./src/credits/nls/main.ts":
+/*!*********************************!*\
+  !*** ./src/credits/nls/main.ts ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+    locales: {
+        de: () => __webpack_require__.e(/*! import() | src/credits/nls/de/main */ "src/credits/nls/de/main").then(__webpack_require__.bind(null, /*! ./de/main */ "./src/credits/nls/de/main.ts")),
+        fr: () => __webpack_require__.e(/*! import() | src/credits/nls/fr/main */ "src/credits/nls/fr/main").then(__webpack_require__.bind(null, /*! ./fr/main */ "./src/credits/nls/fr/main.ts"))
+    },
+    messages: {
+        headline: 'Licensing',
+        deadline: `CC`,
+        textHead: `Creative Commons`,
+        description: `
+By default APConf media will be released under a CC BY license.
+<br><br>
+*Keynotes, talks and presentations*<br>
+The content of the presentations belongs to the presenters and therefore each talk will be released as either
+[CC0](https://creativecommons.org/publicdomain/zero/1.0/deed), [CC BY](https://creativecommons.org/licenses/by/4.0/)
+or [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) per their wishes.<br>
+	`,
+        overview: `[Creative Commons Attribution 4.0 International Public License](https://github.com/ContributorCovenant/contributor_covenant/blob/release/LICENSE.md)<br>
+The [sourcecode](http://github.com/sebilasse/activitypub-origami) of the page is released as `,
+        imgCredit: `Sebastian`
+    }
+});
 
 
 /***/ })

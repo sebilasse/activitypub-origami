@@ -122,8 +122,8 @@ const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["c
 /* harmony default export */ __webpack_exports__["default"] = (factory(function Roadmap({ middleware: { theme } }) {
     const themedCss = theme.classes(_Roadmap_m_css__WEBPACK_IMPORTED_MODULE_5__);
     const timelineEntries = [
-        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Website"), released: true, date: 'June 10' },
-        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Deadline for CFP Submissions"), released: false, date: 'July 6' },
+        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Website"), released: true, date: 'June 15' },
+        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Deadline for CFP Submissions"), released: false, date: 'July 8' },
         { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Approval of Submissions"), released: false, date: 'July 15' },
         { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Detailed Planning"), released: false, date: 'August' },
         { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Planning Meeting"), released: false, date: 'September 5' },

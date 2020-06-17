@@ -211,7 +211,7 @@ const validity = factory(function ({ middleware: { node, invalidator } }) {
 /*! exports provided: name, version, main, scripts, dependencies, devDependencies, redaktor, default */
 /***/ (function(module) {
 
-module.exports = {"name":"apconf2020","version":"1.0.0","main":"src/main.tsx","scripts":{"dev":"dojo build -m dev -s -w memory","build":"dojo build","build:ghpages":"dojo build --dojorc .dojorc-ghpages","build:test":"dojo build -m unit","lint":"eslint \"src/**/*.{ts,tsx}\"","test":"run-s build:test test:local","test:ci":"run-s build:test test:headless","test:local":"dojo test -c local","test:headless":"dojo test -c headless"},"dependencies":{"@dojo/framework":"next","snarkdown":"^1.2.2","tslib":"^1.10.0"},"devDependencies":{"@dojo/cli":"next","@dojo/cli-build-app":"next","@dojo/cli-test-intern":"next","@dojo/scripts":"^4.0.2","@types/node":"^12.12.32","@types/sinon":"^7.5.2","@typescript-eslint/eslint-plugin":"2.25.0","@typescript-eslint/parser":"2.25.0","eslint":"6.8.0","eslint-config-prettier":"6.10.1","eslint-plugin-import":"2.20.2","npm-run-all":"4.1.5","sinon":"^9.0.1","typescript":"~3.4.5"},"redaktor":{"_serverHint":"The full URL to the webserver. Can be a static directory, should have trailing slash:","server":"https://apconf.uber.space/server/"}};
+module.exports = {"name":"apconf2020","version":"1.0.0","main":"src/main.tsx","scripts":{"dev":"dojo build -m dev -s -w memory","build":"dojo build","build:ghpages":"dojo build --dojorc .dojorc-ghpages","build:test":"dojo build -m unit","lint":"eslint \"src/**/*.{ts,tsx}\"","test":"run-s build:test test:local","test:ci":"run-s build:test test:headless","test:local":"dojo test -c local","test:headless":"dojo test -c headless"},"dependencies":{"@dojo/framework":"next","snarkdown":"1.2.2","tslib":"^1.10.0"},"devDependencies":{"@dojo/cli":"next","@dojo/cli-build-app":"next","@dojo/cli-test-intern":"next","@dojo/scripts":"^4.0.2","@types/node":"^12.12.32","@types/sinon":"^7.5.2","@typescript-eslint/eslint-plugin":"2.25.0","@typescript-eslint/parser":"2.25.0","eslint":"6.8.0","eslint-config-prettier":"6.10.1","eslint-plugin-import":"2.20.2","npm-run-all":"4.1.5","sinon":"^9.0.1","typescript":"~3.4.5"},"redaktor":{"_serverHint":"The full URL to the webserver. Can be a static directory, should have trailing slash:","server":"https://apconf.uber.space/server/"}};
 
 /***/ }),
 
@@ -611,36 +611,157 @@ const Label = factory(function Label({ properties, id, children, middleware: { t
 
 /***/ }),
 
-/***/ "./src/radio/index.tsx":
-/*!*****************************!*\
-  !*** ./src/radio/index.tsx ***!
-  \*****************************/
-/*! exports provided: Radio, default */
+/***/ "./src/range-slider/index.tsx":
+/*!************************************!*\
+  !*** ./src/range-slider/index.tsx ***!
+  \************************************/
+/*! exports provided: RangeSlider, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Radio", function() { return Radio; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dojo/framework/core/vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
-/* harmony import */ var _theme_material_radio_m_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../theme/material/radio.m.css */ "./src/theme/material/radio.m.css");
-/* harmony import */ var _theme_material_radio_m_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_theme_material_radio_m_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _checkbox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../checkbox */ "./src/checkbox/index.tsx");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RangeSlider", function() { return RangeSlider; });
+/* harmony import */ var _theme_material_range_slider_m_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../theme/material/range-slider.m.css */ "./src/theme/material/range-slider.m.css");
+/* harmony import */ var _theme_material_range_slider_m_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_theme_material_range_slider_m_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/range-slider.m.css */ "./src/range-slider/styles/range-slider.m.css");
+/* harmony import */ var _styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _label_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../label/index */ "./src/label/index.tsx");
+/* harmony import */ var _dojo_framework_core_middleware_dimensions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @dojo/framework/core/middleware/dimensions */ "./node_modules/@dojo/framework/core/middleware/dimensions.mjs");
+/* harmony import */ var _dojo_framework_core_middleware_focus__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @dojo/framework/core/middleware/focus */ "./node_modules/@dojo/framework/core/middleware/focus.mjs");
+/* harmony import */ var _dojo_framework_core_middleware_theme__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @dojo/framework/core/middleware/theme */ "./node_modules/@dojo/framework/core/middleware/theme.mjs");
+/* harmony import */ var _dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @dojo/framework/core/vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
+/* harmony import */ var _dojo_framework_core_middleware_icache__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @dojo/framework/core/middleware/icache */ "./node_modules/@dojo/framework/core/middleware/icache.mjs");
+/* harmony import */ var _common_util__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../common/util */ "./src/common/util.ts");
 
 
 
 
-const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_1__["create"])().properties()
+
+
+
+
+
+const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["create"])({
+    dimensions: _dojo_framework_core_middleware_dimensions__WEBPACK_IMPORTED_MODULE_3__["default"],
+    focus: _dojo_framework_core_middleware_focus__WEBPACK_IMPORTED_MODULE_4__["default"],
+    icache: Object(_dojo_framework_core_middleware_icache__WEBPACK_IMPORTED_MODULE_7__["createICacheMiddleware"])(),
+    theme: _dojo_framework_core_middleware_theme__WEBPACK_IMPORTED_MODULE_5__["default"]
+})
+    .properties()
     .children();
-const myClasses = {
-    'apconf2020/checkbox': { box: [_theme_material_radio_m_css__WEBPACK_IMPORTED_MODULE_2__["box"]] }
-};
-const Radio = factory(function Radio({ properties, children }) {
-    const _a = properties(), { icon = 'dot' } = _a, baseProperties = tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"](_a, ["icon"]);
-    return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_1__["w"])(_checkbox__WEBPACK_IMPORTED_MODULE_3__["default"], Object.assign({}, baseProperties, { icon, classes: myClasses, _inputType: 'radio' }), [...children()]));
+const RangeSlider = factory(function RangeSlider({ children, id, middleware: { dimensions, focus, icache, theme }, properties }) {
+    const { name = '', max: maxRestraint = 100, min: minRestraint = 0 } = properties();
+    const [{ label, output } = {}] = children();
+    const { aria = {}, classes, disabled, labelHidden, maxName = `${name}_max`, maximumLabel = 'Maximum', minName = `${name}_min`, minimumLabel = 'Minimum', minConstraint = 0, onBlur, onFocus, onOut, onOver, onValue, outputIsTooltip, readOnly, required, showOutput = false, step = 1, theme: themeProp, valid, initialValue = {
+        max: maxRestraint,
+        min: minRestraint
+    }, widgetId = `range-slider-${id}` } = properties();
+    let { value } = properties();
+    if (value === undefined) {
+        value = icache.get('value');
+        const existingInitialValue = icache.get('initialValue');
+        if (!existingInitialValue ||
+            initialValue.min !== existingInitialValue.min ||
+            initialValue.max !== existingInitialValue.max) {
+            icache.set('value', initialValue);
+            icache.set('initialValue', initialValue);
+            value = initialValue;
+        }
+    }
+    const themedCss = theme.classes(_theme_material_range_slider_m_css__WEBPACK_IMPORTED_MODULE_0__);
+    const size = dimensions.get('root');
+    const maxLabelId = `max-label-${id}`;
+    const minLabelId = `min-label-${id}`;
+    const min = Math.max((value || initialValue).min, minRestraint);
+    const max = Math.min((value || initialValue).max, maxRestraint);
+    const slider1Percent = (min - minRestraint) / (maxRestraint - minRestraint);
+    const slider2Percent = (max - minRestraint) / (maxRestraint - minRestraint);
+    const slider1Size = slider1Percent + (slider2Percent - slider1Percent) / 2;
+    const slider2Size = 1 - slider1Size;
+    const getInputProperties = (isSlider1) => (Object.assign({}, Object(_common_util__WEBPACK_IMPORTED_MODULE_8__["formatAriaProperties"])(aria), { 'aria-describedby': isSlider1 ? minLabelId : maxLabelId, 'aria-invalid': valid === false ? 'true' : null, 'aria-labelledby': `${widgetId}-label`, 'aria-readonly': readOnly === true ? 'true' : null, classes: [themedCss.input, _styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1__["nativeInput"]], disabled, max: `${maxRestraint}`, min: `${minRestraint}`, name: isSlider1 ? minName : maxName, onblur: () => {
+            onBlur && onBlur();
+        }, onfocus: () => {
+            onFocus && onFocus();
+        }, oninput: (event) => {
+            onInput(event, isSlider1);
+        }, readonly: readOnly, required, step: `${step}`, type: 'range' }));
+    const onInput = (event, isMinEvent) => {
+        event.stopPropagation();
+        const value = event.target.value;
+        const returnValues = isMinEvent
+            ? { min: Math.min(parseFloat(value), max), max }
+            : { min, max: Math.max(min, parseFloat(value)) };
+        icache.set('value', returnValues);
+        onValue && onValue(returnValues);
+    };
+    const slider1 = (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("input", Object.assign({}, getInputProperties(true), { key: "slider1", value: `${min}`, styles: {
+            clip: `rect(auto, ${Math.round(slider1Size * size.client.width)}px, auto, auto)`
+        } })));
+    const slider2 = (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("input", Object.assign({}, getInputProperties(false), { key: "slider2", styles: {
+            clip: `rect(auto, auto, auto, ${Math.round((1 - slider2Size) * size.client.width)}px)`
+        }, value: `${max}` })));
+    return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("div", { key: "root", classes: [
+            theme.variant(),
+            themedCss.root,
+            disabled ? themedCss.disabled : null,
+            focus.isFocused('root') ? themedCss.focused : null,
+            valid === false ? themedCss.invalid : null,
+            valid === true ? themedCss.valid : null,
+            readOnly ? themedCss.readonly : null,
+            showOutput ? themedCss.hasOutput : null
+        ] },
+        label ? (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])(_label_index__WEBPACK_IMPORTED_MODULE_2__["default"], { classes: classes, disabled: disabled, focused: focus.isFocused('root'), hidden: labelHidden, key: "label", readOnly: readOnly, required: required, secondary: true, theme: themeProp, valid: valid, widgetId: `${widgetId}-label` }, label)) : null,
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("div", { classes: [themedCss.inputWrapper, _styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1__["inputWrapperFixed"]], onpointerenter: () => {
+                onOver && onOver();
+            }, onpointerleave: () => {
+                onOut && onOut();
+            } },
+            slider1,
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("div", { id: minLabelId, classes: themedCss.leftLabel, key: "minimumLabel" }, minimumLabel),
+            slider2,
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("div", { id: maxLabelId, classes: themedCss.rightLabel, key: "maximumLabel" }, maximumLabel),
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("div", { classes: [themedCss.filled, _styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1__["filledFixed"]], key: "track", styles: {
+                    left: Math.round(slider1Percent * 100) + '%',
+                    width: Math.round((slider2Percent - slider1Percent) * 100) + '%'
+                } }),
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("div", { key: "leftThumb", classes: [
+                    themedCss.thumb,
+                    themedCss.leftThumb,
+                    focus.isFocused('slider1') ? themedCss.focused : undefined,
+                    _styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1__["thumbFixed"]
+                ], styles: {
+                    left: Math.round(slider1Percent * 100) + '%'
+                } }),
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("div", { key: "rightThumb", classes: [
+                    themedCss.thumb,
+                    themedCss.rightThumb,
+                    focus.isFocused('slider2') ? themedCss.focused : undefined,
+                    _styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1__["thumbFixed"]
+                ], styles: {
+                    left: Math.max(minConstraint, Math.round(slider2Percent * 100)) + '%'
+                } }),
+            showOutput ? (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("output", { classes: [themedCss.output, outputIsTooltip ? themedCss.outputTooltip : null], for: widgetId, styles: outputIsTooltip
+                    ? {
+                        left: `${Math.round((slider1Percent +
+                            (slider2Percent - slider1Percent) / 2) *
+                            100)}%`
+                    }
+                    : undefined, tabIndex: -1 }, output ? output({ min, max }) : `${min}, ${max}`)) : null)));
 });
-/* harmony default export */ __webpack_exports__["default"] = (Radio);
+/* harmony default export */ __webpack_exports__["default"] = (RangeSlider);
 
+
+/***/ }),
+
+/***/ "./src/range-slider/styles/range-slider.m.css":
+/*!****************************************************!*\
+  !*** ./src/range-slider/styles/range-slider.m.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+module.exports = {" _key":"apconf2020/range-slider","inputWrapperFixed":"range-slider-m__inputWrapperFixed__ecb8b22kDM9","thumbFixed":"range-slider-m__thumbFixed__ecb8b21pFmR","filledFixed":"range-slider-m__filledFixed__ecb8b22P_cd","nativeInput":"range-slider-m__nativeInput__ecb8b22Wltt"};
 
 /***/ }),
 
@@ -652,70 +773,7 @@ const Radio = factory(function Radio({ properties, children }) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {" _key":"apconf2020/Register","root":"Register-m__root__ecb8b23NdBt","sent":"Register-m__sent__ecb8b2CoryU","figure":"Register-m__figure__ecb8b237kjX","noMB":"Register-m__noMB__ecb8b2ZuEjF","img":"Register-m__img__ecb8b2_zpxW","m8l":"Register-m__m8l__ecb8b21TZsr","stub":"Register-m__stub__ecb8b22qjyl","check":"Register-m__check__ecb8b21-y1O","success":"Register-m__success__ecb8b2IjOjJ","confirmed":"Register-m__confirmed__ecb8b23CXsb","confirmedTrp":"Register-m__confirmedTrp__ecb8b21nnIA","confirmedBottom":"Register-m__confirmedBottom__ecb8b21M__j","helperText":"Register-m__helperText__ecb8b226aZT _ui-m__s__ecb8b21rol0 _typo__s__ecb8b22332p","codeOfConduct":"Register-m__codeOfConduct__ecb8b21Ez9F","widescreen":"Register-m__widescreen__ecb8b22G76g","bottom":"Register-m__bottom__ecb8b2T9ymp","flex":"Register-m__flex__ecb8b2gbWUi","flexBottom":"Register-m__flexBottom__ecb8b23SI5M","description":"Register-m__description__ecb8b22mX1u _typo__serif__ecb8b22EAdY","proposals":"Register-m__proposals__ecb8b2gYKWI","help":"Register-m__help__ecb8b27c_WW","submit":"Register-m__submit__ecb8b2KWcJi","asideColumn":"Register-m__asideColumn__ecb8b23KXzX","controlWrapper":"Register-m__controlWrapper__ecb8b2IbA_Z","addControl":"Register-m__addControl__ecb8b23j3Q8","top":"Register-m__top__ecb8b2-zj1x","line":"Register-m__line__ecb8b2BkVna","num":"Register-m__num__ecb8b2GoNiw _ui-m__s__ecb8b21rol0 _typo__s__ecb8b22332p","caption":"Register-m__caption__ecb8b21YYzO _ui-m__s__ecb8b21rol0 _typo__s__ecb8b22332p","input":"Register-m__input__ecb8b2LEmkB","tzCaption":"Register-m__tzCaption__ecb8b21It2A","number":"Register-m__number__ecb8b23orfM","invite":"Register-m__invite__ecb8b21pAKQ _ui-m__xl__ecb8b21ewdq _typo__xl__ecb8b2-KCUG","big":"Register-m__big__ecb8b21NOQh","right":"Register-m__right__ecb8b21euUk","angel":"Register-m__angel__ecb8b2r1gKa","sentAside":"Register-m__sentAside__ecb8b21FdRu"};
-
-/***/ }),
-
-/***/ "./src/register/Register.nls.tsx":
-/*!***************************************!*\
-  !*** ./src/register/Register.nls.tsx ***!
-  \***************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-const messages = {
-    headline: 'Register',
-    headlineConfirmed: 'Registered',
-    byline: `& propose`,
-    bylineSent: `confirm the mail`,
-    bylineConfirmed: `OK`,
-    headerConfirmed: `Awesome!`,
-    textConfirmed: `You registered successfuly.`,
-    registrationMail: `
-You can also register or send proposals by eMail`,
-    description: `
-It is important to *confirm* the link in the mail we send you instantly.<br>
-We will inform you about your registration status in July.`,
-    mailSent: `
-# Final step:
-Please read and *confirm* the mail we sent to complete your registration.`,
-    photocaption: 'Pictures of ActivityPub Conference 2019 Prague',
-    iBadgeName: 'Badge Name',
-    pBadgeName: 'enter a public identifier',
-    iEmail: 'eMail Address',
-    pEmail: 'will not be published',
-    iBadgeByline: 'Badge Byline',
-    iTimezone: 'Timezone',
-    tzCaption: `Given the international audience of this conference,
-we'll try to schedule talks that can be attended by people around the world.
-Please help by setting your own time preferences:`,
-    iName: 'Real Name',
-    iOrg: 'Project, Org. or Company',
-    iAP: 'ActivityPub Address',
-    iWebsite: 'Website',
-    iConduct: 'Code of Conduct',
-    iAgree: 'I agree',
-    offer: 'I can help',
-    oVR: 'Recording',
-    oVE: 'Video edit',
-    oMo: 'Moderation',
-    oWE: 'Webdesign',
-    add: 'Add a',
-    proposal: 'proposal',
-    talkCaption: 'Enter the title and a brief summary',
-    bofCaption: 'Enter the title and a brief summary of the session',
-};
-/* harmony default export */ __webpack_exports__["default"] = ({
-    locales: {
-        en: messages,
-        de: () => __webpack_require__.e(/*! import() | src/register/de/Register.nls */ "src/register/de/Register.nls").then(__webpack_require__.bind(null, /*! ./de/Register.nls */ "./src/register/de/Register.nls.tsx")),
-        fr: () => __webpack_require__.e(/*! import() | src/register/fr/Register.nls */ "src/register/fr/Register.nls").then(__webpack_require__.bind(null, /*! ./fr/Register.nls */ "./src/register/fr/Register.nls.tsx"))
-    },
-    messages
-});
-
+module.exports = {" _key":"apconf2020/Register","root":"Register-m__root__ecb8b23NdBt","sent":"Register-m__sent__ecb8b2CoryU","figure":"Register-m__figure__ecb8b237kjX","noMB":"Register-m__noMB__ecb8b2ZuEjF","img":"Register-m__img__ecb8b2_zpxW","m8l":"Register-m__m8l__ecb8b21TZsr","stub":"Register-m__stub__ecb8b22qjyl","check":"Register-m__check__ecb8b21-y1O","success":"Register-m__success__ecb8b2IjOjJ","confirmed":"Register-m__confirmed__ecb8b23CXsb","confirmedTrp":"Register-m__confirmedTrp__ecb8b21nnIA","confirmedBottom":"Register-m__confirmedBottom__ecb8b21M__j","helperText":"Register-m__helperText__ecb8b226aZT _ui-m__s__ecb8b21rol0 _typo__s__ecb8b22332p","codeOfConduct":"Register-m__codeOfConduct__ecb8b21Ez9F","widescreen":"Register-m__widescreen__ecb8b22G76g","bottom":"Register-m__bottom__ecb8b2T9ymp","flex":"Register-m__flex__ecb8b2gbWUi","flexBottom":"Register-m__flexBottom__ecb8b23SI5M","description":"Register-m__description__ecb8b22mX1u _typo__serif__ecb8b22EAdY","proposals":"Register-m__proposals__ecb8b2gYKWI","help":"Register-m__help__ecb8b27c_WW","submit":"Register-m__submit__ecb8b2KWcJi","asideColumn":"Register-m__asideColumn__ecb8b23KXzX","addControl":"Register-m__addControl__ecb8b23j3Q8","top":"Register-m__top__ecb8b2-zj1x","line":"Register-m__line__ecb8b2BkVna","num":"Register-m__num__ecb8b2GoNiw _ui-m__s__ecb8b21rol0 _typo__s__ecb8b22332p","caption":"Register-m__caption__ecb8b21YYzO _ui-m__s__ecb8b21rol0 _typo__s__ecb8b22332p","input":"Register-m__input__ecb8b2LEmkB","tzCaption":"Register-m__tzCaption__ecb8b21It2A","available":"Register-m__available__ecb8b21iWh9","number":"Register-m__number__ecb8b23orfM","invite":"Register-m__invite__ecb8b21pAKQ _ui-m__xl__ecb8b21ewdq _typo__xl__ecb8b2-KCUG","big":"Register-m__big__ecb8b21NOQh","right":"Register-m__right__ecb8b21euUk","controlWrapper":"Register-m__controlWrapper__ecb8b2IbA_Z","angel":"Register-m__angel__ecb8b2r1gKa","sentAside":"Register-m__sentAside__ecb8b21FdRu"};
 
 /***/ }),
 
@@ -734,22 +792,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _middleware_theme__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../middleware/theme */ "./src/middleware/theme.tsx");
 /* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../button */ "./src/button/index.tsx");
 /* harmony import */ var _checkbox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../checkbox */ "./src/checkbox/index.tsx");
-/* harmony import */ var _radio__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../radio */ "./src/radio/index.tsx");
-/* harmony import */ var _text_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../text-input */ "./src/text-input/index.tsx");
-/* harmony import */ var _text_area__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../text-area */ "./src/text-area/index.tsx");
-/* harmony import */ var _email_input__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../email-input */ "./src/email-input/index.tsx");
+/* harmony import */ var _text_input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../text-input */ "./src/text-input/index.tsx");
+/* harmony import */ var _text_area__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../text-area */ "./src/text-area/index.tsx");
+/* harmony import */ var _email_input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../email-input */ "./src/email-input/index.tsx");
+/* harmony import */ var _range_slider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../range-slider */ "./src/range-slider/index.tsx");
 /* harmony import */ var _assets_timezones__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../assets/timezones */ "./src/assets/timezones.ts");
 /* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../AppContent.m.css */ "./src/AppContent.m.css");
 /* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _Register_m_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Register.m.css */ "./src/register/Register.m.css");
 /* harmony import */ var _Register_m_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_Register_m_css__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _Register_nls__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Register.nls */ "./src/register/Register.nls.tsx");
+/* harmony import */ var _nls_main__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./nls/main */ "./src/register/nls/main.ts");
 
 
 
 
 
 
+// import Radio from '../radio';
 
 
 
@@ -779,14 +838,10 @@ Talk / BoF CFP
 */
 /* harmony default export */ __webpack_exports__["default"] = (factory(function Register({ properties, middleware: { icache, theme, i18n } }) {
     const { get, set } = icache;
-    const { messages } = i18n.localize(_Register_nls__WEBPACK_IMPORTED_MODULE_13__["default"]);
+    const { messages } = i18n.localize(_nls_main__WEBPACK_IMPORTED_MODULE_13__["default"]);
     const themedCss = theme.classes(_Register_m_css__WEBPACK_IMPORTED_MODULE_12__);
     const registerHelper = [themedCss.helperText];
     const timeOptions = Object.assign({}, Intl.DateTimeFormat().resolvedOptions(), { offset: new Date().getTimezoneOffset() });
-    const timeStyle = (min, max, display = true) => {
-        const _opacity = icache.get('customTZ') || timeOptions.offset < min || timeOptions.offset > max ? 1 : 0;
-        return (!display && !_opacity) ? 'display: none;' : `opacity: ${_opacity};`;
-    };
     const { state = 'new' } = properties();
     if (state === 'sent') {
         return Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("output", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["blue"], _AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["root"], themedCss.root, themedCss.sent] },
@@ -799,6 +854,19 @@ Talk / BoF CFP
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { class: 'serif', innerHTML: snarkdown(messages.mailSent) })),
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["asideColumn"], themedCss.sentAside] }));
     }
+    const TIMES = [
+        { US: 1, America: 1, Paific: 1, Brazil: 1, Canada: 1, Antarctica: 1, min: 6, max: 19 },
+        { Europe: 1, Africa: 1, min: 14, max: 27 },
+        { Asia: 1, Atlantic: 1, Australia: 1, min: 5, max: 27 }
+    ];
+    const region = icache.getOrSet('TZ', timeOptions.timeZone).split('/')[0];
+    const minmax = TIMES.reduce((o, t) => {
+        if (t.hasOwnProperty(region)) {
+            o.min = t.min;
+            o.max = t.max;
+        }
+        return o;
+    }, { min: 0, max: 24 });
     return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("form", { action: state === 'confirmed' ? '#' : packageJSON.redaktor.server, method: "POST", classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["blue"], _AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["root"], themedCss.root] },
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("datalist", { id: 'timezones' }, _assets_timezones__WEBPACK_IMPORTED_MODULE_10__["default"].map((tz) => Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("option", { value: tz }))),
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["headline"] },
@@ -814,54 +882,51 @@ Talk / BoF CFP
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("figcaption", null,
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, messages.photocaption),
                     "Sebastian Lasse, hellekin"))),
-        (state === 'confirmed' ?
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("aside", { classes: [themedCss.stub, themedCss.confirmed] }) :
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("aside", { classes: [themedCss.stub] },
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.top },
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, "Admit"),
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", { classes: themedCss.line }),
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", { classes: themedCss.num },
-                        "Invitation",
-                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, " 31415926"))),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.number }, "1"),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.invite },
-                    "Invite for you",
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null)))),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("aside", { classes: [themedCss.stub, state === 'confirmed' ? themedCss.confirmed : null] },
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.top },
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, "Admit"),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", { classes: themedCss.line }),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", { classes: themedCss.num },
+                    state === 'confirmed' ? 'Ticket' : 'Invitation',
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, " 31415926"))),
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.number }, "1"),
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.invite },
+                state === 'confirmed' ? 'You' : 'Invite for you',
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null))),
         (state === 'confirmed' ?
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [themedCss.check] },
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h1", { classes: [themedCss.success] }, messages.headerConfirmed),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", null),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h3", null, messages.textConfirmed)) :
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [themedCss.check] },
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_7__["default"], { name: 'publicBadgeName', autocomplete: 'name', maxLength: 800, responsive: true, size: 'l', required: true, placeholder: messages.pBadgeName, onValidate: (valid, message) => {
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'publicBadgeName', autocomplete: 'name', maxLength: 800, responsive: true, size: 'l', required: true, placeholder: messages.pBadgeName, onValidate: (valid, message) => {
                         set('validBadgeName', !!valid);
                         set('messageBadgeName', message);
                     }, valid: { valid: get('validBadgeName'), message: get('messageBadgeName') }, classes: registerHelper }, messages.iBadgeName),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_email_input__WEBPACK_IMPORTED_MODULE_9__["default"], { name: 'privateEmail', autocomplete: 'email', responsive: true, size: 'l', required: true, placeholder: messages.pEmail, onValidate: (valid, message) => {
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_email_input__WEBPACK_IMPORTED_MODULE_8__["default"], { name: 'privateEmail', autocomplete: 'email', responsive: true, size: 'l', required: true, placeholder: messages.pEmail, onValidate: (valid, message) => {
                         set('validMail', !!valid);
                         set('messageMail', message);
                     }, classes: registerHelper }, messages.iEmail),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_7__["default"], { name: 'publicBadgeByline', maxLength: 800, responsive: true }, messages.iBadgeByline),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_7__["default"], { name: 'timezone', autocomplete: "off", list: 'timezones', responsive: true, value: icache.get('customTZ') || timeOptions.timeZone, onValue: (v) => icache.set('customTZ', v || ''), onValidate: (valid, message) => {
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'publicBadgeByline', maxLength: 800, responsive: true }, messages.iBadgeByline),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'timezone', autocomplete: "off", list: 'timezones', responsive: true, value: icache.get('TZ') || timeOptions.timeZone, onValue: (v) => icache.set('TZ', v || timeOptions.timeZone), onValidate: (valid, message) => {
                         set('validTimezone', !!valid);
                         set('messageTimezone', message);
                     }, valid: { valid: get('validTimezone'), message: get('messageTimezone') }, pattern: _assets_timezones__WEBPACK_IMPORTED_MODULE_10__["default"].join('|') }, messages.iTimezone),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [themedCss.caption, themedCss.tzCaption] },
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, messages.tzCaption)),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { style: timeStyle(-420, 360) },
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_radio__WEBPACK_IMPORTED_MODULE_6__["default"], { key: '_5', name: 'availableFrom', value: '5 a.m.' }, "5"),
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_radio__WEBPACK_IMPORTED_MODULE_6__["default"], { key: '_6', name: 'availableFrom', value: '6 a.m.', checked: true }, "6"),
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_radio__WEBPACK_IMPORTED_MODULE_6__["default"], { key: '_7', name: 'availableFrom', value: '7 a.m.' }, "7 a.m.")),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { style: timeStyle(60, 780) },
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_radio__WEBPACK_IMPORTED_MODULE_6__["default"], { key: '_0', name: 'availableTo', value: '0 a.m.' }, "0"),
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_radio__WEBPACK_IMPORTED_MODULE_6__["default"], { key: '_1', name: 'availableTo', value: '1 a.m.', checked: true }, "1"),
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_radio__WEBPACK_IMPORTED_MODULE_6__["default"], { key: '_2', name: 'availableTo', value: '2 a.m.' }, "2 a.m.")),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("input", { classes: themedCss.confirmedTrp, type: "text", name: 'confirmed' }),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_7__["default"], { name: 'privateName', autocomplete: 'name', maxLength: 400, responsive: true }, messages.iName),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_7__["default"], { name: 'org', autocomplete: 'organization', maxLength: 800, responsive: true }, messages.iOrg),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_7__["default"], { name: 'ActivityPub', maxLength: 800, responsive: true, placeholder: 'e.g. @cwebber@octodon.social' }, messages.iAP),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_7__["default"], { name: 'website', maxLength: 400, responsive: true }, messages.iWebsite))),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.bottom },
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'privateName', autocomplete: 'name', maxLength: 400, responsive: true }, messages.iName),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'org', autocomplete: 'organization', maxLength: 800, responsive: true }, messages.iOrg),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'ActivityPub', maxLength: 800, responsive: true, placeholder: 'e.g. @cwebber@octodon.social' }, messages.iAP),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'website', maxLength: 400, responsive: true }, messages.iWebsite),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [themedCss.caption, themedCss.tzCaption] },
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, icache.get('available') ?
+                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h5", { classes: themedCss.available }, icache.get('available')) : messages.tzCaption),
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_range_slider__WEBPACK_IMPORTED_MODULE_9__["default"], { minimumLabel: `${minmax.min} h`, min: minmax.min, minConstraint: 10, minName: "availableFrom", maximumLabel: `${minmax.max > 24 ? minmax.max - 24 : minmax.max} h`, max: minmax.max, maxName: "availableTo", onValue: (v) => {
+                            icache.set('available', `${v.min} – ${v.max > 24 ? v.max - 24 : v.max} h`);
+                        }, labelHidden: false }),
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("input", { name: "available", type: "hidden", value: `${icache.get('available')} ${icache.get('TZ')}` })),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", null),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", null))),
+        state === 'confirmed' ? Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.bottom }) : Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.bottom },
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.widescreen },
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { classes: themedCss.description },
                     messages.registrationMail,
@@ -885,9 +950,9 @@ Talk / BoF CFP
                                 messages.proposal))),
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", { class: "serif" }, messages.talkCaption),
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { key: "talks", classes: themedCss.controlWrapper },
-                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_7__["default"], { name: "TalkProposal", key: "talkProposal", maxLength: 200, placeholder: 'title max. 200 characters [en]', size: "l", labelHidden: true, responsive: true }, "Title for the talk"),
+                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: "TalkProposal", key: "talkProposal", maxLength: 200, placeholder: 'title max. 200 characters [en]', size: "l", labelHidden: true, responsive: true }, "Title for the talk"),
                         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),
-                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_area__WEBPACK_IMPORTED_MODULE_8__["default"], { name: "TalkProposalSummary", key: "talkProposalSummary", maxLength: 1600, placeholder: 'summary max. 1.600 characters [en]', labelHidden: true, responsive: true }, "Summary of the talk"),
+                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_area__WEBPACK_IMPORTED_MODULE_7__["default"], { name: "TalkProposalSummary", key: "talkProposalSummary", maxLength: 1600, placeholder: 'summary max. 1.600 characters [en]', labelHidden: true, responsive: true }, "Summary of the talk"),
                         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null))),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("details", null,
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("summary", null,
@@ -902,18 +967,10 @@ Talk / BoF CFP
                                 messages.proposal))),
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", { class: "serif" }, messages.bofCaption),
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { key: "bofs", classes: themedCss.controlWrapper },
-                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_7__["default"], { name: "BofProposal", key: "bofProposal", maxLength: 200, placeholder: 'title max. 200 characters [en]', labelHidden: true, responsive: true }, "Title for the session"),
+                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: "BofProposal", key: "bofProposal", maxLength: 200, placeholder: 'title max. 200 characters [en]', labelHidden: true, responsive: true }, "Title for the session"),
                         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),
-                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_area__WEBPACK_IMPORTED_MODULE_8__["default"], { name: "BofProposalSummary", key: "bofProposalSummary", maxLength: 1600, placeholder: 'summary max. 1.600 characters [en]', labelHidden: true, responsive: true }, "Summary of the session"),
-                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null))),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.submit },
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.codeOfConduct },
-                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", { classes: themedCss.noMB },
-                            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("a", { href: 'https://www.contributor-covenant.org/version/1/4/code-of-conduct', target: '_blank' },
-                                messages.iConduct,
-                                ":")),
-                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_checkbox__WEBPACK_IMPORTED_MODULE_5__["default"], { name: "codeOfConduct", required: true, value: 'agreed' }, messages.iAgree)),
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_button__WEBPACK_IMPORTED_MODULE_4__["default"], { color: "blue", spaced: false, responsive: true, type: 'submit', size: 'xxl', variant: 'filled' }, "Register"))),
+                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_area__WEBPACK_IMPORTED_MODULE_7__["default"], { name: "BofProposalSummary", key: "bofProposalSummary", maxLength: 1600, placeholder: 'summary max. 1.600 characters [en]', labelHidden: true, responsive: true }, "Summary of the session"),
+                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null)))),
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.help },
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h3", { classes: themedCss.angel }, messages.offer),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", null,
@@ -924,8 +981,78 @@ Talk / BoF CFP
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_checkbox__WEBPACK_IMPORTED_MODULE_5__["default"], { name: "helpsModeration" }, messages.oMo),
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_checkbox__WEBPACK_IMPORTED_MODULE_5__["default"], { name: "helpsWebdesign" }, messages.oWE),
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null))))));
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null)),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.codeOfConduct },
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", { classes: themedCss.noMB },
+                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("a", { href: 'https://www.contributor-covenant.org/version/1/4/code-of-conduct', target: '_blank' },
+                            messages.iConduct,
+                            ":")),
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_checkbox__WEBPACK_IMPORTED_MODULE_5__["default"], { spaced: false, name: "codeOfConduct", required: true, value: 'agreed' }, messages.iAgree)),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.submit },
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_button__WEBPACK_IMPORTED_MODULE_4__["default"], { color: "blue", spaced: false, responsive: true, type: 'submit', size: 'xxl', variant: 'filled' }, "Register"))))));
 }));
+
+
+/***/ }),
+
+/***/ "./src/register/nls/main.ts":
+/*!**********************************!*\
+  !*** ./src/register/nls/main.ts ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+    locales: {
+        de: () => __webpack_require__.e(/*! import() | src/register/nls/de/main */ "src/register/nls/de/main").then(__webpack_require__.bind(null, /*! ./de/main */ "./src/register/nls/de/main.ts")),
+        fr: () => __webpack_require__.e(/*! import() | src/register/nls/fr/main */ "src/register/nls/fr/main").then(__webpack_require__.bind(null, /*! ./fr/main */ "./src/register/nls/fr/main.ts"))
+    },
+    messages: {
+        headline: 'Register',
+        headlineConfirmed: 'Registered',
+        byline: `& propose`,
+        bylineSent: `confirm the mail`,
+        bylineConfirmed: `OK`,
+        headerConfirmed: `Awesome!`,
+        textConfirmed: `You registered successfuly.`,
+        registrationMail: `You can also register or send proposals by eMail`,
+        description: `
+It is important to *confirm the link* in the mail we send you.
+*Deadline for CFPs is July 8<sup>th</sup>.*<br>
+We will inform you about your registration status in July.`,
+        mailSent: `
+# Final step:
+Please read and *confirm* the mail we sent to complete your registration.`,
+        photocaption: 'Pictures of ActivityPub Conference 2019 Prague',
+        iBadgeName: 'Badge Name',
+        pBadgeName: 'enter a public identifier',
+        iEmail: 'eMail Address',
+        pEmail: 'will not be published',
+        iBadgeByline: 'Badge Byline',
+        iTimezone: 'Timezone',
+        tzCaption: `Given the audience of this conf,
+we'll try to schedule talks that can be attended by people around the world.
+Though we cannot guarantee to accommodate everyone, please help us by selecting
+a time-range you're comfortable with`,
+        iName: 'Real Name',
+        iOrg: 'Project, Org. or Company',
+        iAP: 'ActivityPub Address',
+        iWebsite: 'Website',
+        iConduct: 'Code of Conduct',
+        iAgree: 'I agree',
+        offer: 'I can help',
+        oVR: 'Recording',
+        oVE: 'Video edit',
+        oMo: 'Moderation',
+        oWE: 'Webdesign',
+        add: 'Add a',
+        proposal: 'proposal',
+        talkCaption: 'Enter the title and a brief summary',
+        bofCaption: 'Enter the title and a brief session summary',
+    }
+});
 
 
 /***/ }),
@@ -1344,6 +1471,18 @@ module.exports = {" _key":"apconf2020/_ui","flex":"_ui-m__flex__ecb8b2tbQfK","fl
 
 // extracted by mini-css-extract-plugin
 module.exports = {" _key":"apconf2020/email-input","helperText":"email-input-m__helperText__ecb8b22nTfp _ui-m__s__ecb8b21rol0 _typo__s__ecb8b22332p"};
+
+/***/ }),
+
+/***/ "./src/theme/material/range-slider.m.css":
+/*!***********************************************!*\
+  !*** ./src/theme/material/range-slider.m.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+module.exports = {" _key":"apconf2020/range-slider","root":"range-slider-m__root__ecb8b22s2Ck","hasOutput":"range-slider-m__hasOutput__ecb8b2RHyk9","inputWrapper":"range-slider-m__inputWrapper__ecb8b2256Yl","focused":"range-slider-m__focused__ecb8b28CwV2","disabled":"range-slider-m__disabled__ecb8b2cQLhm","readonly":"range-slider-m__readonly__ecb8b21Yvgn","invalid":"range-slider-m__invalid__ecb8b23ENLH","thumb":"range-slider-m__thumb__ecb8b2gqI8K","valid":"range-slider-m__valid__ecb8b23oM3k","input":"range-slider-m__input__ecb8b23aXE2","leftThumb":"range-slider-m__leftThumb__ecb8b21N_OH","rightThumb":"range-slider-m__rightThumb__ecb8b2boqq5","leftLabel":"range-slider-m__leftLabel__ecb8b21vFB_","rightLabel":"range-slider-m__rightLabel__ecb8b2H6nTU","filled":"range-slider-m__filled__ecb8b22IUmB","outputTooltip":"range-slider-m__outputTooltip__ecb8b23PRN1","output":"range-slider-m__output__ecb8b23I-2x"};
 
 /***/ })
 

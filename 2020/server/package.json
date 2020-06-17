@@ -74,7 +74,7 @@
 
   "redaktor": {
     "_baseHint": "The full URL to the root of the website. Can be a static directory:",
-    "base": "https://apconf.uber.space/",
+    "base": "https://conf.activitypub.rocks/",
     "_portHint": "The port you want to run the node server:",
     "port": 62931,
     "_confirmationEndpointHint": "The full URL to the mail confirmation endpoint:",

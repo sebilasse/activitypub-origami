@@ -1,5 +1,6 @@
 {
-  "supportedLocales": [ "en", "de", "fr" ],
+  "locale": "en",
+  "supportedLocales": ["de"],
   "build-app": {
     "pwa": {
       "manifest": {

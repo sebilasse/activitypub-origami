@@ -1,5 +1,4 @@
-import * as baseCss from '../common/styles/base.m.css';
-import * as css from '../theme/default/range-slider.m.css';
+import * as css from '../theme/material/range-slider.m.css';
 import * as fixedCss from './styles/range-slider.m.css';
 import Label from '../label/index';
 import dimensions from '@dojo/framework/core/middleware/dimensions';
@@ -27,6 +26,8 @@ export interface RangeSliderProperties {
 	maxName?: string;
 	/** The minimum value allowed */
 	min?: number;
+	/** The minimum value allowed for max thumb */
+	minConstraint?: number;
 	/** The label displayed at the minimum range */
 	minimumLabel?: string;
 	/** The name of the minimum range */
@@ -102,6 +103,7 @@ export const RangeSlider = factory(function RangeSlider({
 		maximumLabel = 'Maximum',
 		minName = `${name}_min`,
 		minimumLabel = 'Minimum',
+		minConstraint = 0,
 		onBlur,
 		onFocus,
 		onOut,
@@ -137,7 +139,7 @@ export const RangeSlider = factory(function RangeSlider({
 		}
 	}
 
-	const themeCss = theme.classes(css);
+	const themedCss = theme.classes(css);
 	const size = dimensions.get('root');
 
 	const maxLabelId = `max-label-${id}`;
@@ -156,7 +158,7 @@ export const RangeSlider = factory(function RangeSlider({
 		'aria-invalid': valid === false ? 'true' : null,
 		'aria-labelledby': `${widgetId}-label`,
 		'aria-readonly': readOnly === true ? 'true' : null,
-		classes: [themeCss.input, fixedCss.nativeInput],
+		classes: [themedCss.input, fixedCss.nativeInput],
 		disabled,
 		max: `${maxRestraint}`,
 		min: `${minRestraint}`,
@@ -216,13 +218,13 @@ export const RangeSlider = factory(function RangeSlider({
 			key="root"
 			classes={[
 				theme.variant(),
-				themeCss.root,
-				disabled ? themeCss.disabled : null,
-				focus.isFocused('root') ? themeCss.focused : null,
-				valid === false ? themeCss.invalid : null,
-				valid === true ? themeCss.valid : null,
-				readOnly ? themeCss.readonly : null,
-				showOutput ? themeCss.hasOutput : null
+				themedCss.root,
+				disabled ? themedCss.disabled : null,
+				focus.isFocused('root') ? themedCss.focused : null,
+				valid === false ? themedCss.invalid : null,
+				valid === true ? themedCss.valid : null,
+				readOnly ? themedCss.readonly : null,
+				showOutput ? themedCss.hasOutput : null
 			]}
 		>
 			{label ? (
@@ -243,7 +245,7 @@ export const RangeSlider = factory(function RangeSlider({
 				</Label>
 			) : null}
 			<div
-				classes={[themeCss.inputWrapper, fixedCss.inputWrapperFixed]}
+				classes={[themedCss.inputWrapper, fixedCss.inputWrapperFixed]}
 				onpointerenter={() => {
 					onOver && onOver();
 				}}
@@ -252,15 +254,15 @@ export const RangeSlider = factory(function RangeSlider({
 				}}
 			>
 				{slider1}
-				<div classes={baseCss.visuallyHidden} id={minLabelId} key="minimumLabel">
+				<div id={minLabelId} classes={themedCss.leftLabel} key="minimumLabel">
 					{minimumLabel}
 				</div>
 				{slider2}
-				<div classes={baseCss.visuallyHidden} id={maxLabelId} key="maximumLabel">
+				<div id={maxLabelId} classes={themedCss.rightLabel} key="maximumLabel">
 					{maximumLabel}
 				</div>
 				<div
-					classes={[themeCss.filled, fixedCss.filledFixed]}
+					classes={[themedCss.filled, fixedCss.filledFixed]}
 					key="track"
 					styles={{
 						left: Math.round(slider1Percent * 100) + '%',
@@ -270,9 +272,9 @@ export const RangeSlider = factory(function RangeSlider({
 				<div
 					key="leftThumb"
 					classes={[
-						themeCss.thumb,
-						themeCss.leftThumb,
-						focus.isFocused('slider1') ? themeCss.focused : undefined,
+						themedCss.thumb,
+						themedCss.leftThumb,
+						focus.isFocused('slider1') ? themedCss.focused : undefined,
 						fixedCss.thumbFixed
 					]}
 					styles={{
@@ -282,18 +284,18 @@ export const RangeSlider = factory(function RangeSlider({
 				<div
 					key="rightThumb"
 					classes={[
-						themeCss.thumb,
-						themeCss.rightThumb,
-						focus.isFocused('slider2') ? themeCss.focused : undefined,
+						themedCss.thumb,
+						themedCss.rightThumb,
+						focus.isFocused('slider2') ? themedCss.focused : undefined,
 						fixedCss.thumbFixed
 					]}
 					styles={{
-						left: Math.round(slider2Percent * 100) + '%'
+						left: Math.max(minConstraint, Math.round(slider2Percent * 100)) + '%'
 					}}
 				/>
 				{showOutput ? (
 					<output
-						classes={[themeCss.output, outputIsTooltip ? themeCss.outputTooltip : null]}
+						classes={[themedCss.output, outputIsTooltip ? themedCss.outputTooltip : null]}
 						for={widgetId}
 						styles={
 							outputIsTooltip

@@ -34,78 +34,6 @@ module.exports = {" _key":"apconf2020/CFP","root":"CFP-m__root__ecb8b22t5LA","fi
 
 /***/ }),
 
-/***/ "./src/cfp/CFP.nls.tsx":
-/*!*****************************!*\
-  !*** ./src/cfp/CFP.nls.tsx ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-const messages = {
-    headline: 'CFP',
-    deadline: `Deadline for proposals is July 6`,
-    description: `
-A conference about the present and future of ActivityPub,
-the world’s leading federated social web standard.
-<br><br>
-Following a successful inaugural conference in [2019](https://redaktor.me/apconf/),
-we have expanded APConf 2020 to a four day event that will occur entirely on line
-via Big Blue Button.
-<br>
-This year’s conference will include pre- recorded talks with live question and
-answer sessions, birds of a feather sessions, lightning round talks, and a hackathon
-that follows the conference.`,
-    cfp: `
-We *invite* proposals for birds of a feather session topics and 30- 60 minute talks
-related to ActivityPub. Topics may include, but are not limited to:`,
-    cfpList: `
-- projects and implementations
-- community management and hosting
-- and ActivityPub extensions.`,
-    registration: `
-To *submit* a talk or BoF, please include your title and a brief summary with your registration.
-<br><br>
-Due to bandwidth limitations of video conferencing software, we ask for those
-who wish to participate in the Big Blue Button sessions to register.
-<br>
-Registration will be on a first-come first-serve basis.
-<br>
-There is *no registration fee*.
-<br>
-All of the recorded talks will be uploaded to ConfTube and freely available regardless of registration
-a week prior to the conference.`,
-    codeOfConduct: `By registering, you agree to follow the terms of our Code of Conduct which can be found here:`,
-    hamiltonCaption: `Pioneering computer scientist
-Margaret Hamilton stands next to the code that she and her team wrote
-to guide the Apollo spacecraft to the moon.`,
-    hamiltonCredit: `Draper Laboratory`,
-    hamiltonSpecialInstructions: `[CC0]
-Retouched / restored by Adam Cuerden, modifications:
-dust and scratches removed;
-curves tweaked to bring out shadows,
-approximately 3 pixels cropped from bottom in order to remove a border.`,
-    byronCaption: `The world's First Computer Programmer:
-<br>
-Ada Lovelace aka Augusta Ada Byron
-<br>
-– 1843 or 1850`,
-    byronCredit: `Daguerreotype by Antoine Claudet`,
-    byronSpecialInstructions: `[CC0] wikimedia`
-};
-/* harmony default export */ __webpack_exports__["default"] = ({
-    locales: {
-        en: messages,
-        de: () => __webpack_require__.e(/*! import() | src/cfp/de/CFP.nls */ "src/cfp/de/CFP.nls").then(__webpack_require__.bind(null, /*! ./de/CFP.nls */ "./src/cfp/de/CFP.nls.tsx")),
-        fr: () => __webpack_require__.e(/*! import() | src/cfp/fr/CFP.nls */ "src/cfp/fr/CFP.nls").then(__webpack_require__.bind(null, /*! ./fr/CFP.nls */ "./src/cfp/fr/CFP.nls.tsx"))
-    },
-    messages
-});
-
-
-/***/ }),
-
 /***/ "./src/cfp/CFP.tsx":
 /*!*************************!*\
   !*** ./src/cfp/CFP.tsx ***!
@@ -123,7 +51,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _CFP_m_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CFP.m.css */ "./src/cfp/CFP.m.css");
 /* harmony import */ var _CFP_m_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _CFP_nls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./CFP.nls */ "./src/cfp/CFP.nls.tsx");
+/* harmony import */ var _nls_main__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./nls/main */ "./src/cfp/nls/main.ts");
 
 
 
@@ -137,7 +65,7 @@ const hamilton = __webpack_require__(/*! ../assets/photos/margaret-hamilton-web.
 const byron = __webpack_require__(/*! ../assets/photos/ada-byron.png */ "./src/assets/photos/ada-byron.png");
 const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["create"])({ icache: _dojo_framework_core_middleware_icache__WEBPACK_IMPORTED_MODULE_1__["default"], theme: _middleware_theme__WEBPACK_IMPORTED_MODULE_3__["default"], i18n: _dojo_framework_core_middleware_i18n__WEBPACK_IMPORTED_MODULE_2__["default"] /*, resize*/ });
 /* harmony default export */ __webpack_exports__["default"] = (factory(function CFP({ middleware: { theme, i18n /*,icache, resize*/ } }) {
-    const { messages } = i18n.localize(_CFP_nls__WEBPACK_IMPORTED_MODULE_6__["default"]);
+    const { messages } = i18n.localize(_nls_main__WEBPACK_IMPORTED_MODULE_6__["default"]);
     const themedCss = theme.classes(_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__);
     return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["orange"], _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["root"], themedCss.root, theme.isJS() ? themedCss.js : null] },
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["headline"] },
@@ -183,6 +111,76 @@ const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["c
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { classes: themedCss.responsiveCaption, innerHTML: snarkdown(messages.byronCaption) }),
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", null, messages.byronCredit))))));
 }));
+
+
+/***/ }),
+
+/***/ "./src/cfp/nls/main.ts":
+/*!*****************************!*\
+  !*** ./src/cfp/nls/main.ts ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+    locales: {
+        de: () => __webpack_require__.e(/*! import() | src/cfp/nls/de/main */ "src/cfp/nls/de/main").then(__webpack_require__.bind(null, /*! ./de/main */ "./src/cfp/nls/de/main.ts")),
+        fr: () => __webpack_require__.e(/*! import() | src/cfp/nls/fr/main */ "src/cfp/nls/fr/main").then(__webpack_require__.bind(null, /*! ./fr/main */ "./src/cfp/nls/fr/main.ts"))
+    },
+    messages: {
+        headline: 'CFP',
+        deadline: `Deadline for proposals is July 8`,
+        description: `
+A conference about the present and future of ActivityPub,
+the world’s leading federated social web standard.
+<br><br>
+Following a successful inaugural conference in [2019](https://redaktor.me/apconf/),
+we have expanded APConf 2020 to a four day event that will occur entirely on line
+via Big Blue Button.
+<br>
+This year’s conference will include pre- recorded talks with live question and
+answer sessions, birds of a feather sessions, lightning round talks, and a hackathon
+that follows the conference.`,
+        cfp: `
+We *invite* proposals for birds of a feather session topics and 30- 60 minute talks
+related to ActivityPub. Topics may include, but are not limited to:`,
+        cfpList: `
+- projects and implementations
+- community management and hosting
+- and ActivityPub extensions.`,
+        registration: `
+To *submit* a talk or BoF, please include your title and a brief summary with your registration.
+<br><br>
+Due to bandwidth limitations of video conferencing software, we ask for those
+who wish to participate in the Big Blue Button sessions to register.
+<br>
+Registration will be on a first-come first-serve basis.
+<br>
+There is *no registration fee*.
+<br>
+All of the recorded talks will be uploaded to ConfTube and freely available regardless of registration
+a week prior to the conference.`,
+        codeOfConduct: `By registering, you agree to follow the terms of our Code of Conduct which can be found here:`,
+        hamiltonCaption: `Pioneering computer scientist
+Margaret Hamilton stands next to the code that she and her team wrote
+to guide the Apollo spacecraft to the moon.`,
+        hamiltonCredit: `Draper Laboratory`,
+        hamiltonSpecialInstructions: `[CC0]
+Retouched / restored by Adam Cuerden, modifications:
+dust and scratches removed;
+curves tweaked to bring out shadows,
+approximately 3 pixels cropped from bottom in order to remove a border.`,
+        byronCaption: `The world's First Computer Programmer:
+<br>
+Ada Lovelace aka Augusta Ada Byron
+<br>
+– 1843 or 1850`,
+        byronCredit: `Daguerreotype by Antoine Claudet`,
+        byronSpecialInstructions: `[CC0] wikimedia`
+    }
+});
 
 
 /***/ })

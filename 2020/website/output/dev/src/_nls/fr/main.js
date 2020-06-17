@@ -1,9 +1,9 @@
 (window["dojoWebpackJsonpapconf2020"] = window["dojoWebpackJsonpapconf2020"] || []).push([["src/_nls/fr/main"],{
 
-/***/ "./src/_nls/fr/main.tsx":
-/*!******************************!*\
-  !*** ./src/_nls/fr/main.tsx ***!
-  \******************************/
+/***/ "./src/_nls/fr/main.ts":
+/*!*****************************!*\
+  !*** ./src/_nls/fr/main.ts ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -20,7 +20,7 @@ Une conférence sur le présent et l'avenir d'ActivityPub, la première norme f�
 - a hackathon that follows the conference.`,
     tPrefix: 'The 2020',
     tAddress: 'virtual',
-    tSuffix: 'conference will include',
+    tSuffix: 'conference will include'
 });
 
 

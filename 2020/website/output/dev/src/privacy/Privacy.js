@@ -34,26 +34,100 @@ module.exports = {" _key":"apconf2020/CFP","root":"CFP-m__root__ecb8b22t5LA","fi
 
 /***/ }),
 
-/***/ "./src/privacy/Privacy.nls.tsx":
-/*!*************************************!*\
-  !*** ./src/privacy/Privacy.nls.tsx ***!
-  \*************************************/
+/***/ "./src/privacy/Privacy.tsx":
+/*!*********************************!*\
+  !*** ./src/privacy/Privacy.tsx ***!
+  \*********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-const messages = {
-    headline: 'Privacy',
-    deadline: `GDPR §`,
-    textHead: `An overview of data protection`,
-    description: `
+/* harmony import */ var _dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dojo/framework/core/vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
+/* harmony import */ var _dojo_framework_core_middleware_icache__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dojo/framework/core/middleware/icache */ "./node_modules/@dojo/framework/core/middleware/icache.mjs");
+/* harmony import */ var _dojo_framework_core_middleware_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @dojo/framework/core/middleware/i18n */ "./node_modules/@dojo/framework/core/middleware/i18n.mjs");
+/* harmony import */ var _middleware_theme__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../middleware/theme */ "./src/middleware/theme.tsx");
+/* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../AppContent.m.css */ "./src/AppContent.m.css");
+/* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../cfp/CFP.m.css */ "./src/cfp/CFP.m.css");
+/* harmony import */ var _cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _nls_main__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./nls/main */ "./src/privacy/nls/main.ts");
+
+
+
+
+
+
+
+const snarkdown = __webpack_require__(/*! snarkdown */ "./node_modules/snarkdown/dist/snarkdown.es.js").default;
+const privImg = __webpack_require__(/*! ../assets/photos/low02_apconf_hellekin_002_hd.jpg */ "./src/assets/photos/low02_apconf_hellekin_002_hd.jpg");
+const privImg2 = __webpack_require__(/*! ../assets/photos/low57_apconf_sl051_hd.jpg */ "./src/assets/photos/low57_apconf_sl051_hd.jpg");
+const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["create"])({ icache: _dojo_framework_core_middleware_icache__WEBPACK_IMPORTED_MODULE_1__["default"], theme: _middleware_theme__WEBPACK_IMPORTED_MODULE_3__["default"], i18n: _dojo_framework_core_middleware_i18n__WEBPACK_IMPORTED_MODULE_2__["default"] });
+/* harmony default export */ __webpack_exports__["default"] = (factory(function CFP({ middleware: { theme, i18n /*,icache, resize*/ } }) {
+    const { messages } = i18n.localize(_nls_main__WEBPACK_IMPORTED_MODULE_6__["default"]);
+    const themedCss = theme.classes(_cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__);
+    return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["orange"], _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["root"], themedCss.root, theme.isJS() ? themedCss.js : null] },
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["headline"] },
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h1", null, messages.headline)),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["headline"] },
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h4", null, messages.deadline)),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["leftColumn"] },
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("figure", { classes: themedCss.figure },
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("img", { key: "privImg", classes: [themedCss.img, themedCss.ratio16_7], src: privImg }),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("figcaption", null,
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", null,
+                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("i", null, messages.imgCredit)))),
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("figure", { classes: themedCss.figure },
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("img", { key: "privImg2", classes: [themedCss.img, themedCss.ratio16_7], src: privImg2 }),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("figcaption", null,
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", null,
+                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("i", null, messages.imgCredit2)))),
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null)),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["autoColumnWide"], themedCss.desc1] },
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { class: "serif", innerHTML: snarkdown(messages.description) }),
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { class: "serif", innerHTML: snarkdown(messages.overview) })),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["autoColumnWide"], themedCss.desc2] },
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { class: "serif", innerHTML: snarkdown(messages.info) })),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["asideColumn"], _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["asideStart"]] },
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null,
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("em", null, "contact: "),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", { classes: themedCss.m8l },
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, "activitypub "),
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, "conf"),
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, " @rise ")),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, "up.net"),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null)))));
+}));
+
+
+/***/ }),
+
+/***/ "./src/privacy/nls/main.ts":
+/*!*********************************!*\
+  !*** ./src/privacy/nls/main.ts ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+    locales: {
+        de: () => __webpack_require__.e(/*! import() | src/privacy/nls/de/main */ "src/privacy/nls/de/main").then(__webpack_require__.bind(null, /*! ./de/main */ "./src/privacy/nls/de/main.ts")),
+        fr: () => __webpack_require__.e(/*! import() | src/privacy/nls/fr/main */ "src/privacy/nls/fr/main").then(__webpack_require__.bind(null, /*! ./fr/main */ "./src/privacy/nls/fr/main.ts"))
+    },
+    messages: {
+        headline: 'Privacy',
+        deadline: `GDPR §`,
+        textHead: `An overview of data protection`,
+        description: `
 ## 1. At the Conference<br>
 *Concerns* <br>
 Please raise any concerns over privacy via mail to the conf. organisers or contact a moderator in Big Blue Button.<br>
 We are happy to help!<br>
-`,
-    overview: `
+	`,
+        overview: `
 ## 2. An overview of data protection<br>
 **The following gives a simple overview of what happens to your personal information when you visit our website.<br>
 Personal information is any data with which you could be personally identified.
@@ -82,8 +156,8 @@ You always have the right to request information about your stored data, its ori
 You also have the right to request that it be corrected, blocked, or deleted.
 You can contact us at any time using the address given in the legal notice if you have further questions about the issue of privacy and data protection.
 You may also, of course, file a complaint with the competent regulatory authorities.
-`,
-    info: `
+	`,
+        info: `
 ## 3. General information and mandatory information<br>
 *Data protection* <br>
 The operators of this website take the protection of your personal data very seriously.
@@ -160,88 +234,11 @@ The data provided when registering for the newsletter will be used to distribute
 Data we have stored for other purposes (e.g. email addresses for the members area) remain unaffected.
 <br><br>
 *Hamburg, June 14th 2020*
-`,
-    imgCredit: `hellekin`,
-    imgCredit2: `Sebastian`
-};
-/* harmony default export */ __webpack_exports__["default"] = ({
-    locales: {
-        en: messages,
-        de: () => __webpack_require__.e(/*! import() | src/privacy/de/Privacy.nls */ "src/privacy/de/Privacy.nls").then(__webpack_require__.bind(null, /*! ./de/Privacy.nls */ "./src/privacy/de/Privacy.nls.tsx")),
-        fr: () => __webpack_require__.e(/*! import() | src/privacy/fr/Privacy.nls */ "src/privacy/fr/Privacy.nls").then(__webpack_require__.bind(null, /*! ./fr/Privacy.nls */ "./src/privacy/fr/Privacy.nls.tsx"))
-    },
-    messages
+	`,
+        imgCredit: `hellekin`,
+        imgCredit2: `Sebastian`
+    }
 });
-
-
-/***/ }),
-
-/***/ "./src/privacy/Privacy.tsx":
-/*!*********************************!*\
-  !*** ./src/privacy/Privacy.tsx ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dojo/framework/core/vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
-/* harmony import */ var _dojo_framework_core_middleware_icache__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dojo/framework/core/middleware/icache */ "./node_modules/@dojo/framework/core/middleware/icache.mjs");
-/* harmony import */ var _dojo_framework_core_middleware_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @dojo/framework/core/middleware/i18n */ "./node_modules/@dojo/framework/core/middleware/i18n.mjs");
-/* harmony import */ var _middleware_theme__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../middleware/theme */ "./src/middleware/theme.tsx");
-/* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../AppContent.m.css */ "./src/AppContent.m.css");
-/* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../cfp/CFP.m.css */ "./src/cfp/CFP.m.css");
-/* harmony import */ var _cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _Privacy_nls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Privacy.nls */ "./src/privacy/Privacy.nls.tsx");
-
-
-
-
-// import resize from '@dojo/framework/core/middleware/resize';
-
-
-
-const snarkdown = __webpack_require__(/*! snarkdown */ "./node_modules/snarkdown/dist/snarkdown.es.js").default;
-const privImg = __webpack_require__(/*! ../assets/photos/low02_apconf_hellekin_002_hd.jpg */ "./src/assets/photos/low02_apconf_hellekin_002_hd.jpg");
-const privImg2 = __webpack_require__(/*! ../assets/photos/low57_apconf_sl051_hd.jpg */ "./src/assets/photos/low57_apconf_sl051_hd.jpg");
-const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["create"])({ icache: _dojo_framework_core_middleware_icache__WEBPACK_IMPORTED_MODULE_1__["default"], theme: _middleware_theme__WEBPACK_IMPORTED_MODULE_3__["default"], i18n: _dojo_framework_core_middleware_i18n__WEBPACK_IMPORTED_MODULE_2__["default"] /*, resize*/ });
-/* harmony default export */ __webpack_exports__["default"] = (factory(function CFP({ middleware: { theme, i18n /*,icache, resize*/ } }) {
-    const { messages } = i18n.localize(_Privacy_nls__WEBPACK_IMPORTED_MODULE_6__["default"]);
-    const themedCss = theme.classes(_cfp_CFP_m_css__WEBPACK_IMPORTED_MODULE_5__);
-    return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["orange"], _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["root"], themedCss.root, theme.isJS() ? themedCss.js : null] },
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["headline"] },
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h1", null, messages.headline)),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["headline"] },
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h4", null, messages.deadline)),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["leftColumn"] },
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("figure", { classes: themedCss.figure },
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("img", { key: "privImg", classes: [themedCss.img, themedCss.ratio16_7], src: privImg }),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("figcaption", null,
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", null,
-                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("i", null, messages.imgCredit)))),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("figure", { classes: themedCss.figure },
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("img", { key: "privImg2", classes: [themedCss.img, themedCss.ratio16_7], src: privImg2 }),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("figcaption", null,
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", null,
-                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("i", null, messages.imgCredit2)))),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null)),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["autoColumnWide"], themedCss.desc1] },
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { class: "serif", innerHTML: snarkdown(messages.description) }),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { class: "serif", innerHTML: snarkdown(messages.overview) })),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["autoColumnWide"], themedCss.desc2] },
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { class: "serif", innerHTML: snarkdown(messages.info) })),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["asideColumn"], _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["asideStart"]] },
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null,
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("em", null, "contact: "),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", { classes: themedCss.m8l },
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, "activitypub "),
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, "conf"),
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, " @rise ")),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, "up.net"),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null)))));
-}));
 
 
 /***/ })

@@ -197,7 +197,6 @@ em {
 h2, h3 {
   font-weight: 400;
 }
-a:visited /*no CSS sniffing*/ { color:inherit; }
 
 /* 13px */
 .xs {

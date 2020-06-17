@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-us" dir="ltr">
-<html lang="en">
+<html class="no-js">
 <head>
 	<meta charset="UTF-8">
 	<meta name="theme-color" content="#222127">
@@ -9,16 +8,70 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta property="og:title" content="ActivityPub Conference 2020 Virtual">
 	<meta property="og:site_name" content="#apconf">
-	<meta property="og:url" content="https://redaktor.me/apconf/2020">
+	<meta property="og:url" content="https://conf.activitypub.rocks">
 	<meta property="og:description" content="A conference about the present and future of ActivityPub, the world’s leading federated social web standard. Presentations of prepared talks followed by a loosely structured unconference. #apconf">
 	<meta property="og:type" content="website">
 	<meta property="og:date" content="2020-10-02" />
-	<meta property="og:image" content="https://redaktor.me/_deliver/apconf/APConfLogo_2_1.png">
+	<meta property="og:image" content="https://conf.activitypub.rocks/_deliver/apconf/APConfLogo_2_1.png">
 	<meta property="og:image:alt" content="ActivityPub Conference Logo">
 	<title>ActivityPub 𝗖𝗢𝗡𝗙 2020</title>
-	<script type="application/ld+json" src="_ld/apconf.json"></script>
 	<script src="_polyfill/pep.min.js"></script>
 	<script src="_polyfill/modernizr-custom.js"></script>
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@type": "Event",
+	  "name": "ActivityPub Conference 2020",
+	  "startDate": "2020-10-02",
+	  "endDate": "2020-10-09",
+	  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+	  "eventStatus": "https://schema.org/EventScheduled",
+	  "location": {
+	    "@type": "VirtualLocation",
+	    "url": "https://redaktor.me/apconf2020"
+	  },
+	  "image": [
+	    "https://redaktor.me/_deliver/apconf/APConfLogo_1_1.png",
+	    "https://redaktor.me/_deliver/apconf/APConfLogo_2_1.png",
+	    "https://redaktor.me/_deliver/apconf/APConfLogo.png"
+	   ],
+	  "description": "A conference about the present and future of ActivityPub, the world’s leading federated social web standard.",
+
+	  "offers": {
+	    "@type": "Offer",
+	    "url": "https://redaktor.me/apconf2020/register",
+	    "price": "0",
+	    "priceCurrency": "USD",
+	    "availability": "https://schema.org/InStock",
+	    "validFrom": "2020-10-01T00:00"
+	  },
+	  "performer": {
+	    "@type": "Person",
+	    "name": "Christopher Lemmer-Webber",
+	    "url": "https://"
+	  },
+	  "organizer": [
+	    {
+	      "@type": "Organization",
+	      "name": "W3C Social Community Group",
+	      "url": "https://www.w3.org/community/socialcg/"
+	    }, {
+	      "@type": "Person",
+	      "name": "Morgan Lemmer-Webber",
+	      "url": "https://octodon.social/@mlemweb"
+	    }, {
+	      "@type": "Person",
+	      "name": "Sebastian Lasse",
+	      "url": "https://mastodon.social/@sl007"
+	    },
+			{
+	      "@type": "Organization",
+	      "name": "redaktor",
+	      "url": "https://redaktor.me"
+	    }
+	  ]
+	}
+	</script>
 </head>
 <body>
 	<div id="app" class="h-event"></div>

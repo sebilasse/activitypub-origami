@@ -1,4 +1,4 @@
-@import '../../common/styles/variables.css';
+
 
 .inputWrapperFixed {
 	position: relative;
@@ -12,6 +12,8 @@
 	position: absolute;
 	height: 100%;
 	top: 0;
+	left: -10px;
+	width: calc(100% + 20px);
 }
 
 /* Make native input invisible */
@@ -28,10 +30,10 @@
 	overflow: visible;
 	padding: 0px;
 	position: absolute;
-	top: 0;
+	top: -8px;
 	width: 100%;
-	height: 100%;
-	z-index: calc(var(--zindex-base) + 1);
+	height: calc(100% + 16px);
+	z-index: 1;
 }
 
 /* invisible native track */

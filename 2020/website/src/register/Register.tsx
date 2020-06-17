@@ -5,15 +5,16 @@ import theme from '../middleware/theme';
 
 import Button from '../button';
 import Check from '../checkbox';
-import Radio from '../radio';
+// import Radio from '../radio';
 import TextInput from '../text-input';
 import TextArea from '../text-area';
 import MailInput from '../email-input';
+import RangeSlider from '../range-slider';
 import timezones from '../assets/timezones';
 
 import * as grid from '../AppContent.m.css';
 import * as css from './Register.m.css';
-import bundle from './Register.nls';
+import bundle from './nls/main';
 const snarkdown = require('snarkdown').default;
 const packageJSON = require('../../package.json');
 
@@ -27,9 +28,10 @@ interface RegisterICache {
 	messageMail: string;
 	validTimezone: boolean;
 	messageTimezone: string;
-	customTZ: string;
+	available: string;
 	hasTalk?: boolean;
 	hasBof?: boolean;
+	TZ: string;
 }
 const icache = createICacheMiddleware<RegisterICache>();
 const factory = create({ icache, theme, i18n }).properties<RegisterProperties>();
@@ -60,10 +62,7 @@ export default factory(function Register({ properties, middleware: { icache, the
 		...Intl.DateTimeFormat().resolvedOptions(),
 		offset: new Date().getTimezoneOffset()
 	}
-	const timeStyle = (min: number, max: number, display = true) => {
-		const _opacity = icache.get('customTZ') || timeOptions.offset < min || timeOptions.offset > max ? 1 : 0;
-		return (!display && !_opacity) ? 'display: none;' : `opacity: ${_opacity};`
-	}
+
 
 	const { state = 'new' } = properties();
 
@@ -79,7 +78,20 @@ export default factory(function Register({ properties, middleware: { icache, the
 		</output>
 	}
 
-	return (
+	const TIMES = [
+		{ US: 1, America: 1, Paific: 1, Brazil: 1, Canada: 1, Antarctica: 1, min: 6, max: 19 },
+		{ Europe: 1, Africa: 1, min: 14, max: 27 },
+		{ Asia: 1, Atlantic: 1, Australia: 1, min: 5, max: 27 }
+	];
+	const region = icache.getOrSet('TZ', timeOptions.timeZone).split('/')[0];
+	const minmax = TIMES.reduce((o, t) => {
+		if (t.hasOwnProperty(region)) {
+			o.min = t.min;
+			o.max = t.max;
+		}
+		return o
+	}, {min: 0, max: 24});
+		return (
 		<form
 			action={state === 'confirmed' ? '#' : packageJSON.redaktor.server}
 			method="POST"
@@ -106,20 +118,19 @@ export default factory(function Register({ properties, middleware: { icache, the
 					</figcaption>
 				</figure>
 			</aside>
-			{(state === 'confirmed' ?
-			<aside classes={[themedCss.stub, themedCss.confirmed]} /> :
-			<aside classes={[themedCss.stub]}>
+
+			<aside classes={[themedCss.stub, state === 'confirmed' ? themedCss.confirmed : null]}>
 				<div classes={themedCss.top}>
 					<span>Admit</span>
 					<span classes={themedCss.line}></span>
 					<span classes={themedCss.num}>
-						Invitation
+						{state === 'confirmed' ? 'Ticket' : 'Invitation'}
 						<span> 31415926</span>
 					</span>
 				</div>
 				<div classes={themedCss.number}>1</div>
-				<div classes={themedCss.invite}>Invite for you<span></span></div>
-			</aside>)}
+				<div classes={themedCss.invite}>{state === 'confirmed' ? 'You' : 'Invite for you'}<span></span></div>
+			</aside>
 
 			{(state === 'confirmed' ?
 				<div classes={[themedCss.check]}>
@@ -169,8 +180,8 @@ export default factory(function Register({ properties, middleware: { icache, the
 						autocomplete="off"
 						list='timezones'
 						responsive={true}
-						value={icache.get('customTZ') || timeOptions.timeZone}
-						onValue={(v) => icache.set('customTZ', v||'')}
+						value={icache.get('TZ') || timeOptions.timeZone}
+						onValue={(v) => icache.set('TZ', v||timeOptions.timeZone)}
 						onValidate={(valid, message) => {
 							set('validTimezone', !!valid);
 							set('messageTimezone', message);
@@ -179,19 +190,6 @@ export default factory(function Register({ properties, middleware: { icache, the
 						pattern={timezones.join('|')}
 					>{messages.iTimezone}</TextInput>
 
-					<div classes={[themedCss.caption, themedCss.tzCaption]}>
-						<span>{messages.tzCaption}</span>
-					</div>
-					<div style={timeStyle(-420, 360)}>
-						<Radio key='_5' name='availableFrom' value='5 a.m.'>5</Radio>
-						<Radio key='_6' name='availableFrom' value='6 a.m.' checked={true}>6</Radio>
-						<Radio key='_7' name='availableFrom' value='7 a.m.'>7 a.m.</Radio>
-					</div>
-					<div style={timeStyle(60, 780)}>
-						<Radio key='_0' name='availableTo' value='0 a.m.'>0</Radio>
-						<Radio key='_1' name='availableTo' value='1 a.m.' checked={true}>1</Radio>
-						<Radio key='_2' name='availableTo' value='2 a.m.'>2 a.m.</Radio>
-					</div>
 					<input classes={themedCss.confirmedTrp} type="text" name='confirmed' />
 					<TextInput name='privateName' autocomplete='name' maxLength={400} responsive={true}>
 						{messages.iName}
@@ -206,9 +204,31 @@ export default factory(function Register({ properties, middleware: { icache, the
 					<TextInput name='website' maxLength={400} responsive={true}>
 						{messages.iWebsite}
 					</TextInput>
+					<div classes={[themedCss.caption, themedCss.tzCaption]}>
+						<span>{icache.get('available') ?
+							<h5 classes={themedCss.available}>{icache.get('available')}</h5> : messages.tzCaption
+						}</span>
+
+						<RangeSlider
+							minimumLabel={`${minmax.min} h`}
+							min={minmax.min}
+							minConstraint={10}
+							minName="availableFrom"
+							maximumLabel={`${minmax.max > 24 ? minmax.max-24 : minmax.max} h`}
+							max={minmax.max}
+							maxName="availableTo"
+							onValue={(v) => {
+								icache.set('available',`${v.min} – ${v.max > 24 ? v.max-24 : v.max} h`)
+							}}
+							labelHidden={false}
+						/>
+						<input name="available" type="hidden" value={`${icache.get('available')} ${icache.get('TZ')}`} />
+					</div>
+					<div></div><div></div>
 				</div>
 			)}
-			<div classes={themedCss.bottom}>
+
+			{ state === 'confirmed' ? <div classes={themedCss.bottom} /> : <div classes={themedCss.bottom}>
 					<div classes={themedCss.widescreen}>
 						<p classes={themedCss.description}>
 							{messages.registrationMail}<span>: </span>
@@ -281,19 +301,6 @@ export default factory(function Register({ properties, middleware: { icache, the
 								<br />
 							</p>
 						</details>
-						<div classes={themedCss.submit}>
-							<div classes={themedCss.codeOfConduct}>
-								<span classes={themedCss.noMB}>
-									<a href='https://www.contributor-covenant.org/version/1/4/code-of-conduct' target='_blank'>
-										{messages.iConduct}:
-									</a>
-								</span>
-								<Check name="codeOfConduct" required={true} value='agreed'>{messages.iAgree}</Check>
-							</div>
-							<Button color="blue" spaced={false} responsive={true} type='submit' size='xxl' variant='filled'>
-								Register
-							</Button>
-						</div>
 					</div>
 					<div classes={themedCss.help}>
 						<h3 classes={themedCss.angel}>{messages.offer}</h3>
@@ -303,9 +310,21 @@ export default factory(function Register({ properties, middleware: { icache, the
 							<Check name="helpsModeration">{messages.oMo}</Check><br />
 							<Check name="helpsWebdesign">{messages.oWE}</Check><br />
 						</div>
+						<div classes={themedCss.codeOfConduct}>
+							<small classes={themedCss.noMB}>
+								<a href='https://www.contributor-covenant.org/version/1/4/code-of-conduct' target='_blank'>
+									{messages.iConduct}:
+								</a>
+							</small>
+							<Check spaced={false} name="codeOfConduct" required={true} value='agreed'>{messages.iAgree}</Check>
+						</div>
+						<div classes={themedCss.submit}>
+							<Button color="blue" spaced={false} responsive={true} type='submit' size='xxl' variant='filled'>
+								Register
+							</Button>
+						</div>
 					</div>
-				</div>
-
+				</div>}
 		</form>
 	);
 });

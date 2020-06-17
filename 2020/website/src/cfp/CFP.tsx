@@ -6,7 +6,7 @@ import theme from '../middleware/theme';
 
 import * as grid from '../AppContent.m.css';
 import * as css from './CFP.m.css';
-import bundle from './CFP.nls';
+import bundle from './nls/main';
 const snarkdown = require('snarkdown').default;
 const hamilton = require('../assets/photos/margaret-hamilton-web.jpg');
 const byron = require('../assets/photos/ada-byron.png');

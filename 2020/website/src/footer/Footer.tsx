@@ -1,25 +1,21 @@
 import { tsx, create } from '@dojo/framework/core/vdom';
-import i18n from '@dojo/framework/core/middleware/i18n';
-import theme from '@dojo/framework/core/middleware/theme';
+import Link from '../link/ActiveLink';
+import * as css from '../App.m.css';
 
-import bundle from './Footer.nls';
-import * as css from './Footer.m.css';
-
-const factory = create({ theme, i18n });
-
-export default factory(function Footer({ middleware: { theme, i18n } }) {
-	const { messages } = i18n.localize(bundle);
-	const themedCss = theme.classes(css);
-
+const factory = create({});
+export default factory(function Footer({ }) {
 	return (
-		<footer classes={themedCss.root}>
-			<div classes={themedCss.wrapper}>
-				<div classes={themedCss.content}>
-					<div classes={themedCss.contentRow}>
-						Lorem Ipsum i18n: {messages.examples}
-					</div>
-				</div>
-			</div>
+		<footer classes={[css.footer]}>
+			<small classes={[css.menuItem]}>
+				<Link key='credits' matchParams={{}} params={{}} activeClasses={[]} to='credits'>
+					Credits & License
+				</Link>
+			</small>
+			<small classes={[css.menuItem]}>
+				<Link key='privacy' matchParams={{}} params={{}} activeClasses={[]} to='privacy'>
+					Privacy
+				</Link>
+			</small>
 		</footer>
 	);
 });

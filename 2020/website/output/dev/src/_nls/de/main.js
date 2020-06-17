@@ -1,9 +1,9 @@
 (window["dojoWebpackJsonpapconf2020"] = window["dojoWebpackJsonpapconf2020"] || []).push([["src/_nls/de/main"],{
 
-/***/ "./src/_nls/de/main.tsx":
-/*!******************************!*\
-  !*** ./src/_nls/de/main.tsx ***!
-  \******************************/
+/***/ "./src/_nls/de/main.ts":
+/*!*****************************!*\
+  !*** ./src/_nls/de/main.ts ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -20,7 +20,7 @@ Eine Konferenz über the present and future of ActivityPub, the world’s leadin
 - a hackathon that follows the conference.`,
     tPrefix: 'The 2020',
     tAddress: 'virtual',
-    tSuffix: 'conference will include',
+    tSuffix: 'conference will include'
 });
 
 

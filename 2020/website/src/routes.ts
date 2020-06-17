@@ -1,7 +1,7 @@
 import { RouteConfig } from '@dojo/framework/routing/interfaces';
 
 export default [
-	{	path: '', outlet: 'home', id: 'home', defaultRoute: true },
+	{	path: 'home', outlet: 'home', id: 'home', defaultRoute: true },
 	{ path: 'roadmap', outlet: 'roadmap', id: 'roadmap', title: 'ActivityPub Conf 2020 > Roadmap' },
 	{ path: 'cfp', outlet: 'cfp', id: 'cfp', title: 'ActivityPub Conf 2020 > CFP' },
 	{ path: 'register', outlet: 'register', id: 'register', title: 'ActivityPub Conf 2020 > Register' },
