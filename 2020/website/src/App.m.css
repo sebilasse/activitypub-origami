@@ -216,13 +216,17 @@ time.descriptionMeta,
 	margin-right: var(--line);
 }
 
-.menuItem {
+.menuItem,
+.menuItemRight {
 	margin: 0 var(--line) 0 var(--line);
 	display: inline-block;
 	position: relative;
 	text-transform: uppercase;
 }
-
+.menuItemRight {
+	margin: 0 var(--line) 0 auto;
+	padding-right: 28px;
+}
 .menuLink { }
 
 .menuLink:hover {

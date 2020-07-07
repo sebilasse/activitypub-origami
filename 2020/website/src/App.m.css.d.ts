@@ -11,6 +11,7 @@ export const descriptionMeta: string;
 export const footer: string;
 export const menuList: string;
 export const menuItem: string;
+export const menuItemRight: string;
 export const menuLink: string;
 export const lightbulb: string;
 export const bulbOff: string;

@@ -16,6 +16,11 @@ export default factory(function Footer({ }) {
 					Privacy
 				</Link>
 			</small>
+			<small classes={[css.menuItemRight]}>
+				<a href='https://socialhub.activitypub.rocks' target="_blank">
+					Forum
+				</a>
+			</small>
 		</footer>
 	);
 });

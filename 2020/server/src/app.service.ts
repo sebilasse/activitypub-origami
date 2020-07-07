@@ -42,10 +42,11 @@ export class AppService {
       return true
     }
     const id = uuid();
-    const confirmBase = packageJSON.redaktor.confirmationEndpoint||'http://localhost/confirm';
-    const confirmLink = path.join(confirmBase, encode(`apconf--${id}`));
+    const confirmBase = 'https://apconf.uber.space/server/confirm/';
+    const confirmLink = confirmBase+encode(`apconf--${id}`);
     await writeFile(this._getFile(id), JSON.stringify({
       ...createUserDto,
+      href: confirmLink,
       status: 'pending'
     }));
 

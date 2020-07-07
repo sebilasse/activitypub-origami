@@ -10,7 +10,7 @@ export default {
 A conference about the present and future of ActivityPub,
 the world’s leading federated social web standard.
 <br><br>
-Following a successful inaugural conference in [2019](https://redaktor.me/apconf/),
+Following a successful inaugural conference in [2019](/2019/),
 we have expanded APConf 2020 to a four day event that will occur entirely on line
 via Big Blue Button.
 <br>
@@ -25,7 +25,7 @@ related to ActivityPub. Topics may include, but are not limited to:`,
 - community management and hosting
 - and ActivityPub extensions.`,
 		registration: `
-To *submit* a talk or BoF, please include your title and a brief summary with your registration.
+To *submit* a talk or BoF, please include your title and a brief summary with your [registration](/#register).
 <br><br>
 Due to bandwidth limitations of video conferencing software, we ask for those
 who wish to participate in the Big Blue Button sessions to register.

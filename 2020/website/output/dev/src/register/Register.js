@@ -204,6 +204,219 @@ const validity = factory(function ({ middleware: { node, invalidator } }) {
 
 /***/ }),
 
+/***/ "./node_modules/@dojo/framework/core/util.mjs":
+/*!****************************************************!*\
+  !*** ./node_modules/@dojo/framework/core/util.mjs ***!
+  \****************************************************/
+/*! exports provided: deepAssign, deepMixin, mixin, partial, guaranteeMinimumTimeout, debounce, throttle, uuid, decorate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deepAssign", function() { return deepAssign; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deepMixin", function() { return deepMixin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mixin", function() { return mixin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "partial", function() { return partial; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "guaranteeMinimumTimeout", function() { return guaranteeMinimumTimeout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "debounce", function() { return debounce; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "throttle", function() { return throttle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uuid", function() { return uuid; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "decorate", function() { return decorate; });
+/* harmony import */ var _vdom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
+
+const slice = Array.prototype.slice;
+const hasOwnProperty = Object.prototype.hasOwnProperty;
+/**
+ * Type guard that ensures that the value can be coerced to Object
+ * to weed out host objects that do not derive from Object.
+ * This function is used to check if we want to deep copy an object or not.
+ * Note: In ES6 it is possible to modify an object's Symbol.toStringTag property, which will
+ * change the value returned by `toString`. This is a rare edge case that is difficult to handle,
+ * so it is not handled here.
+ * @param  value The value to check
+ * @return       If the value is coercible into an Object
+ */
+function shouldDeepCopyObject(value) {
+    return Object.prototype.toString.call(value) === '[object Object]';
+}
+function copyArray(array, inherited) {
+    return array.map(function (item) {
+        if (Array.isArray(item)) {
+            return copyArray(item, inherited);
+        }
+        return !shouldDeepCopyObject(item)
+            ? item
+            : _mixin({
+                deep: true,
+                inherited: inherited,
+                sources: [item],
+                target: {}
+            });
+    });
+}
+function _mixin(kwArgs) {
+    const deep = kwArgs.deep;
+    const inherited = kwArgs.inherited;
+    const target = kwArgs.target;
+    const copied = kwArgs.copied || [];
+    const copiedClone = [...copied];
+    for (let i = 0; i < kwArgs.sources.length; i++) {
+        const source = kwArgs.sources[i];
+        if (source === null || source === undefined) {
+            continue;
+        }
+        for (let key in source) {
+            if (inherited || hasOwnProperty.call(source, key)) {
+                let value = source[key];
+                if (copiedClone.indexOf(value) !== -1) {
+                    continue;
+                }
+                if (deep) {
+                    if (Array.isArray(value)) {
+                        value = copyArray(value, inherited);
+                    }
+                    else if (shouldDeepCopyObject(value)) {
+                        const targetValue = target[key] || {};
+                        copied.push(source);
+                        value = _mixin({
+                            deep: true,
+                            inherited: inherited,
+                            sources: [value],
+                            target: targetValue,
+                            copied
+                        });
+                    }
+                }
+                target[key] = value;
+            }
+        }
+    }
+    return target;
+}
+function deepAssign(target, ...sources) {
+    return _mixin({
+        deep: true,
+        inherited: false,
+        sources: sources,
+        target: target
+    });
+}
+function deepMixin(target, ...sources) {
+    return _mixin({
+        deep: true,
+        inherited: true,
+        sources: sources,
+        target: target
+    });
+}
+function mixin(target, ...sources) {
+    return _mixin({
+        deep: false,
+        inherited: true,
+        sources: sources,
+        target: target
+    });
+}
+/**
+ * Returns a function which invokes the given function with the given arguments prepended to its argument list.
+ * Like `Function.prototype.bind`, but does not alter execution context.
+ *
+ * @param targetFunction The function that needs to be bound
+ * @param suppliedArgs An optional array of arguments to prepend to the `targetFunction` arguments list
+ * @return The bound function
+ */
+function partial(targetFunction, ...suppliedArgs) {
+    return function () {
+        const args = arguments.length ? suppliedArgs.concat(slice.call(arguments)) : suppliedArgs;
+        return targetFunction.apply(this, args);
+    };
+}
+function guaranteeMinimumTimeout(callback, delay) {
+    const startTime = Date.now();
+    let timerId;
+    function timeoutHandler() {
+        const delta = Date.now() - startTime;
+        if (delay == null || delta >= delay) {
+            callback();
+        }
+        else {
+            timerId = setTimeout(timeoutHandler, delay - delta);
+        }
+    }
+    timerId = setTimeout(timeoutHandler, delay);
+    return {
+        destroy: () => {
+            if (timerId != null) {
+                clearTimeout(timerId);
+                timerId = null;
+            }
+        }
+    };
+}
+function debounce(callback, delay) {
+    let timer;
+    return function () {
+        timer && timer.destroy();
+        let context = this;
+        let args = arguments;
+        timer = guaranteeMinimumTimeout(function () {
+            callback.apply(context, args);
+            args = context = timer = null;
+        }, delay);
+    };
+}
+function throttle(callback, delay) {
+    let ran;
+    return function () {
+        if (ran) {
+            return;
+        }
+        ran = true;
+        let args = arguments;
+        callback.apply(this, args);
+        guaranteeMinimumTimeout(function () {
+            ran = null;
+        }, delay);
+    };
+}
+function uuid() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        const r = (Math.random() * 16) | 0, v = c === 'x' ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
+    });
+}
+function decorate(dNodes, optionsOrModifier, predicate) {
+    let shallow = false;
+    let modifier;
+    if (typeof optionsOrModifier === 'function') {
+        modifier = optionsOrModifier;
+    }
+    else {
+        modifier = optionsOrModifier.modifier;
+        predicate = optionsOrModifier.predicate;
+        shallow = optionsOrModifier.shallow || false;
+    }
+    let nodes = Array.isArray(dNodes) ? [...dNodes] : [dNodes];
+    function breaker() {
+        nodes = [];
+    }
+    while (nodes.length) {
+        const node = nodes.shift();
+        if (node && node !== true) {
+            if (!shallow && (Object(_vdom__WEBPACK_IMPORTED_MODULE_0__["isWNode"])(node) || Object(_vdom__WEBPACK_IMPORTED_MODULE_0__["isVNode"])(node)) && node.children) {
+                nodes = [...nodes, ...node.children];
+            }
+            if (!predicate || predicate(node)) {
+                modifier(node, breaker);
+            }
+        }
+    }
+    return dNodes;
+}
+
+
+/***/ }),
+
 /***/ "./package.json":
 /*!**********************!*\
   !*** ./package.json ***!
@@ -211,7 +424,7 @@ const validity = factory(function ({ middleware: { node, invalidator } }) {
 /*! exports provided: name, version, main, scripts, dependencies, devDependencies, redaktor, default */
 /***/ (function(module) {
 
-module.exports = {"name":"apconf2020","version":"1.0.0","main":"src/main.tsx","scripts":{"dev":"dojo build -m dev -s -w memory","build":"dojo build","build:ghpages":"dojo build --dojorc .dojorc-ghpages","build:test":"dojo build -m unit","lint":"eslint \"src/**/*.{ts,tsx}\"","test":"run-s build:test test:local","test:ci":"run-s build:test test:headless","test:local":"dojo test -c local","test:headless":"dojo test -c headless"},"dependencies":{"@dojo/framework":"next","snarkdown":"1.2.2","tslib":"^1.10.0"},"devDependencies":{"@dojo/cli":"next","@dojo/cli-build-app":"next","@dojo/cli-test-intern":"next","@dojo/scripts":"^4.0.2","@types/node":"^12.12.32","@types/sinon":"^7.5.2","@typescript-eslint/eslint-plugin":"2.25.0","@typescript-eslint/parser":"2.25.0","eslint":"6.8.0","eslint-config-prettier":"6.10.1","eslint-plugin-import":"2.20.2","npm-run-all":"4.1.5","sinon":"^9.0.1","typescript":"~3.4.5"},"redaktor":{"_serverHint":"The full URL to the webserver. Can be a static directory, should have trailing slash:","server":"https://apconf.uber.space/server/"}};
+module.exports = {"name":"apconf2020","version":"1.0.0","main":"src/main.tsx","scripts":{"dev":"dojo build -m dev -w -s","build":"dojo build","build:ghpages":"dojo build --dojorc .dojorc-ghpages","build:test":"dojo build -m unit","lint":"eslint \"src/**/*.{ts,tsx}\"","test":"run-s build:test test:local","test:ci":"run-s build:test test:headless","test:local":"dojo test -c local","test:headless":"dojo test -c headless"},"dependencies":{"@dojo/framework":"next","snarkdown":"1.2.2","tslib":"^1.10.0"},"devDependencies":{"@dojo/cli":"next","@dojo/cli-build-app":"next","@dojo/cli-test-intern":"next","@dojo/scripts":"^4.0.2","@types/node":"^12.12.32","@types/sinon":"^7.5.2","@typescript-eslint/eslint-plugin":"2.25.0","@typescript-eslint/parser":"2.25.0","eslint":"6.8.0","eslint-config-prettier":"6.10.1","eslint-plugin-import":"2.20.2","npm-run-all":"4.1.5","sinon":"^9.0.1","typescript":"~3.4.5"},"redaktor":{"_serverHint":"The full URL to the webserver. Can be a static directory, should have trailing slash:","server":"https://apconf.uber.space/server/"}};
 
 /***/ }),
 
@@ -915,7 +1128,7 @@ Talk / BoF CFP
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("input", { classes: themedCss.confirmedTrp, type: "text", name: 'confirmed' }),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'privateName', autocomplete: 'name', maxLength: 400, responsive: true }, messages.iName),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'org', autocomplete: 'organization', maxLength: 800, responsive: true }, messages.iOrg),
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'ActivityPub', maxLength: 800, responsive: true, placeholder: 'e.g. @cwebber@octodon.social' }, messages.iAP),
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'ActivityPub', maxLength: 800, responsive: true, placeholder: 'https://octodon.social/@cwebber/' }, messages.iAP),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'website', maxLength: 400, responsive: true }, messages.iWebsite),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [themedCss.caption, themedCss.tzCaption] },
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, icache.get('available') ?
@@ -1069,8 +1282,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextArea", function() { return TextArea; });
 /* harmony import */ var _dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dojo/framework/core/vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
 /* harmony import */ var _label_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../label/index */ "./src/label/index.tsx");
-/* harmony import */ var _theme_default_label_m_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../theme/default/label.m.css */ "./src/theme/default/label.m.css");
-/* harmony import */ var _theme_default_label_m_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_theme_default_label_m_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _theme_material_label_m_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../theme/material/label.m.css */ "./src/theme/material/label.m.css");
+/* harmony import */ var _theme_material_label_m_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_theme_material_label_m_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _helper_text_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helper-text/index */ "./src/helper-text/index.tsx");
 /* harmony import */ var _dojo_framework_core_middleware_icache__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @dojo/framework/core/middleware/icache */ "./node_modules/@dojo/framework/core/middleware/icache.mjs");
 /* harmony import */ var _middleware_theme__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../middleware/theme */ "./src/middleware/theme.tsx");
@@ -1197,7 +1410,7 @@ const TextArea = factory(function TextArea({ id, middleware: { icache, theme, fo
                 required ? themedCss.required : null,
                 inputFocused ? themedCss.focused : null
             ] },
-            label ? (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_label_index__WEBPACK_IMPORTED_MODULE_1__["default"], { theme: theme.compose(_theme_default_label_m_css__WEBPACK_IMPORTED_MODULE_2__, _theme_material_text_area_m_css__WEBPACK_IMPORTED_MODULE_9__, 'label'), classes: classes, disabled: disabled, valid: valid, readOnly: readOnly, required: required, hidden: labelHidden, forId: widgetId, focused: inputFocused, active: !!value || inputFocused }, label)) : null,
+            label ? (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_label_index__WEBPACK_IMPORTED_MODULE_1__["default"], { theme: theme.compose(_theme_material_label_m_css__WEBPACK_IMPORTED_MODULE_2__, _theme_material_text_area_m_css__WEBPACK_IMPORTED_MODULE_9__, 'label'), classes: classes, disabled: disabled, valid: valid, readOnly: readOnly, required: required, hidden: labelHidden, forId: widgetId, focused: inputFocused, active: !!value || inputFocused }, label)) : null,
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("textarea", Object.assign({ id: widgetId, key: "input" }, Object(_middleware_theme__WEBPACK_IMPORTED_MODULE_5__["formatAriaProperties"])(aria), { classes: themedCss.input, style: expand && icache.get('style'), cols: `${columns}`, disabled: disabled, focus: focus.shouldFocus, "aria-invalid": valid === false ? 'true' : null, maxlength: maxLength ? `${maxLength}` : null, minlength: minLength ? `${minLength}` : null, name: name, placeholder: placeholder, readOnly: readOnly, "aria-readonly": readOnly ? 'true' : null, required: required, rows: `${rows}`, value: value, wrap: wrapText, onblur: () => {
                     const { onBlur } = properties();
                     onBlur && onBlur();
@@ -1210,7 +1423,7 @@ const TextArea = factory(function TextArea({ id, middleware: { icache, theme, fo
                     const value = event.target.value;
                     if (expand) {
                         let numberOfLineBreaks = (value.match(/\n/g) || []).length + 1;
-                        icache.set('style', `height: ${line + numberOfLineBreaks * line}px;`);
+                        icache.set('style', `height: ${numberOfLineBreaks * line}px;`);
                     }
                     icache.set('value', value);
                     onValue && onValue(value);
@@ -1471,6 +1684,17 @@ module.exports = {" _key":"apconf2020/_ui","flex":"_ui-m__flex__ecb8b2tbQfK","fl
 
 // extracted by mini-css-extract-plugin
 module.exports = {" _key":"apconf2020/email-input","helperText":"email-input-m__helperText__ecb8b22nTfp _ui-m__s__ecb8b21rol0 _typo__s__ecb8b22332p"};
+
+/***/ }),
+
+/***/ "./src/theme/material/label.m.css":
+/*!****************************************!*\
+  !*** ./src/theme/material/label.m.css ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleNotFoundError: Module not found: Error: Can't resolve '@material/textfield/dist/mdc.textfield.css' in '/Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/src/theme/material'\n    at /Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/webpack/lib/Compilation.js:821:10\n    at /Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/webpack/lib/NormalModuleFactory.js:397:22\n    at /Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/webpack/lib/NormalModuleFactory.js:130:21\n    at /Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/webpack/lib/NormalModuleFactory.js:224:22\n    at /Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/neo-async/async.js:2830:7\n    at /Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/neo-async/async.js:6877:13\n    at /Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/webpack/lib/NormalModuleFactory.js:214:25\n    at /Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/enhanced-resolve/lib/Resolver.js:213:14\n    at /Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/enhanced-resolve/lib/Resolver.js:285:5\n    at eval (eval at create (/Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at /Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/enhanced-resolve/lib/UnsafeCachePlugin.js:44:7\n    at /Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/enhanced-resolve/lib/Resolver.js:285:5\n    at eval (eval at create (/Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at /Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/enhanced-resolve/lib/Resolver.js:285:5\n    at eval (eval at create (/Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:27:1)\n    at /Users/sebi/Desktop/MyGithub/activitypub-origami/2020/website/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:67:43");
 
 /***/ }),
 

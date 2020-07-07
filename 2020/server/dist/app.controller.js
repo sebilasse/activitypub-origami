@@ -87,7 +87,6 @@ let AppController = class AppController {
         this.appService = appService;
     }
     getHello() { return this.appService.getHello(); }
-    getTest() { return this.appService.getHello(); }
     async getConfirm(id) {
         await this.appService.getConfirm(id);
     }
@@ -102,14 +101,8 @@ __decorate([
     __metadata("design:returntype", String)
 ], AppController.prototype, "getHello", null);
 __decorate([
-    common_1.Get('test'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
-], AppController.prototype, "getTest", null);
-__decorate([
     common_1.Get('confirm/:id'),
-    common_1.Redirect(`${packageJSON.redaktor.base || 'http://localhost'}/register/confirmed`),
+    common_1.Redirect(`${packageJSON.redaktor.base || 'http://localhost'}/#register/confirmed`),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
@@ -118,7 +111,7 @@ __decorate([
 __decorate([
     common_1.Post(),
     common_1.UseFilters(new register_exception_filter_1.RegisterExceptionFilter()),
-    common_1.Redirect(`${packageJSON.redaktor.base || 'http://localhost'}/register/sent`),
+    common_1.Redirect(`${packageJSON.redaktor.base || 'http://localhost'}/#register/sent`),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [CreateUserDto]),

@@ -78,16 +78,7 @@ const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["c
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("figcaption", { title: messages.hamiltonSpecialInstructions },
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { classes: themedCss.responsiveCaption, innerHTML: snarkdown(messages.hamiltonCaption) }),
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", null,
-                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("i", null, messages.hamiltonCredit)))),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("blockquote", null,
-                "Be curious. Read widely. Try new things.",
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),
-                "What people call intelligence just boils down to curiosity.",
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("footer", null,
-                    "Aaron Swartz ",
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", null, "1986-2013")))),
+                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("i", null, messages.hamiltonCredit))))),
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["autoColumn"], themedCss.desc1] },
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { class: "serif", innerHTML: snarkdown(messages.description) }),
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { class: "serif", innerHTML: snarkdown(messages.cfp) }),
@@ -100,11 +91,8 @@ const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["c
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("a", { href: "https://www.contributor-covenant.org/version/1/4/code-of-conduct", target: "_blank" }, "https://www.contributor-covenant.org"))),
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["asideColumn"] },
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("blockquote", null,
-                "Access to technology is the great economic equalizer of this century.",
-                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("footer", null,
-                    "Kimberly Bryant,",
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),
-                    "Founder of Black Girls Code")),
+                "Let's keep things fun",
+                Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("footer", null, "Christopher")),
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("figure", { classes: [themedCss.figure, themedCss.portrait, themedCss.bottom] },
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("img", { key: "byron", classes: [themedCss.img], src: byron }),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("figcaption", { title: messages.byronSpecialInstructions },
@@ -136,7 +124,7 @@ __webpack_require__.r(__webpack_exports__);
 A conference about the present and future of ActivityPub,
 the world’s leading federated social web standard.
 <br><br>
-Following a successful inaugural conference in [2019](https://redaktor.me/apconf/),
+Following a successful inaugural conference in [2019](/2019/),
 we have expanded APConf 2020 to a four day event that will occur entirely on line
 via Big Blue Button.
 <br>
@@ -151,7 +139,7 @@ related to ActivityPub. Topics may include, but are not limited to:`,
 - community management and hosting
 - and ActivityPub extensions.`,
         registration: `
-To *submit* a talk or BoF, please include your title and a brief summary with your registration.
+To *submit* a talk or BoF, please include your title and a brief summary with your [registration](/#register).
 <br><br>
 Due to bandwidth limitations of video conferencing software, we ask for those
 who wish to participate in the Big Blue Button sessions to register.

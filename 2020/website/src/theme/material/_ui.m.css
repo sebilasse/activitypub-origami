@@ -8,6 +8,7 @@
 	--pi: 3.14159265359;
 	--transparent: transparent;
 	--ui-font-weight: 400;
+	--ui-font-weight-semibold: 400;
   --ui-font-weight-bold: 700;
 	--ui-default-input-width: 200px; /* if neither responsive or width is given */
 	/* Border */

@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"main": "src/main.tsx",
 	"scripts": {
-		"dev": "dojo build -m dev -s -w memory",
+		"dev": "dojo build -m dev -w -s",
 		"build": "dojo build",
 		"build:ghpages": "dojo build --dojorc .dojorc-ghpages",
 		"build:test": "dojo build -m unit",

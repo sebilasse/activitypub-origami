@@ -548,141 +548,6 @@ class ThemeInjector extends _Injector__WEBPACK_IMPORTED_MODULE_1__["default"] {
 
 /***/ }),
 
-/***/ "./node_modules/@dojo/framework/core/decorators/afterRender.mjs":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@dojo/framework/core/decorators/afterRender.mjs ***!
-  \**********************************************************************/
-/*! exports provided: afterRender, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "afterRender", function() { return afterRender; });
-/* harmony import */ var _handleDecorator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./handleDecorator */ "./node_modules/@dojo/framework/core/decorators/handleDecorator.mjs");
-
-function afterRender(method) {
-    return Object(_handleDecorator__WEBPACK_IMPORTED_MODULE_0__["handleDecorator"])((target, propertyKey) => {
-        target.addDecorator('afterRender', propertyKey ? target[propertyKey] : method);
-    });
-}
-/* harmony default export */ __webpack_exports__["default"] = (afterRender);
-
-
-/***/ }),
-
-/***/ "./node_modules/@dojo/framework/core/decorators/beforeProperties.mjs":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@dojo/framework/core/decorators/beforeProperties.mjs ***!
-  \***************************************************************************/
-/*! exports provided: beforeProperties, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "beforeProperties", function() { return beforeProperties; });
-/* harmony import */ var _handleDecorator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./handleDecorator */ "./node_modules/@dojo/framework/core/decorators/handleDecorator.mjs");
-
-function beforeProperties(method) {
-    return Object(_handleDecorator__WEBPACK_IMPORTED_MODULE_0__["handleDecorator"])((target, propertyKey) => {
-        target.addDecorator('beforeProperties', propertyKey ? target[propertyKey] : method);
-    });
-}
-/* harmony default export */ __webpack_exports__["default"] = (beforeProperties);
-
-
-/***/ }),
-
-/***/ "./node_modules/@dojo/framework/core/decorators/handleDecorator.mjs":
-/*!**************************************************************************!*\
-  !*** ./node_modules/@dojo/framework/core/decorators/handleDecorator.mjs ***!
-  \**************************************************************************/
-/*! exports provided: handleDecorator, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleDecorator", function() { return handleDecorator; });
-/**
- * Generic decorator handler to take care of whether or not the decorator was called at the class level
- * or the method level.
- *
- * @param handler
- */
-function handleDecorator(handler) {
-    return function (target, propertyKey, descriptor) {
-        if (typeof target === 'function') {
-            handler(target.prototype, undefined);
-        }
-        else {
-            handler(target, propertyKey);
-        }
-    };
-}
-/* harmony default export */ __webpack_exports__["default"] = (handleDecorator);
-
-
-/***/ }),
-
-/***/ "./node_modules/@dojo/framework/core/decorators/inject.mjs":
-/*!*****************************************************************!*\
-  !*** ./node_modules/@dojo/framework/core/decorators/inject.mjs ***!
-  \*****************************************************************/
-/*! exports provided: getInjector, inject, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getInjector", function() { return getInjector; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "inject", function() { return inject; });
-/* harmony import */ var _shim_WeakMap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shim/WeakMap */ "./node_modules/@dojo/framework/shim/WeakMap.mjs");
-/* harmony import */ var _handleDecorator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./handleDecorator */ "./node_modules/@dojo/framework/core/decorators/handleDecorator.mjs");
-/* harmony import */ var _beforeProperties__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./beforeProperties */ "./node_modules/@dojo/framework/core/decorators/beforeProperties.mjs");
-
-
-
-/**
- * Map of instances against registered injectors.
- */
-const registeredInjectorsMap = new _shim_WeakMap__WEBPACK_IMPORTED_MODULE_0__["default"]();
-function getInjector(instance, name) {
-    const injectorItem = instance.registry.getInjector(name);
-    if (injectorItem) {
-        const { injector, invalidator } = injectorItem;
-        const registeredInjectors = registeredInjectorsMap.get(instance) || [];
-        if (registeredInjectors.length === 0) {
-            registeredInjectorsMap.set(instance, registeredInjectors);
-        }
-        if (registeredInjectors.indexOf(injectorItem) === -1) {
-            instance.own(invalidator.on('invalidate', () => {
-                instance.invalidate();
-            }));
-            registeredInjectors.push(injectorItem);
-        }
-        return injector;
-    }
-}
-/**
- * Decorator retrieves an injector from an available registry using the name and
- * calls the `getProperties` function with the payload from the injector
- * and current properties with the the injected properties returned.
- *
- * @param InjectConfig the inject configuration
- */
-function inject({ name, getProperties }) {
-    return Object(_handleDecorator__WEBPACK_IMPORTED_MODULE_1__["handleDecorator"])((target) => {
-        Object(_beforeProperties__WEBPACK_IMPORTED_MODULE_2__["beforeProperties"])(function (properties) {
-            const injector = getInjector(this, name);
-            if (injector) {
-                return getProperties(injector(), properties);
-            }
-        })(target);
-    });
-}
-/* harmony default export */ __webpack_exports__["default"] = (inject);
-
-
-/***/ }),
-
 /***/ "./node_modules/@dojo/framework/core/diff.mjs":
 /*!****************************************************!*\
   !*** ./node_modules/@dojo/framework/core/diff.mjs ***!
@@ -1168,341 +1033,6 @@ const theme = factory(({ middleware: { invalidator, icache, diffProperty, inject
     };
 });
 /* harmony default export */ __webpack_exports__["default"] = (theme);
-
-
-/***/ }),
-
-/***/ "./node_modules/@dojo/framework/core/mixins/I18n.mjs":
-/*!***********************************************************!*\
-  !*** ./node_modules/@dojo/framework/core/mixins/I18n.mjs ***!
-  \***********************************************************/
-/*! exports provided: INJECTOR_KEY, registerI18nInjector, I18nMixin, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "I18nMixin", function() { return I18nMixin; });
-/* harmony import */ var _i18n_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../i18n/i18n */ "./node_modules/@dojo/framework/i18n/i18n.mjs");
-/* harmony import */ var _vdom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
-/* harmony import */ var _decorators_afterRender__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../decorators/afterRender */ "./node_modules/@dojo/framework/core/decorators/afterRender.mjs");
-/* harmony import */ var _decorators_inject__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../decorators/inject */ "./node_modules/@dojo/framework/core/decorators/inject.mjs");
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util */ "./node_modules/@dojo/framework/core/util.mjs");
-/* harmony import */ var _shim_Promise__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shim/Promise */ "./node_modules/@dojo/framework/shim/Promise.mjs");
-/* harmony import */ var _decorators_beforeProperties__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../decorators/beforeProperties */ "./node_modules/@dojo/framework/core/decorators/beforeProperties.mjs");
-/* harmony import */ var _I18nInjector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../I18nInjector */ "./node_modules/@dojo/framework/core/I18nInjector.mjs");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "INJECTOR_KEY", function() { return _I18nInjector__WEBPACK_IMPORTED_MODULE_7__["INJECTOR_KEY"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "registerI18nInjector", function() { return _I18nInjector__WEBPACK_IMPORTED_MODULE_7__["registerI18nInjector"]; });
-
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-/* tslint:disable:interface-name */
-
-
-
-
-
-
-
-
-
-const previousLocaleMap = new WeakMap();
-function I18nMixin(Base) {
-    let I18n = class I18n extends Base {
-        localizeBundle(baseBundle) {
-            let { locale, i18nBundle } = this.properties;
-            if (i18nBundle) {
-                if (i18nBundle instanceof Map) {
-                    baseBundle = i18nBundle.get(baseBundle) || baseBundle;
-                }
-                else {
-                    baseBundle = i18nBundle;
-                }
-            }
-            return Object(_i18n_i18n__WEBPACK_IMPORTED_MODULE_0__["localizeBundle"])(baseBundle, {
-                locale,
-                invalidator: () => {
-                    this.invalidate();
-                }
-            });
-        }
-        renderDecorator(result) {
-            Object(_util__WEBPACK_IMPORTED_MODULE_4__["decorate"])(result, {
-                modifier: (node, breaker) => {
-                    const { locale, rtl } = this.properties;
-                    const properties = {};
-                    if (typeof rtl === 'boolean') {
-                        properties['dir'] = rtl ? 'rtl' : 'ltr';
-                    }
-                    if (locale) {
-                        properties['lang'] = locale;
-                    }
-                    node.properties = Object.assign({}, node.properties, properties);
-                    breaker();
-                },
-                predicate: _vdom__WEBPACK_IMPORTED_MODULE_1__["isVNode"]
-            });
-            return result;
-        }
-    };
-    __decorate([
-        Object(_decorators_afterRender__WEBPACK_IMPORTED_MODULE_2__["afterRender"])()
-    ], I18n.prototype, "renderDecorator", null);
-    I18n = __decorate([
-        Object(_decorators_beforeProperties__WEBPACK_IMPORTED_MODULE_6__["default"])(function (properties) {
-            const injector = Object(_decorators_inject__WEBPACK_IMPORTED_MODULE_3__["getInjector"])(this, _I18nInjector__WEBPACK_IMPORTED_MODULE_7__["INJECTOR_KEY"]);
-            let injectedLocale;
-            let injectedRtl;
-            if (injector) {
-                const injectLocaleData = injector();
-                if (injectLocaleData) {
-                    const injectedLocaleData = injectLocaleData.get();
-                    if (injectedLocaleData) {
-                        injectedLocale = injectedLocaleData.locale;
-                        injectedRtl = injectedLocaleData.rtl;
-                    }
-                }
-            }
-            const previousLocale = previousLocaleMap.get(this);
-            previousLocaleMap.set(this, properties.locale);
-            if (properties.locale && previousLocale !== properties.locale) {
-                const result = Object(_i18n_i18n__WEBPACK_IMPORTED_MODULE_0__["setLocale"])({ locale: properties.locale, local: true });
-                if (Object(_shim_Promise__WEBPACK_IMPORTED_MODULE_5__["isThenable"])(result)) {
-                    result.then(() => {
-                        this.invalidate();
-                    });
-                    return {
-                        locale: previousLocale || injectedLocale || Object(_i18n_i18n__WEBPACK_IMPORTED_MODULE_0__["getCurrentLocale"])(),
-                        rtl: properties.rtl !== undefined ? properties.rtl : injectedRtl
-                    };
-                }
-            }
-            return {
-                locale: properties.locale || injectedLocale || Object(_i18n_i18n__WEBPACK_IMPORTED_MODULE_0__["getCurrentLocale"])(),
-                rtl: properties.rtl !== undefined ? properties.rtl : injectedRtl
-            };
-        })
-    ], I18n);
-    return I18n;
-}
-/* harmony default export */ __webpack_exports__["default"] = (I18nMixin);
-
-
-/***/ }),
-
-/***/ "./node_modules/@dojo/framework/core/util.mjs":
-/*!****************************************************!*\
-  !*** ./node_modules/@dojo/framework/core/util.mjs ***!
-  \****************************************************/
-/*! exports provided: deepAssign, deepMixin, mixin, partial, guaranteeMinimumTimeout, debounce, throttle, uuid, decorate */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deepAssign", function() { return deepAssign; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deepMixin", function() { return deepMixin; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mixin", function() { return mixin; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "partial", function() { return partial; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "guaranteeMinimumTimeout", function() { return guaranteeMinimumTimeout; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "debounce", function() { return debounce; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "throttle", function() { return throttle; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uuid", function() { return uuid; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "decorate", function() { return decorate; });
-/* harmony import */ var _vdom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
-
-const slice = Array.prototype.slice;
-const hasOwnProperty = Object.prototype.hasOwnProperty;
-/**
- * Type guard that ensures that the value can be coerced to Object
- * to weed out host objects that do not derive from Object.
- * This function is used to check if we want to deep copy an object or not.
- * Note: In ES6 it is possible to modify an object's Symbol.toStringTag property, which will
- * change the value returned by `toString`. This is a rare edge case that is difficult to handle,
- * so it is not handled here.
- * @param  value The value to check
- * @return       If the value is coercible into an Object
- */
-function shouldDeepCopyObject(value) {
-    return Object.prototype.toString.call(value) === '[object Object]';
-}
-function copyArray(array, inherited) {
-    return array.map(function (item) {
-        if (Array.isArray(item)) {
-            return copyArray(item, inherited);
-        }
-        return !shouldDeepCopyObject(item)
-            ? item
-            : _mixin({
-                deep: true,
-                inherited: inherited,
-                sources: [item],
-                target: {}
-            });
-    });
-}
-function _mixin(kwArgs) {
-    const deep = kwArgs.deep;
-    const inherited = kwArgs.inherited;
-    const target = kwArgs.target;
-    const copied = kwArgs.copied || [];
-    const copiedClone = [...copied];
-    for (let i = 0; i < kwArgs.sources.length; i++) {
-        const source = kwArgs.sources[i];
-        if (source === null || source === undefined) {
-            continue;
-        }
-        for (let key in source) {
-            if (inherited || hasOwnProperty.call(source, key)) {
-                let value = source[key];
-                if (copiedClone.indexOf(value) !== -1) {
-                    continue;
-                }
-                if (deep) {
-                    if (Array.isArray(value)) {
-                        value = copyArray(value, inherited);
-                    }
-                    else if (shouldDeepCopyObject(value)) {
-                        const targetValue = target[key] || {};
-                        copied.push(source);
-                        value = _mixin({
-                            deep: true,
-                            inherited: inherited,
-                            sources: [value],
-                            target: targetValue,
-                            copied
-                        });
-                    }
-                }
-                target[key] = value;
-            }
-        }
-    }
-    return target;
-}
-function deepAssign(target, ...sources) {
-    return _mixin({
-        deep: true,
-        inherited: false,
-        sources: sources,
-        target: target
-    });
-}
-function deepMixin(target, ...sources) {
-    return _mixin({
-        deep: true,
-        inherited: true,
-        sources: sources,
-        target: target
-    });
-}
-function mixin(target, ...sources) {
-    return _mixin({
-        deep: false,
-        inherited: true,
-        sources: sources,
-        target: target
-    });
-}
-/**
- * Returns a function which invokes the given function with the given arguments prepended to its argument list.
- * Like `Function.prototype.bind`, but does not alter execution context.
- *
- * @param targetFunction The function that needs to be bound
- * @param suppliedArgs An optional array of arguments to prepend to the `targetFunction` arguments list
- * @return The bound function
- */
-function partial(targetFunction, ...suppliedArgs) {
-    return function () {
-        const args = arguments.length ? suppliedArgs.concat(slice.call(arguments)) : suppliedArgs;
-        return targetFunction.apply(this, args);
-    };
-}
-function guaranteeMinimumTimeout(callback, delay) {
-    const startTime = Date.now();
-    let timerId;
-    function timeoutHandler() {
-        const delta = Date.now() - startTime;
-        if (delay == null || delta >= delay) {
-            callback();
-        }
-        else {
-            timerId = setTimeout(timeoutHandler, delay - delta);
-        }
-    }
-    timerId = setTimeout(timeoutHandler, delay);
-    return {
-        destroy: () => {
-            if (timerId != null) {
-                clearTimeout(timerId);
-                timerId = null;
-            }
-        }
-    };
-}
-function debounce(callback, delay) {
-    let timer;
-    return function () {
-        timer && timer.destroy();
-        let context = this;
-        let args = arguments;
-        timer = guaranteeMinimumTimeout(function () {
-            callback.apply(context, args);
-            args = context = timer = null;
-        }, delay);
-    };
-}
-function throttle(callback, delay) {
-    let ran;
-    return function () {
-        if (ran) {
-            return;
-        }
-        ran = true;
-        let args = arguments;
-        callback.apply(this, args);
-        guaranteeMinimumTimeout(function () {
-            ran = null;
-        }, delay);
-    };
-}
-function uuid() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-        const r = (Math.random() * 16) | 0, v = c === 'x' ? r : (r & 0x3) | 0x8;
-        return v.toString(16);
-    });
-}
-function decorate(dNodes, optionsOrModifier, predicate) {
-    let shallow = false;
-    let modifier;
-    if (typeof optionsOrModifier === 'function') {
-        modifier = optionsOrModifier;
-    }
-    else {
-        modifier = optionsOrModifier.modifier;
-        predicate = optionsOrModifier.predicate;
-        shallow = optionsOrModifier.shallow || false;
-    }
-    let nodes = Array.isArray(dNodes) ? [...dNodes] : [dNodes];
-    function breaker() {
-        nodes = [];
-    }
-    while (nodes.length) {
-        const node = nodes.shift();
-        if (node && node !== true) {
-            if (!shallow && (Object(_vdom__WEBPACK_IMPORTED_MODULE_0__["isWNode"])(node) || Object(_vdom__WEBPACK_IMPORTED_MODULE_0__["isVNode"])(node)) && node.children) {
-                nodes = [...nodes, ...node.children];
-            }
-            if (!predicate || predicate(node)) {
-                modifier(node, breaker);
-            }
-        }
-    }
-    return dNodes;
-}
 
 
 /***/ }),
@@ -8802,7 +8332,7 @@ function parse(md) {
 /*!*****************************************!*\
   !*** ./node_modules/tslib/tslib.es6.js ***!
   \*****************************************/
-/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8815,6 +8345,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__createBinding", function() { return __createBinding; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
@@ -8830,18 +8361,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
 /*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
+Copyright (c) Microsoft Corporation.
 
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
 
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 /* global Reflect, Promise */
 
@@ -8934,8 +8465,13 @@ function __generator(thisArg, body) {
     }
 }
 
+function __createBinding(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}
+
 function __exportStar(m, exports) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 
 function __values(o) {
@@ -9054,7 +8590,7 @@ function __classPrivateFieldSet(receiver, privateMap, value) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {" _key":"apconf2020/App","root":"App-m__root__ecb8b2LaFAR","hidden":"App-m__hidden__ecb8b23PT0U","lightbulbControl":"App-m__lightbulbControl__ecb8b22Nvsp","control":"App-m__control__ecb8b23LOMB","main":"App-m__main__ecb8b22QTbx","description":"App-m__description__ecb8b2l28Fd","hive":"App-m__hive__ecb8b22wMfM","openRoadmap":"App-m__openRoadmap__ecb8b23aKO7","small":"App-m__small__ecb8b2u1q-Z _ui-m__s__ecb8b21rol0 _typo__s__ecb8b22332p","descriptionMeta":"App-m__descriptionMeta__ecb8b23DhmA","footer":"App-m__footer__ecb8b21Ixgt","menuList":"App-m__menuList__ecb8b21-ErE","menuItem":"App-m__menuItem__ecb8b21pBDQ","menuLink":"App-m__menuLink__ecb8b22nlU6","lightbulb":"App-m__lightbulb__ecb8b21je_u","bulbOff":"App-m__bulbOff__ecb8b21gDnN"};
+module.exports = {" _key":"apconf2020/App","root":"App-m__root__ecb8b2LaFAR","hidden":"App-m__hidden__ecb8b23PT0U","lightbulbControl":"App-m__lightbulbControl__ecb8b22Nvsp","control":"App-m__control__ecb8b23LOMB","main":"App-m__main__ecb8b22QTbx","description":"App-m__description__ecb8b2l28Fd","hive":"App-m__hive__ecb8b22wMfM","openRoadmap":"App-m__openRoadmap__ecb8b23aKO7","small":"App-m__small__ecb8b2u1q-Z _ui-m__s__ecb8b21rol0 _typo__s__ecb8b22332p","descriptionMeta":"App-m__descriptionMeta__ecb8b23DhmA","footer":"App-m__footer__ecb8b21Ixgt","menuList":"App-m__menuList__ecb8b21-ErE","menuItem":"App-m__menuItem__ecb8b21pBDQ","menuItemRight":"App-m__menuItemRight__ecb8b2ef1B7","menuLink":"App-m__menuLink__ecb8b22nlU6","lightbulb":"App-m__lightbulb__ecb8b21je_u","bulbOff":"App-m__bulbOff__ecb8b21gDnN"};
 
 /***/ }),
 
@@ -9411,7 +8947,9 @@ const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["c
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_2__["menuItem"]] },
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_link_ActiveLink__WEBPACK_IMPORTED_MODULE_1__["default"], { key: 'credits', matchParams: {}, params: {}, activeClasses: [], to: 'credits' }, "Credits & License")),
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_2__["menuItem"]] },
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_link_ActiveLink__WEBPACK_IMPORTED_MODULE_1__["default"], { key: 'privacy', matchParams: {}, params: {}, activeClasses: [], to: 'privacy' }, "Privacy"))));
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_link_ActiveLink__WEBPACK_IMPORTED_MODULE_1__["default"], { key: 'privacy', matchParams: {}, params: {}, activeClasses: [], to: 'privacy' }, "Privacy")),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_2__["menuItemRight"]] },
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("a", { href: 'https://socialhub.activitypub.rocks', target: "_blank" }, "Forum"))));
 }));
 
 
@@ -9566,10 +9104,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dojo/framework/core/vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
 /* harmony import */ var _dojo_framework_core_Registry__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dojo/framework/core/Registry */ "./node_modules/@dojo/framework/core/Registry.mjs");
 /* harmony import */ var _dojo_framework_routing_RouterInjector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @dojo/framework/routing/RouterInjector */ "./node_modules/@dojo/framework/routing/RouterInjector.mjs");
-/* harmony import */ var _dojo_framework_core_mixins_I18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @dojo/framework/core/mixins/I18n */ "./node_modules/@dojo/framework/core/mixins/I18n.mjs");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./routes */ "./src/routes.ts");
-/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./App */ "./src/App.tsx");
-
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./routes */ "./src/routes.ts");
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./App */ "./src/App.tsx");
 
 
 
@@ -9577,11 +9113,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const registry = new _dojo_framework_core_Registry__WEBPACK_IMPORTED_MODULE_1__["default"]();
-Object(_dojo_framework_core_mixins_I18n__WEBPACK_IMPORTED_MODULE_3__["registerI18nInjector"])({ locale: 'en', rtl: false }, registry);
-Object(_dojo_framework_routing_RouterInjector__WEBPACK_IMPORTED_MODULE_2__["registerRouterInjector"])(_routes__WEBPACK_IMPORTED_MODULE_4__["default"], registry, {
+Object(_dojo_framework_routing_RouterInjector__WEBPACK_IMPORTED_MODULE_2__["registerRouterInjector"])(_routes__WEBPACK_IMPORTED_MODULE_3__["default"], registry, {
     setDocumentTitle: ({ title, params: {} }) => (title ? title : 'ActivityPub Conference 2020')
 });
-const r = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["default"])(() => Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_App__WEBPACK_IMPORTED_MODULE_5__["default"], null));
+const r = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["default"])(() => Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_App__WEBPACK_IMPORTED_MODULE_4__["default"], null));
 const domNode = document.getElementById('app');
 r.mount({ registry, domNode });
 

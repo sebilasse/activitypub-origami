@@ -44,9 +44,9 @@ let AppService = class AppService {
             return true;
         }
         const id = uuid_1.default();
-        const confirmBase = packageJSON.redaktor.confirmationEndpoint || 'http://localhost/confirm';
-        const confirmLink = path.join(confirmBase, base64_1.encode(`apconf--${id}`));
-        await writeFile(this._getFile(id), JSON.stringify(Object.assign(Object.assign({}, createUserDto), { status: 'pending' })));
+        const confirmBase = 'https://apconf.uber.space/server/confirm/';
+        const confirmLink = confirmBase + base64_1.encode(`apconf--${id}`);
+        await writeFile(this._getFile(id), JSON.stringify(Object.assign(Object.assign({}, createUserDto), { href: confirmLink, status: 'pending' })));
         const text = `
 **Hello ${createUserDto.publicBadgeName},**
 \n\n

@@ -1,6 +1,6 @@
 import { create, tsx } from '@dojo/framework/core/vdom';
 import Label from '../label/index';
-import * as labelCss from '../theme/default/label.m.css';
+import * as labelCss from '../theme/material/label.m.css';
 import HelperText from '../helper-text/index';
 import { createICacheMiddleware } from '@dojo/framework/core/middleware/icache';
 // import dimensions from '@dojo/framework/core/middleware/dimensions';
@@ -303,7 +303,7 @@ export const TextArea = factory(function TextArea({
 						const value = (event.target as HTMLInputElement).value;
 						if (expand) {
 							let numberOfLineBreaks = (value.match(/\n/g) || []).length + 1;
-						  icache.set('style', `height: ${line + numberOfLineBreaks * line}px;`);
+						  icache.set('style', `height: ${numberOfLineBreaks * line}px;`);
 						}
 						icache.set('value', value);
 						onValue && onValue(value);

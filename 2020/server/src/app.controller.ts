@@ -49,18 +49,16 @@ export class AppController {
 
   @Get()
   getHello(): string { return this.appService.getHello() }
-  @Get('test')
-  getTest(): string { return this.appService.getHello() }
 
   @Get('confirm/:id')
-  @Redirect(`${packageJSON.redaktor.base||'http://localhost'}/register/confirmed`)
+  @Redirect(`${packageJSON.redaktor.base||'http://localhost'}/#register/confirmed`)
   async getConfirm(@Param('id') id: string) {
     await this.appService.getConfirm(id)
   }
 
   @Post()
   @UseFilters(new RegisterExceptionFilter())
-  @Redirect(`${packageJSON.redaktor.base||'http://localhost'}/register/sent`)
+  @Redirect(`${packageJSON.redaktor.base||'http://localhost'}/#register/sent`)
   async create(@Body() createUserDto: CreateUserDto) {
     await this.appService.postRegistration(createUserDto);
   }

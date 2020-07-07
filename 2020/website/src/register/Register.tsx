@@ -198,7 +198,7 @@ export default factory(function Register({ properties, middleware: { icache, the
 						{messages.iOrg}
 					</TextInput>
 
-					<TextInput name='ActivityPub' maxLength={800} responsive={true} placeholder='e.g. @cwebber@octodon.social'>
+					<TextInput name='ActivityPub' maxLength={800} responsive={true} placeholder='https://octodon.social/@cwebber/'>
 						{messages.iAP}
 					</TextInput>
 					<TextInput name='website' maxLength={400} responsive={true}>

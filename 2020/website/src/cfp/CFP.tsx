@@ -29,11 +29,6 @@ export default factory(function CFP({ middleware: { theme, i18n/*,icache, resize
 						<small><i>{messages.hamiltonCredit}</i></small>
 					</figcaption>
 				</figure>
-				<br /><br />
-				<blockquote>
-					Be curious. Read widely. Try new things.<br />What people call intelligence just boils down to curiosity.
-					<footer>Aaron Swartz <small>1986-2013</small></footer>
-				</blockquote>
 			</div>
 			<div classes={[grid.autoColumn, themedCss.desc1]}>
 				<p class="serif" innerHTML={snarkdown(messages.description)} />
@@ -51,8 +46,8 @@ export default factory(function CFP({ middleware: { theme, i18n/*,icache, resize
 			</div>
 			<div classes={grid.asideColumn}>
 				<blockquote>
-					Access to technology is the great economic equalizer of this century.
-					<footer>Kimberly Bryant,<br />Founder of Black Girls Code</footer>
+					Let's keep things fun
+					<footer>Christopher</footer>
 				</blockquote>
 				<figure classes={[themedCss.figure, themedCss.portrait, themedCss.bottom]}>
 					<img key="byron" classes={[themedCss.img]} src={byron} />

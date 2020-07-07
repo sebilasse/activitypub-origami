@@ -31,8 +31,8 @@ export default factory(function CFP({ middleware: { theme, i18n/*,icache, resize
 			<div classes={[grid.autoColumnWide, themedCss.desc1]}>
 				<p class="serif" innerHTML={snarkdown(messages.description)} />
 				<p class="serif">
-					<em>Page made with <b>❤</b> by <a href="https://mastodon.social/@sl007">Sebastian</a></em><br />
-						The page and event is hosted at <a href="https://fosshost.org">fosshost!</a>
+					<em>Page made with <b>❤</b> by <a href="https://mastodon.social/@sl007" target="_blank">Sebastian</a>, <a href="https://socialhub.activitypub.rocks/c/software/redaktor-me/22" target="_blank">redaktor.me</a></em><br />
+						The page and event is hosted at <a href="https://fosshost.org" target="_blank">fosshost!</a>
 				</p>
 				<small class="serif">Lightbulb Icons Created by David from Noun Project</small>
 			</div>
