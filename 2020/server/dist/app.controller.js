@@ -44,14 +44,6 @@ __decorate([
 __decorate([
     class_validator_1.MaxLength(200),
     __metadata("design:type", String)
-], CreateUserDto.prototype, "TalkProposal", void 0);
-__decorate([
-    class_validator_1.MaxLength(1600),
-    __metadata("design:type", String)
-], CreateUserDto.prototype, "TalkProposalSummary", void 0);
-__decorate([
-    class_validator_1.MaxLength(200),
-    __metadata("design:type", String)
 ], CreateUserDto.prototype, "BofProposal", void 0);
 __decorate([
     class_validator_1.MaxLength(1600),

@@ -119,7 +119,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     messages: {
         headline: 'CFP',
-        deadline: `Deadline for proposals is July 8`,
+        deadline: `Talk Submission closed`,
         description: `
 A conference about the present and future of ActivityPub,
 the world’s leading federated social web standard.
@@ -139,7 +139,7 @@ related to ActivityPub. Topics may include, but are not limited to:`,
 - community management and hosting
 - and ActivityPub extensions.`,
         registration: `
-To *submit* a talk or BoF, please include your title and a brief summary with your [registration](/#register).
+To *submit* a BoF, please include your title and a brief summary with your [registration](/#register).
 <br><br>
 Due to bandwidth limitations of video conferencing software, we ask for those
 who wish to participate in the Big Blue Button sessions to register.

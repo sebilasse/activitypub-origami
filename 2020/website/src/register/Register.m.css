@@ -145,7 +145,13 @@
 .description {
 	composes: serif from '../theme/material/_typo.css';
 	padding-left: var(--line2);
-	margin-top: 14px;
+	margin-top: var(--line,15px);
+}
+.descCaption {
+	display: inline-block;
+	padding-top: 0;
+	padding-bottom: 4px;
+	margin-top: 25px;
 }
 .proposals {
 	flex: 1;

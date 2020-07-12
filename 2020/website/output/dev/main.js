@@ -8948,6 +8948,8 @@ const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["c
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_link_ActiveLink__WEBPACK_IMPORTED_MODULE_1__["default"], { key: 'credits', matchParams: {}, params: {}, activeClasses: [], to: 'credits' }, "Credits & License")),
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_2__["menuItem"]] },
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_link_ActiveLink__WEBPACK_IMPORTED_MODULE_1__["default"], { key: 'privacy', matchParams: {}, params: {}, activeClasses: [], to: 'privacy' }, "Privacy")),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_2__["menuItemRight"]], style: "margin-right:0;" },
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("a", { href: 'https://redaktor.me/apconf', target: "_blank" }, "2019")),
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("small", { classes: [_App_m_css__WEBPACK_IMPORTED_MODULE_2__["menuItemRight"]] },
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("a", { href: 'https://socialhub.activitypub.rocks', target: "_blank" }, "Forum"))));
 }));

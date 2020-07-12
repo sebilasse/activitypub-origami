@@ -16,6 +16,11 @@ export default factory(function Footer({ }) {
 					Privacy
 				</Link>
 			</small>
+			<small classes={[css.menuItemRight]} style="margin-right:0;">
+				<a href='https://redaktor.me/apconf' target="_blank">
+					2019
+				</a>
+			</small>
 			<small classes={[css.menuItemRight]}>
 				<a href='https://socialhub.activitypub.rocks' target="_blank">
 					Forum

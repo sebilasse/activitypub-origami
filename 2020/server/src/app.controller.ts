@@ -16,10 +16,12 @@ export class CreateUserDto {
   availableFrom: string;
   @MaxLength(7)
   availableTo: string;
+  /*
   @MaxLength(200)
   TalkProposal: string;
   @MaxLength(1600)
   TalkProposalSummary: string;
+  */
   @MaxLength(200)
   BofProposal: string;
   @MaxLength(1600)

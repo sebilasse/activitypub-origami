@@ -1,9 +1,9 @@
 .root {
-	composes: mdc-floating-label from '@material/textfield/dist/mdc.textfield.css';
+
 }
 
 .active {
-	composes: mdc-floating-label--float-above from '@material/textfield/dist/mdc.textfield.css';
+	
 }
 
 .root.secondary {

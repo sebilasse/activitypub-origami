@@ -243,35 +243,10 @@ export default factory(function Register({ properties, middleware: { icache, the
 						</p>
 					</div>
 					<div classes={themedCss.proposals}>
-						<details>
-							<summary>
-								<h3 key="talkControl" onclick={() => {icache.set('hasTalk', true)}} classes={themedCss.flex}>
-									<div classes={themedCss.addControl} /><span> {messages.add} talk {messages.proposal}</span>
-								</h3>
-							</summary>
-							<small class="serif">{messages.talkCaption}</small>
-							<p key="talks" classes={themedCss.controlWrapper}>
-								<TextInput name="TalkProposal" key="talkProposal"
-									maxLength={200}
-									placeholder='title max. 200 characters [en]'
-									size="l"
-									labelHidden={true}
-									responsive={true}
-								>
-									Title for the talk
-								</TextInput>
-								<br />
-								<TextArea name="TalkProposalSummary" key="talkProposalSummary"
-									maxLength={1600}
-									placeholder='summary max. 1.600 characters [en]'
-									labelHidden={true}
-									responsive={true}
-								>
-									Summary of the talk
-								</TextArea>
-								<br />
-							</p>
-						</details>
+						<p classes={themedCss.description}>
+							The CFP for talks closed with 75 registered attendees.<br />
+							<em classes={themedCss.descCaption}>Thank You!</em>
+						</p>
 						<details>
 							<summary>
 								<h3 key="bofControl" onclick={() => {icache.set('hasBof', true)}} classes={themedCss.flex}>

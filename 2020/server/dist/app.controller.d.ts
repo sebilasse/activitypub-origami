@@ -5,8 +5,6 @@ export declare class CreateUserDto {
     timezone: string;
     availableFrom: string;
     availableTo: string;
-    TalkProposal: string;
-    TalkProposalSummary: string;
     BofProposal: string;
     BofProposalSummary: string;
     publicBadgeByline: string;

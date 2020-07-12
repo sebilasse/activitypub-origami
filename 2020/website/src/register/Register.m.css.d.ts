@@ -17,6 +17,7 @@ export const bottom: string;
 export const flex: string;
 export const flexBottom: string;
 export const description: string;
+export const descCaption: string;
 export const proposals: string;
 export const help: string;
 export const submit: string;
