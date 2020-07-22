@@ -9,7 +9,7 @@ import Check from '../checkbox';
 import TextInput from '../text-input';
 import TextArea from '../text-area';
 import MailInput from '../email-input';
-import RangeSlider from '../range-slider';
+// import RangeSlider from '../range-slider';
 import timezones from '../assets/timezones';
 
 import * as grid from '../AppContent.m.css';
@@ -50,6 +50,21 @@ code of conduct Check
 ok recording Check
 
 Talk / BoF CFP
+
+
+<RangeSlider
+	minimumLabel={`${minmax.min} h`}
+	min={minmax.min}
+	minConstraint={10}
+	minName="availableFrom"
+	maximumLabel={`${minmax.max > 24 ? minmax.max-24 : minmax.max} h`}
+	max={minmax.max}
+	maxName="availableTo"
+	onValue={(v) => {
+		icache.set('available',`${v.min} – ${v.max > 24 ? v.max-24 : v.max} h`)
+	}}
+	labelHidden={false}
+/>
 */
 
 export default factory(function Register({ properties, middleware: { icache, theme, i18n } }) {
@@ -77,20 +92,21 @@ export default factory(function Register({ properties, middleware: { icache, the
 			<div classes={[grid.asideColumn, themedCss.sentAside]} />
 		</output>
 	}
-
+/*
 	const TIMES = [
 		{ US: 1, America: 1, Paific: 1, Brazil: 1, Canada: 1, Antarctica: 1, min: 6, max: 19 },
 		{ Europe: 1, Africa: 1, min: 14, max: 27 },
 		{ Asia: 1, Atlantic: 1, Australia: 1, min: 5, max: 27 }
 	];
 	const region = icache.getOrSet('TZ', timeOptions.timeZone).split('/')[0];
+
 	const minmax = TIMES.reduce((o, t) => {
 		if (t.hasOwnProperty(region)) {
 			o.min = t.min;
 			o.max = t.max;
 		}
 		return o
-	}, {min: 0, max: 24});
+	}, {min: 0, max: 24});*/
 		return (
 		<form
 			action={state === 'confirmed' ? '#' : packageJSON.redaktor.server}
@@ -129,7 +145,7 @@ export default factory(function Register({ properties, middleware: { icache, the
 					</span>
 				</div>
 				<div classes={themedCss.number}>1</div>
-				<div classes={themedCss.invite}>{state === 'confirmed' ? 'You' : 'Invite for you'}<span></span></div>
+				<div classes={themedCss.invite}>{state === 'confirmed' ? 'You' : 'sold out'}<span></span></div>
 			</aside>
 
 			{(state === 'confirmed' ?
@@ -205,23 +221,12 @@ export default factory(function Register({ properties, middleware: { icache, the
 						{messages.iWebsite}
 					</TextInput>
 					<div classes={[themedCss.caption, themedCss.tzCaption]}>
-						<span>{icache.get('available') ?
-							<h5 classes={themedCss.available}>{icache.get('available')}</h5> : messages.tzCaption
-						}</span>
+						<h4>{messages.tzClosedCaption1}</h4>
+						<h4>{messages.tzClosedCaption2}</h4>
 
-						<RangeSlider
-							minimumLabel={`${minmax.min} h`}
-							min={minmax.min}
-							minConstraint={10}
-							minName="availableFrom"
-							maximumLabel={`${minmax.max > 24 ? minmax.max-24 : minmax.max} h`}
-							max={minmax.max}
-							maxName="availableTo"
-							onValue={(v) => {
-								icache.set('available',`${v.min} – ${v.max > 24 ? v.max-24 : v.max} h`)
-							}}
-							labelHidden={false}
-						/>
+
+
+
 						<input name="available" type="hidden" value={`${icache.get('available')} ${icache.get('TZ')}`} />
 					</div>
 					<div></div><div></div>
@@ -245,6 +250,7 @@ export default factory(function Register({ properties, middleware: { icache, the
 					<div classes={themedCss.proposals}>
 						<p classes={themedCss.description}>
 							The CFP for talks closed with 75 registered attendees.<br />
+							The Registration closed with 100 registered attendees.<br />
 							<em classes={themedCss.descCaption}>Thank You!</em>
 						</p>
 						<details>
@@ -295,7 +301,7 @@ export default factory(function Register({ properties, middleware: { icache, the
 						</div>
 						<div classes={themedCss.submit}>
 							<Button color="blue" spaced={false} responsive={true} type='submit' size='xxl' variant='filled'>
-								Register
+								Join list
 							</Button>
 						</div>
 					</div>

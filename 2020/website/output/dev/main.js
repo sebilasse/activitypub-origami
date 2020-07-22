@@ -8781,11 +8781,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["create"])({ theme: _middleware_theme__WEBPACK_IMPORTED_MODULE_1__["default"] }).properties();
 const menuItems = [
-    { label: (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("virtual", null,
-            "Call for",
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),
-            "Proposals")), color: 'orange', n: 'cfp' },
-    { label: 'Register', color: 'blue', n: 'register' },
+    { label: 'Info', color: 'orange', n: 'cfp' },
+    { label: 'Waiting List', color: 'blue', n: 'register' },
     { label: (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("virtual", null,
             "Birds of a",
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),

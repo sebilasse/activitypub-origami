@@ -151,7 +151,7 @@
 	display: inline-block;
 	padding-top: 0;
 	padding-bottom: 4px;
-	margin-top: 25px;
+	margin-top: 50px;
 }
 .proposals {
 	flex: 1;
@@ -241,8 +241,9 @@ details summary:focus h3 {
 	color: var(--text-muted);
 }
 .root .tzCaption {
-	margin: 0;
+	margin: var(--line,15px) 0 0 0;
 	line-height: 1.24;
+	color: var(--ap);
 }
 .available {
 	text-align: center;

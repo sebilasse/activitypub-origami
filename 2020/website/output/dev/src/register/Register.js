@@ -824,160 +824,6 @@ const Label = factory(function Label({ properties, id, children, middleware: { t
 
 /***/ }),
 
-/***/ "./src/range-slider/index.tsx":
-/*!************************************!*\
-  !*** ./src/range-slider/index.tsx ***!
-  \************************************/
-/*! exports provided: RangeSlider, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RangeSlider", function() { return RangeSlider; });
-/* harmony import */ var _theme_material_range_slider_m_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../theme/material/range-slider.m.css */ "./src/theme/material/range-slider.m.css");
-/* harmony import */ var _theme_material_range_slider_m_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_theme_material_range_slider_m_css__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/range-slider.m.css */ "./src/range-slider/styles/range-slider.m.css");
-/* harmony import */ var _styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _label_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../label/index */ "./src/label/index.tsx");
-/* harmony import */ var _dojo_framework_core_middleware_dimensions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @dojo/framework/core/middleware/dimensions */ "./node_modules/@dojo/framework/core/middleware/dimensions.mjs");
-/* harmony import */ var _dojo_framework_core_middleware_focus__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @dojo/framework/core/middleware/focus */ "./node_modules/@dojo/framework/core/middleware/focus.mjs");
-/* harmony import */ var _dojo_framework_core_middleware_theme__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @dojo/framework/core/middleware/theme */ "./node_modules/@dojo/framework/core/middleware/theme.mjs");
-/* harmony import */ var _dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @dojo/framework/core/vdom */ "./node_modules/@dojo/framework/core/vdom.mjs");
-/* harmony import */ var _dojo_framework_core_middleware_icache__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @dojo/framework/core/middleware/icache */ "./node_modules/@dojo/framework/core/middleware/icache.mjs");
-/* harmony import */ var _common_util__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../common/util */ "./src/common/util.ts");
-
-
-
-
-
-
-
-
-
-const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["create"])({
-    dimensions: _dojo_framework_core_middleware_dimensions__WEBPACK_IMPORTED_MODULE_3__["default"],
-    focus: _dojo_framework_core_middleware_focus__WEBPACK_IMPORTED_MODULE_4__["default"],
-    icache: Object(_dojo_framework_core_middleware_icache__WEBPACK_IMPORTED_MODULE_7__["createICacheMiddleware"])(),
-    theme: _dojo_framework_core_middleware_theme__WEBPACK_IMPORTED_MODULE_5__["default"]
-})
-    .properties()
-    .children();
-const RangeSlider = factory(function RangeSlider({ children, id, middleware: { dimensions, focus, icache, theme }, properties }) {
-    const { name = '', max: maxRestraint = 100, min: minRestraint = 0 } = properties();
-    const [{ label, output } = {}] = children();
-    const { aria = {}, classes, disabled, labelHidden, maxName = `${name}_max`, maximumLabel = 'Maximum', minName = `${name}_min`, minimumLabel = 'Minimum', minConstraint = 0, onBlur, onFocus, onOut, onOver, onValue, outputIsTooltip, readOnly, required, showOutput = false, step = 1, theme: themeProp, valid, initialValue = {
-        max: maxRestraint,
-        min: minRestraint
-    }, widgetId = `range-slider-${id}` } = properties();
-    let { value } = properties();
-    if (value === undefined) {
-        value = icache.get('value');
-        const existingInitialValue = icache.get('initialValue');
-        if (!existingInitialValue ||
-            initialValue.min !== existingInitialValue.min ||
-            initialValue.max !== existingInitialValue.max) {
-            icache.set('value', initialValue);
-            icache.set('initialValue', initialValue);
-            value = initialValue;
-        }
-    }
-    const themedCss = theme.classes(_theme_material_range_slider_m_css__WEBPACK_IMPORTED_MODULE_0__);
-    const size = dimensions.get('root');
-    const maxLabelId = `max-label-${id}`;
-    const minLabelId = `min-label-${id}`;
-    const min = Math.max((value || initialValue).min, minRestraint);
-    const max = Math.min((value || initialValue).max, maxRestraint);
-    const slider1Percent = (min - minRestraint) / (maxRestraint - minRestraint);
-    const slider2Percent = (max - minRestraint) / (maxRestraint - minRestraint);
-    const slider1Size = slider1Percent + (slider2Percent - slider1Percent) / 2;
-    const slider2Size = 1 - slider1Size;
-    const getInputProperties = (isSlider1) => (Object.assign({}, Object(_common_util__WEBPACK_IMPORTED_MODULE_8__["formatAriaProperties"])(aria), { 'aria-describedby': isSlider1 ? minLabelId : maxLabelId, 'aria-invalid': valid === false ? 'true' : null, 'aria-labelledby': `${widgetId}-label`, 'aria-readonly': readOnly === true ? 'true' : null, classes: [themedCss.input, _styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1__["nativeInput"]], disabled, max: `${maxRestraint}`, min: `${minRestraint}`, name: isSlider1 ? minName : maxName, onblur: () => {
-            onBlur && onBlur();
-        }, onfocus: () => {
-            onFocus && onFocus();
-        }, oninput: (event) => {
-            onInput(event, isSlider1);
-        }, readonly: readOnly, required, step: `${step}`, type: 'range' }));
-    const onInput = (event, isMinEvent) => {
-        event.stopPropagation();
-        const value = event.target.value;
-        const returnValues = isMinEvent
-            ? { min: Math.min(parseFloat(value), max), max }
-            : { min, max: Math.max(min, parseFloat(value)) };
-        icache.set('value', returnValues);
-        onValue && onValue(returnValues);
-    };
-    const slider1 = (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("input", Object.assign({}, getInputProperties(true), { key: "slider1", value: `${min}`, styles: {
-            clip: `rect(auto, ${Math.round(slider1Size * size.client.width)}px, auto, auto)`
-        } })));
-    const slider2 = (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("input", Object.assign({}, getInputProperties(false), { key: "slider2", styles: {
-            clip: `rect(auto, auto, auto, ${Math.round((1 - slider2Size) * size.client.width)}px)`
-        }, value: `${max}` })));
-    return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("div", { key: "root", classes: [
-            theme.variant(),
-            themedCss.root,
-            disabled ? themedCss.disabled : null,
-            focus.isFocused('root') ? themedCss.focused : null,
-            valid === false ? themedCss.invalid : null,
-            valid === true ? themedCss.valid : null,
-            readOnly ? themedCss.readonly : null,
-            showOutput ? themedCss.hasOutput : null
-        ] },
-        label ? (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])(_label_index__WEBPACK_IMPORTED_MODULE_2__["default"], { classes: classes, disabled: disabled, focused: focus.isFocused('root'), hidden: labelHidden, key: "label", readOnly: readOnly, required: required, secondary: true, theme: themeProp, valid: valid, widgetId: `${widgetId}-label` }, label)) : null,
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("div", { classes: [themedCss.inputWrapper, _styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1__["inputWrapperFixed"]], onpointerenter: () => {
-                onOver && onOver();
-            }, onpointerleave: () => {
-                onOut && onOut();
-            } },
-            slider1,
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("div", { id: minLabelId, classes: themedCss.leftLabel, key: "minimumLabel" }, minimumLabel),
-            slider2,
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("div", { id: maxLabelId, classes: themedCss.rightLabel, key: "maximumLabel" }, maximumLabel),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("div", { classes: [themedCss.filled, _styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1__["filledFixed"]], key: "track", styles: {
-                    left: Math.round(slider1Percent * 100) + '%',
-                    width: Math.round((slider2Percent - slider1Percent) * 100) + '%'
-                } }),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("div", { key: "leftThumb", classes: [
-                    themedCss.thumb,
-                    themedCss.leftThumb,
-                    focus.isFocused('slider1') ? themedCss.focused : undefined,
-                    _styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1__["thumbFixed"]
-                ], styles: {
-                    left: Math.round(slider1Percent * 100) + '%'
-                } }),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("div", { key: "rightThumb", classes: [
-                    themedCss.thumb,
-                    themedCss.rightThumb,
-                    focus.isFocused('slider2') ? themedCss.focused : undefined,
-                    _styles_range_slider_m_css__WEBPACK_IMPORTED_MODULE_1__["thumbFixed"]
-                ], styles: {
-                    left: Math.max(minConstraint, Math.round(slider2Percent * 100)) + '%'
-                } }),
-            showOutput ? (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_6__["tsx"])("output", { classes: [themedCss.output, outputIsTooltip ? themedCss.outputTooltip : null], for: widgetId, styles: outputIsTooltip
-                    ? {
-                        left: `${Math.round((slider1Percent +
-                            (slider2Percent - slider1Percent) / 2) *
-                            100)}%`
-                    }
-                    : undefined, tabIndex: -1 }, output ? output({ min, max }) : `${min}, ${max}`)) : null)));
-});
-/* harmony default export */ __webpack_exports__["default"] = (RangeSlider);
-
-
-/***/ }),
-
-/***/ "./src/range-slider/styles/range-slider.m.css":
-/*!****************************************************!*\
-  !*** ./src/range-slider/styles/range-slider.m.css ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-module.exports = {" _key":"apconf2020/range-slider","inputWrapperFixed":"range-slider-m__inputWrapperFixed__ecb8b22kDM9","thumbFixed":"range-slider-m__thumbFixed__ecb8b21pFmR","filledFixed":"range-slider-m__filledFixed__ecb8b22P_cd","nativeInput":"range-slider-m__nativeInput__ecb8b22Wltt"};
-
-/***/ }),
-
 /***/ "./src/register/Register.m.css":
 /*!*************************************!*\
   !*** ./src/register/Register.m.css ***!
@@ -1008,13 +854,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _text_input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../text-input */ "./src/text-input/index.tsx");
 /* harmony import */ var _text_area__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../text-area */ "./src/text-area/index.tsx");
 /* harmony import */ var _email_input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../email-input */ "./src/email-input/index.tsx");
-/* harmony import */ var _range_slider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../range-slider */ "./src/range-slider/index.tsx");
-/* harmony import */ var _assets_timezones__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../assets/timezones */ "./src/assets/timezones.ts");
-/* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../AppContent.m.css */ "./src/AppContent.m.css");
-/* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _Register_m_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Register.m.css */ "./src/register/Register.m.css");
-/* harmony import */ var _Register_m_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_Register_m_css__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _nls_main__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./nls/main */ "./src/register/nls/main.ts");
+/* harmony import */ var _assets_timezones__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../assets/timezones */ "./src/assets/timezones.ts");
+/* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../AppContent.m.css */ "./src/AppContent.m.css");
+/* harmony import */ var _AppContent_m_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_AppContent_m_css__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _Register_m_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Register.m.css */ "./src/register/Register.m.css");
+/* harmony import */ var _Register_m_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_Register_m_css__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _nls_main__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./nls/main */ "./src/register/nls/main.ts");
 
 
 
@@ -1025,7 +870,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+// import RangeSlider from '../range-slider';
 
 
 
@@ -1048,45 +893,62 @@ code of conduct Check
 ok recording Check
 
 Talk / BoF CFP
+
+
+<RangeSlider
+    minimumLabel={`${minmax.min} h`}
+    min={minmax.min}
+    minConstraint={10}
+    minName="availableFrom"
+    maximumLabel={`${minmax.max > 24 ? minmax.max-24 : minmax.max} h`}
+    max={minmax.max}
+    maxName="availableTo"
+    onValue={(v) => {
+        icache.set('available',`${v.min} – ${v.max > 24 ? v.max-24 : v.max} h`)
+    }}
+    labelHidden={false}
+/>
 */
 /* harmony default export */ __webpack_exports__["default"] = (factory(function Register({ properties, middleware: { icache, theme, i18n } }) {
     const { get, set } = icache;
-    const { messages } = i18n.localize(_nls_main__WEBPACK_IMPORTED_MODULE_13__["default"]);
-    const themedCss = theme.classes(_Register_m_css__WEBPACK_IMPORTED_MODULE_12__);
+    const { messages } = i18n.localize(_nls_main__WEBPACK_IMPORTED_MODULE_12__["default"]);
+    const themedCss = theme.classes(_Register_m_css__WEBPACK_IMPORTED_MODULE_11__);
     const registerHelper = [themedCss.helperText];
     const timeOptions = Object.assign({}, Intl.DateTimeFormat().resolvedOptions(), { offset: new Date().getTimezoneOffset() });
     const { state = 'new' } = properties();
     if (state === 'sent') {
-        return Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("output", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["blue"], _AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["root"], themedCss.root, themedCss.sent] },
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["headline"] },
+        return Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("output", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_10__["blue"], _AppContent_m_css__WEBPACK_IMPORTED_MODULE_10__["root"], themedCss.root, themedCss.sent] },
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_10__["headline"] },
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h1", null, messages.headline)),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["headline"] },
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_10__["headline"] },
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h4", null, messages.bylineSent)),
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", null),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["autoColumn"] },
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_10__["autoColumn"] },
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { class: 'serif', innerHTML: snarkdown(messages.mailSent) })),
-            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["asideColumn"], themedCss.sentAside] }));
+            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_10__["asideColumn"], themedCss.sentAside] }));
     }
-    const TIMES = [
-        { US: 1, America: 1, Paific: 1, Brazil: 1, Canada: 1, Antarctica: 1, min: 6, max: 19 },
-        { Europe: 1, Africa: 1, min: 14, max: 27 },
-        { Asia: 1, Atlantic: 1, Australia: 1, min: 5, max: 27 }
-    ];
-    const region = icache.getOrSet('TZ', timeOptions.timeZone).split('/')[0];
-    const minmax = TIMES.reduce((o, t) => {
-        if (t.hasOwnProperty(region)) {
-            o.min = t.min;
-            o.max = t.max;
-        }
-        return o;
-    }, { min: 0, max: 24 });
-    return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("form", { action: state === 'confirmed' ? '#' : packageJSON.redaktor.server, method: "POST", classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["blue"], _AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["root"], themedCss.root] },
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("datalist", { id: 'timezones' }, _assets_timezones__WEBPACK_IMPORTED_MODULE_10__["default"].map((tz) => Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("option", { value: tz }))),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["headline"] },
+    /*
+        const TIMES = [
+            { US: 1, America: 1, Paific: 1, Brazil: 1, Canada: 1, Antarctica: 1, min: 6, max: 19 },
+            { Europe: 1, Africa: 1, min: 14, max: 27 },
+            { Asia: 1, Atlantic: 1, Australia: 1, min: 5, max: 27 }
+        ];
+        const region = icache.getOrSet('TZ', timeOptions.timeZone).split('/')[0];
+    
+        const minmax = TIMES.reduce((o, t) => {
+            if (t.hasOwnProperty(region)) {
+                o.min = t.min;
+                o.max = t.max;
+            }
+            return o
+        }, {min: 0, max: 24});*/
+    return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("form", { action: state === 'confirmed' ? '#' : packageJSON.redaktor.server, method: "POST", classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_10__["blue"], _AppContent_m_css__WEBPACK_IMPORTED_MODULE_10__["root"], themedCss.root] },
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("datalist", { id: 'timezones' }, _assets_timezones__WEBPACK_IMPORTED_MODULE_9__["default"].map((tz) => Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("option", { value: tz }))),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_10__["headline"] },
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h1", null, state === 'confirmed' ? messages.headlineConfirmed : messages.headline)),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["headline"] },
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: _AppContent_m_css__WEBPACK_IMPORTED_MODULE_10__["headline"] },
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h4", null, state === 'confirmed' ? messages.bylineConfirmed : messages.byline)),
-        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("aside", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_11__["leftColumn"], themedCss.asideColumn] },
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("aside", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_10__["leftColumn"], themedCss.asideColumn] },
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("figure", { classes: themedCss.figure },
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("img", { classes: [themedCss.img], src: apconf2019_1 }),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("img", { classes: [themedCss.img], src: apconf2019_2 }),
@@ -1104,7 +966,7 @@ Talk / BoF CFP
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, " 31415926"))),
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.number }, "1"),
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.invite },
-                state === 'confirmed' ? 'You' : 'Invite for you',
+                state === 'confirmed' ? 'You' : 'sold out',
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null))),
         (state === 'confirmed' ?
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [themedCss.check] },
@@ -1124,18 +986,15 @@ Talk / BoF CFP
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'timezone', autocomplete: "off", list: 'timezones', responsive: true, value: icache.get('TZ') || timeOptions.timeZone, onValue: (v) => icache.set('TZ', v || timeOptions.timeZone), onValidate: (valid, message) => {
                         set('validTimezone', !!valid);
                         set('messageTimezone', message);
-                    }, valid: { valid: get('validTimezone'), message: get('messageTimezone') }, pattern: _assets_timezones__WEBPACK_IMPORTED_MODULE_10__["default"].join('|') }, messages.iTimezone),
+                    }, valid: { valid: get('validTimezone'), message: get('messageTimezone') }, pattern: _assets_timezones__WEBPACK_IMPORTED_MODULE_9__["default"].join('|') }, messages.iTimezone),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("input", { classes: themedCss.confirmedTrp, type: "text", name: 'confirmed' }),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'privateName', autocomplete: 'name', maxLength: 400, responsive: true }, messages.iName),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'org', autocomplete: 'organization', maxLength: 800, responsive: true }, messages.iOrg),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'ActivityPub', maxLength: 800, responsive: true, placeholder: 'https://octodon.social/@cwebber/' }, messages.iAP),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_text_input__WEBPACK_IMPORTED_MODULE_6__["default"], { name: 'website', maxLength: 400, responsive: true }, messages.iWebsite),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [themedCss.caption, themedCss.tzCaption] },
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("span", null, icache.get('available') ?
-                        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h5", { classes: themedCss.available }, icache.get('available')) : messages.tzCaption),
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_range_slider__WEBPACK_IMPORTED_MODULE_9__["default"], { minimumLabel: `${minmax.min} h`, min: minmax.min, minConstraint: 10, minName: "availableFrom", maximumLabel: `${minmax.max > 24 ? minmax.max - 24 : minmax.max} h`, max: minmax.max, maxName: "availableTo", onValue: (v) => {
-                            icache.set('available', `${v.min} – ${v.max > 24 ? v.max - 24 : v.max} h`);
-                        }, labelHidden: false }),
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h4", null, messages.tzClosedCaption1),
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h4", null, messages.tzClosedCaption2),
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("input", { name: "available", type: "hidden", value: `${icache.get('available')} ${icache.get('TZ')}` })),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", null),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", null))),
@@ -1154,6 +1013,8 @@ Talk / BoF CFP
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.proposals },
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { classes: themedCss.description },
                     "The CFP for talks closed with 75 registered attendees.",
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),
+                    "The Registration closed with 100 registered attendees.",
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("em", { classes: themedCss.descCaption }, "Thank You!")),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("details", null,
@@ -1191,7 +1052,7 @@ Talk / BoF CFP
                             ":")),
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_checkbox__WEBPACK_IMPORTED_MODULE_5__["default"], { spaced: false, name: "codeOfConduct", required: true, value: 'agreed' }, messages.iAgree)),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: themedCss.submit },
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_button__WEBPACK_IMPORTED_MODULE_4__["default"], { color: "blue", spaced: false, responsive: true, type: 'submit', size: 'xxl', variant: 'filled' }, "Register"))))));
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_button__WEBPACK_IMPORTED_MODULE_4__["default"], { color: "blue", spaced: false, responsive: true, type: 'submit', size: 'xxl', variant: 'filled' }, "Join list"))))));
 }));
 
 
@@ -1212,21 +1073,18 @@ __webpack_require__.r(__webpack_exports__);
         fr: () => __webpack_require__.e(/*! import() | src/register/nls/fr/main */ "src/register/nls/fr/main").then(__webpack_require__.bind(null, /*! ./fr/main */ "./src/register/nls/fr/main.ts"))
     },
     messages: {
-        headline: 'Register',
-        headlineConfirmed: 'Registered',
-        byline: `& propose`,
+        headline: 'Waiting List',
+        headlineConfirmed: 'Waiting List joined',
+        byline: `Registration closed`,
         bylineSent: `confirm the mail`,
         bylineConfirmed: `OK`,
         headerConfirmed: `Awesome!`,
-        textConfirmed: `You registered successfuly.`,
-        registrationMail: `You can also register or send proposals by eMail`,
-        description: `
-It is important to *confirm the link* in the mail we send you.
-*Deadline for CFPs is July 8<sup>th</sup>.*<br>
-We will inform you about your registration status in July.`,
+        textConfirmed: `You joined the waiting list.`,
+        registrationMail: `You can also send proposals by eMail`,
+        description: `It is important to *confirm the link* in the mail we send you.`,
         mailSent: `
 # Final step:
-Please read and *confirm* the mail we sent to complete your registration.`,
+Please read and *confirm* the mail we sent to complete your request.`,
         photocaption: 'Pictures of ActivityPub Conference 2019 Prague',
         iBadgeName: 'Badge Name',
         pBadgeName: 'enter a public identifier',
@@ -1238,6 +1096,8 @@ Please read and *confirm* the mail we sent to complete your registration.`,
 we'll try to schedule talks that can be attended by people around the world.
 Though we cannot guarantee to accommodate everyone, please help us by selecting
 a time-range you're comfortable with`,
+        tzClosedCaption1: `The official registration for ActivityPub Conference is closed!`,
+        tzClosedCaption2: `You can now join the waiting list here and propose a session.`,
         iName: 'Real Name',
         iOrg: 'Project, Org. or Company',
         iAP: 'ActivityPub Address',
@@ -1685,18 +1545,6 @@ module.exports = {" _key":"apconf2020/email-input","helperText":"email-input-m__
 
 // extracted by mini-css-extract-plugin
 module.exports = {" _key":"apconf2020/label","root":"label-m__root__ecb8b22OcvT","active":"label-m__active__ecb8b21CdbX","secondary":"label-m__secondary__ecb8b22qRmS"};
-
-/***/ }),
-
-/***/ "./src/theme/material/range-slider.m.css":
-/*!***********************************************!*\
-  !*** ./src/theme/material/range-slider.m.css ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-module.exports = {" _key":"apconf2020/range-slider","root":"range-slider-m__root__ecb8b22s2Ck","hasOutput":"range-slider-m__hasOutput__ecb8b2RHyk9","inputWrapper":"range-slider-m__inputWrapper__ecb8b2256Yl","focused":"range-slider-m__focused__ecb8b28CwV2","disabled":"range-slider-m__disabled__ecb8b2cQLhm","readonly":"range-slider-m__readonly__ecb8b21Yvgn","invalid":"range-slider-m__invalid__ecb8b23ENLH","thumb":"range-slider-m__thumb__ecb8b2gqI8K","valid":"range-slider-m__valid__ecb8b23oM3k","input":"range-slider-m__input__ecb8b23aXE2","leftThumb":"range-slider-m__leftThumb__ecb8b21N_OH","rightThumb":"range-slider-m__rightThumb__ecb8b2boqq5","leftLabel":"range-slider-m__leftLabel__ecb8b21vFB_","rightLabel":"range-slider-m__rightLabel__ecb8b2H6nTU","filled":"range-slider-m__filled__ecb8b22IUmB","outputTooltip":"range-slider-m__outputTooltip__ecb8b23PRN1","output":"range-slider-m__output__ecb8b23I-2x"};
 
 /***/ })
 

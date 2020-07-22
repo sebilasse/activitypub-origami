@@ -13,8 +13,8 @@ export interface CombsProperties {
 
 const factory = create({ theme }).properties<CombsProperties>();
 const menuItems = [
-	{label: (<virtual>Call for<br />Proposals</virtual>), color: 'orange', n: 'cfp'},
-	{label: 'Register', color: 'blue', n: 'register'},
+	{label: 'Info', color: 'orange', n: 'cfp'},
+	{label: 'Waiting List', color: 'blue', n: 'register'},
 
 	{label: (<virtual>Birds of a<br />feather</virtual>), color: 'red', n: 'bof', disabled: true},
 	{label: 'Live', color: 'pink', n: 'live', disabled: true},

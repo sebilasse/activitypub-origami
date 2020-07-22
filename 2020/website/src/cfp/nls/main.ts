@@ -4,8 +4,8 @@ export default {
 		fr: () => import('./fr/main')
 	},
 	messages: {
-		headline: 'CFP',
-		deadline: `Talk Submission closed`,
+		headline: 'Info',
+		deadline: `Registration closed`,
 		description: `
 A conference about the present and future of ActivityPub,
 the world’s leading federated social web standard.
@@ -30,13 +30,13 @@ To *submit* a BoF, please include your title and a brief summary with your [regi
 Due to bandwidth limitations of video conferencing software, we ask for those
 who wish to participate in the Big Blue Button sessions to register.
 <br>
-Registration will be on a first-come first-serve basis.
+Registration happened on a first-come first-serve basis.
 <br>
 There is *no registration fee*.
 <br>
 All of the recorded talks will be uploaded to ConfTube and freely available regardless of registration
 a week prior to the conference.`,
-		codeOfConduct: `By registering, you agree to follow the terms of our Code of Conduct which can be found here:`,
+		codeOfConduct: `By participating, you agree to follow the terms of our Code of Conduct which can be found here:`,
 		hamiltonCaption: `Pioneering computer scientist
 Margaret Hamilton stands next to the code that she and her team wrote
 to guide the Apollo spacecraft to the moon.`,
