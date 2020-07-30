@@ -95,6 +95,9 @@
   will-change: margin, background-color, filter;
   z-index: 2;
 }
+a.comb[href="#talks"] {
+  color: rgb(28, 25, 27) !important;
+}
 .comb, .comb:visited {
 	color: var(--text, #1c191b);
 }

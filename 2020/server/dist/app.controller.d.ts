@@ -2,9 +2,6 @@ import { AppService } from './app.service';
 export declare class CreateUserDto {
     publicBadgeName: string;
     privateEmail: string;
-    timezone: string;
-    availableFrom: string;
-    availableTo: string;
     BofProposal: string;
     BofProposalSummary: string;
     publicBadgeByline: string;

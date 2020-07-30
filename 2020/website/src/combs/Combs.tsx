@@ -16,10 +16,10 @@ const menuItems = [
 	{label: 'Info', color: 'orange', n: 'cfp'},
 	{label: 'Waiting List', color: 'blue', n: 'register'},
 
-	{label: (<virtual>Birds of a<br />feather</virtual>), color: 'red', n: 'bof', disabled: true},
+	{label: (<virtual>Birds of a<br />feather</virtual>), color: 'red', n: 'bof'},
 	{label: 'Live', color: 'pink', n: 'live', disabled: true},
 	{label: 'Hackathon', color: 'green', n: 'hackathon', disabled: true},
-	{label: 'Talks', color: 'amber', n: 'talks', disabled: true},
+	{label: 'Talks', color: 'amber', n: 'talks'},
 ];
 
 export default factory(function Combs({ properties, middleware: { theme } }) {

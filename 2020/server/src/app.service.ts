@@ -53,7 +53,7 @@ export class AppService {
     const text = `
 **Hello ${createUserDto.publicBadgeName},**
 \n\n
-Please confirm your registration by visiting this link:\n
+Please confirm joining the ActivityPub Conf 2020 waiting list by visiting this link:\n
 [${confirmLink}](${confirmLink})
 \n\n
 Thank you,\n
@@ -64,7 +64,7 @@ Morgan Lemmer Webber and Sebastian Lasse\n
     const info = await transporter.sendMail({
       from: `"ActivityPub Conference" <${packageJSON.redaktor.smtp.from}>`,
       to: createUserDto.privateEmail,
-      subject: "⬡ Please confirm your registration for ActivityPub Conference 2020",
+      subject: "⬡ Please confirm your request for ActivityPub Conference 2020",
       text,
       html
     });
@@ -119,10 +119,8 @@ Morgan Lemmer Webber and Sebastian Lasse\n
 
       const text = `
 **Hello ${registration.publicBadgeName},**\n\n
-Thank you for registering for the ActivityPub Conference 2020.\n
-You’re now on the registration list and we look forward to seeing you remotely in October!\n
-We will get in touch with further details.
-Please find your lanyard information below.
+Thank you for joining the waiting list for the ActivityPub Conference 2020.\n
+You’re now on the list and we look forward to get in touch with further details.
 \n\n
 ${data}
 \n\n
@@ -136,7 +134,7 @@ Morgan Lemmer Webber and Sebastian Lasse\n
         to: `${registration.privateEmail}`,
         bcc: packageJSON.redaktor.smtp.bcc,
         // TODO BCC ! */
-        subject: "⬡ Confirmed registration for ActivityPub Conference 2020",
+        subject: "⬡ Waiting List for ActivityPub Conference 2020",
         text,
         html,
         icalEvent: {

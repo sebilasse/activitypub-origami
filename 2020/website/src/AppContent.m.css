@@ -9,7 +9,7 @@
 .root > div:nth-of-type(1) {
 	grid-column: content-start / span 2;
 	background-color: var(--bg-muted);
-	color: #fff;
+	color: var(--headline, #fff);
 }
 .root > div:nth-of-type(2) {
 	background-color: var(--ap);
@@ -105,7 +105,7 @@
 }
 
 .orange { --bg: #ff7a00; --bg-muted: #e03c05; }
-.amber { --bg: #ffaf00; --bg-muted: #f36f0b; }
+.amber { --bg: #ffaf00; --bg-muted: #ffaf00; --headline: #1c191b; }
 .blue { --bg: #0d7ecc; --bg-muted: #0059a2; }
 .purple { --bg: #c30c70; --bg-muted: #96004b; }
 .pink { --bg: #eb2f59; --bg-muted: #bb0036; }

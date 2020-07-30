@@ -38,7 +38,7 @@ const factory = create({ icache, theme, i18n }).properties<RegisterProperties>()
 const apconf2019_1 = require('../assets/photos/low04_apconf_sl_002_hd.jpg');
 const apconf2019_2 = require('../assets/photos/low00_apconf_hellekin_001_hd.jpg');
 const apconf2019_3 = require('../assets/photos/low32_apconf_sl029.jpg');
-const apconf2019_4 = require('../assets/photos/low70_apconf_sl061_hd.jpg');
+const apconf2019_4 = require('../assets/photos/low05_apconf_sl_003_hd.jpg');
 
 /*
 TODO : customValidator for the badge name for uniqueness ???

@@ -450,6 +450,17 @@ module.exports = __webpack_require__.p + "low04_apconf_sl_002_hd.17CYAaX3.jpg";
 
 /***/ }),
 
+/***/ "./src/assets/photos/low05_apconf_sl_003_hd.jpg":
+/*!******************************************************!*\
+  !*** ./src/assets/photos/low05_apconf_sl_003_hd.jpg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "low05_apconf_sl_003_hd.3nfh05rK.jpg";
+
+/***/ }),
+
 /***/ "./src/assets/photos/low32_apconf_sl029.jpg":
 /*!**************************************************!*\
   !*** ./src/assets/photos/low32_apconf_sl029.jpg ***!
@@ -458,17 +469,6 @@ module.exports = __webpack_require__.p + "low04_apconf_sl_002_hd.17CYAaX3.jpg";
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "low32_apconf_sl029.3S_wn-cL.jpg";
-
-/***/ }),
-
-/***/ "./src/assets/photos/low70_apconf_sl061_hd.jpg":
-/*!*****************************************************!*\
-  !*** ./src/assets/photos/low70_apconf_sl061_hd.jpg ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "low70_apconf_sl061_hd.e6CtMEHB.jpg";
 
 /***/ }),
 
@@ -882,7 +882,7 @@ const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["c
 const apconf2019_1 = __webpack_require__(/*! ../assets/photos/low04_apconf_sl_002_hd.jpg */ "./src/assets/photos/low04_apconf_sl_002_hd.jpg");
 const apconf2019_2 = __webpack_require__(/*! ../assets/photos/low00_apconf_hellekin_001_hd.jpg */ "./src/assets/photos/low00_apconf_hellekin_001_hd.jpg");
 const apconf2019_3 = __webpack_require__(/*! ../assets/photos/low32_apconf_sl029.jpg */ "./src/assets/photos/low32_apconf_sl029.jpg");
-const apconf2019_4 = __webpack_require__(/*! ../assets/photos/low70_apconf_sl061_hd.jpg */ "./src/assets/photos/low70_apconf_sl061_hd.jpg");
+const apconf2019_4 = __webpack_require__(/*! ../assets/photos/low05_apconf_sl_003_hd.jpg */ "./src/assets/photos/low05_apconf_sl_003_hd.jpg");
 /*
 TODO : customValidator for the badge name for uniqueness ???
 
@@ -1097,7 +1097,7 @@ we'll try to schedule talks that can be attended by people around the world.
 Though we cannot guarantee to accommodate everyone, please help us by selecting
 a time-range you're comfortable with`,
         tzClosedCaption1: `The official registration for ActivityPub Conference is closed!`,
-        tzClosedCaption2: `You can now join the waiting list here and propose a session.`,
+        tzClosedCaption2: ` `,
         iName: 'Real Name',
         iOrg: 'Project, Org. or Company',
         iAP: 'ActivityPub Address',

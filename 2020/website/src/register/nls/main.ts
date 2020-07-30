@@ -29,7 +29,7 @@ we'll try to schedule talks that can be attended by people around the world.
 Though we cannot guarantee to accommodate everyone, please help us by selecting
 a time-range you're comfortable with`,
 		tzClosedCaption1: `The official registration for ActivityPub Conference is closed!`,
-		tzClosedCaption2: `You can now join the waiting list here and propose a session.`,
+		tzClosedCaption2: ` `,
 		iName: 'Real Name',
 		iOrg: 'Project, Org. or Company',
 		iAP: 'ActivityPub Address',

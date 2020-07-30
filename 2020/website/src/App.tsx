@@ -13,6 +13,8 @@ import Register from './register/Register';
 import Roadmap from './roadmap/Roadmap';
 import Privacy from './privacy/Privacy';
 import Credits from './credits/Credits';
+import Talks from './talks/Talks';
+import BOF from './bof/BOF';
 
 import material from './theme/material';
 import * as css from './App.m.css';
@@ -85,6 +87,8 @@ export default factory(function App({ middleware: { theme, i18n, icache } }) {
 			<Route id="home" renderer={r('home', desc(), true, false)} />
 			<Route id="roadmap" renderer={r('roadmap', <Roadmap />, false, true)} />
       <Route id="cfp" renderer={r('cfp', <CFP />)} />
+      <Route id="talks" renderer={r('talks', <Talks />)} />
+      <Route id="bof" renderer={r('bof', <BOF />)} />
       <Route id="privacy" renderer={r('privacy', <Privacy />)} />
       <Route id="credits" renderer={r('credits', <Credits />)} />
       <Route id="register" renderer={r('register', <Register />)} />

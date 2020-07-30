@@ -1,6 +1,7 @@
 .root {
 	color: var(--text-muted);
 	max-width: 100%;
+	background-color: transparent !important;
 }
 .text {
 	composes: small serif from './_typo.css';

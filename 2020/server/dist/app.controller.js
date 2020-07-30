@@ -18,7 +18,6 @@ const class_validator_1 = require("class-validator");
 const app_service_1 = require("./app.service");
 const register_exception_filter_1 = require("./register-exception.filter");
 const packageJSON = require('../package.json');
-const timezones_1 = require("./data/timezones");
 class CreateUserDto {
 }
 __decorate([
@@ -29,18 +28,6 @@ __decorate([
     class_validator_1.IsEmail(),
     __metadata("design:type", String)
 ], CreateUserDto.prototype, "privateEmail", void 0);
-__decorate([
-    class_validator_1.IsIn(timezones_1.default),
-    __metadata("design:type", String)
-], CreateUserDto.prototype, "timezone", void 0);
-__decorate([
-    class_validator_1.MaxLength(7),
-    __metadata("design:type", String)
-], CreateUserDto.prototype, "availableFrom", void 0);
-__decorate([
-    class_validator_1.MaxLength(7),
-    __metadata("design:type", String)
-], CreateUserDto.prototype, "availableTo", void 0);
 __decorate([
     class_validator_1.MaxLength(200),
     __metadata("design:type", String)

@@ -8629,7 +8629,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Loadable__ = { type: "registry" };
-var __autoRegistryItems = { Roadmap: () => __webpack_require__.e(/*! import() | src/roadmap/Roadmap */ "src/roadmap/Roadmap").then(__webpack_require__.bind(null, /*! ./roadmap/Roadmap */ "./src/roadmap/Roadmap.tsx")), CFP: () => __webpack_require__.e(/*! import() | src/cfp/CFP */ "src/cfp/CFP").then(__webpack_require__.bind(null, /*! ./cfp/CFP */ "./src/cfp/CFP.tsx")), Privacy: () => __webpack_require__.e(/*! import() | src/privacy/Privacy */ "src/privacy/Privacy").then(__webpack_require__.bind(null, /*! ./privacy/Privacy */ "./src/privacy/Privacy.tsx")), Credits: () => __webpack_require__.e(/*! import() | src/credits/Credits */ "src/credits/Credits").then(__webpack_require__.bind(null, /*! ./credits/Credits */ "./src/credits/Credits.tsx")), Register: () => __webpack_require__.e(/*! import() | src/register/Register */ "src/register/Register").then(__webpack_require__.bind(null, /*! ./register/Register */ "./src/register/Register.tsx")) };
+var __autoRegistryItems = { Roadmap: () => __webpack_require__.e(/*! import() | src/roadmap/Roadmap */ "src/roadmap/Roadmap").then(__webpack_require__.bind(null, /*! ./roadmap/Roadmap */ "./src/roadmap/Roadmap.tsx")), CFP: () => __webpack_require__.e(/*! import() | src/cfp/CFP */ "src/cfp/CFP").then(__webpack_require__.bind(null, /*! ./cfp/CFP */ "./src/cfp/CFP.tsx")), Talks: () => __webpack_require__.e(/*! import() | src/talks/Talks */ "src/talks/Talks").then(__webpack_require__.bind(null, /*! ./talks/Talks */ "./src/talks/Talks.tsx")), BOF: () => __webpack_require__.e(/*! import() | src/bof/BOF */ "src/bof/BOF").then(__webpack_require__.bind(null, /*! ./bof/BOF */ "./src/bof/BOF.tsx")), Privacy: () => __webpack_require__.e(/*! import() | src/privacy/Privacy */ "src/privacy/Privacy").then(__webpack_require__.bind(null, /*! ./privacy/Privacy */ "./src/privacy/Privacy.tsx")), Credits: () => __webpack_require__.e(/*! import() | src/credits/Credits */ "src/credits/Credits").then(__webpack_require__.bind(null, /*! ./credits/Credits */ "./src/credits/Credits.tsx")), Register: () => __webpack_require__.e(/*! import() | src/register/Register */ "src/register/Register").then(__webpack_require__.bind(null, /*! ./register/Register */ "./src/register/Register.tsx")) };
 const snarkdown = __webpack_require__(/*! snarkdown */ "./node_modules/snarkdown/dist/snarkdown.es.js").default;
 const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["create"])({ theme: _dojo_framework_core_middleware_theme__WEBPACK_IMPORTED_MODULE_1__["default"], i18n: _dojo_framework_core_middleware_i18n__WEBPACK_IMPORTED_MODULE_2__["default"], icache: _dojo_framework_core_middleware_icache__WEBPACK_IMPORTED_MODULE_3__["default"] });
 /* harmony default export */ __webpack_exports__["default"] = (factory(function App({ middleware: { theme, i18n, icache } }) {
@@ -8690,6 +8690,8 @@ const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["c
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_dojo_framework_routing_Route__WEBPACK_IMPORTED_MODULE_4__["default"], { id: "home", renderer: r('home', desc(), true, false) }),
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_dojo_framework_routing_Route__WEBPACK_IMPORTED_MODULE_4__["default"], { id: "roadmap", renderer: r('roadmap', Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(Loadable__, { __autoRegistryItem: { label: "__autoRegistryItem_Roadmap", registryItem: __autoRegistryItems.Roadmap } }), false, true) }),
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_dojo_framework_routing_Route__WEBPACK_IMPORTED_MODULE_4__["default"], { id: "cfp", renderer: r('cfp', Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(Loadable__, { __autoRegistryItem: { label: "__autoRegistryItem_CFP", registryItem: __autoRegistryItems.CFP } })) }),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_dojo_framework_routing_Route__WEBPACK_IMPORTED_MODULE_4__["default"], { id: "talks", renderer: r('talks', Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(Loadable__, { __autoRegistryItem: { label: "__autoRegistryItem_Talks", registryItem: __autoRegistryItems.Talks } })) }),
+        Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_dojo_framework_routing_Route__WEBPACK_IMPORTED_MODULE_4__["default"], { id: "bof", renderer: r('bof', Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(Loadable__, { __autoRegistryItem: { label: "__autoRegistryItem_BOF", registryItem: __autoRegistryItems.BOF } })) }),
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_dojo_framework_routing_Route__WEBPACK_IMPORTED_MODULE_4__["default"], { id: "privacy", renderer: r('privacy', Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(Loadable__, { __autoRegistryItem: { label: "__autoRegistryItem_Privacy", registryItem: __autoRegistryItems.Privacy } })) }),
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_dojo_framework_routing_Route__WEBPACK_IMPORTED_MODULE_4__["default"], { id: "credits", renderer: r('credits', Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(Loadable__, { __autoRegistryItem: { label: "__autoRegistryItem_Credits", registryItem: __autoRegistryItems.Credits } })) }),
         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(_dojo_framework_routing_Route__WEBPACK_IMPORTED_MODULE_4__["default"], { id: "register", renderer: r('register', Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])(Loadable__, { __autoRegistryItem: { label: "__autoRegistryItem_Register", registryItem: __autoRegistryItems.Register } })) }),
@@ -8786,10 +8788,10 @@ const menuItems = [
     { label: (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("virtual", null,
             "Birds of a",
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),
-            "feather")), color: 'red', n: 'bof', disabled: true },
+            "feather")), color: 'red', n: 'bof' },
     { label: 'Live', color: 'pink', n: 'live', disabled: true },
     { label: 'Hackathon', color: 'green', n: 'hackathon', disabled: true },
-    { label: 'Talks', color: 'amber', n: 'talks', disabled: true },
+    { label: 'Talks', color: 'amber', n: 'talks' },
 ];
 /* harmony default export */ __webpack_exports__["default"] = (factory(function Combs({ properties, middleware: { theme } }) {
     const themedCss = theme.classes(_Combs_m_css__WEBPACK_IMPORTED_MODULE_4__);
@@ -9881,7 +9883,7 @@ module.exports = {" _key":"apconf2020/dark","root":"dark-m__root__ecb8b23sO1y"};
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {" _key":"apconf2020/light","root":"light-m__root__ecb8b2141xP","ligh":"light-m__ligh__ecb8b21npIR","primary":"light-m__primary__ecb8b22inzV","light":"light-m__light__ecb8b23ABRb","secondary":"light-m__secondary__ecb8b227iDB","settings":"light-m__settings__ecb8b22FLDw","info":"light-m__info__ecb8b2M_bWd","warning":"light-m__warning__ecb8b21FXIk","error":"light-m__error__ecb8b21dWwI","success":"light-m__success__ecb8b23PwwX","neutral":"light-m__neutral__ecb8b212kNQ"};
+module.exports = {" _key":"apconf2020/light","root":"light-m__root__ecb8b2141xP","light":"light-m__light__ecb8b23ABRb","primary":"light-m__primary__ecb8b22inzV","secondary":"light-m__secondary__ecb8b227iDB","settings":"light-m__settings__ecb8b22FLDw","info":"light-m__info__ecb8b2M_bWd","warning":"light-m__warning__ecb8b21FXIk","error":"light-m__error__ecb8b21dWwI","success":"light-m__success__ecb8b23PwwX","neutral":"light-m__neutral__ecb8b212kNQ"};
 
 /***/ })
 

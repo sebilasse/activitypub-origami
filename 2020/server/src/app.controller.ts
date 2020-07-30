@@ -10,13 +10,14 @@ export class CreateUserDto {
   publicBadgeName: string;
   @IsEmail()
   privateEmail: string;
+  /*
   @IsIn(timezones)
   timezone: string;
   @MaxLength(7)
   availableFrom: string;
   @MaxLength(7)
   availableTo: string;
-  /*
+  
   @MaxLength(200)
   TalkProposal: string;
   @MaxLength(1600)

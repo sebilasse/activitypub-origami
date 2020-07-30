@@ -64,11 +64,9 @@
   --native-input-text : var(--full-black);
   --ui-menu-border    : rgba(0, 0, 0, 0.24);
   --ui-fill-text      : var(--full-black);
-}
 
-:root {
 	color: var(--text);
-	background-color: var(--bg);
+	background-color: #2f3338;
 }
 
 /*-------------------

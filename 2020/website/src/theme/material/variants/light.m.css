@@ -47,8 +47,11 @@
   --ui-success        : #95cc0d;
   --ui-warning        : #ffaf00;
   --ui-error          : #dc0005;
+  
+	color: var(--text);
+	background-color: #e7e6e2;
 }
-.ligh.primary,
+.light.primary,
 .light.secondary,
 .settings,
 .info,
