@@ -222,7 +222,11 @@ export default factory(function Register({ properties, middleware: { icache, the
 					</TextInput>
 					<div classes={[themedCss.caption, themedCss.tzCaption]}>
 						<h4>{messages.tzClosedCaption1}</h4>
-						<h4>{messages.tzClosedCaption2}</h4>
+						<p classes={themedCss.description}>
+							The Registration closed at 100 registered attendees.<br />
+							Add your BoF Session proposals below.<br />
+							<em classes={themedCss.descCaption}>Thank You!</em>
+						</p>
 
 
 
@@ -248,11 +252,6 @@ export default factory(function Register({ properties, middleware: { icache, the
 						</p>
 					</div>
 					<div classes={themedCss.proposals}>
-						<p classes={themedCss.description}>
-							The CFP for talks closed with 75 registered attendees.<br />
-							The Registration closed with 100 registered attendees.<br />
-							<em classes={themedCss.descCaption}>Thank You!</em>
-						</p>
 						<details>
 							<summary>
 								<h3 key="bofControl" onclick={() => {icache.set('hasBof', true)}} classes={themedCss.flex}>

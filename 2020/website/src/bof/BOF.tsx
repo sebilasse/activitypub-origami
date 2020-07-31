@@ -67,7 +67,7 @@ We’ve been building step stones for the ActivityPub community to collaborate i
 This BoF proposes to focus on three aspects:<br />
 <ul>
 <li>What can we do to consolidate community use of the SocialHub?</li>
-<li>Achievements and ways to gather more funding to develop AvtivityPub software.</li>
+<li>Achievements and ways to gather more funding to develop ActivityPub software.</li>
 <li>What alliances can we make to facilitate wide scale adoption of federated services?</li>
 </ul>
 						</p>

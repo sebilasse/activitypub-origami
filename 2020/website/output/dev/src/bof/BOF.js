@@ -139,7 +139,7 @@ const apconf2019_5 = __webpack_require__(/*! ../assets/photos/low06_apconf_sl_00
                         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),
                         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("ul", null,
                             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("li", null, "What can we do to consolidate community use of the SocialHub?"),
-                            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("li", null, "Achievements and ways to gather more funding to develop AvtivityPub software."),
+                            Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("li", null, "Achievements and ways to gather more funding to develop ActivityPub software."),
                             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("li", null, "What alliances can we make to facilitate wide scale adoption of federated services?"))))),
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("hr", null),
             Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [themedCss.talk] },

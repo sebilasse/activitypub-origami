@@ -241,7 +241,7 @@ See live updates and demonstrations from the Spritely project and hear how these
 					<p classes={[themedCss.number]}>17</p>
 					<div>
 						<h2>Running a FOSS virtual conference</h2>
-						<i classes={[themedCss.byline]}>Morgan Lemmer-Webber, Thomas Markey and fosshost.org</i>
+						<i classes={[themedCss.byline]}>Morgan Lemmer-Webber, Thomas Markey and fosshost.org, Sebastian Lasse</i>
 						<p class="serif">
 Online conferences and live-streamed conferences have been increasingly popular in the face of political and social changes over the past decade. The COVID-19 pandemic has brought this trend from a convenience to a necessity.<br />
 In this talk, organizers of APConf will discuss how we threw together a virtual conference using Peertube and a Big Blue Button server hosted by Fosshost.<br /><br />

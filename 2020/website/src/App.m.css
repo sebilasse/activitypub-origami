@@ -102,8 +102,21 @@ a:hover {
 	.main::before { height: 21.6em; }
 }
 
-li, .description {
+.description {
 	list-style-image: url('./assets/AP_logo.svg');
+}
+li {
+	list-style: none;
+}
+li::before {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 13px;
+	background-image: url('./assets/AP_logo.svg');
+	background-repeat: no-repeat;
+	margin-left: -26px;
+	margin-right: 6px;
 }
 .hive {
 	display: grid;
@@ -226,6 +239,7 @@ time.descriptionMeta,
 .menuItemRight {
 	margin: 0 var(--line) 0 auto;
 	padding-right: 28px;
+
 }
 .menuLink { }
 

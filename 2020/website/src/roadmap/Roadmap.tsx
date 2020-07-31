@@ -14,8 +14,8 @@ export default factory(function Roadmap({ middleware: { theme } }) {
 
 	const timelineEntries: any = [
 		{title: <p>Website</p>, released: true, date: 'June 15'},
-		{title: <p>Deadline for CFP Submissions</p>, released: false, date: 'July 8'},
-		{title: <p>Approval of Submissions</p>, released: false, date: 'July 15'},
+		{title: <p>Deadline for CFP Submissions</p>, released: true, date: 'July 8'},
+		{title: <p>Approval of Submissions</p>, released: true, date: 'July 15'},
 		{title: <p>Detailed Planning</p>, released: false, date: 'August'},
 		{title: <p>Planning Meeting</p>, released: false, date: 'September 5'},
 		{title: <p>End of pre-recorded talk submission</p>, released: false, date: 'September 11'},

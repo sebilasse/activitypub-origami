@@ -314,7 +314,7 @@ const apconf2019_4 = __webpack_require__(/*! ../assets/photos/low26_apconf_sl023
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { classes: [themedCss.number] }, "17"),
                 Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", null,
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("h2", null, "Running a FOSS virtual conference"),
-                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("i", { classes: [themedCss.byline] }, "Morgan Lemmer-Webber, Thomas Markey and fosshost.org"),
+                    Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("i", { classes: [themedCss.byline] }, "Morgan Lemmer-Webber, Thomas Markey and fosshost.org, Sebastian Lasse"),
                     Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", { class: "serif" },
                         "Online conferences and live-streamed conferences have been increasingly popular in the face of political and social changes over the past decade. The COVID-19 pandemic has brought this trend from a convenience to a necessity.",
                         Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("br", null),

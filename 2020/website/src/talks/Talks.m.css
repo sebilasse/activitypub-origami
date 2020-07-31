@@ -26,9 +26,9 @@
 	position: relative;
 	display: flex;
 	align-items: center;
-	text-align: justify;
 }
 .talk p {
+	text-align: justify;
 	max-width: 600px;
   hyphens: auto;
 }
@@ -41,14 +41,14 @@
 }
 .number {
 	composes: hero serif from '../theme/material/_typo.css';
-	color: var(--ap-muted);
+	color: var(--bg-muted);
 	margin-left: var(--line);
 	margin-right: var(--line3);
 	min-width: 52px;
 	clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
 	background: var(--surface,black);
 	display: inline-block;
-	text-align: center;
+	text-align: center !important;
 	padding: 0;
 }
 hr {
