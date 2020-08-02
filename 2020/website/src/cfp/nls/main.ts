@@ -14,11 +14,11 @@ Following a successful inaugural conference in [2019](/2019/),
 we have expanded APConf 2020 to a four day event that will occur entirely on line
 via Big Blue Button.
 <br>
-This year’s conference will include pre- recorded talks with live question and
+This year’s conference will include pre-recorded talks with live question and
 answer sessions, birds of a feather sessions, lightning round talks, and a hackathon
 that follows the conference.`,
 		cfp: `
-We *invite* proposals for birds of a feather session topics and 30- 60 minute talks
+We *invited* proposals for birds of a feather session topics and 30- 60 minute talks
 related to ActivityPub. Topics may include, but are not limited to:`,
 		cfpList: `
 - projects and implementations
