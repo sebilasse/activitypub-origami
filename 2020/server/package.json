@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@dojo/framework": "next",
-    "class-transformer": "0.2.3",
+    "class-transformer": "0.3.1",
     "class-validator": "0.12.2",
     "helmet": "3.22.1",
     "@nestjs/common": "^7.0.0",
