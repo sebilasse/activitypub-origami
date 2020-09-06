@@ -197,7 +197,7 @@ const apconf2019_5 = __webpack_require__(/*! ../assets/photos/low06_apconf_sl_00
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {" _key":"apconf2020/Talks","root":"Talks-m__root__ecb8b21r5zK","talks":"Talks-m__talks__ecb8b23ndGs","talk":"Talks-m__talk__ecb8b23VjZA","byline":"Talks-m__byline__ecb8b22llEA _typo__serif__ecb8b22EAdY","muted":"Talks-m__muted__ecb8b21lyc0","number":"Talks-m__number__ecb8b21dgmx _typo__hero__ecb8b2z-aGb _typo__serif__ecb8b22EAdY","figure":"Talks-m__figure__ecb8b23_aho","noMB":"Talks-m__noMB__ecb8b23XUXi","img":"Talks-m__img__ecb8b21xMKM","m8l":"Talks-m__m8l__ecb8b22Guzr","widescreen":"Talks-m__widescreen__ecb8b22F2Ia","bottom":"Talks-m__bottom__ecb8b23iaKz","flex":"Talks-m__flex__ecb8b23TYiO","flexBottom":"Talks-m__flexBottom__ecb8b22VQN3","asideColumn":"Talks-m__asideColumn__ecb8b21xewt","proposals":"Talks-m__proposals__ecb8b23e8Us"};
+module.exports = {" _key":"apconf2020/Talks","root":"Talks-m__root__ecb8b21r5zK","hr":"Talks-m__hr__ecb8b21DnlD","talks":"Talks-m__talks__ecb8b23ndGs","talk":"Talks-m__talk__ecb8b23VjZA","byline":"Talks-m__byline__ecb8b22llEA _typo__serif__ecb8b22EAdY","muted":"Talks-m__muted__ecb8b21lyc0","number":"Talks-m__number__ecb8b21dgmx _typo__hero__ecb8b2z-aGb _typo__serif__ecb8b22EAdY","figure":"Talks-m__figure__ecb8b23_aho","noMB":"Talks-m__noMB__ecb8b23XUXi","img":"Talks-m__img__ecb8b21xMKM","m8l":"Talks-m__m8l__ecb8b22Guzr","widescreen":"Talks-m__widescreen__ecb8b22F2Ia","bottom":"Talks-m__bottom__ecb8b23iaKz","flex":"Talks-m__flex__ecb8b23TYiO","flexBottom":"Talks-m__flexBottom__ecb8b22VQN3","asideColumn":"Talks-m__asideColumn__ecb8b21xewt","proposals":"Talks-m__proposals__ecb8b23e8Us"};
 
 /***/ })
 

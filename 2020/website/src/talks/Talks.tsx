@@ -17,6 +17,32 @@ export default factory(function Talks({ middleware: { theme } }) {
 			<div classes={grid.headline}><h1>Talks</h1></div>
 			<div classes={grid.headline}><h4></h4></div>
 			<div classes={[themedCss.talks]}>
+				<h3 classes={themedCss.muted}>Keynotes</h3>
+				<div classes={[themedCss.talk]}>
+					<p classes={[themedCss.number]}>K</p>
+					<div>
+						<h2>The ActivityPub Panel</h2>
+						<i classes={[themedCss.byline]}>including Jessica Tallon, Amy Guy, Evan Prodromou, and Erin Shepherd<br /> moderated by Christopher Lemmer-Webber</i>
+						<p class="serif">
+<a href ="https://activitypub.rocks" target="_blank" rel="noopener noreferrer">ActivityPub</a> is now a widely adopted <a href="https://www.w3.org/TR/activitypub" target="_blank" rel="noopener noreferrer">standard</a><br />... but how did it become a standard in the first place?<br /><br />
+Hear about the process of getting ActivityPub all the way to W3C Recommendation status from the people who made it happen, as well as the history that lead to the decision to try and make ActivityPub a standard in the first place! This will be a panel of editors and authors of the ActivityPub protocol.
+						</p>
+					</div>
+				</div>
+				<hr />
+				<div classes={[themedCss.talk]}>
+					<p classes={[themedCss.number]}>K</p>
+					<div>
+						<h2>Let's Play and Win Our Own Game</h2>
+						<i classes={[themedCss.byline]}>I'm Darius Kazemi, and I'm an independent researcher, programmer, and artist. I'm the maintainer of Hometown, a fork of Mastodon with community-enhancing features, and I added AcitvityPub support to the open source event organizing software Gathio. I was a Mozilla Open Web Fellow in 2018-2019</i>
+						<p class="serif">
+As creators of federated social software, we have a choice: we can compete with social media giants on their own terms, or we can play our own game, one that's impossible for the giants to play in the first place. If we want to do the latter, we need to identify the fundamental assumptions that constrain the giants and ask ourselves what we can do when we throw those assumptions out entirely.<br /><br />
+In this talk, I am going to try and inspire you to make things that would be literally impossible to make on the centralized web. I am going to talk about both the advantages and disadvantages of doing this kind of thing. Expect to hear concrete examples of software that already exists, and also examples of software that could conceivably exist in the very near future.<br />
+						</p>
+					</div>
+				</div>
+<br /><br /><hr classes={themedCss.hr} /><br /><br />
+				<h3 classes={themedCss.muted}>Pre-recorded Talks</h3>
 				<div classes={[themedCss.talk]}>
 					<p classes={[themedCss.number]}>1</p>
 					<div>
@@ -240,6 +266,28 @@ See live updates and demonstrations from the Spritely project and hear how these
 				<div classes={[themedCss.talk]}>
 					<p classes={[themedCss.number]}>17</p>
 					<div>
+						<h2>CommonsPub and the quest for a modular decentralised app ecosystem</h2>
+						<i classes={[themedCss.byline]}>Mayel de Borniol, with the participation of the CommonsPub Team & Contributors.</i>
+						<p class="serif">
+							<i>The goal: empower people to create and self-manage social spaces and tools tailored to their needs.</i><br /><br />
+ActivityPub gave us interoperability at the data level, and we’d like to do the same on the software level with <a href ="https://commonspub.org/" target="_blank" rel="noopener noreferrer">CommonsPub</a>. Instead of a top-down “product design” approach to building an app or platform, we’d like a world where even non-technical users and communities can do it themselves: being able to piece together custom experiences from an ecosystem of apps and plugins developed by different groups who all contribute to (and benefit from) a pool of interdependent software libraries, while each focusing on different use cases, features and user experiences.
+<br /><br />
+We have implemented groups (to further decentralise the fediverse by rendering users and communities independent from the instance they’re on), and decoupled the federation and storage of ActivityStreams activities/objects from the app’s relational database, backend logic, APIs and frontend interfaces. This means users can have one fediverse identity and a timeline which shows all types of content and activities in one place, while participating in multiple communities and using specialised apps for different activities.
+<br /><br />
+After presenting what’s available to be hacked on and deployed, we’ll discuss some of our ongoing projects, such as:
+<ol>
+	<li><a href ="https://valueflo.ws/" target="_blank" rel="noopener noreferrer">ValueFlows</a> to facilitate and federate mutual aid and circular economies.</li>
+	<li><a href ="https://haha.academy/" target="_blank" rel="noopener noreferrer">HAHA Academy</a> to share educational knowledge and encourage lifelong learning.</li>
+	<li>Federated taxonomies for topic-based search and disovery across instances.</li>
+	<li>Plus one more thing which touches on self-hosting, privacy, portability and network neutrality…</li>
+</ol>
+						</p>
+					</div>
+				</div>
+				<hr />
+				<div classes={[themedCss.talk]}>
+					<p classes={[themedCss.number]}>18</p>
+					<div>
 						<h2>Running a FOSS virtual conference</h2>
 						<i classes={[themedCss.byline]}>Morgan Lemmer-Webber, Thomas Markey and fosshost.org, Sebastian Lasse</i>
 						<p class="serif">
@@ -249,7 +297,7 @@ Fosshost provides cloud compute power to the free and open source software commu
 						</p>
 					</div>
 				</div>
-				<hr />
+
 			</div>
 			<aside classes={[grid.leftColumn, themedCss.asideColumn]}>
 				<figure classes={themedCss.figure}>

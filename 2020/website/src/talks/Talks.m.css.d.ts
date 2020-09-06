@@ -1,4 +1,5 @@
 export const root: string;
+export const hr: string;
 export const talks: string;
 export const talk: string;
 export const byline: string;

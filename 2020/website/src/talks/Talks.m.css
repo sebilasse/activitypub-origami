@@ -15,7 +15,9 @@
 	background-color: var(--ui-bg);
 	z-index: -1;
 }
-
+.hr {
+	border-color: var(--bg) !important;
+}
 .talks {
 	grid-row: 2 / auto;
 	grid-column: content-start / span 3;
@@ -32,8 +34,13 @@
 	max-width: 600px;
   hyphens: auto;
 }
+.talk p ol {
+	text-align: left;
+}
 .byline {
 	composes: serif from '../theme/material/_typo.css';
+	display: inline-block;
+	max-width: 600px;
 	color: var(--accent);
 }
 .muted {
