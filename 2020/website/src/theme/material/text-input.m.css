@@ -35,10 +35,12 @@
 	overflow: hidden;
 }
 /* Contains the input element */
-.inputWrapper { }
 .wrapper, .inputWrapper {
-	/*display: flex;*/
 	width: 100%;
+}
+.inputWrapper {
+	display: flex;
+	min-height: var(--h);
 }
 /* Added to the input */
 .input {
@@ -201,7 +203,7 @@
 }
 .slideLabel.flat .input:focus ~ .label,
 .slideLabel.flat .input:not(:placeholder-shown) ~ .label {
-	transform: translateX(0) translateY(calc(var(--small-size) * -1));
+	transform: translateX(0) translateY(calc(var(--small-size) * -0.618));
 }
 .slideLabel.outlined .input:focus ~ .label,
 .slideLabel.outlined .input:not(:placeholder-shown) ~ .label {

@@ -14,6 +14,7 @@ import Roadmap from './roadmap/Roadmap';
 import Privacy from './privacy/Privacy';
 import Credits from './credits/Credits';
 import Talks from './talks/Talks';
+import Live from './live/Live';
 import BOF from './bof/BOF';
 
 import material from './theme/material';
@@ -86,6 +87,7 @@ export default factory(function App({ middleware: { theme, i18n, icache } }) {
     <virtual>
 			<Route id="home" renderer={r('home', desc(), true, false)} />
 			<Route id="roadmap" renderer={r('roadmap', <Roadmap />, false, true)} />
+      <Route id="live" renderer={r('live', <Live />)} />
       <Route id="cfp" renderer={r('cfp', <CFP />)} />
       <Route id="talks" renderer={r('talks', <Talks />)} />
       <Route id="bof" renderer={r('bof', <BOF />)} />

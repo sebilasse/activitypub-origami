@@ -223,7 +223,7 @@ export const TextArea = factory(function TextArea({
 	const label = (!!l ? l : (!l && !!children()) ?
 		children() : void 0) || void 0;
 
-//	const [label] = children();
+// const [label] = children();
 
 	return (
 		<div key="root" classes={[

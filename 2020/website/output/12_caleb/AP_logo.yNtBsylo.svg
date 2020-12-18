@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg8" sodipodi:docname="ActivityPub-logo-symbol.svg" inkscape:version="0.92.1 r15371" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="13px"
+	 viewBox="0 0 1024 768" enable-background="new 0 0 1024 768" xml:space="preserve">
+<title  id="title4590">ActivityPub logo</title>
+<sodipodi:namedview  units="px" pagecolor="#ffffff" id="base" bordercolor="#666666" borderopacity="0.14509804" inkscape:cx="-195.34129" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.70710678" inkscape:cy="-120.65903" inkscape:document-units="px" inkscape:current-layer="layer1" showgrid="false" inkscape:snap-global="true" showguides="false" fit-margin-top="0" inkscape:guide-bbox="true" showborder="true" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0" inkscape:showpageshadow="false" borderlayer="false">
+	<inkscape:grid  type="xygrid" id="grid4572" enabled="false" originx="7.1437514" originy="-404.28382"></inkscape:grid>
+
+		<inkscape:grid  units="mm" type="axonomgrid" id="grid4574" enabled="false" originx="7.1437514" originy="-404.28382" empspacing="12">
+		</inkscape:grid>
+	<sodipodi:guide  id="guide5059" position="3278.981,1256.5057" inkscape:locked="false" orientation="0,1"></sodipodi:guide>
+	<sodipodi:guide  id="guide5061" position="3278.981,1238.2495" inkscape:locked="false" orientation="0,1"></sodipodi:guide>
+</sodipodi:namedview>
+<g id="layer1" transform="translate(7.1437516,141.67967)" inkscape:label="Layer 1" inkscape:groupmode="layer">
+	<g id="g5197" transform="translate(-4.2352716,0.01824528)">
+		<g id="g5132-90" transform="matrix(0.9789804,0,0,0.9789804,-3157.9561,1202.4422)">
+			<g id="g5080-78" transform="matrix(0.2553682,0,0,0.2553682,2615.9213,-1125.3113)">
+
+					<linearGradient id="path5404-0-0_1_" gradientUnits="userSpaceOnUse" x1="17296.6406" y1="5682.5244" x2="17317.791" y2="5682.5244" gradientTransform="matrix(5.5821 0 0 -5.5821 -63781.0117 32286.4043)">
+					<stop  offset="0" style="stop-color:#F1007E"/>
+					<stop  offset="1" style="stop-color:#000000"/>
+				</linearGradient>
+				<path id="path5404-0-0" inkscape:connector-curvature="0" sodipodi:nodetypes="cccccccc" fill="url(#path5404-0-0_1_)" d="
+					M4609.389-715.165l1849.3,1067.697v427.074l-1849.3,1067.698V1420.23l1479.452-854.16L4609.396-288.085L4609.389-715.165z"/>
+
+					<linearGradient id="path5406-6-3_1_" gradientUnits="userSpaceOnUse" x1="17296.6289" y1="5682.5244" x2="17317.7793" y2="5682.5244" gradientTransform="matrix(5.5821 0 0 -5.5821 -63781.0117 32286.4043)">
+					<stop  offset="0" style="stop-color:#F1007E"/>
+					<stop  offset="1" style="stop-color:#000000"/>
+				</linearGradient>
+				<path id="path5406-6-3" inkscape:connector-curvature="0" sodipodi:nodetypes="cccc" fill="url(#path5406-6-3_1_)" d="
+					M4609.389,138.989l739.723,427.082l-739.723,427.082V138.989z"/>
+			</g>
+		</g>
+		<g id="g5127-1" transform="matrix(0.9789804,0,0,0.9789804,-3157.9561,1202.4422)">
+
+				<linearGradient id="path5467-2-0_1_" gradientUnits="userSpaceOnUse" x1="6513.3306" y1="794.8345" x2="6534.4819" y2="794.8345" gradientTransform="matrix(21.859 0 0 -21.859 -139148.3125 16393.5039)">
+				<stop  offset="0" style="stop-color:#6D6D6D"/>
+				<stop  offset="1" style="stop-color:#000000"/>
+			</linearGradient>
+			<path id="path5467-2-0" inkscape:connector-curvature="0" fill="url(#path5467-2-0_1_)" d="M3698.56-1307.93l-472.253,272.648
+				v109.055l377.795-218.111v436.24l94.458,54.537V-1307.93z M3509.663-980.745l-188.916,109.055l188.916,109.055V-980.745z"/>
+		</g>
+	</g>
+</g>
+</svg>

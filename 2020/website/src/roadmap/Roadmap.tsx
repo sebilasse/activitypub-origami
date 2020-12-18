@@ -18,8 +18,8 @@ export default factory(function Roadmap({ middleware: { theme } }) {
 		{title: <p>Approval of Submissions</p>, released: true, date: 'July 15'},
 		{title: <p>Detailed Planning</p>, released: true, date: 'August'},
 		{title: <p>Planning Meeting</p>, released: true, date: 'September 5'},
-		{title: <p>End of pre-recorded talk submission</p>, released: false, date: 'September 11'},
-		{title: <p>Deadline for uploads</p>, released: false, date: 'September 25'},
+		{title: <p>End of pre-recorded talk submission</p>, released: true, date: 'September 11'},
+		{title: <p>Deadline for uploads</p>, released: true, date: 'September 25'},
 		{title: <p>Conference Meet and Greet</p>, released: false, date: 'October 2'}
 	];
 

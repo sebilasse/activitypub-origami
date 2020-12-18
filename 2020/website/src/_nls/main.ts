@@ -12,8 +12,8 @@ export default {
 - birds of a feather sessions
 - lightning round talks
 - a hackathon that follows the conference.`,
-		tPrefix: 'The 2020',
+		tPrefix: 'This 2020',
 		tAddress: 'virtual',
-		tSuffix: 'conference will include'
+		tSuffix: 'conference site includes'
 	}
 };

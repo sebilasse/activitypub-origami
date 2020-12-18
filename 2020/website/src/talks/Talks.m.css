@@ -15,6 +15,16 @@
 	background-color: var(--ui-bg);
 	z-index: -1;
 }
+.root h4 a {
+	color: #fff !important;
+}
+
+button {
+	padding: 8px !important;
+}
+button i {
+	line-height: 0 !important;
+}
 .hr {
 	border-color: var(--bg) !important;
 }
@@ -29,6 +39,22 @@
 	display: flex;
 	align-items: center;
 }
+.talkFrame {
+  position: relative;
+  padding-bottom: 56.25%; /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
+  height: 0;
+  overflow: hidden;
+	width: 100%;
+	max-width: 600px;
+}
+.talkFrame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .talk p {
 	text-align: justify;
 	max-width: 600px;

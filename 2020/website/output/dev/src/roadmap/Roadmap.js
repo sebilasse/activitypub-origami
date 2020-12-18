@@ -127,8 +127,8 @@ const factory = Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["c
         { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Approval of Submissions"), released: true, date: 'July 15' },
         { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Detailed Planning"), released: true, date: 'August' },
         { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Planning Meeting"), released: true, date: 'September 5' },
-        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "End of pre-recorded talk submission"), released: false, date: 'September 11' },
-        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Deadline for uploads"), released: false, date: 'September 25' },
+        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "End of pre-recorded talk submission"), released: true, date: 'September 11' },
+        { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Deadline for uploads"), released: true, date: 'September 25' },
         { title: Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("p", null, "Conference Meet and Greet"), released: false, date: 'October 2' }
     ];
     return (Object(_dojo_framework_core_vdom__WEBPACK_IMPORTED_MODULE_0__["tsx"])("div", { classes: [_AppContent_m_css__WEBPACK_IMPORTED_MODULE_4__["root"], themedCss.root] },

@@ -2,6 +2,7 @@ export const root: string;
 export const hr: string;
 export const talks: string;
 export const talk: string;
+export const talkFrame: string;
 export const byline: string;
 export const muted: string;
 export const number: string;
