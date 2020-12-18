@@ -7,7 +7,7 @@ stuff for #apconf<br>
 
 Contains websites
 - https://redaktor.me/apconf/
-- https://apconf.uber.space [draft, final URL t.b.a]
+- https://conf.activitypub.rocks
 and iconfont and Etherpad extension …
 
 Is a Work in Progress
