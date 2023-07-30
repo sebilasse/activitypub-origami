@@ -2,7 +2,7 @@
 <img src="https://raw.githubusercontent.com/redaktor/style/master/assets/readme/logo.png" width="36" height="auto" align="right">
 
 ### ActivityPub origami
-stuff for #apconf<br>
+stuff for #apconf #fedicamp etc.<br>
 [![-](https://raw.githubusercontent.com/redaktor/style/master/assets/readme/lineBlue.png)](#)<br>
 
 Contains websites
@@ -23,7 +23,9 @@ Maybe he want's a quick overview of the [`Schedule`](https://redaktor.me/apconf/
 - The webfont folder includes all the icons as SVG and fonts
 - The ep_apconf folder is the Etherpad extension
 
-Made with dojo.io – more infos for building [`here `](https://v5.dojo.io)
+## Unicode 
+The webfont comes with the ActivityPub Logo, about Unicode: 
+[Jan Wildboer proposes ȹ as an universal unicode ligature for #ActivityPub](https://digitalcourage.social/@jwildeboer@social.wildeboer.net/110802803793481489)
 
 ## How do I contribute?
 
